@@ -1,0 +1,74 @@
+{
+  "webSearch": {
+    "title": "联网搜索",
+    "description": "在这里配置各搜索 Provider（API Key/实例地址等）。对话内是否启用请在输入框工具栏选择，系统会按需触发搜索。",
+    "engine": "搜索引擎",
+    "results": {
+      "searching": "正在联网搜索…",
+      "failed": "联网搜索失败",
+      "summary": "联网搜索 · {{count}} 条",
+      "noResults": "未找到可用结果"
+    },
+    "settings": {
+      "apiKeyLabel": "API Key",
+      "getApiKeyPrefix": "获取 API Key：",
+      "instanceUrl": "实例地址",
+      "docsPrefix": "SearXNG 部署文档：",
+      "searchWithTimeLabel": "追加当前日期",
+      "searchWithTimeDesc": "开启后查询中会附加今天的日期，引导搜索引擎偏向最新内容",
+      "excludeDomainsLabel": "屏蔽域名",
+      "excludeDomainsPlaceholder": "输入域名后按 Enter 添加（如 pinterest.com）",
+      "excludeDomainsDesc": "搜索结果中命中这些域名的条目会被过滤掉"
+    },
+    "providers": {
+      "exaMcp": {
+        "name": "ExaMCP",
+        "desc": "使用公共 MCP 端点进行搜索，无需 API Key。"
+      },
+      "localGoogle": {
+        "name": "Google（本地）",
+        "desc": "通过标签页访问 Google 搜索，无需 API Key，仅浏览器扩展可用。"
+      },
+      "localBing": {
+        "name": "Bing（本地）",
+        "desc": "通过后台标签访问 Bing 搜索，无需 API Key，仅浏览器扩展可用。"
+      },
+      "localBaidu": {
+        "name": "百度（本地）",
+        "desc": "通过后台标签访问百度搜索，无需 API Key，仅浏览器扩展可用。"
+      },
+      "tavily": {
+        "name": "Tavily",
+        "desc": "专为 AI 设计的搜索 API，结果质量高，支持自然语言查询。"
+      },
+      "exa": {
+        "name": "Exa",
+        "desc": "语义搜索引擎，理解查询意图，适合学术和技术搜索。"
+      },
+      "bocha": {
+        "name": "Bocha",
+        "desc": "博查 AI 搜索，中文优化，适合中文内容检索。"
+      },
+      "zhipu": {
+        "name": "智谱 AI",
+        "desc": "智谱 AI 联网搜索，中文友好，与 GLM 深度集成。"
+      },
+      "searxng": {
+        "name": "SearXNG（自托管）",
+        "desc": "开源隐私搜索引擎，需要自己部署实例并填入服务地址。"
+      }
+    },
+    "localGoogle": "Google（本地浏览器）",
+    "localGoogleDesc": "通过后台标签页访问 Google 搜索并提取结果，无需 API Key。",
+    "tavily": "Tavily API",
+    "tavilyDesc": "使用 Tavily Search API，需要提供 API Key。",
+    "tavilyApiKey": "Tavily API Key",
+    "getApiKey": "获取 API Key",
+    "getApiKeyFrom": "获取 API Key：",
+    "maxResults": "最大结果数",
+    "permissions": {
+      "title": "网络目标",
+      "hint": "联网搜索会访问以下站点；普通 http/https 访问由 manifest 安装期声明，不再运行时弹出网页授权。"
+    }
+  }
+}

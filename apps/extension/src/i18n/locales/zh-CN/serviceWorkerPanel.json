@@ -1,0 +1,73 @@
+{
+  "serviceWorkerPanel": {
+    "title": "Service Worker 生命周期管理",
+    "description": "管理 Manifest V3 环境下的服务工作线程保活与状态持久化策略。",
+    "status": {
+      "threadStatus": "工作线程状态",
+      "uptime": "运行时长",
+      "lastEvent": "最近事件",
+      "active": "活跃",
+      "unavailable": "不可用",
+      "unknown": "未知"
+    },
+    "lifecycle": {
+      "title": "生命周期状态说明",
+      "table": {
+        "state": "状态",
+        "trigger": "触发条件",
+        "impact": "AI 任务影响",
+        "strategy": "应对策略"
+      },
+      "rows": {
+        "active": {
+          "state": "活跃",
+          "trigger": "API 调用、消息或闹钟事件",
+          "impact": "正常执行推理与流式转发",
+          "strategy": "chrome.alarms 心跳"
+        },
+        "idle": {
+          "state": "空闲",
+          "trigger": "超过 30 秒无活跃事件",
+          "impact": "随时面临终止风险",
+          "strategy": "维持 Port 连接"
+        },
+        "terminated": {
+          "state": "已终止",
+          "trigger": "资源回收或超时关闭",
+          "impact": "任务中断，状态丢失",
+          "strategy": "IndexedDB 持久化上下文"
+        }
+      }
+    },
+    "keepalive": {
+      "title": "保活策略配置",
+      "alarms": {
+        "title": "chrome.alarms 心跳",
+        "desc": "官方允许的唤醒机制（Chrome 会对过小间隔做限制）",
+        "interval": "心跳间隔（分钟）",
+        "intervalValue": "{{count}} 分钟"
+      },
+      "port": {
+        "title": "Port 连接保活",
+        "desc": "通过 chrome.runtime.connect 保持端口连接",
+        "connected": "已连接（{{count}}）",
+        "disconnected": "未连接"
+      }
+    },
+    "persistence": {
+      "title": "状态持久化配置",
+      "autoSave": {
+        "title": "自动保存话题上下文",
+        "desc": "当前话题与提示词会在 UI 层自动写入本地存储。"
+      },
+      "recovery": {
+        "title": "崩溃恢复",
+        "desc": "页面刷新或崩溃后会从本地存储恢复当前话题。"
+      }
+    },
+    "time": {
+      "duration": "{{minutes}}分{{seconds}}秒",
+      "ago": "{{duration}}前"
+    }
+  }
+}

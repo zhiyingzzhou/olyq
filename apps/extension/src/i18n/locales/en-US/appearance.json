@@ -1,0 +1,38 @@
+{
+  "appearance": {
+    "description": "Customize theme and UI language.",
+    "darkMode": "Dark mode",
+    "darkModeDesc": "Use the dark theme.",
+    "themeColor": "Theme color",
+    "themeColorDesc": "Switch the full color system used by dark mode.",
+    "themeColorPresetList": "Theme color presets",
+    "themeColorHexLabel": "Custom theme color Hex",
+    "themeColorPresets": {
+      "olyqBrand": "Olyq Brand",
+      "techBlue": "Tech Blue",
+      "emerald": "Emerald",
+      "amber": "Amber",
+      "rose": "Rose",
+      "cyan": "Cyan",
+      "lavender": "Lavender",
+      "coral": "Coral",
+      "mint": "Mint",
+      "sunset": "Sunset",
+      "jade": "Jade",
+      "deepSpace": "Deep Space"
+    },
+    "pinTopicsToTop": "Show pinned topics first",
+    "pinTopicsToTopDesc": "Only float pinned topics to the top in the visible list without changing the assistant entry topic rule.",
+    "extensionSettingsOpenMode": "Settings open mode",
+    "extensionSettingsOpenModeDesc": "Choose whether the extension settings entry opens a dialog or the full workspace page.",
+    "extensionSettingsOpenModeDialog": "Dialog",
+    "extensionSettingsOpenModeWorkspace": "Workspace page",
+    "toggleTheme": "Toggle theme",
+    "language": "Language",
+    "languageDesc": "Switch UI language.",
+    "languages": {
+      "zhCN": "Chinese",
+      "enUS": "English"
+    }
+  }
+}

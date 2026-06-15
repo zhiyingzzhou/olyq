@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olyq Page Style Benchmark</title>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      body {
+        min-height: 100vh;
+      }
+
+      #__olyq_shadow_host__ {
+        position: fixed;
+        inset: 16px auto auto 16px;
+        z-index: 9999;
+        max-width: min(420px, calc(100vw - 32px));
+        padding: 14px 16px;
+        border-radius: 18px;
+        background: rgba(17, 24, 39, 0.88);
+        color: rgb(255, 255, 255);
+        font: 500 12px/1.5 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+        box-shadow: 0 18px 40px rgba(15, 23, 42, 0.28);
+        backdrop-filter: blur(12px);
+      }
+
+      #__olyq_shadow_host__ h1 {
+        margin: 0 0 6px;
+        font-size: 13px;
+      }
+
+      #__olyq_shadow_host__ p {
+        margin: 0;
+        opacity: 0.82;
+      }
+
+      #benchmark-status {
+        margin-top: 10px;
+        white-space: pre-wrap;
+        word-break: break-word;
+      }
+
+      #page-style-benchmark-host {
+        isolation: isolate;
+      }
+    </style>
+  </head>
+  <body>
+    <section id="__olyq_shadow_host__" aria-hidden="true">
+      <h1>Olyq Page Style Benchmark</h1>
+      <p>这个页面只用于真实浏览器 benchmark，不进入扩展默认功能链路。</p>
+      <div id="benchmark-status">booting…</div>
+    </section>
+    <div id="page-style-benchmark-host"></div>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

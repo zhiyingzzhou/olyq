@@ -1,0 +1,50 @@
+{
+  "shadowDomPanel": {
+    "title": "UI Architecture: Shadow DOM & Style Isolation",
+    "description": "A Shadow DOM based encapsulation strategy to prevent host page CSS from leaking into the extension UI.",
+    "architectureTitle": "olyqShadowHost Architecture",
+    "hostDomComment": "// Host page DOM",
+    "injectedStyleLine": "<style> (isolated styles)</style>",
+    "shadowRootOpen": "#shadow-root (open)",
+    "eventDispatchTitle": "Event listening & dispatch",
+    "eventDispatchFlow": "↳ mouseup/keyup/scroll → sendMessage → SW → Side Panel",
+    "benefits": {
+      "style": {
+        "title": "Style isolation",
+        "desc": "Host CSS can't pierce the Shadow Tree"
+      },
+      "event": {
+        "title": "Event isolation",
+        "desc": "Prevent host hotkeys from interfering with input"
+      },
+      "consistent": {
+        "title": "Consistent UX",
+        "desc": "Consistent look across websites"
+      }
+    },
+    "currentImplTitle": "Current implementation (read-only)",
+    "shadowRootMode": "Shadow Root mode",
+    "shadowRootModeDesc": "Currently open (for debugging and troubleshooting)",
+    "styleInjection": "Style injection",
+    "styleInjectionDesc": "Inject <style> inside shadowRoot to avoid host CSS pollution.",
+    "reactPortal": "React Portal",
+    "reactPortalDesc": "Assistant selector is built with native DOM (lighter).",
+    "injectionConfigTitle": "Extension runtime entry config",
+    "table": {
+      "mode": "Mode",
+      "desc": "Description",
+      "status": "Status"
+    },
+    "injectionModes": {
+      "sidePanel": "Side Panel",
+      "contentScript": "Content Script",
+      "offscreen": "Offscreen"
+    },
+    "injection": {
+      "sidePanelDesc": "Standalone side panel UI, fully isolated",
+      "contentScriptDesc": "Injected floating assistant button",
+      "offscreenDesc": "Hidden background capability host, not a user-facing entry"
+    },
+    "coreCodeTitle": "Core wrapper code"
+  }
+}

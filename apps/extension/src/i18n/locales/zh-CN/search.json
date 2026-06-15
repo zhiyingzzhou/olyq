@@ -1,0 +1,14 @@
+{
+  "search": {
+    "inChat": "在对话中搜索…",
+    "includeUser": "包含用户问题",
+    "caseSensitive": "大小写敏感（仅英文）",
+    "wholeWord": "全词匹配（仅英文）",
+    "prev": "上一个",
+    "next": "下一个",
+    "globalTitle": "全局搜索",
+    "globalPlaceholder": "搜索所有话题…",
+    "openInChat": "在对话中打开",
+    "noResults": "无结果"
+  }
+}

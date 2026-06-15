@@ -1,0 +1,50 @@
+{
+  "securityPanel": {
+    "title": "Security & Privacy",
+    "description": "Security audit based on manifest.json: CSP, permissions and web-accessible resources.",
+    "csp": {
+      "title": "Content Security Policy (CSP)",
+      "extensionPages": "Extension pages CSP (read-only)",
+      "note": "This is declared in the manifest and can't be changed at runtime via UI.",
+      "missing": "(CSP unavailable: not in extension context or not explicitly declared in manifest)"
+    },
+    "permissions": {
+      "title": "Permission Audit",
+      "table": {
+        "permission": "Permission",
+        "type": "Type",
+        "source": "Source"
+      },
+      "typeLabels": {
+        "permissions": "Manifest permissions",
+        "hostPermissions": "Install-time website access"
+      },
+      "sourceLabels": {
+        "manifest": "Manifest file (manifest.json)"
+      },
+      "missing": "(No permission info available)"
+    },
+    "installTimeWebAccess": {
+      "title": "Install-time website access",
+      "description": "Normal website access only uses fixed http://*/* and https://*/* declarations in the manifest. There is no runtime website-access prompt or removal entry.",
+      "declared": "Normal website access declared",
+      "missing": "Normal website access missing from manifest",
+      "count": "{{count}} manifest entries"
+    },
+    "webAccessibleResources": {
+      "title": "Web Accessible Resources",
+      "description": "The following resources are explicitly declared as web-accessible in manifest.json:",
+      "none": "(None declared)"
+    },
+    "credentials": {
+      "title": "Credential Storage",
+      "modelApiKey": "Model provider API key",
+      "modelApiKeyDesc": "Stored in chrome.storage.local (not exposed to web pages)."
+    },
+    "networkTips": {
+      "title": "Network Tips",
+      "allUrls": "Technology-stack detection, browser context, and page tools only cover normal http/https pages. Internal pages, extension pages, about:, and file: are not collectable by default.",
+      "audit": "For external channels like MCP/sync, consider enabling audit logs (coming later)."
+    }
+  }
+}

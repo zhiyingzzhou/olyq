@@ -1,0 +1,64 @@
+{
+  "sitePermissionsPanel": {
+    "title": "Website Capabilities",
+    "description": "The extension declares normal website access at install time and uses static content scripts on http/https pages. Internal pages, extension pages, about:, and file: are not collectable by default.",
+    "status": {
+      "injection": "Content Script Injection",
+      "staticReady": "Static injection ready",
+      "notReady": "Not ready",
+      "method": "Injection Method",
+      "hostAccess": "Website Access"
+    },
+    "hostAccess": {
+      "title": "Website Access",
+      "desc": "This version no longer uses runtime website-access prompts. http://*/* and https://*/* are declared in the manifest, so normal website capabilities work immediately after install.",
+      "installGranted": "Declared at install",
+      "installMissing": "Missing in manifest",
+      "installNote": "Access only covers normal http/https pages. Cookies are read only by name for local rule matching; raw values are never stored, shown, or sent to AI."
+    },
+    "method": {
+      "static": "Manifest static content script",
+      "none": "Unavailable"
+    },
+    "technologyStack": {
+      "title": "Technology-stack detection",
+      "desc": "A plugin reads public signals such as headers, meta tags, script URLs, DOM, JS globals, request URLs, and cookie names, then exposes a compact chat-top entry.",
+      "status": "Enabled",
+      "privacy": "When automatic context is on, AI receives only a technology-stack summary, never raw HTML, cookie values, script snippets, or long CSS."
+    },
+    "pageTools": {
+      "title": "Enable page tools",
+      "desc": "Controls in-page overlay tools (Selection Assistant / Element Picker). When disabled, these tools will be unavailable.",
+      "disabledHint": "Page tools are disabled in settings",
+      "disabledSitesTitle": "Disabled sites",
+      "noDisabledSites": "No sites are disabled individually.",
+      "noDisabledSitesMatch": "No matching sites.",
+      "disabledSitesSearchPlaceholder": "Search disabled sites",
+      "disabledSitesSearchLabel": "Search disabled sites",
+      "disabledSitesCount": "{{count}} total",
+      "disabledSitesMatchCount": "{{count}} of {{total}} matches",
+      "restoreSite": "Restore",
+      "restoreSiteAriaLabel": "Restore {{origin}}",
+      "clearDisabledSites": "Clear all"
+    },
+    "browserContext": {
+      "title": "Automatic browser context",
+      "desc": "Controls automatic browser-context collection for send, resend, regenerate, and manual refresh. When disabled, no page body will be fetched automatically.",
+      "scopeHint": "This switch only affects automatic browser-context collection. Selection Assistant and Element Picker are still controlled by Page Tools.",
+      "fullPagePromptCharsTitle": "Full-page mode prompt limit",
+      "fullPagePromptCharsHint": "Only affects the top-bar full-page mode toggle. The default body budget is 24,000 chars.",
+      "tagRulesTitle": "Tag rules",
+      "tagRulesDesc": "Assign a default profile to assistant tags. When multiple tags match, only the highest-priority rule wins.",
+      "addRule": "Add rule",
+      "emptyRules": "No tag rules yet. Assistants fall back to Lightweight Page when no rule matches.",
+      "tagPlaceholder": "Enter an assistant tag",
+      "singleWinnerHint": "Rules use a single-winner model: assistant overrides always win over tag rules, and tag rules only resolve by highest priority."
+    },
+    "debug": {
+      "loader": "Loader:",
+      "lastRegistrationError": "Last content-script error",
+      "errorCode": "Error code:",
+      "errorReason": "Reason:"
+    }
+  }
+}

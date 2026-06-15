@@ -1,0 +1,87 @@
+{
+  "modelRegistry": {
+    "empty": "None",
+    "filters": {
+      "all": "All"
+    },
+    "capabilities": {
+      "chat": "Chat",
+      "multimodal-chat": "Multimodal Chat",
+      "audio-chat": "Audio Chat",
+      "transcription": "Transcription",
+      "speech-generation": "Speech Generation",
+      "moderation": "Moderation",
+      "audio-model": "Audio Model",
+      "image-generation": "Image Generation",
+      "video-generation": "Video Generation",
+      "embedding": "Embedding",
+      "rerank": "Rerank",
+      "unknown": "Unknown",
+      "vision-input": "Vision Input",
+      "audio-input": "Audio Input",
+      "file-input": "File Input",
+      "tool-call": "Tool Calling",
+      "structured-output": "Structured Output",
+      "reasoning": "Reasoning",
+      "native-web-search": "Native Web Search",
+      "image-output": "Image Output",
+      "audio-output": "Audio Output"
+    },
+    "modalities": {
+      "text": "Text",
+      "image": "Image",
+      "audio": "Audio",
+      "video": "Video",
+      "file": "File",
+      "embeddings": "Embeddings"
+    },
+    "scopes": {
+      "public": "Public",
+      "provider": "Provider Scoped",
+      "local": "Local"
+    },
+    "confidence": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    },
+    "transportProtocols": {
+      "openai-chat": "OpenAI Chat Completions",
+      "openai-responses": "OpenAI Responses",
+      "anthropic-messages": "Anthropic Messages",
+      "gemini-generate-content": "Gemini GenerateContent",
+      "cohere-chat": "Cohere Chat",
+      "bedrock-converse": "AWS Bedrock Converse",
+      "embedding-api": "Embedding API",
+      "rerank-api": "Rerank API",
+      "image-api": "Image API",
+      "video-api": "Video API",
+      "transcription-api": "Transcription API",
+      "speech-api": "Speech API",
+      "moderation-api": "Moderation API",
+      "unknown": "Unknown"
+    },
+    "fields": {
+      "baseModelKey": "Base Model ID",
+      "canonicalId": "Internal Canonical ID",
+      "scope": "Scope",
+      "kind": "System Primary Kind",
+      "confidence": "Confidence",
+      "transportProtocol": "System Detected Protocol",
+      "displayName": "Display Name",
+      "description": "System Description",
+      "systemCapabilities": "System Capabilities",
+      "inputModalities": "Input Modalities",
+      "outputModalities": "Output Modalities"
+    },
+    "manifestEditor": {
+      "validate": "Validate",
+      "attachLocalFile": "Attach local file",
+      "currentFile": "Current file: {{name}}",
+      "downloadJsonFallback": "JSON will be downloaded when no local file is attached",
+      "validateFailed": "Validation failed",
+      "updatedAt": "updatedAt: {{value}}",
+      "jsonContent": "JSON content"
+    }
+  }
+}

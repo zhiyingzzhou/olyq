@@ -1,0 +1,7 @@
+{
+  "multiSelect": {
+    "selectedCount": "已选择 {{count}} 条",
+    "confirmDelete": "删除选中的 {{count}} 条消息",
+    "confirmDeleteDesc": "删除后会移除这些消息，并回收仅被它们引用的附件。"
+  }
+}

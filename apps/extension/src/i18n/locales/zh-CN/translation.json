@@ -1,0 +1,40 @@
+{
+  "translation": {
+    "title": "翻译面板",
+    "sourceLang": "源语言",
+    "targetLang": "目标语言",
+    "autoDetect": "自动检测",
+    "translate": "翻译",
+    "translating": "翻译中…",
+    "inputPlaceholder": "输入要翻译的文本…",
+    "swap": "交换语言",
+    "resultPlaceholder": "翻译结果会显示在这里…",
+    "charsCount": "{{count}} 字符",
+    "autoDetectSource": "自动检测源语言",
+    "sourceIs": "源语言为",
+    "promptRole": "你是一个专业翻译。",
+    "promptTranslateTo": "，请翻译为",
+    "promptPeriod": "。",
+    "promptRequirements": "要求：",
+    "promptOnlyResult": "只输出翻译结果，不要解释",
+    "promptKeepFormat": "保持原文的格式与换行",
+    "promptKeepTone": "保持原文的语气和风格",
+    "inputSystemPrompt": "你是一名翻译助手。请将用户提供的文本翻译为指定的目标语言。只输出译文，不要解释，不要加引号或任何前后缀。尽量保持原文格式（段落/列表/表格/代码块）。如果原文已经是目标语言，请原样输出。",
+    "inputUserPrompt": "目标语言：{{language}}\n\n<input_text>\n{{text}}\n</input_text>",
+    "messageSystemPrompt": "你是一个专业翻译。只输出译文，不要添加解释、前后缀或引号。尽量保持原文格式（段落/列表/表格/代码块）。",
+    "messageUserPrompt": "目标语言：{{language}}\n\n{{text}}",
+    "languages": {
+      "auto": "自动检测",
+      "zh": "中文",
+      "en": "英语",
+      "ja": "日语",
+      "ko": "韩语",
+      "fr": "法语",
+      "de": "德语",
+      "es": "西班牙语",
+      "ru": "俄语",
+      "pt": "葡萄牙语",
+      "ar": "阿拉伯语"
+    }
+  }
+}

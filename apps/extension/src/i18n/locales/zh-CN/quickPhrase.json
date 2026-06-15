@@ -1,0 +1,31 @@
+{
+  "quickPhrase": {
+    "title": "快捷短语",
+    "manageTitle": "管理快捷短语",
+    "manageDesc": "管理当前助手常用短语和所有助手可用的全局短语。",
+    "search": "搜索短语…",
+    "add": "添加短语",
+    "titleLabel": "标题",
+    "titlePlaceholder": "例如：会议纪要模板",
+    "contentLabel": "内容",
+    "contentPlaceholder": "输入要插入聊天输入框的短语内容…",
+    "saveTo": "保存位置",
+    "assistantScope": "当前助手",
+    "assistantScopeDesc": "只在当前助手的聊天输入区优先展示",
+    "assistantScopeUnavailable": "当前输入区没有绑定助手，只能保存为全局短语",
+    "globalScope": "全局短语",
+    "globalScopeDesc": "所有助手和话题都可以使用",
+    "assistantSection": "当前助手",
+    "globalSection": "全局",
+    "addFromInputDesc": "保存后可从输入区闪电按钮或 / 面板快速插入。",
+    "manageGlobalDesc": "管理所有助手都可用的全局快捷短语。",
+    "assistantManageTitle": "常用短语",
+    "assistantManageDesc": "这些短语只属于当前助手，会在输入区短语面板中优先展示。",
+    "dragHandle": "拖拽排序",
+    "deleteConfirmTitle": "删除短语",
+    "deleteConfirmDesc": "删除后无法从快捷短语列表继续插入该内容。",
+    "noResults": "无匹配的短语",
+    "hint": "输入 / 触发快捷短语",
+    "empty": "暂无快捷短语"
+  }
+}

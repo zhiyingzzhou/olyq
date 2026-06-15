@@ -1,0 +1,50 @@
+{
+  "shadowDomPanel": {
+    "title": "UI 架构：Shadow DOM 与样式隔离",
+    "description": "基于 Shadow DOM 的组件封装方案，防止扩展样式受宿主网页 CSS 污染。",
+    "architectureTitle": "olyqShadowHost 组件架构",
+    "hostDomComment": "// 宿主网页 DOM",
+    "injectedStyleLine": "<style>（注入隔离样式）</style>",
+    "shadowRootOpen": "#shadow-root (open)",
+    "eventDispatchTitle": "事件监听与动作派发",
+    "eventDispatchFlow": "↳ mouseup/keyup/scroll → sendMessage → SW → Side Panel",
+    "benefits": {
+      "style": {
+        "title": "样式隔离",
+        "desc": "宿主 CSS 无法穿透 Shadow Tree"
+      },
+      "event": {
+        "title": "事件隔离",
+        "desc": "防止宿主快捷键干扰输入"
+      },
+      "consistent": {
+        "title": "一致体验",
+        "desc": "任何网站上视觉体验一致"
+      }
+    },
+    "currentImplTitle": "当前实现（只读）",
+    "shadowRootMode": "Shadow Root 模式",
+    "shadowRootModeDesc": "当前为 open（便于调试与问题排查）",
+    "styleInjection": "样式注入",
+    "styleInjectionDesc": "在 shadowRoot 内注入 <style>，避免宿主 CSS 污染。",
+    "reactPortal": "React Portal",
+    "reactPortalDesc": "选择助手使用原生 DOM 构建（更轻量）。",
+    "injectionConfigTitle": "扩展运行时入口配置",
+    "table": {
+      "mode": "注入模式",
+      "desc": "说明",
+      "status": "状态"
+    },
+    "injectionModes": {
+      "sidePanel": "Side Panel",
+      "contentScript": "Content Script",
+      "offscreen": "Offscreen"
+    },
+    "injection": {
+      "sidePanelDesc": "独立侧边栏 UI，完全隔离",
+      "contentScriptDesc": "注入页面的浮动助手按钮",
+      "offscreenDesc": "隐藏后台能力宿主，不承载用户可见入口"
+    },
+    "coreCodeTitle": "核心封装代码"
+  }
+}

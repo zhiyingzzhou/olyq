@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <script>
+      try {
+        const theme = localStorage.getItem('olyq.theme.v1');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        document.documentElement.classList.toggle('dark', theme ? theme === 'dark' : prefersDark);
+      } catch {}
+    </script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Olyq | 浏览器里的开源多模型 AI 工作台</title>
+    <meta
+      name="description"
+      content="Olyq 是浏览器里的开源多模型 AI 工作台，把网页上下文、多模型对话、Paint、搜索、远程 MCP、话题和本地备份放进同一个侧边栏。"
+    />
+    <meta name="author" content="Olyq" />
+    <meta
+      name="keywords"
+      content="Olyq, 浏览器扩展, 多模型 AI 工作台, 网页上下文, Paint, 联网搜索, remote MCP, 本地备份"
+    />
+
+    <meta property="og:title" content="Olyq | 浏览器里的开源多模型 AI 工作台" />
+    <meta
+      property="og:description"
+      content="把当前网页、模型、工具、Paint 和话题放进同一个浏览器侧边栏。"
+    />
+    <meta property="og:site_name" content="Olyq" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/icons/olyq-128.png" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Olyq | 浏览器里的开源多模型 AI 工作台" />
+    <meta
+      name="twitter:description"
+      content="把当前网页、模型、工具、Paint 和话题放进同一个浏览器侧边栏。"
+    />
+    <meta name="twitter:image" content="/icons/olyq-128.png" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

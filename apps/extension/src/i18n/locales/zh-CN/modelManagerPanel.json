@@ -1,0 +1,397 @@
+{
+  "modelManagerPanel": {
+    "providerSearchPlaceholder": "搜索模型平台...",
+    "providers": {
+      "openai": "OpenAI",
+      "google": "Gemini",
+      "claude": "Claude",
+      "deepseek": "DeepSeek",
+      "moonshot": "Moonshot",
+      "qwen": "通义千问",
+      "siliconflow": "硅基流动",
+      "aihubmix": "AiHubMix"
+    },
+    "provider": {
+      "on": "ON",
+      "off": "OFF",
+      "dragHandle": "拖拽调整模型平台顺序",
+      "dragDisabledInSearch": "搜索时不能调整顺序，请清空搜索后再拖拽"
+    },
+    "actions": {
+      "add": "添加",
+      "manage": "管理",
+      "editProvider": "编辑平台",
+      "addModel": "添加模型",
+      "healthCheck": "检测",
+      "fetchModels": "获取模型",
+      "customHeaders": "自定义请求头"
+    },
+    "apiKey": {
+      "title": "API 密钥",
+      "configured": "已配置 {{count}} 个密钥",
+      "placeholder": "输入 API 密钥",
+      "hintMain": "支持多个密钥：在「密钥设置」中用逗号/换行分隔粘贴，将自动轮询使用。",
+      "rotationHint": "多个密钥将自动轮询使用（支持逗号/换行分隔）。",
+      "bulkTitle": "批量添加",
+      "bulkPlaceholder": "粘贴一个或多个 API Key（每行一个，或用逗号分隔）",
+      "bulkHint": "支持逗号/换行分隔；会自动去重。",
+      "toastAdded": "已添加 {{count}} 个密钥",
+      "settings": "密钥设置",
+      "manageAll": "全部管理",
+      "moreKeys": "还有 {{count}} 个密钥，",
+      "inlineEditBlocked": "当前平台已配置多个密钥，请进入「全部管理」统一编辑，避免误覆盖其他密钥。",
+      "inlineHintMulti": "当前已配置多个密钥。顶部输入框仅展示首条密钥，如需修改请进入「全部管理」。",
+      "listTitle": "API 密钥",
+      "listDescription": "管理多个 API 密钥，并进行连通性检测。",
+      "checkModel": "检测模型",
+      "checkAll": "批量检测",
+      "checkAllTitle": "批量检测所有密钥",
+      "checkOne": "检测",
+      "removeInvalid": "删除失败",
+      "removeInvalidTitle": "删除检测失败的密钥",
+      "empty": "暂无密钥，点击右上角添加",
+      "newPlaceholder": "输入新的 API Key",
+      "errorEmpty": "密钥不能为空",
+      "errorDuplicate": "密钥已存在",
+      "errorUrlLike": "这里需要填写 API Key，不是 API 地址。请把 API 地址填到「API 地址」字段。",
+      "inlineManageMulti": "当前平台已配置多个密钥，请在“全部管理”中编辑，顶部单行输入不会覆盖多密钥配置。"
+    },
+    "apiBase": {
+      "title": "API 地址",
+      "preview": "预览：{{url}}",
+      "previewBase": "预览 Base：{{url}}",
+      "previewTransportDependent": "预览 Base：{{url}}（具体聊天端点由模型协议决定）",
+      "emptyHint": "API 地址为空，请填写后使用",
+      "overrideTitle": "API 地址（可选）",
+      "overrideHint": "仅在使用自定义代理或网关时填写；留空时按专用鉴权配置推导官方地址。",
+      "overridePlaceholder": "留空使用官方默认地址"
+    },
+    "models": {
+      "title": "模型",
+      "empty": "暂无模型，点击下方按钮添加"
+    },
+    "manageDialog": {
+      "title": "{{provider}} 模型",
+      "description": "管理该模型平台下的模型列表、分组、用户模型类型与系统识别结果。",
+      "notSupported": "当前 Provider 不支持通过 /models 拉取模型目录，请使用「添加模型」手动添加模型 ID，并用「健康检查」验证可用性。",
+      "importBlockedUnknownProtocol": "当前无法可靠判断该模型的调用协议，请先补全注册表或手动指定协议后再导入。",
+      "importBlockedProviderCatalogTypeUnsupported": "官方目录返回了该{{typeLabel}}，但扩展端当前还没有稳定的导入调用协议。该模型仅展示，不可导入。",
+      "importBlockedTogetherDedicatedSpeechEndpointRequired": "官方目录已返回该 Together 语音模型，但它需要 Together Dedicated Endpoint。扩展端当前还不支持按 endpoint name 导入和调用该模型，因此仅展示、不可导入。",
+      "importBlockedTranscriptionRuntimeUnavailable": "官方目录已返回该转写模型，但当前 Provider 还没有接入可运行的 transcription-api runtime。该模型仅展示，不可导入。",
+      "importBlockedSpeechRuntimeUnavailable": "官方目录已返回该语音模型，但当前 Provider 还没有接入可运行的 speech-api runtime。该模型仅展示，不可导入。",
+      "importBlockedModerationRuntimeUnavailable": "官方目录已返回该审核模型，但当前 Provider 还没有接入可运行的 moderation-api runtime。该模型仅展示，不可导入。",
+      "importBlockedVideoRuntimeUnavailable": "官方目录已返回该视频模型，但当前 Provider 还没有接入可运行的 video-api runtime。该模型仅展示，不可导入。",
+      "searchPlaceholder": "搜索模型 ID 或名称",
+      "typePlaceholder": "模型类型",
+      "typeAll": "全部类型",
+      "loading": "正在获取模型列表...",
+      "retry": "重试",
+      "empty": "未获取到可用模型",
+      "deprecated": "已弃用",
+      "add": "添加",
+      "remove": "移除",
+      "addAll": "全部添加",
+      "removeAll": "全部移除"
+    },
+    "modelDialog": {
+      "editTitle": "编辑模型",
+      "addTitle": "添加模型",
+      "description": "配置模型 ID、名称、分组、手动模型类型覆盖，以及系统只读识别结果。",
+      "errors": {
+        "duplicateId": "模型 ID「{{id}}」已存在，请使用唯一的模型 ID。"
+      },
+      "registryPlaceholder": "输入模型 ID 后，会按当前 Provider 与 Model Registry 展示解析结果。",
+      "sections": {
+        "basic": "基础信息",
+        "advanced": "高级设置"
+      },
+      "sectionDescriptions": {
+        "basic": "只保留当前仍然有效的模型基础字段。",
+        "advanced": "左侧只允许覆盖 8 类用户模型类型；主类、系统识别能力与协议仍保持只读。",
+        "registryMetadata": "这里展示的是系统识别结果，不会被左侧手动覆盖污染。"
+      },
+      "actions": {
+        "resetModelTypes": "重置为系统识别"
+      },
+      "modelTypeModes": {
+        "followSystem": "跟随系统识别",
+        "manualOverride": "手动覆盖"
+      },
+      "modelTypes": {
+        "text_generation": "文本生成",
+        "image_generation": "图片生成",
+        "vision": "视觉",
+        "web_search": "联网搜索",
+        "reasoning": "推理",
+        "function_calling": "工具调用",
+        "rerank": "重排",
+        "embedding": "向量化"
+      },
+      "modelTypesFollowHint": "当前未写入任何手动覆盖，左侧选中状态来自系统识别结果。",
+      "modelTypesOverrideHint": "当前已启用手动覆盖。运行时、模型列表与模型选择器都会优先使用左侧结果。",
+      "help": {
+        "id": "发送给 API 的模型标识，必须与平台侧一致（例如 gpt-4o）。",
+        "name": "仅用于界面展示，不影响实际请求。",
+        "group": "用于在模型列表中分组展示，不影响实际请求。",
+        "modelTypes": "这里只允许编辑 8 类用户模型类型：文本生成、图片生成、视觉、联网搜索、推理、工具调用、重排、向量化。图片生成现在既属于主类，也属于用户模型类型。图片生成是独占类型；embedding 与 rerank 互斥；选中任一独占类型后，其它类型会被禁用。",
+        "userModelTypes": "这里只允许编辑 8 类用户模型类型：文本生成、图片生成、视觉、联网搜索、推理、工具调用、重排、向量化。图片生成现在既属于主类，也属于用户模型类型。图片生成是独占类型；embedding 与 rerank 互斥；选中任一独占类型后，其它类型会被禁用。",
+        "systemTransportProtocol": "传输协议改为系统自动识别并只读展示。若结果为 unknown，说明当前模型还没有足够的官方目录信号或稳定规则支持。",
+        "supportedTextDelta": "是否支持流式文本增量。关闭可回退到非流式以兼容不返回 delta 的网关。",
+        "registryMetadata": "只读展示当前模型在统一 Model Registry 中解析出的基础模型 ID、内部 canonicalId、系统识别主类、系统识别能力、模态与协议。"
+      },
+      "fields": {
+        "id": "模型 ID",
+        "idPlaceholder": "必填 例如 gpt-3.5-turbo",
+        "name": "模型名称",
+        "namePlaceholder": "例如 GPT-4",
+        "group": "分组名称",
+        "groupPlaceholder": "例如 ChatGPT",
+        "modelTypes": "模型类型",
+        "userModelTypes": "用户模型类型",
+        "modelTypesMode": "当前模式",
+        "effectiveKind": "当前生效主类型",
+        "effectiveModelTypes": "当前生效模型类型",
+        "effectivePrimaryKind": "当前生效主类",
+        "effectiveUserModelTypes": "当前生效用户模型类型",
+        "effectiveUserModelTypesEmpty": "当前主类不映射任何用户模型类型",
+        "systemPrimaryKind": "系统识别主类",
+        "systemTransportProtocol": "系统识别协议",
+        "systemTransportProtocolUnknown": "暂未识别，保存后仍会保留该模型，但运行时无法按未知协议发起请求",
+        "inputModalities": "输入模态",
+        "outputModalities": "输出模态",
+        "contextLength": "上下文长度",
+        "unknownContextLength": "未知",
+        "deprecated": "已弃用",
+        "supportedTextDelta": "Text Delta",
+        "supportedTextDeltaPlaceholder": "默认（不指定）",
+        "supportedTextDeltaTrue": "支持",
+        "supportedTextDeltaFalse": "不支持",
+        "registryMetadata": "注册表元数据（系统识别）"
+      }
+    },
+    "headersDialog": {
+      "title": "自定义请求头",
+      "description": "为该模型平台配置自定义 HTTP 请求头（JSON 格式）。",
+      "hint": "自定义请求头 (json 格式)",
+      "toastSaved": "已保存自定义请求头",
+      "errors": {
+        "invalidJson": "JSON 格式错误",
+        "mustBeObject": "必须是 JSON 对象（key-value）"
+      }
+    },
+    "addProviderDialog": {
+      "title": "添加模型平台",
+      "editTitle": "编辑模型平台",
+      "description": "配置自定义模型平台的名称、类型与 API 地址。",
+      "fields": {
+        "name": "平台名称",
+        "namePlaceholder": "例如 My Provider",
+        "type": "平台类型",
+        "apiBase": "API 地址",
+        "apiBasePlaceholder": "例如 https://api.example.com/v1",
+        "anthropicApiHost": "Anthropic 原生地址（可选）",
+        "anthropicApiHostHint": "仅当该平台下某些模型走 Anthropic Messages 协议时使用；留空则复用 API 地址。",
+        "anthropicApiHostPlaceholder": "例如 https://api.example.com/anthropic/v1",
+        "apiVersion": "API 版本",
+        "apiVersionPlaceholder": "例如 2024-10-21"
+      },
+      "types": {
+        "openai": "OpenAI",
+        "anthropic": "Anthropic",
+        "google": "Gemini",
+        "azure-openai": "Azure OpenAI",
+        "ollama": "Ollama",
+        "openai-compatible": "OpenAI 兼容"
+      },
+      "avatar": {
+        "upload": "上传图片",
+        "builtin": "内置图标",
+        "reset": "重置头像",
+        "builtinTitle": "选择内置图标",
+        "searchPlaceholder": "搜索图标...",
+        "loading": "正在加载图标...",
+        "noResults": "未找到匹配的图标"
+      }
+    },
+    "deleteProvider": {
+      "confirm": "删除模型平台「{{name}}」",
+      "desc": "删除后，该平台下的模型将不再出现在模型选择器中。"
+    },
+    "healthDialog": {
+      "title": "模型健康检测",
+      "description": "发送探测请求以验证模型可用性与延迟。",
+      "warning": "健康检查需要发送请求，请谨慎使用。按次收费的模型可能产生更多费用，请自行承担。",
+      "selectKey": "选择密钥：",
+      "emptyKey": "(空密钥)",
+      "keyMode": {
+        "title": "使用密钥：",
+        "single": "单个",
+        "all": "所有"
+      },
+      "concurrent": {
+        "title": "并发检测：",
+        "off": "关闭",
+        "on": "开启"
+      },
+      "timeout": "超时：",
+      "secondsUnit": "秒",
+      "running": "检测中…",
+      "start": "开始",
+      "stop": "停止",
+      "keySummary": "密钥成功/总数",
+      "noModels": "当前 Provider 没有模型可检测",
+      "noPort": "无法连接到后台服务（Service Worker）"
+    },
+    "advanced": {
+      "title": "高级设置"
+    },
+    "loadState": {
+      "loadingTitle": "正在加载模型平台配置…",
+      "loadingDescription": "加载完成前已暂时禁用编辑，避免默认值覆盖真实配置。",
+      "errorTitle": "模型平台配置加载失败",
+      "errorDescription": "未成功读取配置前已阻止编辑，避免覆盖现有配置。请修复后重试。",
+      "retry": "重新加载"
+    },
+    "saveState": {
+      "errorTitle": "配置尚未成功保存",
+      "retry": "重新保存",
+      "unsaved": "当前修改尚未同步到后台运行时。"
+    },
+    "apiOptions": {
+      "title": "API 兼容性",
+      "reset": "重置",
+      "isNotSupportImageInput": "不支持图片输入",
+      "isNotSupportImageInputHint": "开启后：携带图片附件时会在请求发出前直接报图片输入错误。",
+      "isNotSupportFileInput": "不支持文件输入",
+      "isNotSupportFileInputHint": "开启后：携带原生文件附件时会在请求发出前直接报文件输入错误。",
+      "isNotSupportStreamOptions": "不支持 stream_options / usage",
+      "isNotSupportStreamOptionsHint": "部分 OpenAI 兼容网关不支持 include_usage 等扩展字段。",
+      "isSupportDeveloperRole": "支持 developer role",
+      "isSupportDeveloperRoleHint": "开启后会把 system prompt 作为 developer role 发送；关闭时保持 system。",
+      "isSupportServiceTier": "支持 service_tier / serviceTier",
+      "isSupportServiceTierHint": "默认认为支持；关闭后将不注入 service tier。",
+      "isNotSupportEnableThinking": "不支持 enable_thinking",
+      "isNotSupportEnableThinkingHint": "Qwen 等模型可使用 /think 或 /no_think 后缀控制。",
+      "isNotSupportVerbosity": "不支持 verbosity / textVerbosity",
+      "isNotSupportVerbosityHint": "关闭后将不注入 OpenAI Responses 的 verbosity。",
+      "isNotSupportAPIVersion": "不支持 api-version",
+      "isNotSupportAPIVersionHint": "部分网关虽为 Azure/OpenAI 风格，但不接受 api-version。"
+    },
+    "providerOptions": {
+      "title": "Provider 级参数",
+      "hint": "仅对支持对应协议的模型平台生效；不支持时不会注入到请求。",
+      "serviceTier": "Service Tier",
+      "serviceTierPlaceholder": "默认（不传）",
+      "serviceTierHint": "仅当 Provider 支持时才会注入到请求。",
+      "verbosity": "Verbosity",
+      "verbosityPlaceholder": "默认（不传）",
+      "verbosityHint": "用于 OpenAI Responses（textVerbosity）。",
+      "unset": "默认（不传）"
+    },
+    "apiKeyAuth": {
+      "title": "API Key 鉴权",
+      "hint": "配置 provider.apiKey 发送时使用的鉴权 Header。普通自定义请求头只用于业务附加头，不承担鉴权。",
+      "preset": "鉴权预设",
+      "presets": {
+        "default": "平台默认",
+        "authorizationBearer": "Authorization + Bearer",
+        "xApiKey": "x-api-key（Anthropic）",
+        "xGoogApiKey": "x-goog-api-key（Gemini）",
+        "apiKey": "api-key（Azure OpenAI）",
+        "xiApiKey": "xi-api-key（ElevenLabs）",
+        "custom": "自定义"
+      },
+      "headerName": "Header 名称",
+      "valuePrefix": "Value 前缀",
+      "valuePrefixHint": "留空表示直接发送原始 API Key；填写 Bearer 会发送 “Bearer <key>”。",
+      "invalidHeader": "Header 名称不合法，且不能使用 Content-Type。"
+    },
+    "rateLimit": {
+      "title": "速率限制（可选）",
+      "placeholder": "例如 60",
+      "hint": "用于节流/健康检查等场景（不改变 Provider 行为）。"
+    },
+    "notes": {
+      "title": "备注",
+      "placeholder": "仅本地存储，可记录限速/特殊参数等"
+    },
+    "azure": {
+      "title": "Azure OpenAI",
+      "sectionHint": "Azure OpenAI 支持旧版 deployment endpoint + api-version，也支持新版 /openai/v1 endpoint。这里决定详情页预览和运行时是否传 api-version。",
+      "apiShape": "API 形态",
+      "apiShapeHint": "如果 API 地址是 /openai/deployments/{deployment}，请选择 deployment + api-version；如果是 /openai/v1，请选择 v1 endpoint。",
+      "apiShapeOptions": {
+        "deployment": "Deployment endpoint + api-version",
+        "v1": "Azure OpenAI v1 endpoint"
+      },
+      "apiVersion": "API Version",
+      "apiVersionHint": "Deployment endpoint 模式必填；运行时会作为 api-version query 参数发送。",
+      "apiVersionPlaceholder": "例如 2024-10-21",
+      "hint": "切到 v1 endpoint 会清空 API Version 并关闭 api-version；切回 deployment 模式后请重新填写 API Version。"
+    },
+    "newApi": {
+      "title": "NewAPI",
+      "sectionHint": "NewAPI 可按模型协议分流；当 Claude 类模型走 Anthropic Messages 协议时，可单独指定 Anthropic upstream。",
+      "anthropicApiHost": "Anthropic Messages 地址（可选）",
+      "anthropicApiHostHint": "仅用于 transportProtocol=anthropic-messages 的模型；留空则继续复用 API 地址。",
+      "anthropicApiHostPlaceholder": "例如 https://api.example.com/anthropic/v1",
+      "hint": "该字段只影响 Anthropic Messages 分流，不改变默认 OpenAI-compatible 路由。"
+    },
+    "vertex": {
+      "title": "Vertex AI",
+      "sectionHint": "用于 Google Vertex AI（Gemini on Vertex）。Service Account 需要项目与区域；express mode API Key 不要求 project/location。",
+      "sectionHintAnthropic": "用于 Vertex AI 上的 Anthropic（Claude）。固定使用 Service Account，必须填写项目、区域和服务账号字段。",
+      "authType": "鉴权方式",
+      "authTypeHint": "Service Account 使用项目、区域与服务账号；API Key 对应 Vertex express mode。",
+      "authTypeOptions": {
+        "serviceAccount": "Service Account",
+        "apiKey": "API Key（express mode）"
+      },
+      "projectId": "项目 ID projectId",
+      "projectIdHint": "Service Account 模式必填，例如 my-gcp-project。",
+      "location": "区域 location",
+      "locationHint": "Service Account 模式必填，例如 us-central1。",
+      "clientEmail": "Client Email",
+      "clientEmailHint": "Service Account 邮箱，对应 Google 凭据里的 client_email。",
+      "privateKey": "Private Key",
+      "privateKeyHint": "Service Account PEM 私钥；支持粘贴含 \\n 的私钥内容。",
+      "privateKeyPlaceholder": "-----BEGIN PRIVATE KEY-----\\n...\\n-----END PRIVATE KEY-----",
+      "privateKeyId": "Private Key ID（可选）",
+      "privateKeyIdHint": "对应 Google 凭据里的 private_key_id；可留空。",
+      "apiKey": "Vertex API Key",
+      "apiKeyHint": "Vertex express mode API Key；不要求 projectId/location。",
+      "hint": "普通 Vertex AI 可在 Service Account 与 express mode API Key 之间切换；provider.apiKey 不参与。",
+      "hintAnthropic": "Vertex Anthropic 固定使用 Service Account，不支持 API Key 模式。"
+    },
+    "bedrock": {
+      "title": "AWS Bedrock",
+      "sectionHint": "用于 AWS Bedrock。官方支持 IAM 与 Bedrock API Key；临时凭证可填写 Session Token。",
+      "authType": "鉴权方式",
+      "authTypeHint": "IAM 使用 Access Key / Secret Key；API Key 使用 AWS Bedrock 官方 Bearer token。",
+      "authTypeOptions": {
+        "iam": "IAM（Access Key / Secret Key）",
+        "apiKey": "Bedrock API Key"
+      },
+      "region": "区域 Region",
+      "regionHint": "AWS 区域；用于定位 Bedrock 端点，例如 us-east-1。",
+      "accessKeyId": "访问密钥 Access Key ID",
+      "accessKeyIdHint": "IAM 模式必填，对应 AWS Access Key ID。",
+      "secretAccessKey": "私有密钥 Secret Access Key",
+      "secretAccessKeyHint": "IAM 模式必填，对应 AWS Secret Access Key。",
+      "sessionToken": "临时会话令牌 Session Token（可选）",
+      "sessionTokenHint": "仅使用 STS / 临时凭证时填写；长期 AK/SK 可留空。",
+      "apiKey": "Bedrock API Key",
+      "apiKeyHint": "AWS Bedrock API Key；SDK 会以 Bearer token 发送，不走 provider.apiKey。",
+      "hint": "Bedrock 使用 IAM 或官方 Bedrock API Key 鉴权；provider.apiKey 不参与。"
+    },
+    "anthropicCache": {
+      "title": "Anthropic Prompt Caching",
+      "reset": "重置",
+      "tokenThreshold": "Token 阈值",
+      "cacheSystem": "缓存 system",
+      "cacheSystemLabel": "启用",
+      "cacheLastN": "缓存最近 N 条",
+      "hint": "当累计 tokens 超过阈值时，为指定消息打上 ephemeral cacheControl 标记。"
+    }
+  }
+}

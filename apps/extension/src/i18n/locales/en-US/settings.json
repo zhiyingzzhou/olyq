@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "Extension Settings",
+    "description": "Manage MCP, cloud sync, memory, model platforms, web search, and security settings.",
+    "backToChat": "Back to Chat",
+    "appearance": "Appearance",
+    "chatDialog": "Chat",
+    "developer": "Developer",
+    "serviceWorker": "Service Worker",
+    "mcpBridge": "MCP Servers",
+    "cloudSync": "Cloud Sync",
+    "modelManager": "Models",
+    "defaultModels": "Defaults",
+    "webSearch": "Web Search",
+    "memory": "Memory",
+    "uiArch": "UI Architecture",
+    "performance": "Performance",
+    "sitePermissions": "Site Permissions",
+    "security": "Security & Privacy",
+    "licenses": "Licenses"
+  }
+}

@@ -1,0 +1,31 @@
+# Dependencies
+node_modules
+
+# Logs
+*.log
+pnpm-debug.log*
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Build outputs
+artifacts
+dist
+dist-firefox
+dist-e2e
+dist-firefox-e2e
+dist-ssr
+test-results
+.cache
+apps/www/public/product/
+
+# Editor and OS files
+.DS_Store
+.idea
+.vscode/*
+!.vscode/extensions.json
+*.tsbuildinfo
+
+notus-react

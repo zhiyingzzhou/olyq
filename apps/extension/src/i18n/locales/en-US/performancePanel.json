@@ -1,0 +1,46 @@
+{
+  "performancePanel": {
+    "title": "Performance & Resource Management",
+    "description": "Monitor and manage CPU, memory, and background resources used by the extension.",
+    "metrics": {
+      "cpu": "CPU",
+      "jsHeap": "JS Heap",
+      "storageUsage": "Storage usage",
+      "background": "Background components"
+    },
+    "cpu": {
+      "loading": "Sampling CPU usage",
+      "loadingDesc": "The first sample takes about 2 seconds.",
+      "estimated": "Estimated system CPU usage (last ~2s)",
+      "unavailable": "CPU metrics unavailable",
+      "unavailableDesc": "Requires the Chrome system.cpu permission (or open in the extension side panel)."
+    },
+    "background": {
+      "summary": "UI Port: {{uiPortCount}} ｜ Offscreen: {{offscreen}}",
+      "offscreenPort": "Offscreen Port: {{status}}"
+    },
+    "unload": {
+      "title": "Resource reclaim policy",
+      "autoUnload": "Auto reclaim offscreen resources",
+      "autoUnloadDesc": "Close the Offscreen Document when the background is idle and no tasks are pending (best-effort).",
+      "idleTimeout": "Idle timeout"
+    },
+    "units": {
+      "seconds": "{{count}} seconds"
+    },
+    "storage": {
+      "title": "Where data is stored",
+      "chatPrompts": "Chats / prompts",
+      "chatPromptsDesc": "Chat settings, prompts, and lightweight preferences use shared storage with startup snapshots or bootstrap mirrors.",
+      "sharedJson": "Shared JSON",
+      "modelKeys": "Model API keys",
+      "modelKeysDesc": "Stored in chrome.storage.local (shared across contexts).",
+      "memory": "Memory",
+      "memoryDesc": "Memory data is stored in IndexedDB, and vectors are generated online by the configured model."
+    },
+    "tips": {
+      "title": "Tips",
+      "swMemoryLimit": "In multi-tab scenarios, be aware of the shared Service Worker memory limit"
+    }
+  }
+}

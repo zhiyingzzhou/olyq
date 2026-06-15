@@ -1,0 +1,74 @@
+{
+  "webSearch": {
+    "title": "Web Search",
+    "description": "Configure web search providers here (API keys, instance URLs, etc.). Enable/disable in chat toolbar; searches run only when needed.",
+    "engine": "Search Engine",
+    "results": {
+      "searching": "Searching the web…",
+      "failed": "Web search failed",
+      "summary": "Web search · {{count}} results",
+      "noResults": "No usable results found"
+    },
+    "settings": {
+      "apiKeyLabel": "API Key",
+      "getApiKeyPrefix": "Get API key:",
+      "instanceUrl": "Instance URL",
+      "docsPrefix": "SearXNG docs:",
+      "searchWithTimeLabel": "Append current date",
+      "searchWithTimeDesc": "When enabled, today’s date is added to the query to bias results toward newer content.",
+      "excludeDomainsLabel": "Blocked domains",
+      "excludeDomainsPlaceholder": "Type a domain and press Enter (for example pinterest.com)",
+      "excludeDomainsDesc": "Results matching these domains will be filtered out."
+    },
+    "providers": {
+      "exaMcp": {
+        "name": "ExaMCP",
+        "desc": "Search through the public MCP endpoint with no API key required."
+      },
+      "localGoogle": {
+        "name": "Google (local)",
+        "desc": "Access Google Search in a tab with no API key required. Available only in the browser extension."
+      },
+      "localBing": {
+        "name": "Bing (local)",
+        "desc": "Access Bing Search in a background tab with no API key required. Available only in the browser extension."
+      },
+      "localBaidu": {
+        "name": "Baidu (local)",
+        "desc": "Access Baidu Search in a background tab with no API key required. Available only in the browser extension."
+      },
+      "tavily": {
+        "name": "Tavily",
+        "desc": "A search API built for AI, with high-quality results and natural-language queries."
+      },
+      "exa": {
+        "name": "Exa",
+        "desc": "A semantic search engine that understands intent and works well for research and technical search."
+      },
+      "bocha": {
+        "name": "Bocha",
+        "desc": "Bocha AI search, optimized for Chinese-language retrieval."
+      },
+      "zhipu": {
+        "name": "Zhipu AI",
+        "desc": "Zhipu AI web search with strong Chinese support and deep GLM integration."
+      },
+      "searxng": {
+        "name": "SearXNG (self-hosted)",
+        "desc": "An open-source privacy search engine. Deploy your own instance and enter its URL here."
+      }
+    },
+    "localGoogle": "Google (Local Browser)",
+    "localGoogleDesc": "Uses a background tab to access Google Search and extract results. No API key needed.",
+    "tavily": "Tavily API",
+    "tavilyDesc": "Uses the Tavily Search API. Requires an API key.",
+    "tavilyApiKey": "Tavily API Key",
+    "getApiKey": "Get API Key",
+    "getApiKeyFrom": "Get an API key from:",
+    "maxResults": "Max Results",
+    "permissions": {
+      "title": "Network Targets",
+      "hint": "Web search may access these sites. Normal http/https access is declared at install time in the manifest; no runtime website-access prompt is shown."
+    }
+  }
+}

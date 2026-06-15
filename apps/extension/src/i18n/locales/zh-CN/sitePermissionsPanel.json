@@ -1,0 +1,64 @@
+{
+  "sitePermissionsPanel": {
+    "title": "网站能力",
+    "description": "扩展在安装期声明普通网页访问权限，并通过静态 content script 覆盖 http/https 页面。内部页、扩展页、about: 与 file: 默认不可采集。",
+    "status": {
+      "injection": "内容脚本注入",
+      "staticReady": "静态注入已就绪",
+      "notReady": "未就绪",
+      "method": "注入方式",
+      "hostAccess": "网站访问权限"
+    },
+    "hostAccess": {
+      "title": "网站访问权限",
+      "desc": "当前版本不再使用运行时网页授权弹窗。http://*/* 与 https://*/* 在 manifest 中声明，普通网页能力安装后即可使用。",
+      "installGranted": "安装期已声明",
+      "installMissing": "manifest 未声明",
+      "installNote": "权限只覆盖普通 http/https 页面；cookie 只读取名称用于本地规则匹配，原始值不会保存、展示或注入 AI。"
+    },
+    "method": {
+      "static": "Manifest 静态 content script",
+      "none": "不可用"
+    },
+    "technologyStack": {
+      "title": "技术栈探测",
+      "desc": "按插件形式读取 headers、meta、脚本 URL、DOM、JS 全局对象、请求 URL 和 cookie 名称等公开信号，并在聊天顶部提供紧凑入口。",
+      "status": "已启用",
+      "privacy": "自动上下文开启时只把技术栈摘要注入 AI，不包含原始 HTML、cookie 值、脚本片段或长 CSS。"
+    },
+    "pageTools": {
+      "title": "启用网页工具",
+      "desc": "控制网页内浮层工具（划词助手/元素选择器等）。关闭后这些工具将不可用。",
+      "disabledHint": "网页工具已在设置中关闭",
+      "disabledSitesTitle": "已禁用网站",
+      "noDisabledSites": "当前没有单独禁用的网站。",
+      "noDisabledSitesMatch": "没有找到匹配的网站。",
+      "disabledSitesSearchPlaceholder": "搜索已禁用网站",
+      "disabledSitesSearchLabel": "搜索已禁用网站",
+      "disabledSitesCount": "共 {{count}} 个",
+      "disabledSitesMatchCount": "匹配 {{count}} / {{total}} 个",
+      "restoreSite": "恢复",
+      "restoreSiteAriaLabel": "恢复 {{origin}}",
+      "clearDisabledSites": "清空全部"
+    },
+    "browserContext": {
+      "title": "自动浏览器上下文",
+      "desc": "控制聊天发送、重发、重新生成和手动刷新时的自动浏览器上下文采集。关闭后不会再自动抓取正文。",
+      "scopeHint": "该开关只影响自动浏览器上下文采集；划词助手和元素选择器仍由“网页工具”单独控制。",
+      "fullPagePromptCharsTitle": "全文网页模式正文上限",
+      "fullPagePromptCharsHint": "只影响顶部“全文网页模式”开关开启时的正文注入预算，默认 24000 字。",
+      "tagRulesTitle": "标签规则",
+      "tagRulesDesc": "为助手标签指定默认 profile。多个标签同时命中时，只取优先级最高的一条规则。",
+      "addRule": "新增规则",
+      "emptyRules": "当前还没有标签规则。未命中规则时，助手会默认使用轻量页面。",
+      "tagPlaceholder": "输入助手标签",
+      "singleWinnerHint": "规则采用单赢家模型：assistant 自定义覆盖始终高于标签规则；标签规则之间只按 priority 取最高项。"
+    },
+    "debug": {
+      "loader": "注入 loader：",
+      "lastRegistrationError": "最近一次内容脚本错误",
+      "errorCode": "错误码：",
+      "errorReason": "触发原因："
+    }
+  }
+}

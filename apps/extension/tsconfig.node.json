@@ -1,0 +1,25 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "types": ["node", "vite/client", "chrome"],
+    "skipLibCheck": true,
+    "incremental": true,
+    "tsBuildInfoFile": "./.cache/tsconfig.node.tsbuildinfo",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "*": ["./*"],
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "playwright.config.ts",
+    "vitest.config.ts",
+    "scripts/run-browser-context-benchmark.ts",
+    "scripts/run-technology-stack-benchmark.ts",
+    "scripts/run-technology-stack-accuracy.ts",
+    "scripts/technology-stack-accuracy-gold.ts"
+  ]
+}

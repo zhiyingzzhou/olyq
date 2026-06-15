@@ -1,0 +1,73 @@
+{
+  "serviceWorkerPanel": {
+    "title": "Service Worker lifecycle",
+    "description": "Manage keepalive and state persistence strategies for the Manifest V3 Service Worker.",
+    "status": {
+      "threadStatus": "Worker status",
+      "uptime": "Uptime",
+      "lastEvent": "Last event",
+      "active": "Active",
+      "unavailable": "Unavailable",
+      "unknown": "Unknown"
+    },
+    "lifecycle": {
+      "title": "Lifecycle states",
+      "table": {
+        "state": "State",
+        "trigger": "Trigger",
+        "impact": "Impact",
+        "strategy": "Strategy"
+      },
+      "rows": {
+        "active": {
+          "state": "Active",
+          "trigger": "API calls, messages, or alarms",
+          "impact": "Normal inference and streaming relay",
+          "strategy": "chrome.alarms heartbeat"
+        },
+        "idle": {
+          "state": "Idle",
+          "trigger": "No active events for > 30 seconds",
+          "impact": "May be terminated at any time",
+          "strategy": "Keep Port connection alive"
+        },
+        "terminated": {
+          "state": "Terminated",
+          "trigger": "GC or timeout shutdown",
+          "impact": "Tasks interrupted; state lost",
+          "strategy": "Persist context in IndexedDB"
+        }
+      }
+    },
+    "keepalive": {
+      "title": "Keepalive strategy",
+      "alarms": {
+        "title": "chrome.alarms heartbeat",
+        "desc": "An official wake-up mechanism (Chrome may throttle short intervals).",
+        "interval": "Heartbeat interval (minutes)",
+        "intervalValue": "{{count}} min"
+      },
+      "port": {
+        "title": "Port keepalive",
+        "desc": "Keep a port connected via chrome.runtime.connect",
+        "connected": "Connected ({{count}})",
+        "disconnected": "Not connected"
+      }
+    },
+    "persistence": {
+      "title": "State persistence",
+      "autoSave": {
+        "title": "Auto-save topic context",
+        "desc": "The current topic and prompt data are automatically persisted by the UI."
+      },
+      "recovery": {
+        "title": "Crash recovery",
+        "desc": "Restore the current topic from local storage after refresh/crash."
+      }
+    },
+    "time": {
+      "duration": "{{minutes}}m {{seconds}}s",
+      "ago": "{{duration}} ago"
+    }
+  }
+}

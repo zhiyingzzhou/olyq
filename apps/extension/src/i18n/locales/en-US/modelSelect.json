@@ -1,0 +1,23 @@
+{
+  "modelSelect": {
+    "title": "Select model",
+    "searchPlaceholder": "Search models…",
+    "filterByTag": "Filter by model type",
+    "pinned": "Pinned",
+    "pin": "Pin",
+    "unpin": "Unpin",
+    "emptyTitle": "No matching models",
+    "emptyDesc": "Try adjusting search or filters",
+    "emptyDescWithFilters": "Current filters: {{filters}}. Try adjusting search or filters.",
+    "useDefault": "Use default",
+    "manageModels": "Model manager",
+    "currentSelection": "Current selection",
+    "currentUnavailable": "This model is currently filtered out, so it is pinned here for recovery.",
+    "selectedCount": "Selected {{count}}",
+    "clear": "Clear",
+    "done": "Done",
+    "tags": {
+      "free": "Free"
+    }
+  }
+}

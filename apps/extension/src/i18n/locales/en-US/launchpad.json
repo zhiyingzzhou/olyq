@@ -1,0 +1,21 @@
+{
+  "launchpad": {
+    "title": "Launchpad",
+    "description": "Quick access to modules.",
+    "sections": {
+      "apps": "Modules"
+    },
+    "items": {
+      "store": "Assistant Store",
+      "translate": "Translate",
+      "files": "Files",
+      "paint": "Paint"
+    },
+    "hints": {
+      "store": "Browse/manage assistants",
+      "translate": "Quick translate & polish",
+      "files": "Manage attachments & exports",
+      "paint": "Text-to-image / image-to-image"
+    }
+  }
+}

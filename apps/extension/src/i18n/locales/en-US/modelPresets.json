@@ -1,0 +1,7 @@
+{
+  "modelPresets": {
+    "creative": "Creative",
+    "balanced": "Balanced",
+    "precise": "Precise"
+  }
+}

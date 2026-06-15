@@ -1,0 +1,91 @@
+{
+  "elementContext": {
+    "kind": {
+      "text": "文本",
+      "code": "代码",
+      "image": "图片",
+      "table": "表格",
+      "visual": "视觉区域"
+    },
+    "summary": {
+      "table": "{{kind}} · {{tag}} · {{rows}} 行 × {{columns}} 列",
+      "code": "{{kind}} · {{tag}}{{languagePart}} · {{lines}} 行",
+      "codeLanguagePart": " · {{language}}",
+      "image": "{{kind}} · {{tag}} · {{count}} 张图",
+      "visual": "{{kind}} · {{tag}} · 截图区域",
+      "text": "{{kind}} · {{tag}} · 约 {{count}} 字"
+    },
+    "detail": {
+      "label": {
+        "type": "类型",
+        "tag": "标签",
+        "source": "来源",
+        "url": "URL",
+        "selector": "选择器",
+        "size": "规模",
+        "lines": "行数",
+        "language": "语言",
+        "images": "图片",
+        "imageName": "文件名",
+        "imageAlt": "替代文本",
+        "mime": "MIME",
+        "visibleRect": "可见区域",
+        "viewport": "视口"
+      },
+      "value": {
+        "chars": "约 {{count}} 字",
+        "lines": "{{lines}} 行",
+        "images": "{{count}} 张图",
+        "tableSize": "{{rows}} 行 × {{columns}} 列",
+        "regionSize": "{{width}} × {{height}} CSS px",
+        "visibleRect": "x={{x}}, y={{y}}, {{width}} × {{height}} CSS px",
+        "viewport": "{{width}} × {{height}} CSS px，滚动：{{scrollX}}, {{scrollY}}"
+      },
+      "section": {
+        "metadata": "引用元数据",
+        "preview": "引用预览",
+        "content": "引用内容",
+        "technical": "技术详情",
+        "text": "正文",
+        "code": "代码",
+        "table": "表格",
+        "image": "图片",
+        "visual": "视觉区域"
+      },
+      "empty": {
+        "text": "(无可提取文本)",
+        "code": "// 无可提取代码",
+        "table": "(表格为空)",
+        "image": "(无可展示图片信息)",
+        "visual": "(无可展示视觉区域指标)"
+      },
+      "generatedColumn": "列 {{index}}",
+      "tableTruncated": "...(已截断，原表 {{rows}} 行)",
+      "previewMoreRows": "仅预览前 {{count}} 行",
+      "imageFallback": "图片 {{index}}",
+      "attachmentStatus": "{{count}} 个附件已加入本次引用",
+      "showFullContent": "查看完整内容",
+      "hideFullContent": "收起完整内容",
+      "showTechnicalDetails": "技术详情",
+      "hideTechnicalDetails": "收起技术详情"
+    },
+    "markdown": {
+      "heading": "页面元素引用：{{title}}",
+      "source": "来源：{{source}}",
+      "url": "URL：{{url}}",
+      "selector": "选择器：{{selector}}",
+      "tableEmpty": "(表格为空)",
+      "codeEmpty": "// 无可提取代码",
+      "imageFallback": "图片 {{index}}",
+      "imageAttached": "[已作为附件加入]",
+      "imageAttachmentOnly": "(图片已作为附件加入)",
+      "visibleRect": "可见区域：x={{x}}, y={{y}}, {{width}} × {{height}} CSS px",
+      "viewport": "视口：{{width}} × {{height}} CSS px，滚动：{{scrollX}}, {{scrollY}}",
+      "screenshotAttached": "截图：已作为附件加入",
+      "visualAttachmentOnly": "(视觉区域已作为截图附件加入)",
+      "textEmpty": "(无可提取文本)",
+      "generatedColumn": "列 {{index}}",
+      "tableTruncated": "...(已截断，原表 {{rows}} 行)"
+    }
+  }
+}

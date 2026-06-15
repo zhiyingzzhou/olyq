@@ -1,0 +1,397 @@
+{
+  "modelManagerPanel": {
+    "providerSearchPlaceholder": "Search providers…",
+    "providers": {
+      "openai": "OpenAI",
+      "google": "Gemini",
+      "claude": "Claude",
+      "deepseek": "DeepSeek",
+      "moonshot": "Moonshot",
+      "qwen": "Qwen",
+      "siliconflow": "SiliconFlow",
+      "aihubmix": "AiHubMix"
+    },
+    "provider": {
+      "on": "ON",
+      "off": "OFF",
+      "dragHandle": "Drag to reorder providers",
+      "dragDisabledInSearch": "Clear search before reordering providers"
+    },
+    "actions": {
+      "add": "Add",
+      "manage": "Manage",
+      "editProvider": "Edit provider",
+      "addModel": "Add model",
+      "healthCheck": "Check",
+      "fetchModels": "Fetch models",
+      "customHeaders": "Custom headers"
+    },
+    "apiKey": {
+      "title": "API key",
+      "configured": "Configured {{count}} key(s)",
+      "placeholder": "Enter API key",
+      "hintMain": "Supports multiple keys. Paste comma/newline separated keys in Key settings; keys rotate automatically.",
+      "rotationHint": "Multiple keys are rotated automatically (comma/newline separated).",
+      "bulkTitle": "Bulk add",
+      "bulkPlaceholder": "Paste one or more API keys (one per line or comma-separated)",
+      "bulkHint": "Comma/newline separated. Duplicates are removed automatically.",
+      "toastAdded": "Added {{count}} key(s)",
+      "settings": "Key settings",
+      "manageAll": "Manage all",
+      "moreKeys": "And {{count}} more key(s), ",
+      "inlineEditBlocked": "Multiple API keys are configured. Open “Manage all” to edit them without overwriting the rest.",
+      "inlineHintMulti": "Multiple API keys are configured. The inline field only shows the first key; use “Manage all” to edit the full list.",
+      "listTitle": "API keys",
+      "listDescription": "Manage multiple API keys and run connectivity checks.",
+      "checkModel": "Check model",
+      "checkAll": "Check all",
+      "checkAllTitle": "Check all keys",
+      "checkOne": "Check",
+      "removeInvalid": "Remove failed",
+      "removeInvalidTitle": "Remove failed keys",
+      "empty": "No keys. Click Add to create one.",
+      "newPlaceholder": "Enter a new API key",
+      "errorEmpty": "API key cannot be empty",
+      "errorDuplicate": "API key already exists",
+      "errorUrlLike": "Enter an API key here, not an API base URL. Put the URL in the API base field.",
+      "inlineManageMulti": "This provider already has multiple keys. Edit them in Manage all; the inline field will not overwrite a multi-key config."
+    },
+    "apiBase": {
+      "title": "API base",
+      "preview": "Preview: {{url}}",
+      "previewBase": "Preview base: {{url}}",
+      "previewTransportDependent": "Preview base: {{url}} (the exact chat endpoint depends on the model transport)",
+      "emptyHint": "API base is empty. Please set it before use.",
+      "overrideTitle": "API base (optional)",
+      "overrideHint": "Only fill this for a custom proxy or gateway. Leave empty to derive the official endpoint from the dedicated auth fields.",
+      "overridePlaceholder": "Leave empty to use the official default"
+    },
+    "models": {
+      "title": "Models",
+      "empty": "No models yet. Click the button below to add one."
+    },
+    "manageDialog": {
+      "title": "{{provider}} models",
+      "description": "Manage models, groups, user-facing model types, and system-detected semantics for this provider.",
+      "notSupported": "This provider does not support fetching a model catalog via /models. Please add model IDs manually and use Health Check to verify connectivity.",
+      "importBlockedUnknownProtocol": "The runtime protocol for this model is still unresolved. Update the registry or set the protocol manually before importing it.",
+      "importBlockedProviderCatalogTypeUnsupported": "The official catalog returned {{typeLabel}}, but the extension does not yet have a stable import/runtime protocol for it. It is shown for reference only and cannot be imported.",
+      "importBlockedTogetherDedicatedSpeechEndpointRequired": "The official catalog returned this Together speech model, but it requires a Together Dedicated Endpoint. The extension does not yet support importing or invoking it by endpoint name, so it is shown for reference only and cannot be imported.",
+      "importBlockedTranscriptionRuntimeUnavailable": "The official catalog returned this transcription model, but the current provider does not yet have a runnable transcription-api runtime in the extension. It is shown for reference only and cannot be imported.",
+      "importBlockedSpeechRuntimeUnavailable": "The official catalog returned this speech model, but the current provider does not yet have a runnable speech-api runtime in the extension. It is shown for reference only and cannot be imported.",
+      "importBlockedModerationRuntimeUnavailable": "The official catalog returned this moderation model, but the current provider does not yet have a runnable moderation-api runtime in the extension. It is shown for reference only and cannot be imported.",
+      "importBlockedVideoRuntimeUnavailable": "The official catalog returned this video model, but the current provider does not yet have a runnable video-api runtime in the extension. It is shown for reference only and cannot be imported.",
+      "searchPlaceholder": "Search model ID or name",
+      "typePlaceholder": "Model type",
+      "typeAll": "All types",
+      "loading": "Fetching models…",
+      "retry": "Retry",
+      "empty": "No models found",
+      "deprecated": "Deprecated",
+      "add": "Add",
+      "remove": "Remove",
+      "addAll": "Add all",
+      "removeAll": "Remove all"
+    },
+    "modelDialog": {
+      "editTitle": "Edit model",
+      "addTitle": "Add model",
+      "description": "Configure model ID, name, group, manual model-type overrides, and the system read-only semantic metadata.",
+      "errors": {
+        "duplicateId": "Model ID \"{{id}}\" already exists. Please use a unique model ID."
+      },
+      "registryPlaceholder": "Enter a model ID to preview how the current Provider resolves it in Model Registry.",
+      "sections": {
+        "basic": "Basic information",
+        "advanced": "Advanced settings"
+      },
+      "sectionDescriptions": {
+        "basic": "Mirrors the desktop layout while keeping only the fields that still participate in the current extension logic.",
+        "advanced": "The left side only edits the 8 user-facing model types; primary kind, system capabilities, and protocol remain read-only.",
+        "registryMetadata": "This card always shows system-detected metadata and is never overwritten by the manual types on the left."
+      },
+      "actions": {
+        "resetModelTypes": "Reset to system"
+      },
+      "modelTypeModes": {
+        "followSystem": "Follow system",
+        "manualOverride": "Manual override"
+      },
+      "modelTypes": {
+        "text_generation": "Text generation",
+        "image_generation": "Image generation",
+        "vision": "Vision",
+        "web_search": "Web search",
+        "reasoning": "Reasoning",
+        "function_calling": "Tool calling",
+        "rerank": "Rerank",
+        "embedding": "Embedding"
+      },
+      "modelTypesFollowHint": "No manual override is stored yet. The selected state on the left currently comes from system detection.",
+      "modelTypesOverrideHint": "Manual override is active. Runtime, model lists, and model pickers will all prefer the left-side result.",
+      "help": {
+        "id": "The model identifier sent to the API. Must match the provider (e.g. gpt-4o).",
+        "name": "Display name only. Does not affect requests.",
+        "group": "Used for grouping in UI. Does not affect requests.",
+        "modelTypes": "Only the 8 desktop-style user model types are editable here: text generation, image generation, vision, web search, reasoning, tool calling, rerank, and embedding. Image generation now belongs to both the primary-kind layer and the user model type layer. Image generation is exclusive; embedding and rerank remain mutually exclusive; selecting any exclusive type disables the others.",
+        "userModelTypes": "Only the 8 desktop-style user model types are editable here: text generation, image generation, vision, web search, reasoning, tool calling, rerank, and embedding. Image generation now belongs to both the primary-kind layer and the user model type layer. Image generation is exclusive; embedding and rerank remain mutually exclusive; selecting any exclusive type disables the others.",
+        "systemTransportProtocol": "Transport routing is now system-inferred and read-only. If the result is unknown, the current model still lacks enough official catalog signals or stable fallback rules.",
+        "supportedTextDelta": "Whether the model supports streaming text deltas. Disable to fallback to non-streaming for compatibility.",
+        "registryMetadata": "Read-only projection from the unified Model Registry, including base model ID, internal canonicalId, system-detected primary kind, system capabilities, modalities, and resolved protocol."
+      },
+      "fields": {
+        "id": "Model ID",
+        "idPlaceholder": "Required, e.g. gpt-3.5-turbo",
+        "name": "Model name",
+        "namePlaceholder": "e.g. GPT-4",
+        "group": "Group",
+        "groupPlaceholder": "e.g. ChatGPT",
+        "modelTypes": "Model type",
+        "userModelTypes": "User model types",
+        "modelTypesMode": "Current mode",
+        "effectiveKind": "Effective kind",
+        "effectiveModelTypes": "Effective model types",
+        "effectivePrimaryKind": "Effective primary kind",
+        "effectiveUserModelTypes": "Effective user model types",
+        "effectiveUserModelTypesEmpty": "The current primary kind does not map to any user model types",
+        "systemPrimaryKind": "System primary kind",
+        "systemTransportProtocol": "System detected protocol",
+        "systemTransportProtocolUnknown": "Not detected yet. The model can still be saved, but runtime requests cannot be routed with an unknown protocol.",
+        "inputModalities": "Input modalities",
+        "outputModalities": "Output modalities",
+        "contextLength": "Context length",
+        "unknownContextLength": "Unknown",
+        "deprecated": "Deprecated",
+        "supportedTextDelta": "Text Delta",
+        "supportedTextDeltaPlaceholder": "Default (unset)",
+        "supportedTextDeltaTrue": "Supported",
+        "supportedTextDeltaFalse": "Not supported",
+        "registryMetadata": "Registry metadata (system)"
+      }
+    },
+    "headersDialog": {
+      "title": "Custom headers",
+      "description": "Configure custom HTTP headers (JSON) for this provider.",
+      "hint": "Custom headers (JSON)",
+      "toastSaved": "Custom headers saved",
+      "errors": {
+        "invalidJson": "Invalid JSON",
+        "mustBeObject": "Must be a JSON object (key-value)"
+      }
+    },
+    "addProviderDialog": {
+      "title": "Add provider",
+      "editTitle": "Edit provider",
+      "description": "Configure name, type, and API base for a custom provider.",
+      "fields": {
+        "name": "Provider name",
+        "namePlaceholder": "e.g. My Provider",
+        "type": "Provider type",
+        "apiBase": "API base",
+        "apiBasePlaceholder": "e.g. https://api.example.com/v1",
+        "anthropicApiHost": "Anthropic native base (optional)",
+        "anthropicApiHostHint": "Only use this when some models under this provider speak the Anthropic Messages protocol. Leave it empty to reuse the API base.",
+        "anthropicApiHostPlaceholder": "e.g. https://api.example.com/anthropic/v1",
+        "apiVersion": "API version",
+        "apiVersionPlaceholder": "e.g. 2024-10-21"
+      },
+      "types": {
+        "openai": "OpenAI",
+        "anthropic": "Anthropic",
+        "google": "Gemini",
+        "azure-openai": "Azure OpenAI",
+        "ollama": "Ollama",
+        "openai-compatible": "OpenAI Compatible"
+      },
+      "avatar": {
+        "upload": "Upload image",
+        "builtin": "Built-in icons",
+        "reset": "Reset avatar",
+        "builtinTitle": "Choose a built-in icon",
+        "searchPlaceholder": "Search icons...",
+        "loading": "Loading icons...",
+        "noResults": "No icons found"
+      }
+    },
+    "deleteProvider": {
+      "confirm": "Delete provider \"{{name}}\"",
+      "desc": "Models from this provider will no longer appear in model pickers."
+    },
+    "healthDialog": {
+      "title": "Model health check",
+      "description": "Send probe requests to verify availability and latency.",
+      "warning": "Health checks send requests. Use with caution. Pay-per-request models may incur additional costs.",
+      "selectKey": "Select API key:",
+      "emptyKey": "(Empty key)",
+      "keyMode": {
+        "title": "API key mode:",
+        "single": "Single",
+        "all": "All"
+      },
+      "concurrent": {
+        "title": "Concurrent:",
+        "off": "Off",
+        "on": "On"
+      },
+      "timeout": "Timeout:",
+      "secondsUnit": "s",
+      "running": "Checking…",
+      "start": "Start",
+      "stop": "Stop",
+      "keySummary": "Key success/total",
+      "noModels": "No models to check",
+      "noPort": "Cannot connect to Service Worker"
+    },
+    "advanced": {
+      "title": "Advanced settings"
+    },
+    "loadState": {
+      "loadingTitle": "Loading provider configuration…",
+      "loadingDescription": "Editing is temporarily blocked until hydration finishes, so default values cannot overwrite real configuration.",
+      "errorTitle": "Failed to load provider configuration",
+      "errorDescription": "Editing stays blocked until the saved configuration is loaded successfully, to avoid overwriting existing data.",
+      "retry": "Reload"
+    },
+    "saveState": {
+      "errorTitle": "Configuration has not been saved",
+      "retry": "Retry save",
+      "unsaved": "Current edits have not reached the background runtime yet."
+    },
+    "apiOptions": {
+      "title": "API compatibility",
+      "reset": "Reset",
+      "isNotSupportImageInput": "No image input",
+      "isNotSupportImageInputHint": "When enabled, requests with image attachments will fail before reaching the provider.",
+      "isNotSupportFileInput": "No file input",
+      "isNotSupportFileInputHint": "When enabled, requests with native file attachments will fail before reaching the provider.",
+      "isNotSupportStreamOptions": "No stream_options / usage",
+      "isNotSupportStreamOptionsHint": "Some OpenAI-compatible gateways don't support include_usage and related fields.",
+      "isSupportDeveloperRole": "Supports developer role",
+      "isSupportDeveloperRoleHint": "When enabled, system prompts are sent as developer role; when disabled, they stay as system.",
+      "isSupportServiceTier": "Supports service_tier / serviceTier",
+      "isSupportServiceTierHint": "Assumed supported by default; disable to stop injecting service tier.",
+      "isNotSupportEnableThinking": "No enable_thinking",
+      "isNotSupportEnableThinkingHint": "For Qwen-like models you can control via /think or /no_think suffix.",
+      "isNotSupportVerbosity": "No verbosity / textVerbosity",
+      "isNotSupportVerbosityHint": "Disable to avoid injecting OpenAI Responses verbosity.",
+      "isNotSupportAPIVersion": "No api-version",
+      "isNotSupportAPIVersionHint": "Some Azure/OpenAI-like gateways reject api-version."
+    },
+    "providerOptions": {
+      "title": "Provider-level parameters",
+      "hint": "Only applied to provider types that support these protocol-level settings.",
+      "serviceTier": "Service Tier",
+      "serviceTierPlaceholder": "Default (omit)",
+      "serviceTierHint": "Only injected if supported by the provider.",
+      "verbosity": "Verbosity",
+      "verbosityPlaceholder": "Default (omit)",
+      "verbosityHint": "Used for OpenAI Responses (textVerbosity).",
+      "unset": "Default (omit)"
+    },
+    "apiKeyAuth": {
+      "title": "API key auth",
+      "hint": "Configure the auth header used for provider.apiKey. Custom headers are only extra business headers and do not own authentication.",
+      "preset": "Auth preset",
+      "presets": {
+        "default": "Provider default",
+        "authorizationBearer": "Authorization + Bearer",
+        "xApiKey": "x-api-key (Anthropic)",
+        "xGoogApiKey": "x-goog-api-key (Gemini)",
+        "apiKey": "api-key (Azure OpenAI)",
+        "xiApiKey": "xi-api-key (ElevenLabs)",
+        "custom": "Custom"
+      },
+      "headerName": "Header name",
+      "valuePrefix": "Value prefix",
+      "valuePrefixHint": "Leave empty to send the raw API key. Bearer sends “Bearer <key>”.",
+      "invalidHeader": "Header name is invalid, and Content-Type is not allowed."
+    },
+    "rateLimit": {
+      "title": "Rate limit (optional)",
+      "placeholder": "e.g. 60",
+      "hint": "Used for throttling/health check scenarios (does not change provider behavior)."
+    },
+    "notes": {
+      "title": "Notes",
+      "placeholder": "Stored locally; record rate limits and special params"
+    },
+    "azure": {
+      "title": "Azure OpenAI",
+      "sectionHint": "Azure OpenAI supports the legacy deployment endpoint with api-version and the newer /openai/v1 endpoint. This controls the preview and whether runtime sends api-version.",
+      "apiShape": "API shape",
+      "apiShapeHint": "Choose deployment + api-version for /openai/deployments/{deployment}. Choose v1 endpoint for /openai/v1.",
+      "apiShapeOptions": {
+        "deployment": "Deployment endpoint + api-version",
+        "v1": "Azure OpenAI v1 endpoint"
+      },
+      "apiVersion": "API Version",
+      "apiVersionHint": "Required for deployment endpoint mode. Runtime sends it as the api-version query parameter.",
+      "apiVersionPlaceholder": "e.g. 2024-10-21",
+      "hint": "Switching to v1 endpoint clears API Version and disables api-version. Switching back to deployment mode requires filling API Version again."
+    },
+    "newApi": {
+      "title": "NewAPI",
+      "sectionHint": "NewAPI can route by model transport. Set a separate Anthropic upstream when Claude-like models use the Anthropic Messages protocol.",
+      "anthropicApiHost": "Anthropic Messages base (optional)",
+      "anthropicApiHostHint": "Only used for models with transportProtocol=anthropic-messages. Leave empty to reuse the API base.",
+      "anthropicApiHostPlaceholder": "e.g. https://api.example.com/anthropic/v1",
+      "hint": "This only affects Anthropic Messages routing and does not change the default OpenAI-compatible route."
+    },
+    "vertex": {
+      "title": "Vertex AI",
+      "sectionHint": "Used for Google Vertex AI (Gemini on Vertex). Service Account requires project and location; express mode API key does not.",
+      "sectionHintAnthropic": "Used for Anthropic (Claude) on Vertex AI. Service Account is required with project, location, and service account fields.",
+      "authType": "Auth type",
+      "authTypeHint": "Service Account uses project, location, and service account fields. API Key uses Vertex express mode.",
+      "authTypeOptions": {
+        "serviceAccount": "Service Account",
+        "apiKey": "API Key (express mode)"
+      },
+      "projectId": "Project ID projectId",
+      "projectIdHint": "Required in Service Account mode, for example my-gcp-project.",
+      "location": "Location location",
+      "locationHint": "Required in Service Account mode, for example us-central1.",
+      "clientEmail": "Client Email",
+      "clientEmailHint": "Service Account email, matching client_email in Google credentials.",
+      "privateKey": "Private Key",
+      "privateKeyHint": "Service Account PEM private key. Escaped \\n line breaks are accepted.",
+      "privateKeyPlaceholder": "-----BEGIN PRIVATE KEY-----\\n...\\n-----END PRIVATE KEY-----",
+      "privateKeyId": "Private Key ID (optional)",
+      "privateKeyIdHint": "Matches private_key_id in Google credentials. Optional.",
+      "apiKey": "Vertex API Key",
+      "apiKeyHint": "Vertex express mode API key. projectId/location are not required.",
+      "hint": "Vertex AI can switch between Service Account and express mode API key. provider.apiKey is not used.",
+      "hintAnthropic": "Vertex Anthropic always uses Service Account and does not support API key mode."
+    },
+    "bedrock": {
+      "title": "AWS Bedrock",
+      "sectionHint": "Used for AWS Bedrock. Official Bedrock supports IAM and Bedrock API keys; temporary credentials can include Session Token.",
+      "authType": "Auth type",
+      "authTypeHint": "IAM uses Access Key / Secret Key. API Key uses the official AWS Bedrock Bearer token path.",
+      "authTypeOptions": {
+        "iam": "IAM (Access Key / Secret Key)",
+        "apiKey": "Bedrock API Key"
+      },
+      "region": "Region region",
+      "regionHint": "AWS region used to resolve the Bedrock endpoint, for example us-east-1.",
+      "accessKeyId": "Access Key ID accessKeyId",
+      "accessKeyIdHint": "Required in IAM mode.",
+      "secretAccessKey": "Secret Access Key secretAccessKey",
+      "secretAccessKeyHint": "Required in IAM mode.",
+      "sessionToken": "Session Token sessionToken (optional)",
+      "sessionTokenHint": "Only needed for temporary STS credentials.",
+      "apiKey": "Bedrock API Key",
+      "apiKeyHint": "AWS Bedrock API key. The SDK sends it as a Bearer token; provider.apiKey is not used.",
+      "hint": "Bedrock uses IAM or the official Bedrock API key; provider.apiKey is not used."
+    },
+    "anthropicCache": {
+      "title": "Anthropic prompt caching",
+      "reset": "Reset",
+      "tokenThreshold": "Token threshold",
+      "cacheSystem": "Cache system",
+      "cacheSystemLabel": "Enabled",
+      "cacheLastN": "Cache last N",
+      "hint": "When token count exceeds the threshold, mark messages with ephemeral cacheControl."
+    }
+  }
+}

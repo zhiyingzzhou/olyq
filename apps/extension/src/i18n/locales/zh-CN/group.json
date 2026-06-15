@@ -1,0 +1,23 @@
+{
+  "group": {
+    "useful": "标记为有用",
+    "empty": "无内容",
+    "layoutFold": "折叠",
+    "layoutVertical": "纵向",
+    "layoutHorizontal": "横向",
+    "layoutGrid": "网格",
+    "retryFailedAll": "重试失败（{{count}}）",
+    "gridSettings": "网格设置",
+    "gridColumns": "列数",
+    "gridTrigger": "弹出方式",
+    "openFullscreen": "当前视口全屏比较",
+    "closeFullscreen": "退出全屏比较",
+    "triggerHover": "悬停",
+    "triggerClick": "点击",
+    "deleteGroup": "删除整组",
+    "confirmDeleteGroup": "确定删除该组所有模型回复吗？",
+    "modelTabs": "选择要查看的模型回复",
+    "compact": "紧凑",
+    "expanded": "展开"
+  }
+}

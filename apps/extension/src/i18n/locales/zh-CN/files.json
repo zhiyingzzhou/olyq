@@ -1,0 +1,34 @@
+{
+  "files": {
+    "title": "文件",
+    "description": "管理聊天附件与本地备份快照。",
+    "tabs": {
+      "attachments": "附件",
+      "backups": "备份"
+    },
+    "searchPlaceholder": "搜索文件名 / MIME / ID…",
+    "filters": {
+      "all": "全部",
+      "images": "图片",
+      "files": "文件"
+    },
+    "selected": "已选 {{count}} 项",
+    "deleteSelected": "删除已选",
+    "empty": "暂无附件",
+    "preview": "预览",
+    "download": "下载",
+    "restore": "恢复",
+    "lite": "精简备份",
+    "backupsHint": "这些快照存储在浏览器 IndexedDB，可在设置中同步到云端。",
+    "backupsEmpty": "暂无本地备份快照",
+    "errors": {
+      "attachmentMissing": "附件不存在或已被清理",
+      "backupMissing": "备份内容不存在（可能已被清理）"
+    },
+    "toast": {
+      "deleted": "已删除 {{count}} 项",
+      "restored": "已从本地备份恢复（数据已刷新）",
+      "backupDeleted": "已删除备份快照"
+    }
+  }
+}

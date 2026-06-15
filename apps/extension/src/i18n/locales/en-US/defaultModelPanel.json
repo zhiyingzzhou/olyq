@@ -1,0 +1,32 @@
+{
+  "defaultModelPanel": {
+    "title": "Models & Prompts",
+    "description": "Configure the default models and global prompts used by chat, image generation, transcription, and translation tasks",
+    "conversationModel": "Default Chat Model",
+    "conversationModelDesc": "Used when creating new topics and assistants",
+    "imageModel": "Default Image Model",
+    "imageModelDesc": "Preselected when creating a new painting",
+    "transcriptionModel": "Default Transcription Model",
+    "transcriptionModelDesc": "Used to transcribe audio attachments before sending them into chat",
+    "ocrModel": "Screenshot OCR Model",
+    "ocrModelDesc": "Vision chat model used to extract text from web screenshots",
+    "speechModel": "Default Speech Model",
+    "speechModelDesc": "Used when manually reading assistant messages aloud",
+    "speechVoice": "Default Speech Voice",
+    "speechVoiceDesc": "Voice identifier passed to speech-api. Leave empty to use the provider default voice.",
+    "speechVoicePlaceholder": "For example: alloy, nova, shimmer",
+    "topicNamingModel": "Topic Naming Model",
+    "topicNamingModelDesc": "Used to automatically generate topic titles",
+    "translateModel": "Translation Model",
+    "translateModelDesc": "Used in the translation panel",
+    "globalChatPrompt": "Global Chat Prompt",
+    "globalChatPromptDesc": "Always prepended before the assistant prompt on every chat request",
+    "globalChatPromptPlaceholder": "Enter the global chat prompt that should be prepended to every conversation…",
+    "globalImagePrompt": "Global Image Prompt",
+    "globalImagePromptDesc": "Prepended before the current painting prompt for every image generation request",
+    "globalImagePromptPlaceholder": "Enter the global image prompt prefix for every painting request…",
+    "useDefaultModel": "Use default chat model",
+    "selectModel": "Select model",
+    "noModels": "No available models. Please add models in Model Manager first."
+  }
+}

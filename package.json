@@ -1,0 +1,65 @@
+{
+  "name": "olyq",
+  "private": true,
+  "version": "0.1.0",
+  "license": "MIT",
+  "type": "module",
+  "packageManager": "pnpm@10.27.0",
+  "scripts": {
+    "dev:extension:chromium": "pnpm --filter @olyq/extension dev:chromium",
+    "dev:extension:firefox": "pnpm --filter @olyq/extension dev:firefox",
+    "dev:www": "pnpm --filter @olyq/www dev",
+    "sync:product-assets": "node ./scripts/sync-product-assets.mjs",
+    "optimize:product-assets": "node ./scripts/optimize-product-assets.mjs",
+    "lint:extension": "pnpm --filter @olyq/extension lint",
+    "typecheck:extension": "pnpm --filter @olyq/extension typecheck",
+    "test:extension": "pnpm --filter @olyq/extension test",
+    "build:extension:chromium": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:chromium && node ./scripts/report-extension-build-output.mjs chromium",
+    "build:extension:firefox": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:firefox && node ./scripts/report-extension-build-output.mjs firefox",
+    "build:extension:test:chromium": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:test:chromium && node ./scripts/report-extension-build-output.mjs chromium-e2e",
+    "build:extension:test:firefox": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:test:firefox && node ./scripts/report-extension-build-output.mjs firefox-e2e",
+    "build:www": "pnpm --filter @olyq/www build",
+    "verify:extension-dist-boundary": "node ./scripts/verify-extension-dist-boundary.mjs",
+    "verify:github-workflows": "node ./scripts/verify-github-workflows.mjs",
+    "verify": "pnpm verify:github-workflows && pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension verify && pnpm --filter @olyq/www build",
+    "verify:extension": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension verify",
+    "verify:www": "pnpm --filter @olyq/www build",
+    "package:extension": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension package:all",
+    "package:extension:chrome-web-store": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension package:chromium",
+    "package:extension:firefox-amo-addon": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension package:firefox",
+    "package:extension:firefox-amo-source": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension package:firefox-source",
+    "package:release-docs": "node ./apps/extension/scripts/package-release-docs.mjs"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@swc/core",
+      "esbuild"
+    ],
+    "allowedDeprecatedVersions": {
+      "node-domexception": "1"
+    },
+    "overrides": {
+      "@crxjs/vite-plugin>rollup": "2.80.0",
+      "@typescript-eslint/project-service": "8.59.4",
+      "@typescript-eslint/tsconfig-utils": "8.59.4",
+      "@typescript-eslint/typescript-estree": "8.59.4",
+      "@typescript-eslint/utils": "8.59.4",
+      "google-auth-library": "10.6.2",
+      "@tootallnate/once": "3.0.1",
+      "brace-expansion@1": "1.1.13",
+      "brace-expansion@2": "2.0.3",
+      "brace-expansion@5": "5.0.6",
+      "dompurify": "3.4.1",
+      "fast-uri": "3.1.2",
+      "flatted": "3.4.2",
+      "lodash": "4.18.1",
+      "lodash-es": "4.18.1",
+      "picomatch@2": "2.3.2",
+      "picomatch@4": "4.0.4",
+      "postcss": "8.5.15",
+      "undici": "7.25.0",
+      "uuid": "14.0.0",
+      "vite": "8.0.16"
+    }
+  }
+}

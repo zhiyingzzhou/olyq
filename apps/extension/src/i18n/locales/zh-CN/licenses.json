@@ -1,0 +1,10 @@
+{
+  "licenses": {
+    "title": "开源许可",
+    "description": "展示本扩展的开源许可（MIT）。",
+    "olyqLicenseLine": "Olyq 浏览器扩展以 MIT 协议开源发布。",
+    "usageNotice": "提示：完整第三方依赖/资源声明随发行源码提供；如需商业使用请自行评估合规。",
+    "mitTitle": "MIT License",
+    "thirdPartyTitle": "Third-Party Notices"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "navigation": {
+    "top": "顶部",
+    "bottom": "底部",
+    "prev": "上一问",
+    "next": "下一问",
+    "flow": "对话流程",
+    "hide": "隐藏",
+    "panel": "消息导航",
+    "closePanel": "收起消息导航"
+  }
+}

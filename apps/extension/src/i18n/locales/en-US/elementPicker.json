@@ -1,0 +1,22 @@
+{
+  "elementPicker": {
+    "title": "Pick Element",
+    "pickHint": "Click an element",
+    "pickedTag": "Selected {{tag}}",
+    "shrink": "Shrink selection",
+    "expand": "Expand selection",
+    "commit": "Add to conversation",
+    "escCancel": "Press Esc to cancel",
+    "emptyElement": "No extractable content in this element. Expand the selection or choose another element.",
+    "commitFailed": "Unable to add the selected region. Try again or choose another region.",
+    "summary": {
+      "visual": "Visual region · {{tag}} · screenshot area",
+      "table": "Table · {{tag}} · {{rows}} rows × {{columns}} columns",
+      "code": "Code · {{tag}}{{languagePart}} · {{lines}} lines",
+      "languagePart": " · {{language}}",
+      "image": "Image · {{tag}} · {{count}} images",
+      "link": "Link · {{tag}} · about {{count}} chars",
+      "text": "Text · {{tag}} · about {{count}} chars"
+    }
+  }
+}

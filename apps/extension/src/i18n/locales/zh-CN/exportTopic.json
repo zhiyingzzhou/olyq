@@ -1,0 +1,24 @@
+{
+  "exportTopic": {
+    "title": "导出话题",
+    "fallbackTitle": "聊天记录",
+    "formatMarkdown": "Markdown",
+    "formatHtml": "HTML",
+    "formatWord": "Word",
+    "exportedAt": "导出时间",
+    "messageCount": "共 {{count}} 条消息",
+    "reasoning": "思考过程",
+    "images": "图片附件",
+    "files": "文件附件",
+    "attachmentMissing": "附件不可用或已被清理",
+    "toolCalls": "工具调用",
+    "toolStatus": "状态",
+    "toolArgs": "参数",
+    "toolResult": "结果",
+    "webSearchProvider": "Provider",
+    "webSearchQuery": "查询词",
+    "translations": "翻译",
+    "translationItem": "翻译：{{language}}",
+    "error": "错误信息"
+  }
+}

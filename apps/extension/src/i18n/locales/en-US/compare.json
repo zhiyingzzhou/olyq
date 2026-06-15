@@ -1,0 +1,10 @@
+{
+  "compare": {
+    "title": "Multi-Model Compare",
+    "description": "Select 2 or more models for parallel comparison (minimum 2).",
+    "selected": "{{count}} models selected",
+    "start": "Start Compare",
+    "models": "{{count}} models compared",
+    "generating": "Generating…"
+  }
+}

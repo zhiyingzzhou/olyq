@@ -1,0 +1,11 @@
+{
+  "selectionPrompt": {
+    "targetChinese": "中文",
+    "targetEnglish": "英文",
+    "source": "\n\n来源：{{title}}\n{{url}}",
+    "translate": "请将以下内容翻译成{{targetLanguage}}，保持语气与格式：\n\n\"{{text}}\"{{source}}",
+    "summarize": "请用要点列表总结以下内容，并给出一句话结论：\n\n\"{{text}}\"{{source}}",
+    "explain": "请解释以下内容，并补充必要的背景与例子：\n\n\"{{text}}\"{{source}}",
+    "ask": "基于以下引用给出你的分析与建议：\n\n\"{{text}}\"{{source}}"
+  }
+}

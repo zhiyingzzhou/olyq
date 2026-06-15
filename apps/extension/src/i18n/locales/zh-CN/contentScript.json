@@ -1,0 +1,30 @@
+{
+  "contentScript": {
+    "actions": {
+      "explain": "解释",
+      "translate": "翻译",
+      "summarize": "总结",
+      "ask": "问 Olyq"
+    },
+    "card": {
+      "label": "Olyq · {{action}}",
+      "close": "关闭",
+      "copy": "复制",
+      "copied": "已复制",
+      "open": "在侧边栏打开"
+    },
+    "hide": {
+      "hidePageToolsLabel": "隐藏网页工具",
+      "dismissSession": "本次关闭直到下次访问",
+      "disableSite": "当前网站禁用",
+      "disableGlobal": "永久禁用"
+    },
+    "inlinePrompt": {
+      "targetChinese": "中文",
+      "targetEnglish": "英文",
+      "translate": "请将以下内容翻译成{{targetLanguage}}，保持语气与格式，只输出翻译结果：\n\n\"{{text}}\"",
+      "summarize": "请用简洁的要点列表总结以下内容：\n\n\"{{text}}\"",
+      "explain": "请解释以下内容，用简洁易懂的语言：\n\n\"{{text}}\""
+    }
+  }
+}

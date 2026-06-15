@@ -1,0 +1,21 @@
+{
+  "launchpad": {
+    "title": "启动台",
+    "description": "快速进入常用模块。",
+    "sections": {
+      "apps": "模块"
+    },
+    "items": {
+      "store": "助手商店",
+      "translate": "翻译",
+      "files": "文件",
+      "paint": "绘画"
+    },
+    "hints": {
+      "store": "浏览/管理 AI 助手",
+      "translate": "快速翻译与润色",
+      "files": "管理附件与导出文件",
+      "paint": "文生图 / 图生图工作台"
+    }
+  }
+}

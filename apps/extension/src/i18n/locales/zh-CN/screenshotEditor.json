@@ -1,0 +1,42 @@
+{
+  "screenshotEditor": {
+    "title": "网页截图",
+    "textInput": "输入标注文字",
+    "ocrPrompt": "你是 OCR 文本转写器。只读取截图中真实可见的文字，并按阅读顺序保留换行。只输出一个 JSON 对象，格式必须是 {\"text\":\"...\"}。text 必须只包含截图里的原文；不要添加解释、标题、总结、Markdown、代码块、加粗符号或任何截图中不可见的文字。如果截图中没有可识别文字，输出 {\"text\":\"\"}。",
+    "actions": {
+      "chat": "聊天",
+      "ocr": "OCR",
+      "undo": "撤销",
+      "copy": "复制",
+      "download": "下载",
+      "close": "关闭",
+      "confirm": "添加到对话"
+    },
+    "tools": {
+      "rect": "矩形",
+      "circle": "圆形",
+      "arrow": "箭头",
+      "pen": "画笔",
+      "mosaic": "马赛克",
+      "text": "文字"
+    },
+    "options": {
+      "label": "标注样式",
+      "color": "颜色 {{color}}",
+      "size": "粗细 {{size}}",
+      "fontSize": "字号 {{size}}"
+    },
+    "feedback": {
+      "copied": "已复制截图"
+    },
+    "ocr": {
+      "title": "识别文字",
+      "loading": "正在识别文字…",
+      "empty": "未识别到文字",
+      "copy": "复制",
+      "copied": "已复制",
+      "copyFailed": "复制失败",
+      "close": "关闭 OCR 结果"
+    }
+  }
+}

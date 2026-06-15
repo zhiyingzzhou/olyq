@@ -1,0 +1,9 @@
+{
+  "topic": {
+    "title": "话题",
+    "tab": "话题",
+    "new": "新建话题",
+    "confirmDeleteTitle": "确认删除",
+    "confirmDeleteDesc": "确定要删除此话题吗？此操作不可撤销。"
+  }
+}

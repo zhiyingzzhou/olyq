@@ -1,0 +1,33 @@
+{
+  "markdown": {
+    "code": "代码",
+    "mermaidRenderError": "Mermaid 渲染错误",
+    "mermaidDiagram": "Mermaid 图表",
+    "mermaidPreview": "预览图表",
+    "mermaidPreviewTitle": "图表预览",
+    "mermaidSource": "Mermaid 源码",
+    "mermaidViewToggle": "Mermaid 视图切换",
+    "mermaidViewDiagram": "图表",
+    "mermaidViewSource": "源码",
+    "mermaidRendering": "图表正在渲染，暂时先显示源码。",
+    "mermaidRenderAfterStream": "回答完成后会自动渲染图表，当前先显示源码。",
+    "mermaidRenderFallback": "图表暂时无法渲染，已回退为源码展示。",
+    "imageBlockedUnsafe": "[图片已阻止：不安全的地址]",
+    "imageLoadFailed": "图片加载失败：{{alt}}",
+    "linkPreview": {
+      "loading": "正在读取链接预览",
+      "unavailable": "无法预览此链接",
+      "untitled": "未命名链接",
+      "imageAlt": "{{title}} 的预览图"
+    },
+    "viewer": {
+      "toolbar": "预览操作栏",
+      "zoomOut": "缩小",
+      "zoomIn": "放大",
+      "reset": "重置/适应窗口",
+      "rotateLeft": "向左旋转",
+      "rotateRight": "向右旋转"
+    },
+    "imagePreviewHint": "点击遮罩或按 ESC 关闭预览。"
+  }
+}

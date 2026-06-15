@@ -1,0 +1,38 @@
+/* 扩展页根尺寸必须在 React 启动前就锁住；sidepanel 的内部滚动 owner 依赖 100% 高度链，别等 JS 挂载后再补。 */
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* 这些颜色是启动快照，不是设计系统；它们只负责避免主题 class 到达前白屏/黑屏乱闪，真实 token 仍在 src/index.css。 */
+html {
+  background: #ffffff;
+  color: #0f172a;
+  color-scheme: light;
+}
+
+html.dark {
+  background: #0b1020;
+  color: #e5edf6;
+  color-scheme: dark;
+}
+
+/* 外壳禁止滚动：聊天区、设置页和虚拟列表各自持有滚动权，body 滚起来会直接制造双滚动条。 */
+body {
+  background: inherit;
+  color: inherit;
+  overflow: hidden;
+}
+
+/* 首帧 reveal 只能用 visibility：display:none 会让虚拟列表和测量逻辑拿到 0 尺寸，transform/animation 又会跟浏览器 sidePanel 外壳动画互相添乱。 */
+body[data-extension-page-ready="false"] #root {
+  visibility: hidden;
+}
+
+body[data-extension-page-ready="true"] #root {
+  visibility: visible;
+}

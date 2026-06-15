@@ -1,0 +1,108 @@
+{
+  "mcpBridgePanel": {
+    "title": "MCP 服务",
+    "description": "为远程 Streamable HTTP MCP 服务配置请求头与 OAuth。",
+    "settings": {
+      "chatTools": "聊天中启用 MCP 工具",
+      "chatToolsDesc": "开启后，会把已启用远程 MCP 服务中的工具注入当前聊天上下文。"
+    },
+    "servers": {
+      "title": "远程 MCP 服务",
+      "description": "你可以为每个远程 MCP 服务单独连接、授权、刷新工具和编辑配置。",
+      "add": "添加服务",
+      "empty": "暂无 MCP 服务，点击“添加服务”开始配置。",
+      "connect": "连接",
+      "disconnect": "断开",
+      "refreshTools": "刷新工具",
+      "edit": "编辑",
+      "delete": "删除",
+      "authorize": "OAuth 授权",
+      "clearAuthorization": "清除授权",
+      "enabled": "已启用",
+      "disabled": "已停用",
+      "connected": "已连接",
+      "disconnected": "未连接",
+      "oauthEnabled": "OAuth",
+      "url": "URL：",
+      "toolsCount": "工具：{{count}} 个"
+    },
+    "toolRunner": {
+      "title": "工具调用测试",
+      "needConnect": "请先连接至少一个远程 MCP 服务。",
+      "service": "服务",
+      "tool": "工具",
+      "args": "参数（JSON）",
+      "result": "结果",
+      "resultPlaceholder": "工具输出会显示在这里。",
+      "auditHint": "每次运行都会写入浏览器本地审计日志。",
+      "run": "执行",
+      "running": "执行中…"
+    },
+    "audit": {
+      "title": "工具审计日志",
+      "empty": "暂无记录",
+      "ok": "OK",
+      "err": "ERR",
+      "server": "服务={{serverId}}",
+      "durationMs": "耗时={{durationMs}}ms"
+    },
+    "dialog": {
+      "editTitle": "编辑 MCP 服务",
+      "addTitle": "添加 MCP 服务",
+      "description": "填写远程 Streamable HTTP MCP 服务地址；如需连接本地服务，请先把它暴露成 HTTP 端点。",
+      "formMode": "表单模式",
+      "jsonMode": "JSON 模式",
+      "type": "服务类型",
+      "name": "服务名称",
+      "namePlaceholder": "例如 GitHub MCP",
+      "url": "服务 URL",
+      "jsonConfig": "完整的 JSON 配置",
+      "jsonHint": "支持标准 mcpServers 包装格式。必须显式提供 `type` 和 `url`；当前只接受 `type`、`url`、`headers`、`oauth`。",
+      "parseToForm": "解析并切换到表单模式",
+      "headers": "请求头（可选）",
+      "headersPlaceholder": "{\"Authorization\":\"Bearer xxx\"}",
+      "headersHint": "JSON 对象格式；会附加到每次 Streamable HTTP 请求头。",
+      "warnStreamableHttp": "保存时会按你填写的 URL、请求头和 OAuth 配置连接这个 MCP 服务。"
+    },
+    "oauth": {
+      "enable": "启用 OAuth",
+      "enableHint": "启用后，扩展会按 MCP 远程授权规范做 metadata discovery、DCR / prereg client、PKCE 与 token refresh。",
+      "registrationStrategy": "注册策略",
+      "dynamic": "动态注册（DCR）",
+      "preregistered": "预注册客户端",
+      "scopes": "Scopes（每行一个）",
+      "resource": "Resource override",
+      "protectedResourceMetadataUrl": "Protected Resource Metadata URL",
+      "authorizationServerMetadataUrl": "Authorization Server Metadata URL",
+      "dynamicClientName": "动态客户端名称",
+      "dynamicClientNamePlaceholder": "Olyq 浏览器扩展",
+      "tokenEndpointAuthMethod": "Token Endpoint 鉴权方式",
+      "tokenEndpointAuthNone": "none",
+      "tokenEndpointAuthSecretPost": "client_secret_post",
+      "preregClientId": "预注册 Client ID",
+      "preregClientSecret": "预注册 Client Secret"
+    },
+    "server": {
+      "protocolVersion": "协议 {{version}}"
+    },
+    "serverType": {
+      "streamableHttp": "Streamable HTTP"
+    },
+    "toast": {
+      "toolsRefreshed": "工具已刷新",
+      "authorizationDone": "OAuth 授权已完成",
+      "authorizationCleared": "OAuth 授权已清除",
+      "toolNeedServer": "请选择服务",
+      "toolNeedTool": "请选择工具",
+      "argsInvalidJson": "参数必须是合法 JSON",
+      "toolDone": "工具执行完成",
+      "toolFailed": "工具执行失败：{{error}}",
+      "serverNameRequired": "请输入服务名称",
+      "serverUpdated": "服务已更新",
+      "serverAdded": "服务已添加",
+      "serverDeleted": "服务已删除",
+      "serverDeleteConfirm": "删除 MCP 服务“{{name}}”",
+      "serverDeleteConfirmDesc": "删除后，该服务不会再参与聊天工具调用。"
+    }
+  }
+}

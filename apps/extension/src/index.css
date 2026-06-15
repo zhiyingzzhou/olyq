@@ -1,0 +1,1505 @@
+@import "tailwindcss";
+@config "../tailwind.config.mjs";
+
+/* 设计系统真源：这些 token 被 Tailwind、shadcn 组件和扩展页启动快照同时消费；颜色必须保持裸 HSL，别把 hsl()/hex 写进变量里把透明度组合搞死。 */
+
+@layer base {
+  /* 浅色模式是语义 token 基线；业务组件只能消费 background/primary/sidebar 这类语义名，不要偷用品牌输入 token 当设计捷径。 */
+  :root {
+    --olyq-brand-start: 165 100% 42.5%;
+    --olyq-brand-end: 195 100% 42.5%;
+
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+    --primary-control-thumb: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* 深色主题在这里把运行时输入 token 映射成语义 token；外观设置只能改 --olyq-dark-theme-*，直接改 --primary 等于制造第二真源。 */
+  .dark {
+    --background: 230 25% 7%;
+    --foreground: 210 40% 96%;
+
+    --card: 230 25% 9%;
+    --card-foreground: 210 40% 96%;
+
+    --popover: 230 25% 9%;
+    --popover-foreground: 210 40% 96%;
+
+    --olyq-brand-start: var(--olyq-dark-theme-brand-start, 165 100% 42.5%);
+    --olyq-brand-end: var(--olyq-dark-theme-brand-end, 195 100% 42.5%);
+
+    --primary: var(--olyq-brand-start);
+    --primary-foreground: var(--olyq-dark-theme-primary-foreground, 168 72% 8.4%);
+    --primary-control-thumb: var(--olyq-dark-theme-primary-control-thumb, 210 40% 98%);
+
+    --secondary: 230 20% 14%;
+    --secondary-foreground: 210 40% 96%;
+
+    --muted: 230 20% 14%;
+    --muted-foreground: 215 20% 55%;
+
+    --accent: 230 20% 16%;
+    --accent-foreground: 210 40% 96%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 230 15% 18%;
+    --input: 230 15% 18%;
+    --ring: var(--olyq-brand-start);
+    --sidebar-background: 230 25% 5%;
+    --sidebar-foreground: 210 30% 85%;
+    --sidebar-primary: var(--olyq-brand-start);
+    --sidebar-primary-foreground: var(--olyq-dark-theme-primary-foreground, 168 72% 8.4%);
+    --sidebar-accent: 230 20% 12%;
+    --sidebar-accent-foreground: 210 30% 90%;
+    --sidebar-border: 230 15% 15%;
+    --sidebar-ring: var(--olyq-brand-start);
+  }
+}
+
+@layer base {
+  /* Tailwind base 的全局边框接线点：组件默认吃 border-border，免得每个 Radix/shadcn 外壳各自声明一套边框色。 */
+  * {
+    @apply border-border;
+  }
+
+  /* body 只承接语义背景和前景色；真正的页面滚动 owner 由各工作区显式决定，别在这里顺手加 overflow。 */
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* 品牌渐变只在深色模式落到可见 surface；浅色模式不强行上品牌色，避免设置页和聊天区被同一抹高饱和色糊住。 */
+.dark .olyq-brand-gradient-surface {
+  background: linear-gradient(90deg, hsl(var(--olyq-brand-start)), hsl(var(--olyq-brand-end)));
+}
+
+@layer components {
+  /* 模型管理面板用容器查询，不用 viewport 查询；它可能活在设置弹窗、工作区页或窄侧栏里，视口宽度在这里是废情报。 */
+  [data-model-manager-panel-container] {
+    container-type: inline-size;
+    --model-manager-detail-bottom-space: 1rem;
+    --model-manager-model-section-min: 15rem;
+    --model-manager-model-list-min: 12rem;
+  }
+
+  /* 960px 是桌面设置页的舒适宽度，底部留白可以加厚；窄弹窗仍要把空间还给可滚动详情。 */
+  @media (min-width: 960px) {
+    [data-model-manager-panel-container] {
+      --model-manager-detail-bottom-space: 1.5rem;
+    }
+  }
+
+  /* 高度阈值服务右侧详情 body 的内部滚动：Bedrock/Vertex 表单很长，模型列表不能靠撑开整页来假装可见。 */
+  @media (max-height: 720px) {
+    [data-model-manager-panel-container] {
+      --model-manager-model-section-min: 13rem;
+      --model-manager-model-list-min: 9.5rem;
+    }
+  }
+
+  @media (max-height: 560px) {
+    [data-model-manager-panel-container] {
+      --model-manager-model-section-min: 11.5rem;
+      --model-manager-model-list-min: 8rem;
+    }
+  }
+
+  /* 这些 min-* 是 flex/grid 子项的逃生阀；去掉后长模型名和滚动容器会拒绝收缩，然后把详情页横向撑爆。 */
+  [data-model-manager-panel-container] .model-manager-layout {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-nav {
+    min-width: 0;
+    min-height: 0;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-compact-select {
+    display: none !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-detail-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-height: 100%;
+  }
+
+  /* 详情 body 是唯一纵向滚动 owner；padding 和 scroll-padding 必须同源，否则程序滚动会把底部字段怼到安全区后面。 */
+  [data-model-manager-panel-container] .model-manager-provider-detail-body {
+    min-width: 0;
+    min-height: 0;
+    padding-bottom: var(--model-manager-detail-bottom-space);
+    scroll-padding-bottom: var(--model-manager-detail-bottom-space);
+  }
+
+  /* 这层 z-index 只盖住详情 body 尾部的初始贴底感，不参与全局弹层战争；把它调大就是在帮空白层抢点击。 */
+  [data-model-manager-panel-container] .model-manager-provider-detail-bottom-safe-area {
+    z-index: 1;
+    height: var(--model-manager-detail-bottom-space);
+    background: hsl(var(--background));
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-detail-tail-spacer {
+    height: calc(var(--model-manager-detail-bottom-space) + 0.75rem);
+  }
+
+  /* 模型区用 grid 拆“标题/工具条”和“列表轨道”：列表吃剩余高度，长 provider 配置不会把模型行挤到不可滚。 */
+  [data-model-manager-panel-container] .model-manager-model-section {
+    display: grid;
+    grid-template-rows: auto minmax(var(--model-manager-model-list-min), 1fr);
+    flex: 1 1 var(--model-manager-model-section-min);
+    gap: 0.75rem;
+    min-height: var(--model-manager-model-section-min);
+  }
+
+  /* 行级容器查询让 badge 断行看自身宽度，不看整个设置页；这是防止窄详情面板里长模型名和标签互殴的关键。 */
+  [data-model-manager-panel-container] .model-manager-model-row {
+    container-type: inline-size;
+  }
+
+  /* 这里必须用 grid：图标、名称、badge、动作要各占稳定轨道；flex 在长模型名下会先牺牲 badge，再牺牲按钮，可维护性很丑。 */
+  [data-model-manager-panel-container] .model-manager-model-row-grid {
+    display: grid;
+    grid-template-columns: auto minmax(6rem, 1fr) minmax(6rem, min(18rem, 44cqw)) auto;
+    align-items: start;
+    min-width: 0;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-badges {
+    grid-column: 3 / 4;
+    grid-row: 1;
+    min-width: 0;
+    max-width: min(18rem, 44cqw);
+    padding-top: 0.125rem;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-badges > div {
+    justify-content: flex-end;
+    flex-wrap: nowrap;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-actions {
+    grid-column: 4 / 5;
+    grid-row: 1;
+  }
+
+  /* 430px 以下 badge 下沉到第二行；这是“可读地换行”，不是把标签和动作按钮挤成一坨。 */
+  @container (max-width: 430px) {
+    [data-model-manager-panel-container] .model-manager-model-row-grid {
+      grid-template-columns: auto minmax(7rem, 1fr) auto;
+    }
+
+    [data-model-manager-panel-container] .model-manager-model-row-badges {
+      grid-column: 2 / 4;
+      grid-row: 2;
+      max-width: 100%;
+    }
+
+    [data-model-manager-panel-container] .model-manager-model-row-badges > div {
+      flex-wrap: wrap;
+    }
+
+    [data-model-manager-panel-container] .model-manager-model-row-actions {
+      grid-column: 3 / 4;
+      grid-row: 1;
+    }
+  }
+
+  /* 700px 以下 provider 列表切成顶部选择器；左栏继续常驻会把右侧连接表单压成逐字换行，纯属自虐。 */
+  @container (max-width: 700px) {
+    [data-model-manager-panel-container] .model-manager-layout {
+      flex-direction: column !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-nav {
+      width: 100% !important;
+      flex: 0 0 auto !important;
+      border-right-width: 0 !important;
+      border-bottom-width: 1px !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-search {
+      display: none !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-compact-select {
+      display: flex !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-scroll-shell {
+      display: none !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-summary {
+      padding-top: 0.75rem;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-detail-grid {
+      gap: 0.5rem;
+    }
+
+    [data-model-manager-panel-container] .model-manager-model-section {
+      gap: 0.5rem;
+      grid-template-rows: auto minmax(12rem, 1fr);
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-toolbar {
+      padding-block: 0.5rem;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-toolbar-inner {
+      flex-direction: row !important;
+      align-items: center !important;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-add-compact {
+      display: inline-flex !important;
+      width: auto !important;
+      flex: 0 0 auto !important;
+      padding-inline: 0.75rem;
+    }
+
+    [data-model-manager-panel-container] .model-manager-provider-add-footer {
+      display: none !important;
+    }
+  }
+
+  @container (min-width: 960px) {
+    [data-model-manager-panel-container] .model-manager-provider-detail-grid {
+      gap: 1.5rem;
+    }
+  }
+
+  @container (max-width: 500px) {
+    [data-model-manager-panel-container] .model-manager-provider-rows {
+      min-height: auto;
+    }
+
+    [data-model-manager-panel-container] .model-manager-model-row {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
+
+  /* 工作区外壳只声明可收缩；聊天滚动、侧栏和 composer 都有各自 owner，别在父层抢 overflow。 */
+  [data-olyq-workspace-shell] {
+    min-width: 0;
+  }
+
+  /* 聊天主列用容器查询驱动输入区和状态条降级；sidepanel 与新标签页宽度不同，viewport 断点会误判。 */
+  [data-chat-main-shell] {
+    min-width: 0;
+    container-type: inline-size;
+  }
+
+  [data-chat-right-toolbar] {
+    min-width: 3rem;
+  }
+
+  /* 右工具条滚动条故意隐身：3rem 宽轨道只给图标和焦点态，显示系统滚动条会把按钮压扁。Firefox/WebKit 各写一份。 */
+  [data-chat-right-toolbar] .chat-right-toolbar-main {
+    scrollbar-width: none;
+  }
+
+  [data-chat-right-toolbar] .chat-right-toolbar-main::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 话题/助手侧栏宽度是阅读列的让位契约：clamp 保住可扫列表，同时不给聊天区吃掉过多横向空间。 */
+  [data-topic-sidebar-shell] {
+    width: clamp(15.5rem, 24vw, 18rem);
+    min-width: 15.5rem;
+    max-width: 18rem;
+  }
+
+  /* floating 面板只吃 rail 旁边的临时空间；calc(100vw - 3rem) 给 mini rail 留命，别改成 100vw 把关闭入口盖掉。 */
+  [data-topic-sidebar-shell][data-sidebar-presentation="floating"] {
+    width: min(18rem, calc(100vw - 3rem));
+    min-width: min(15.5rem, calc(100vw - 3rem));
+    max-width: calc(100vw - 3rem);
+  }
+
+  [data-topic-sidebar-floating-frame] {
+    width: min(18rem, calc(100vw - 3rem));
+    max-width: calc(100vw - 3rem);
+  }
+
+  /* 独立 stacking context 用来驯服遮罩和浮层的相对层级；不要靠全局 z-index 拼手气。 */
+  [data-topic-sidebar-floating-layer] {
+    isolation: isolate;
+  }
+
+  /* composer 预留高度来自运行时测量；max() 的硬底线避免首帧未测量时虚拟列表把输入区当空气。 */
+  [data-chat-composer-shell] {
+    min-height: max(6.5rem, var(--chat-composer-shell-height, 7.75rem));
+  }
+
+  /* 输入区只按自身容器降级：弹窗、sidepanel、新标签页的可用宽度都不同，写 viewport 断点就是装瞎。 */
+  [data-chat-input-container] {
+    container-type: inline-size;
+  }
+
+  [data-chat-input-container] .chat-input-composer-body {
+    min-height: 0;
+  }
+
+  /* 拖拽高度属于 composer shell；textarea 是唯一弹性编辑区，工具栏保持流内固定尾部，避免 shell 底部出现空白区。 */
+  [data-chat-input-container] .chat-input-textarea {
+    flex: 1 1 0;
+    max-height: none;
+  }
+
+  [data-chat-input-container] .chat-input-tool-button {
+    min-width: 2rem;
+    min-height: 2rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-tools {
+    min-width: 0;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-actions {
+    justify-content: flex-end;
+  }
+
+  [data-chat-input-container] .chat-input-send-button {
+    min-width: 3.5rem;
+  }
+
+  [data-chat-input-container] .chat-input-send-label {
+    white-space: nowrap;
+  }
+
+  [data-chat-input-container] .chat-input-more-tools-trigger {
+    display: none;
+  }
+
+  /* 520px 以下先收二级工具进更多菜单，保住发送按钮和主输入动作；别把核心动作拿去换一排装饰按钮。 */
+  @container (max-width: 520px) {
+    [data-chat-input-container] .chat-input-toolbar {
+      column-gap: 0.5rem;
+      row-gap: 0.5rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-tools {
+      gap: 0.25rem;
+    }
+
+    [data-chat-input-container] .chat-input-secondary-tool {
+      display: none;
+    }
+
+    [data-chat-input-container] .chat-input-more-tools-trigger {
+      display: inline-flex;
+    }
+
+    [data-chat-input-container] .chat-input-tool-button {
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+      padding: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-actions {
+      margin-left: auto;
+      gap: 0.375rem;
+      justify-content: flex-end;
+    }
+
+    [data-chat-input-container] .chat-input-send-button {
+      height: 1.875rem;
+      min-width: 3.375rem;
+      padding-inline: 0.5rem;
+      gap: 0.25rem;
+      border-radius: 0.625rem;
+    }
+  }
+
+  /* 360px 以下工具栏改成两行 grid，让 icon 均分可点区域；继续 flex 会让最后几个按钮变成指甲盖。 */
+  @container (max-width: 360px) {
+    [data-chat-input-container] .chat-input-composer-body {
+      padding-inline: 0.5rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-frame {
+      margin-top: 0.375rem;
+      padding-top: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar {
+      align-items: stretch;
+      column-gap: 0.5rem;
+      row-gap: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-tools {
+      display: grid;
+      flex-basis: 100%;
+      width: 100%;
+      grid-template-columns: repeat(auto-fit, minmax(1.75rem, 1fr));
+      gap: 0.25rem;
+      justify-items: center;
+    }
+
+    [data-chat-input-container] .chat-input-tool-button {
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+      padding: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-actions {
+      flex-basis: 100%;
+      width: 100%;
+      margin-left: 0;
+      gap: 0.375rem;
+      justify-content: flex-end;
+    }
+
+    [data-chat-input-container] .chat-input-send-button {
+      height: 1.75rem;
+      min-width: 3.125rem;
+      padding-inline: 0.4375rem;
+      gap: 0.25rem;
+    }
+  }
+
+  /* 260px 是极窄兜底，不追求漂亮，只保证按钮还可点、文本不溢出、发送动作不失踪。 */
+  @container (max-width: 260px) {
+    [data-chat-input-container] .chat-input-composer-body {
+      padding: 0.5rem 0.25rem 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-frame {
+      margin-top: 0.25rem;
+      padding-top: 0.25rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar {
+      row-gap: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-tools {
+      display: flex;
+      flex-basis: 100%;
+      width: 100%;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+      justify-content: flex-start;
+    }
+
+    [data-chat-input-container] .chat-input-toolbar-actions {
+      margin-left: 0;
+      gap: 0.25rem;
+      justify-content: flex-end;
+    }
+
+    [data-chat-input-container] .chat-input-tool-button {
+      min-width: 1.75rem;
+      min-height: 1.75rem;
+      padding: 0.375rem;
+    }
+
+    [data-chat-input-container] .chat-input-send-button {
+      height: 1.75rem;
+      min-width: 3.125rem;
+      padding-inline: 0.4375rem;
+      gap: 0.25rem;
+      border-radius: 0.5rem;
+    }
+
+    [data-chat-input-container] .chat-input-send-button svg {
+      height: 0.8125rem;
+      width: 0.8125rem;
+    }
+  }
+
+  /* 设置页响应式也看面板容器，不看视口；同一 surface 会被 dialog 和 workspace 两种宿主复用。 */
+  [data-extension-settings-panel-container] {
+    container-type: inline-size;
+  }
+
+  [data-extension-settings-panel-container] .memory-model-picker-field {
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .memory-model-picker-shell {
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .memory-switch-control {
+    justify-self: end;
+    width: auto;
+  }
+
+  [data-extension-settings-compact-nav] {
+    display: flex;
+  }
+
+  [data-extension-settings-side-nav] {
+    display: none;
+  }
+
+  /* 导航切换仍用 viewport：这是外层设置壳的整体布局选择，不是单个设置行的内容降级。 */
+  @media (min-width: 640px) {
+    [data-extension-settings-compact-nav] {
+      display: none;
+    }
+
+    [data-extension-settings-side-nav] {
+      display: block;
+    }
+  }
+
+  /* 设置行窄宽时控件整行下沉，避免 label 被表单控件挤到不可读；switch 例外，因为它短到不配占整行。 */
+  @container (max-width: 720px) {
+    [data-extension-settings-panel-container] .settings-responsive-row {
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control {
+      justify-self: stretch;
+      width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .memory-switch-row {
+      grid-template-columns: minmax(0, 1fr) auto;
+      align-items: center;
+    }
+
+    [data-extension-settings-panel-container] .memory-switch-control {
+      justify-self: end;
+      width: auto;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control > :where(button:not([role="switch"]):not(.settings-responsive-icon-action), input, textarea, [role="combobox"]) {
+      width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control > .settings-responsive-icon-action {
+      flex: 0 0 2rem;
+      width: 2rem;
+    }
+
+    [data-extension-settings-panel-container] :where([role="switch"]) {
+      width: 2.75rem;
+      min-width: 2.75rem;
+      flex: 0 0 auto;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control > .relative {
+      width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control > .settings-responsive-actions {
+      width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-control :where(input, textarea, [role="combobox"]) {
+      max-width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .settings-panel-inset {
+      padding-inline: 1rem;
+      padding-block: 1rem;
+    }
+  }
+
+  /* 动作按钮在窄面板里允许换行并均分，不做横向滚动；设置页滚出横轴就是 UI 在骂人。 */
+  @container (max-width: 560px) {
+    [data-extension-settings-panel-container] .settings-action-row,
+    [data-extension-settings-panel-container] .settings-responsive-actions {
+      justify-content: flex-start;
+      width: 100%;
+    }
+
+    [data-extension-settings-panel-container] .settings-action-row {
+      flex-wrap: wrap;
+    }
+
+    [data-extension-settings-panel-container] .settings-responsive-actions > :where(button:not([role="switch"]), [role="button"]) {
+      flex: 1 1 9rem;
+    }
+  }
+
+  /* PageContextBar 的降级顺序写在 CSS：先藏摘要噪音，再收模式/刷新进更多菜单，不能让 React 各组件各猜一套。 */
+  [data-page-context-bar] {
+    container-type: inline-size;
+  }
+
+  [data-page-context-bar] .page-context-summary-shell,
+  [data-page-context-bar] [data-testid="page-context-summary"] {
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  [data-page-context-bar] .page-context-compact-controls {
+    display: none !important;
+  }
+
+  /* 1020px 先删可恢复的信息 chip，保住页面身份、模式和技术栈入口；摘要文本没资格挤掉操作。 */
+  @container (max-width: 1020px) {
+    [data-page-context-bar] .page-context-hostname,
+    [data-page-context-bar] .page-context-style-capture-badge,
+    [data-page-context-bar] .page-context-body-badge,
+    [data-page-context-bar] .page-context-profile-badge,
+    [data-page-context-bar] .page-context-technology-stack-trigger span {
+      display: none;
+    }
+  }
+
+  /* 680px 以下 inline 控件组整体收起；半藏半露的分组比直接进菜单更难用。 */
+  @container (max-width: 680px) {
+    [data-page-context-bar] .page-context-inline-control-group {
+      display: none !important;
+    }
+
+    [data-page-context-bar] .page-context-compact-controls {
+      display: inline-flex !important;
+    }
+  }
+
+  @container (max-width: 460px) {
+    [data-page-context-bar] .page-context-auto-label {
+      display: none;
+    }
+  }
+
+  /* Paint 参数面板可能被放进很窄的设置容器；容器查询让图片输入和控件优先纵向堆叠，不靠页面级断点猜。 */
+  [data-paint-settings-panel] {
+    container-type: inline-size;
+  }
+
+  @container (max-width: 280px) {
+    [data-paint-settings-panel] .paint-settings-row {
+      grid-template-columns: minmax(0, 1fr);
+      align-items: start;
+    }
+
+    [data-paint-settings-panel] .paint-settings-control {
+      width: 100%;
+    }
+
+    [data-paint-settings-panel] .paint-settings-control > :where(button, input, textarea, [role="combobox"]) {
+      width: 100%;
+    }
+
+    [data-paint-settings-panel] .paint-settings-control > .relative {
+      width: 100%;
+    }
+
+    [data-paint-settings-panel] .paint-input-images-header {
+      align-items: stretch;
+      flex-direction: column;
+    }
+
+    [data-paint-settings-panel] .paint-input-images-actions {
+      width: 100%;
+    }
+
+    [data-paint-settings-panel] .paint-input-images-actions > button {
+      width: 100%;
+    }
+  }
+
+  @container (max-width: 220px) {
+    [data-paint-settings-panel] .paint-input-images-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+}
+
+/* Tailwind v4 的 utilities 层会晚于 components 层输出；这些规则是运行时布局 owner，必须放在非 layer 级联里压住组件 class 上的工具类。 */
+[data-testid="extension-settings-dialog"] {
+  box-sizing: border-box;
+  width: 1024px;
+  min-width: 0;
+  max-width: calc(100vw - 1.5rem);
+}
+
+[data-model-manager-panel-container] {
+  container-type: inline-size;
+  --model-manager-detail-bottom-space: 1rem;
+  --model-manager-model-section-min: 15rem;
+  --model-manager-model-list-min: 12rem;
+}
+
+@media (min-width: 960px) {
+  [data-model-manager-panel-container] {
+    --model-manager-detail-bottom-space: 1.5rem;
+  }
+}
+
+@media (max-height: 720px) {
+  [data-model-manager-panel-container] {
+    --model-manager-model-section-min: 13rem;
+    --model-manager-model-list-min: 9.5rem;
+  }
+}
+
+@media (max-height: 560px) {
+  [data-model-manager-panel-container] {
+    --model-manager-model-section-min: 11.5rem;
+    --model-manager-model-list-min: 8rem;
+  }
+}
+
+[data-model-manager-panel-container] .model-manager-layout,
+[data-model-manager-panel-container] .model-manager-provider-nav,
+[data-model-manager-panel-container] .model-manager-provider-detail-body {
+  min-width: 0;
+  min-height: 0;
+}
+
+[data-model-manager-panel-container] .model-manager-provider-compact-select {
+  display: none !important;
+}
+
+[data-model-manager-panel-container] .model-manager-provider-detail-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  min-height: 100%;
+}
+
+[data-model-manager-panel-container] .model-manager-provider-detail-body {
+  padding-bottom: var(--model-manager-detail-bottom-space);
+  scroll-padding-bottom: var(--model-manager-detail-bottom-space);
+}
+
+[data-model-manager-panel-container] .model-manager-provider-detail-bottom-safe-area {
+  z-index: 1;
+  height: var(--model-manager-detail-bottom-space);
+  background: hsl(var(--background));
+}
+
+[data-model-manager-panel-container] .model-manager-provider-detail-tail-spacer {
+  height: calc(var(--model-manager-detail-bottom-space) + 0.75rem);
+}
+
+[data-model-manager-panel-container] .model-manager-model-section {
+  display: grid;
+  grid-template-rows: auto minmax(var(--model-manager-model-list-min), 1fr);
+  flex: 1 1 var(--model-manager-model-section-min);
+  gap: 0.75rem;
+  min-height: var(--model-manager-model-section-min);
+}
+
+[data-model-manager-panel-container] .model-manager-model-row {
+  container-type: inline-size;
+}
+
+[data-model-manager-panel-container] .model-manager-model-row-grid {
+  display: grid;
+  grid-template-columns: auto minmax(6rem, 1fr) minmax(6rem, min(18rem, 44cqw)) auto;
+  align-items: start;
+  min-width: 0;
+}
+
+[data-model-manager-panel-container] .model-manager-model-row-badges {
+  grid-column: 3 / 4;
+  grid-row: 1;
+  min-width: 0;
+  max-width: min(18rem, 44cqw);
+  padding-top: 0.125rem;
+}
+
+[data-model-manager-panel-container] .model-manager-model-row-badges > div {
+  justify-content: flex-end;
+  flex-wrap: nowrap;
+}
+
+[data-model-manager-panel-container] .model-manager-model-row-actions {
+  grid-column: 4 / 5;
+  grid-row: 1;
+}
+
+@container (max-width: 430px) {
+  [data-model-manager-panel-container] .model-manager-model-row-grid {
+    grid-template-columns: auto minmax(7rem, 1fr) auto;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-badges {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    max-width: 100%;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-badges > div {
+    flex-wrap: wrap;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row-actions {
+    grid-column: 3 / 4;
+    grid-row: 1;
+  }
+}
+
+@container (max-width: 700px) {
+  [data-model-manager-panel-container] .model-manager-layout {
+    flex-direction: column !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-nav {
+    width: 100% !important;
+    flex: 0 0 auto !important;
+    border-right-width: 0 !important;
+    border-bottom-width: 1px !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-search {
+    display: none !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-compact-select {
+    display: flex !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-scroll-shell {
+    display: none !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-summary {
+    padding-top: 0.75rem;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-detail-grid {
+    gap: 0.5rem;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-section {
+    gap: 0.5rem;
+    grid-template-rows: auto minmax(12rem, 1fr);
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-toolbar {
+    padding-block: 0.5rem;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-toolbar-inner {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-add-compact {
+    display: inline-flex !important;
+    width: auto !important;
+    flex: 0 0 auto !important;
+    padding-inline: 0.75rem;
+  }
+
+  [data-model-manager-panel-container] .model-manager-provider-add-footer {
+    display: none !important;
+  }
+}
+
+@container (min-width: 960px) {
+  [data-model-manager-panel-container] .model-manager-provider-detail-grid {
+    gap: 1.5rem;
+  }
+}
+
+@container (max-width: 500px) {
+  [data-model-manager-panel-container] .model-manager-provider-rows {
+    min-height: auto;
+  }
+
+  [data-model-manager-panel-container] .model-manager-model-row {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+[data-chat-input-container] .chat-input-more-tools-trigger {
+  display: none;
+}
+
+@container (max-width: 520px) {
+  [data-chat-input-container] .chat-input-toolbar {
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-tools {
+    gap: 0.25rem;
+  }
+
+  [data-chat-input-container] .chat-input-secondary-tool {
+    display: none;
+  }
+
+  [data-chat-input-container] .chat-input-more-tools-trigger {
+    display: inline-flex;
+  }
+
+  [data-chat-input-container] .chat-input-tool-button {
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    padding: 0.375rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-actions {
+    margin-left: auto;
+    gap: 0.375rem;
+    justify-content: flex-end;
+  }
+
+  [data-chat-input-container] .chat-input-send-button {
+    height: 1.875rem;
+    min-width: 3.375rem;
+    padding-inline: 0.5rem;
+    gap: 0.25rem;
+    border-radius: 0.625rem;
+  }
+}
+
+@container (max-width: 360px) {
+  [data-chat-input-container] .chat-input-composer-body {
+    padding-inline: 0.5rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-frame {
+    margin-top: 0.375rem;
+    padding-top: 0.375rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar {
+    align-items: stretch;
+    column-gap: 0.5rem;
+    row-gap: 0.375rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-tools {
+    display: grid;
+    flex-basis: 100%;
+    width: 100%;
+    grid-template-columns: repeat(auto-fit, minmax(1.75rem, 1fr));
+    gap: 0.25rem;
+    justify-items: center;
+  }
+
+  [data-chat-input-container] .chat-input-tool-button {
+    min-width: 1.75rem;
+    min-height: 1.75rem;
+    padding: 0.375rem;
+  }
+
+  [data-chat-input-container] .chat-input-toolbar-actions {
+    flex-basis: 100%;
+    width: 100%;
+    margin-left: 0;
+    gap: 0.375rem;
+    justify-content: flex-end;
+  }
+
+  [data-chat-input-container] .chat-input-send-button {
+    height: 1.75rem;
+    min-width: 3.125rem;
+    padding-inline: 0.4375rem;
+    gap: 0.25rem;
+  }
+}
+
+[data-extension-settings-panel-container] {
+  container-type: inline-size;
+}
+
+[data-extension-settings-compact-nav] {
+  display: flex;
+}
+
+[data-extension-settings-side-nav] {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  [data-extension-settings-compact-nav] {
+    display: none;
+  }
+
+  [data-extension-settings-side-nav] {
+    display: block;
+  }
+}
+
+@container (max-width: 720px) {
+  [data-extension-settings-panel-container] .settings-responsive-row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-control {
+    justify-self: stretch;
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .memory-switch-row {
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+  }
+
+  [data-extension-settings-panel-container] .memory-switch-control {
+    justify-self: end;
+    width: auto;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-control > :where(button:not([role="switch"]):not(.settings-responsive-icon-action), input, textarea, [role="combobox"]) {
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-control > .settings-responsive-icon-action {
+    flex: 0 0 2rem;
+    width: 2rem;
+  }
+
+  [data-extension-settings-panel-container] :where([role="switch"]) {
+    width: 2.75rem;
+    min-width: 2.75rem;
+    flex: 0 0 auto;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-control > .relative,
+  [data-extension-settings-panel-container] .settings-responsive-control > .settings-responsive-actions {
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-control :where(input, textarea, [role="combobox"]) {
+    max-width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .settings-panel-inset {
+    padding-inline: 1rem;
+    padding-block: 1rem;
+  }
+}
+
+@container (max-width: 560px) {
+  [data-extension-settings-panel-container] .settings-action-row,
+  [data-extension-settings-panel-container] .settings-responsive-actions {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  [data-extension-settings-panel-container] .settings-action-row {
+    flex-wrap: wrap;
+  }
+
+  [data-extension-settings-panel-container] .settings-responsive-actions > :where(button:not([role="switch"]), [role="button"]) {
+    flex: 1 1 9rem;
+  }
+}
+
+[data-page-context-bar] {
+  container-type: inline-size;
+}
+
+[data-page-context-bar] .page-context-summary-shell,
+[data-page-context-bar] [data-testid="page-context-summary"] {
+  min-width: 0;
+  overflow: hidden;
+}
+
+[data-page-context-bar] .page-context-compact-controls {
+  display: none !important;
+}
+
+@container (max-width: 1020px) {
+  [data-page-context-bar] .page-context-hostname,
+  [data-page-context-bar] .page-context-style-capture-badge,
+  [data-page-context-bar] .page-context-body-badge,
+  [data-page-context-bar] .page-context-profile-badge,
+  [data-page-context-bar] .page-context-technology-stack-trigger span {
+    display: none;
+  }
+}
+
+@container (max-width: 680px) {
+  [data-page-context-bar] .page-context-inline-control-group {
+    display: none !important;
+  }
+
+  [data-page-context-bar] .page-context-compact-controls {
+    display: inline-flex !important;
+  }
+}
+
+@container (max-width: 460px) {
+  [data-page-context-bar] .page-context-auto-label {
+    display: none;
+  }
+}
+
+@container (max-width: 280px) {
+  [data-paint-settings-panel] .paint-settings-row {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  [data-paint-settings-panel] .paint-settings-control,
+  [data-paint-settings-panel] .paint-settings-control > :where(button, input, textarea, [role="combobox"]),
+  [data-paint-settings-panel] .paint-settings-control > .relative,
+  [data-paint-settings-panel] .paint-input-images-actions,
+  [data-paint-settings-panel] .paint-input-images-actions > button {
+    width: 100%;
+  }
+
+  [data-paint-settings-panel] .paint-input-images-header {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
+
+@container (max-width: 220px) {
+  [data-paint-settings-panel] .paint-input-images-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+/* 聊天 Markdown 走紧凑阅读密度，不套文章页排版；消息流里大标题大段距只会制造滚动噪音。 */
+.markdown-body {
+  line-height: 1.62;
+  font-size: 0.875rem;
+}
+
+.markdown-body p {
+  margin-bottom: 0.45em;
+}
+
+.markdown-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* Fallback 只能退到消息容器提示：不支持 Highlights 时别再包 span，虚拟行高度会被你悄悄改掉。 */
+[data-msg-id][data-search-hit="true"] {
+  border-radius: 14px;
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.18) inset;
+}
+
+[data-msg-id][data-search-current="true"] {
+  border-radius: 14px;
+  box-shadow: 0 0 0 2px hsl(var(--primary) / 0.45) inset;
+  background: hsl(var(--primary) / 0.06);
+}
+
+[data-msg-id][data-jump-flash="true"] {
+  border-radius: 14px;
+  animation: olyq-jump-double-pulse 1.4s ease-out 1;
+}
+
+/* 问答导航的双闪只服务“目标问句已落位”这一件事；不要把搜索、top/bottom 或 hover 反馈顺手复用进来。 */
+@keyframes olyq-jump-double-pulse {
+  0% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.68) inset,
+      0 0 0 10px hsl(var(--primary) / 0.0);
+    background: hsl(var(--primary) / 0.0);
+  }
+  14% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.68) inset,
+      0 0 0 10px hsl(var(--primary) / 0.2);
+    background: hsl(var(--primary) / 0.1);
+  }
+  28% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.5) inset,
+      0 0 0 6px hsl(var(--primary) / 0.08);
+    background: hsl(var(--primary) / 0.05);
+  }
+  44% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.0) inset,
+      0 0 0 4px hsl(var(--primary) / 0.0);
+    background: hsl(var(--primary) / 0.0);
+  }
+  58% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.64) inset,
+      0 0 0 10px hsl(var(--primary) / 0.0);
+    background: hsl(var(--primary) / 0.0);
+  }
+  72% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.64) inset,
+      0 0 0 10px hsl(var(--primary) / 0.18);
+    background: hsl(var(--primary) / 0.09);
+  }
+  86% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.42) inset,
+      0 0 0 6px hsl(var(--primary) / 0.06);
+    background: hsl(var(--primary) / 0.04);
+  }
+  100% {
+    box-shadow:
+      0 0 0 2px hsl(var(--primary) / 0.0) inset,
+      0 0 0 4px hsl(var(--primary) / 0.0);
+    background: hsl(var(--primary) / 0.0);
+  }
+}
+
+@keyframes paint-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 0.9em;
+  margin-bottom: 0.32em;
+  line-height: 1.28;
+  font-weight: 650;
+  color: hsl(var(--foreground));
+}
+
+.markdown-body h1:first-child,
+.markdown-body h2:first-child,
+.markdown-body h3:first-child {
+  margin-top: 0;
+}
+
+.markdown-body h1 { font-size: 1.28em; }
+.markdown-body h2 { font-size: 1.18em; }
+.markdown-body h3 { font-size: 1.08em; }
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 { font-size: 1em; }
+
+.markdown-body hr {
+  border-color: hsl(var(--border) / 0.5);
+  margin: 1em 0;
+}
+
+/* 全局滚动条是视觉 token，不是滚动 owner；Firefox 用 scrollbar-*，Chromium/WebKit 用伪元素，两个世界只能各写各的。 */
+:root {
+  --olyq-scrollbar-size: 8px;
+  --olyq-scrollbar-thumb-radius: 999px;
+  --olyq-scrollbar-thumb: hsl(var(--muted-foreground) / 0.22);
+  --olyq-scrollbar-thumb-hover: hsl(var(--muted-foreground) / 0.34);
+  --olyq-scrollbar-thumb-active: hsl(var(--muted-foreground) / 0.46);
+  --olyq-scrollbar-track: hsl(var(--background) / 0.0);
+  --olyq-scrollbar-track-hover: hsl(var(--muted) / 0.22);
+  --olyq-scrollbar-corner: hsl(var(--background) / 0.0);
+}
+
+.dark {
+  --olyq-scrollbar-thumb: hsl(var(--muted-foreground) / 0.28);
+  --olyq-scrollbar-thumb-hover: hsl(var(--muted-foreground) / 0.42);
+  --olyq-scrollbar-thumb-active: hsl(var(--muted-foreground) / 0.56);
+  --olyq-scrollbar-track-hover: hsl(var(--muted) / 0.3);
+}
+
+body,
+body * {
+  scrollbar-width: thin;
+  scrollbar-color: var(--olyq-scrollbar-thumb) transparent;
+}
+
+body::-webkit-scrollbar,
+body *::-webkit-scrollbar {
+  width: var(--olyq-scrollbar-size);
+  height: var(--olyq-scrollbar-size);
+}
+
+body::-webkit-scrollbar-track,
+body *::-webkit-scrollbar-track,
+body::-webkit-scrollbar-corner,
+body *::-webkit-scrollbar-corner {
+  background: var(--olyq-scrollbar-track);
+}
+
+body::-webkit-scrollbar-thumb,
+body *::-webkit-scrollbar-thumb {
+  /* 24px 是触控和短滚动容器的底线；拇指再短就变成“猜这里能不能拖”的盲猜。 */
+  min-width: 24px;
+  min-height: 24px;
+  border: 2px solid transparent;
+  border-radius: var(--olyq-scrollbar-thumb-radius);
+  background: var(--olyq-scrollbar-thumb);
+  background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+body *::-webkit-scrollbar-thumb:hover {
+  background: var(--olyq-scrollbar-thumb-hover);
+  background-clip: padding-box;
+}
+
+body::-webkit-scrollbar-thumb:active,
+body *::-webkit-scrollbar-thumb:active {
+  background: var(--olyq-scrollbar-thumb-active);
+  background-clip: padding-box;
+}
+
+.olyq-scroll-area [data-slot="scroll-area-viewport"] {
+  /* Radix ScrollArea 的 gutter 固定住可用宽度，避免内容在滚动条出现/消失时横向跳一下。 */
+  scrollbar-gutter: stable both-edges;
+}
+
+/* KaTeX 自带颜色不认识 Olyq token；深色模式强制继承前景色，否则公式会在聊天气泡里表演隐身。 */
+.dark .katex {
+  color: hsl(var(--foreground));
+}
+
+.dark .katex .base,
+.dark .katex .strut {
+  color: hsl(var(--foreground));
+}
+
+.dark .katex .mord,
+.dark .katex .mop,
+.dark .katex .mbin,
+.dark .katex .mrel,
+.dark .katex .mopen,
+.dark .katex .mclose,
+.dark .katex .mpunct,
+.dark .katex .minner {
+  color: hsl(var(--foreground));
+}
+
+/* 块级公式用轻 surface 承载横向滚动；不要让公式把消息列撑宽，也不要把它和正文粘成一坨。 */
+.katex-display {
+  margin: 0.75em 0 !important;
+  padding: 0.55em 0.75em;
+  background: hsl(var(--muted) / 0.4);
+  border-radius: 0.5rem;
+  border: 1px solid hsl(var(--border) / 0.4);
+  overflow-x: auto;
+}
+
+/* GFM 任务列表的 checkbox 已经是语义标记，默认圆点再出现就是双重符号污染。:has 支持不够时宁可保守降级。 */
+.markdown-body li:has(> input[type="checkbox"]) {
+  list-style: none;
+  margin-left: -1rem;
+}
+
+/* Mermaid 宽图宁可横向滚动，也不压成 100% 缩略图；Gantt/sequence 被缩小后就是一张不可读的装饰画。 */
+.markdown-body .olyq-mermaid-inline-scroll {
+  max-width: 100%;
+}
+
+.markdown-body .olyq-mermaid-inline-trigger {
+  display: block;
+  width: max(100%, var(--olyq-mermaid-readable-width, 100%));
+  min-width: var(--olyq-mermaid-readable-width, 45rem);
+  max-width: none;
+}
+
+.markdown-body .olyq-mermaid-diagram {
+  width: 100%;
+  min-width: 100%;
+}
+
+.markdown-body .olyq-mermaid-diagram svg {
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  max-width: none;
+  height: auto;
+  text-rendering: geometricPrecision;
+}
+
+/* 预览层按视口钳制，普通消息按可读宽度钳制；两者不是同一个约束，别合并。 */
+.olyq-mermaid-diagram-preview {
+  width: min(86vw, 80rem);
+}
+
+.olyq-mermaid-diagram-preview svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  text-rendering: geometricPrecision;
+}
+
+/* Markdown 图片只加轻 hover 反馈，不参与卡片化；聊天内容不是相册，别把每张图都抬成独立模块。 */
+.markdown-body img {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.markdown-body img:hover {
+  box-shadow: 0 4px 20px hsl(var(--primary) / 0.15);
+}
+
+/* 用户气泡继承当前前景色；prose 默认 token 会把链接/标题拉回正文色，这里统一改成 currentColor，别逐元素补补丁。 */
+.user-bubble-markdown .markdown-body {
+  color: inherit;
+}
+.user-bubble-markdown .markdown-body h1,
+.user-bubble-markdown .markdown-body h2,
+.user-bubble-markdown .markdown-body h3,
+.user-bubble-markdown .markdown-body h4 {
+  color: inherit;
+}
+.user-bubble-markdown .markdown-body code {
+  background: hsl(var(--muted) / 0.55);
+  border-color: hsl(var(--border) / 0.65);
+  color: inherit;
+}
+.user-bubble-markdown .markdown-body a {
+  color: inherit;
+  text-decoration-color: hsl(var(--foreground) / 0.42);
+}
+.user-bubble-markdown .markdown-body blockquote {
+  border-left-color: hsl(var(--border) / 0.85);
+  color: inherit;
+  opacity: 0.85;
+}
+.user-bubble-markdown .prose {
+  --tw-prose-body: currentColor;
+  --tw-prose-headings: currentColor;
+  --tw-prose-links: currentColor;
+  --tw-prose-bold: currentColor;
+  --tw-prose-code: currentColor;
+  --tw-prose-quotes: currentColor;
+}

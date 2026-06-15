@@ -1,0 +1,14 @@
+{
+  "appName": {
+    "message": "Olyq"
+  },
+  "appDescription": {
+    "message": "Open-source multi-model AI workspace for the browser: page context, Paint, search, remote MCP, and topics in one sidebar."
+  },
+  "appActionTitle": {
+    "message": "Open Olyq"
+  },
+  "commandOpenPanel": {
+    "message": "Open Olyq sidebar"
+  }
+}

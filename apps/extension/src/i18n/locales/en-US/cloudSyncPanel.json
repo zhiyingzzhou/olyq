@@ -1,0 +1,331 @@
+{
+  "cloudSyncPanel": {
+    "nav": {
+      "sections": {
+        "base": "Base data",
+        "backup": "Cloud sync & backup"
+      },
+      "items": {
+        "dataDir": "Data directory",
+        "localBackup": "Local backup",
+        "webdav": "WebDAV",
+        "s3": "S3-compatible storage"
+      }
+    },
+    "actions": {
+      "backup": "Create backup snapshot",
+      "restore": "Restore from backup snapshot",
+      "manage": "Manage backup snapshots",
+      "download": "Download",
+      "copy": "Copy",
+      "refresh": "Refresh"
+    },
+    "toast": {
+      "copyFailed": "Copy failed: check clipboard permission."
+    },
+    "snapshotBackup": {
+      "title": "Backup & restore",
+      "desc": "Create a restorable ZIP snapshot for recovery, migration, or rollback. This is the only backup entry point.",
+      "autoTitle": "Auto-create snapshots"
+    },
+    "liteBackup": {
+      "title": "Lite backup",
+      "desc": "Keeps chats, settings, memories, and Paint metadata; skips attachment and image binaries, and removes related attachment references."
+    },
+    "autoSync": {
+      "title": "Auto sync",
+      "off": "Off",
+      "minute_interval": "{{count}} min",
+      "hour_interval": "{{count}} h"
+    },
+    "sync": {
+      "title": "Multi-device sync",
+      "desc": "Merge current state such as assistants, topics, and messages across devices. It does not create backups and cannot be used for rollback recovery.",
+      "runLabel": "Current state",
+      "fileLabel": "Sync state file",
+      "syncNow": "Sync current state",
+      "never": "Multi-device sync has not run yet.",
+      "lastSuccess": "Last success: {{time}}, merged {{merged}} topics; this does not create a backup",
+      "lastFailure": "Last failure: {{time}}",
+      "toast": {
+        "synced": "Multi-device sync completed, merged {{merged}} topics"
+      }
+    },
+    "maxBackups": {
+      "title": "Max snapshots",
+      "unlimited": "Unlimited"
+    },
+    "remoteBackups": {
+      "count": "{{count}} backup snapshots",
+      "empty": "No remote backup snapshots.",
+      "unknownTime": "Unknown time",
+      "restoreConfirmTitle": "Restore this backup snapshot?",
+      "restoreConfirmDesc": "This will replace local data with “{{name}}”, including chats, settings, memories, and other data in the backup."
+    },
+    "dataDir": {
+      "dataSettingsTitle": "Data settings",
+      "backupRestore": "Snapshot backup",
+      "dataDirTitle": "Data directory",
+      "appData": "App data",
+      "appDataDesc": "localStorage (browser local storage)",
+      "viewData": "View data",
+      "viewDataDialog": {
+        "title": "View data",
+        "desc": "Shows a local-only overview of data stored in localStorage / chrome.storage.local / IndexedDB."
+      },
+      "kbFiles": "Knowledge memory",
+      "deleteFiles": "Clear memory",
+      "deleteFilesDialog": {
+        "title": "Clear knowledge memory?",
+        "desc": "This will clear knowledge-memory data and cannot be undone. Chat attachments and Paint images are not deleted."
+      },
+      "clearCache": "Clear cache",
+      "clearCacheDialog": {
+        "title": "Clear cache?",
+        "desc": "Clears CacheStorage and other caches. Chats and settings will not be deleted."
+      },
+      "resetData": "Reset data",
+      "resetDialog": {
+        "title": "Reset all data?",
+        "desc": "This will remove chats, attachments, memories, model configs, and sync configs stored locally. This cannot be undone."
+      },
+      "toast": {
+        "backupExported": "Backup exported",
+        "restoreDone": "Restore completed (chat data refreshed; reopen settings to load the latest config).",
+        "copied": "Copied to clipboard",
+        "filesDeleted": "Knowledge memory cleared",
+        "cacheCleared": "Cache cleared",
+        "resetDone": "Data reset; reloading…"
+      }
+    },
+    "localBackup": {
+      "title": "Local snapshot backup",
+      "dir": "Snapshot export directory",
+      "dirDesc": "Optional: after granting a directory, each new backup snapshot will also be exported as a ZIP file (best-effort).",
+      "dirDescUnsupported": "This browser does not support picking a directory. Snapshots will only be stored locally (IndexedDB) and can be downloaded in “Manage backup snapshots”.",
+      "dirPlaceholder": "Select a snapshot export directory",
+      "browse": "Browse",
+      "clear": "Clear",
+      "manageTitle": "Local backup snapshot manager",
+      "manageDesc": "Snapshots are stored in the browser’s IndexedDB. You can restore, download, or delete them here.",
+      "manageCount": "{{count}} backup snapshots",
+      "manageEmpty": "No backup snapshots.",
+      "status": {
+        "saving": "Saving auto snapshot settings...",
+        "savedAt": "Saved: {{time}}",
+        "scheduleActive": "Auto snapshots are enabled",
+        "autoDisabled": "Auto snapshots are off",
+        "autoDisabledDesc": "After enabling, the first automatic snapshot runs after one full interval.",
+        "nextRunAt": "Next around {{time}}; the browser may delay it because of sleep or resource scheduling.",
+        "nextRunPending": "Waiting for the background schedule; the first run is not immediate.",
+        "never": "Automatic snapshots have not run yet.",
+        "lastSuccess": "Last success: {{time}}",
+        "lastFailure": "Last failure: {{time}}, {{error}}",
+        "cleaned": "Cleaned up {{count}} old backup snapshots in this run",
+        "fileExportDegraded": "Directory export needs reauthorization; the snapshot was still saved to local IndexedDB.",
+        "reauthorizeDir": "Reauthorize directory",
+        "fastFullBackupWarning": "A 5-minute automatic snapshot is not guaranteed to run exactly on time. Full backups can increase background export cost; use lite backup or a longer interval.",
+        "queryFailed": "Unable to read the background auto snapshot schedule",
+        "detail": {
+          "action": "Details",
+          "title": "Auto snapshot failure details",
+          "desc": "Shows readable diagnostics recorded by the automatic task. Copy the full diagnostics when you need to share them for troubleshooting.",
+          "copyDiagnostics": "Copy diagnostics",
+          "summary": "Summary",
+          "time": "Time",
+          "runtime": "Runtime",
+          "phase": "Phase",
+          "taskType": "Task",
+          "requestId": "Request ID",
+          "errorKey": "Error key",
+          "reason": "Reason code",
+          "causeReason": "Cause reason",
+          "domainId": "Backup domain",
+          "stage": "Export stage",
+          "path": "Archive path",
+          "message": "Raw message",
+          "causeMessage": "Cause",
+          "note": "Note",
+          "backupProfile": "Backup profile",
+          "syncInterval": "Interval minutes",
+          "maxBackups": "Max snapshots",
+          "nextRun": "Next schedule",
+          "raw": "Raw status",
+          "empty": "This failure record does not contain more technical details. It will refresh after the next automatic run.",
+          "unknownValue": "Unrecognized diagnostic value",
+          "unknownReason": "Unrecognized failure reason",
+          "unknownDomain": "Unrecognized data scope",
+          "notes": {
+            "reasonCodeMissingLegacy": "This is an older failure record. The automatic task only saved a generic error and did not save a reason code. If the next automatic snapshot still fails, it will write the real reason code.",
+            "statusMissingDetail": "This failure status is missing details because it was written by an older path. It will refresh after the next automatic task."
+          },
+          "domainLabels": {
+            "config_shared_storage": "Shared settings",
+            "config_local_storage": "Local settings",
+            "workspace_paint": "Paint workspace",
+            "chat_messages": "Chat messages",
+            "memory_records": "Memory data",
+            "attachments_records": "Attachment data"
+          },
+          "valueLabels": {
+            "runtime": {
+              "offscreen": "Offscreen document",
+              "service_worker": "Service Worker"
+            },
+            "phase": {
+              "ensure_offscreen_document": "Prepare offscreen document",
+              "wait_offscreen_port": "Wait for offscreen connection",
+              "offscreen_rpc": "Call offscreen task",
+              "offscreen_result": "Read offscreen result",
+              "service_worker_fallback": "Service Worker fallback",
+              "service_worker_task": "Service Worker task",
+              "local_backup_snapshot": "Create local snapshot",
+              "status_missing_detail": "Read older failure status",
+              "webdav_structured_sync": "WebDAV state sync",
+              "s3_structured_sync": "S3 state sync",
+              "flush": "Flush pending writes",
+              "export": "Export backup domain",
+              "validate": "Validate backup domain",
+              "encode": "Encode backup domain",
+              "manifest": "Generate backup domain manifest"
+            },
+            "taskType": {
+              "local_backup_auto": "Local auto snapshot",
+              "webdav_auto": "WebDAV auto sync",
+              "s3_auto": "S3 auto sync"
+            },
+            "backupProfile": {
+              "full": "Full backup",
+              "lite": "Lite backup"
+            }
+          },
+          "reasonCodes": {
+            "backup_format_detail_missing": "Older failure record is missing the concrete reason code. The next automatic snapshot will write the real reason.",
+            "backup_archive_export_domain_flush_failed": "Failed to flush pending writes for a backup domain.",
+            "backup_archive_export_domain_export_failed": "Failed to export a backup domain.",
+            "backup_archive_export_domain_validate_failed": "Failed to validate a backup domain.",
+            "backup_archive_export_domain_encode_failed": "Failed to encode a backup domain.",
+            "backup_archive_export_domain_manifest_failed": "Failed to generate the backup domain manifest.",
+            "backup_archive_app_version_missing": "The backup manifest is missing the app version.",
+            "backup_archive_domain_blob_path_invalid": "A backup domain contains an invalid attachment path.",
+            "backup_archive_json_entry_missing": "The backup archive is missing a required JSON file.",
+            "backup_archive_json_entry_invalid_json": "A JSON file in the backup archive cannot be parsed.",
+            "backup_archive_domain_manifest_domain_id_missing": "A backup domain manifest is missing its data-scope identifier.",
+            "backup_archive_domain_manifest_hash_or_data_path_missing": "A backup domain manifest is missing its data path or checksum.",
+            "backup_archive_domain_manifest_numeric_fields_invalid": "A backup domain manifest contains invalid numeric fields.",
+            "backup_archive_manifest_version_unsupported": "The backup manifest version is not supported.",
+            "backup_archive_manifest_domains_array_required": "The backup manifest data-scope list has an invalid format.",
+            "backup_archive_attachments_manifest_array_required": "The attachment manifest has an invalid format.",
+            "backup_archive_attachments_blob_entry_missing": "The backup archive is missing an attachment file.",
+            "backup_archive_attachments_blob_missing_for_record": "An attachment record is missing its file.",
+            "backup_archive_serialized_archive_size_invalid": "The backup archive size exceeds the limit.",
+            "backup_archive_input_blob_invalid": "The imported backup file is not a valid Blob.",
+            "backup_archive_zip_load_failed": "Failed to read the backup ZIP.",
+            "backup_archive_manifest_file_missing": "The backup ZIP is missing its manifest file.",
+            "backup_archive_domain_descriptor_missing": "The backup contains a data scope that is not registered in this version.",
+            "backup_archive_domain_hash_mismatch": "The backup domain checksum does not match.",
+            "backup_archive_file_count_mismatch": "The backup ZIP file count does not match the manifest.",
+            "backup_archive_unexpected_file": "The backup ZIP contains an unregistered file.",
+            "backup_archive_parse_failed": "Failed to parse the backup ZIP.",
+            "backup_chat_messages_topic_id_missing": "A chat message backup record is missing its topic ID.",
+            "backup_chat_messages_array_required": "Chat message backup data is not an array.",
+            "backup_chat_messages_count_limit_exceeded": "Chat message count exceeds the backup limit.",
+            "backup_memory_records_array_required": "Memory backup data is not an array.",
+            "backup_memory_records_record_invalid": "Memory backup contains an invalid record.",
+            "attachments_records_data_blob_like_missing": "An attachment record is missing readable Blob data.",
+            "attachments_records_size_mismatch": "Attachment metadata size does not match the actual Blob size.",
+            "attachments_records_missing_blob_record": "A chat or workspace item references a missing attachment record.",
+            "attachments_records_count_limit_exceeded": "Attachment count exceeds the backup limit.",
+            "attachments_records_item_size_limit_exceeded": "A single attachment exceeds the backup size limit.",
+            "attachments_records_total_size_limit_exceeded": "Total attachment size exceeds the backup limit.",
+            "attachments_records_selected_count_limit_exceeded": "Selected attachment count exceeds the backup limit.",
+            "attachments_records_record_required": "Attachment backup contains a non-object record.",
+            "attachments_records_meta_record_required": "Attachment metadata is not an object.",
+            "attachments_records_kind_invalid": "Attachment type is invalid.",
+            "attachments_records_non_empty_string_required": "An attachment record is missing a required text field.",
+            "attachments_records_finite_non_negative_integer_required": "An attachment record contains an invalid numeric field.",
+            "attachments_records_duplicate_id": "Attachment backup contains duplicate IDs.",
+            "attachments_records_array_required": "Attachment backup data is not an array.",
+            "attachments_records_manifest_array_required": "Attachment manifest is not an array."
+          }
+        }
+      },
+      "toast": {
+        "dirPickerUnsupported": "Directory picker is not supported (File System Access API unavailable).",
+        "dirSelected": "Directory selected: {{name}}",
+        "dirAuthorized": "Snapshot export directory reauthorized",
+        "dirCleared": "Backup directory cleared",
+        "dirPermissionDenied": "Write permission to the directory was not granted",
+        "exportFailed": "Export to directory failed: {{error}}",
+        "backedUp": "Local backup snapshot created",
+        "cleaned": "Cleaned up {{count}} old backup snapshots",
+        "backupMissing": "Backup snapshot content is missing (it may have been cleaned up)",
+        "restored": "Restored from a local backup snapshot (chat data refreshed)",
+        "deleted": "Backup snapshot deleted"
+      }
+    },
+    "webdav": {
+      "title": "WebDAV",
+      "url": "WebDAV URL",
+      "username": "WebDAV username",
+      "usernamePlaceholder": "WebDAV username",
+      "password": "WebDAV password",
+      "passwordPlaceholder": "WebDAV password",
+      "path": "WebDAV path",
+      "targetFile": "Backup snapshot file",
+      "targetFileDesc": "Path is always a remote directory. Snapshot backup writes a ZIP in that directory; state sync writes olyq-sync-state.v1.json in the same directory.",
+      "actions": {
+        "backup": "Backup to WebDAV",
+        "restore": "Restore from WebDAV"
+      },
+      "manage": {
+        "title": "Choose WebDAV backup",
+        "description": "Select an Olyq ZIP snapshot from the WebDAV directory to restore."
+      },
+      "disableStream": "Disable streaming upload",
+      "disableStreamDesc": "When enabled, load the file into memory before uploading. Helps with some WebDAV servers that don't support chunked uploads, but increases memory usage.",
+      "toast": {
+        "backedUp": "WebDAV backup snapshot created",
+        "restoreUrlMissing": "No restorable WebDAV backup snapshot was found. Create a backup under the current WebDAV path first.",
+        "restored": "Restored from a WebDAV backup snapshot (chat data refreshed)"
+      }
+    },
+    "s3": {
+      "title": "S3-compatible storage",
+      "description": "Object storage compatible with the AWS S3 API, e.g. AWS S3, Cloudflare R2, Alibaba OSS, Tencent COS, etc.",
+      "fields": {
+        "apiUrl": "API endpoint",
+        "apiUrlPlaceholder": "https://s3.amazonaws.com",
+        "region": "Region",
+        "regionPlaceholder": "Region, e.g. us-east-1",
+        "bucket": "Bucket",
+        "bucketPlaceholder": "Bucket, e.g. my-backup",
+        "accessKeyId": "Access Key ID",
+        "accessKeyIdPlaceholder": "Access Key ID",
+        "secretAccessKey": "Secret Access Key",
+        "secretAccessKeyPlaceholder": "Secret Access Key",
+        "backupDir": "Backup prefix (optional)",
+        "backupDirPlaceholder": "e.g. olyq"
+      },
+      "actions": {
+        "backup": "Backup to S3",
+        "connectionTest": "Connection test",
+        "testConnection": "Test connection"
+      },
+      "manage": {
+        "title": "Manage S3 backups",
+        "description": "View, restore, or delete backup snapshots on S3.",
+        "count": "{{count}} backup snapshots",
+        "empty": "No backup snapshots."
+      },
+      "toast": {
+        "backedUp": "S3 backup snapshot created",
+        "cleaned": "Cleaned up {{count}} old backup snapshots",
+        "restored": "Restored from an S3 backup snapshot",
+        "deleted": "Backup snapshot deleted",
+        "connectionOk": "Connected",
+        "connectionFailedTitle": "Connection failed"
+      }
+    }
+  }
+}

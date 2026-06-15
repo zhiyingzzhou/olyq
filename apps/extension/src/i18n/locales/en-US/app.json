@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "Olyq",
+    "loadingWorkspace": "Loading workspace",
+    "workspaceCrashedTitle": "Workspace is temporarily unavailable",
+    "workspaceCrashedDescription": "This extension page failed to render. Refresh the extension page to continue."
+  },
+  "status": {
+    "swAlive": "Service Worker Active",
+    "swDisconnected": "Service Worker Disconnected",
+    "offscreenReady": "Offscreen Ready",
+    "offscreenNotReady": "Offscreen Not Ready",
+    "mcpServers": "MCP Servers: {{count}}",
+    "shortSw": "SW",
+    "shortOff": "OFF"
+  },
+  "welcome": {
+    "badge": "New topic",
+    "title": "Start a new conversation",
+    "description": "Ask directly, or organize some context first and send it to {{modelName}}.",
+    "askTitle": "Ask anything",
+    "askDesc": "Draft, summarize, analyze the current page, or break down a complex task step by step.",
+    "attachTitle": "Bring context",
+    "attachDesc": "Paste long text, drop in images, or add files so the model sees the full picture.",
+    "modelTitle": "Switch models",
+    "modelDesc": "Mention a model with @, or switch to one that fits writing, coding, search, or reasoning.",
+    "hintTitle": "Quick start"
+  }
+}

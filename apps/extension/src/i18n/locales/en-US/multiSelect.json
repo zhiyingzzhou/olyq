@@ -1,0 +1,7 @@
+{
+  "multiSelect": {
+    "selectedCount": "{{count}} selected",
+    "confirmDelete": "Delete {{count}} selected messages",
+    "confirmDeleteDesc": "This removes the selected messages and reclaims attachments referenced only by them."
+  }
+}

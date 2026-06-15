@@ -1,0 +1,11 @@
+{
+  "selectionPrompt": {
+    "targetChinese": "Chinese",
+    "targetEnglish": "English",
+    "source": "\n\nSource: {{title}}\n{{url}}",
+    "translate": "Translate the following content into {{targetLanguage}}, preserving tone and formatting:\n\n\"{{text}}\"{{source}}",
+    "summarize": "Summarize the following content as bullet points and add a one-sentence conclusion:\n\n\"{{text}}\"{{source}}",
+    "explain": "Explain the following content and add any necessary background and examples:\n\n\"{{text}}\"{{source}}",
+    "ask": "Analyze and give suggestions based on the following quote:\n\n\"{{text}}\"{{source}}"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "exportTopic": {
+    "title": "Export topic",
+    "fallbackTitle": "Chat Export",
+    "formatMarkdown": "Markdown",
+    "formatHtml": "HTML",
+    "formatWord": "Word",
+    "exportedAt": "Exported at",
+    "messageCount": "{{count}} messages",
+    "reasoning": "Reasoning",
+    "images": "Image attachments",
+    "files": "File attachments",
+    "attachmentMissing": "Attachment is unavailable or has been cleaned up",
+    "toolCalls": "Tool calls",
+    "toolStatus": "Status",
+    "toolArgs": "Arguments",
+    "toolResult": "Result",
+    "webSearchProvider": "Provider",
+    "webSearchQuery": "Query",
+    "translations": "Translations",
+    "translationItem": "Translation: {{language}}",
+    "error": "Error"
+  }
+}

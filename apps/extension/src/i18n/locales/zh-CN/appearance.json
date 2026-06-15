@@ -1,0 +1,38 @@
+{
+  "appearance": {
+    "description": "自定义主题与界面语言。",
+    "darkMode": "深色模式",
+    "darkModeDesc": "开启后使用深色主题。",
+    "themeColor": "主题颜色",
+    "themeColorDesc": "切换深色模式的完整色彩系统。",
+    "themeColorPresetList": "主题颜色预设",
+    "themeColorHexLabel": "自定义主题颜色 Hex",
+    "themeColorPresets": {
+      "olyqBrand": "Olyq 品牌",
+      "techBlue": "科技蓝",
+      "emerald": "翡翠绿",
+      "amber": "琥珀橙",
+      "rose": "玫瑰红",
+      "cyan": "青色",
+      "lavender": "薰衣草",
+      "coral": "珊瑚粉",
+      "mint": "薄荷绿",
+      "sunset": "日落橙",
+      "jade": "翠绿",
+      "deepSpace": "深空蓝"
+    },
+    "pinTopicsToTop": "置顶话题浮顶显示",
+    "pinTopicsToTopDesc": "仅在话题列表显示层把已置顶话题浮到顶部，不改变助手切换时的默认落点。",
+    "extensionSettingsOpenMode": "设置打开方式",
+    "extensionSettingsOpenModeDesc": "选择点击扩展设置入口时使用弹窗，还是进入完整工作区页面。",
+    "extensionSettingsOpenModeDialog": "弹窗",
+    "extensionSettingsOpenModeWorkspace": "工作区页面",
+    "toggleTheme": "切换主题",
+    "language": "语言",
+    "languageDesc": "切换界面语言。",
+    "languages": {
+      "zhCN": "中文",
+      "enUS": "English"
+    }
+  }
+}

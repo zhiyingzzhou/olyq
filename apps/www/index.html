@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/icons/olyq-32.png" />
+    <link rel="apple-touch-icon" href="/icons/olyq-256.png" />
+    <script>
+      ;(() => {
+        try {
+          const root = document.documentElement
+          const storedTheme = window.localStorage.getItem('theme')
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const resolvedTheme =
+            storedTheme === 'light' || storedTheme === 'dark'
+              ? storedTheme
+              : prefersDark
+                ? 'dark'
+                : 'light'
+
+          root.classList.toggle('dark', resolvedTheme === 'dark')
+          root.style.colorScheme = resolvedTheme
+        } catch {
+          const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
+          document.documentElement.classList.toggle('dark', prefersDark)
+          document.documentElement.style.colorScheme = prefersDark ? 'dark' : 'light'
+        }
+      })()
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Olyq 是浏览器里的开源多模型 AI 工作台，把网页上下文、多模型对话、Paint、搜索、远程 MCP、话题和本地备份放进同一个侧边栏。"
+    />
+    <meta name="author" content="Olyq" />
+    <meta property="og:title" content="Olyq | 浏览器里的开源多模型 AI 工作台" />
+    <meta
+      property="og:description"
+      content="网页上下文、多模型对话、Paint、搜索、远程 MCP、话题和本地备份，放进同一个浏览器侧边栏。"
+    />
+    <meta property="og:site_name" content="Olyq" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="/product/olyq-page-context-zh-light.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Olyq | 浏览器里的开源多模型 AI 工作台" />
+    <meta
+      name="twitter:description"
+      content="网页上下文、多模型对话、Paint、搜索、远程 MCP、话题和本地备份，放进同一个浏览器侧边栏。"
+    />
+    <meta name="twitter:image" content="/product/olyq-page-context-zh-light.png" />
+    <title>Olyq | 浏览器里的开源多模型 AI 工作台</title>
+  </head>
+  <body class="font-primary h-full bg-white [--pattern-fg:var(--color-charcoal-900)]/10 dark:bg-black dark:[--pattern-fg:var(--color-neutral-100)]/30">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

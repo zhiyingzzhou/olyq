@@ -1,0 +1,46 @@
+version: 2
+
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:00"
+      timezone: Asia/Shanghai
+    labels:
+      - dependencies
+      - github-actions
+    open-pull-requests-limit: 2
+    groups:
+      github-actions-major:
+        update-types:
+          - major
+      github-actions-minor-patch:
+        update-types:
+          - minor
+          - patch
+
+  - package-ecosystem: npm
+    directories:
+      - /
+      - /apps/extension
+      - /apps/www
+    schedule:
+      interval: weekly
+      day: monday
+      time: "09:30"
+      timezone: Asia/Shanghai
+    labels:
+      - dependencies
+    open-pull-requests-limit: 2
+    groups:
+      npm-major:
+        update-types:
+          - major
+        group-by: dependency-name
+      npm-minor-patch:
+        update-types:
+          - minor
+          - patch
+        group-by: dependency-name

@@ -1,0 +1,3279 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-09T22:56:04.484Z",
+  "sourceRules": {
+    "path": "public/data/technology-fingerprints/fingerprint-rules.json",
+    "snapshotVersion": "6.12.2",
+    "generatedAt": "2026-05-08T04:48:38.908Z",
+    "ruleCount": 7098,
+    "technologyCount": 7193,
+    "categoryCount": 108
+  },
+  "iconCount": 696,
+  "sources": {
+    "ts": "gh/glincker/thesvg@v2.3.0/public/icons/",
+    "si": "npm/simple-icons@16.18.1/icons/",
+    "di": "npm/devicon@2.17.0/icons/",
+    "mit": "npm/material-icon-theme@5.34.0/icons/",
+    "ski": "gh/tandpfun/skill-icons@7f7e691e71aec64e8354bf697835e009d1ad80f8/icons/",
+    "tb": "npm/@tabler/icons@3.44.0/icons/outline/"
+  },
+  "icons": {
+    "a-frame": [
+      "ts",
+      "a-frame/default.svg"
+    ],
+    "accuweather": [
+      "ts",
+      "accuweather/default.svg"
+    ],
+    "ace": [
+      "ts",
+      "ace/default.svg"
+    ],
+    "ada": [
+      "ts",
+      "ada/default.svg"
+    ],
+    "adminer": [
+      "ts",
+      "adminer/default.svg"
+    ],
+    "adobe": [
+      "ts",
+      "adobe/default.svg"
+    ],
+    "adobe-fonts": [
+      "ts",
+      "adobe-fonts/default.svg"
+    ],
+    "adonisjs": [
+      "ts",
+      "adonisjs/default.svg"
+    ],
+    "adroll": [
+      "ts",
+      "adroll/default.svg"
+    ],
+    "adyen": [
+      "ts",
+      "adyen/default.svg"
+    ],
+    "aero": [
+      "ts",
+      "aero/default.svg"
+    ],
+    "affirm": [
+      "ts",
+      "affirm/default.svg"
+    ],
+    "afterpay": [
+      "ts",
+      "afterpay/default.svg"
+    ],
+    "aftership": [
+      "ts",
+      "aftership/default.svg"
+    ],
+    "agora": [
+      "ts",
+      "agora/default.svg"
+    ],
+    "ahrefs": [
+      "ts",
+      "ahrefs/default.svg"
+    ],
+    "airtable": [
+      "ts",
+      "airtable/default.svg"
+    ],
+    "akamai": [
+      "ts",
+      "akamai/default.svg"
+    ],
+    "akaunting": [
+      "ts",
+      "akaunting/default.svg"
+    ],
+    "akka": [
+      "ts",
+      "akka/default.svg"
+    ],
+    "algolia": [
+      "ts",
+      "algolia/default.svg"
+    ],
+    "alibaba": [
+      "ts",
+      "alibaba/default.svg"
+    ],
+    "almalinux": [
+      "ts",
+      "almalinux/default.svg"
+    ],
+    "alpine-js": {
+      "light": [
+        "ski",
+        "AlpineJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "AlpineJS-Dark.svg"
+      ]
+    },
+    "amazon": [
+      "ts",
+      "amazon/default.svg"
+    ],
+    "amazon-web-services": [
+      "ts",
+      "amazon-web-services/default.svg"
+    ],
+    "american-express": [
+      "ts",
+      "american-express/default.svg"
+    ],
+    "amp": [
+      "ts",
+      "amp/default.svg"
+    ],
+    "angular": [
+      "ts",
+      "angular/default.svg"
+    ],
+    "angularjs": [
+      "ts",
+      "angularjs/default.svg"
+    ],
+    "animate": [
+      "ts",
+      "animate/default.svg"
+    ],
+    "ant-design": [
+      "ts",
+      "ant-design/default.svg"
+    ],
+    "antv": [
+      "ts",
+      "antv/default.svg"
+    ],
+    "apache": [
+      "ts",
+      "apache/default.svg"
+    ],
+    "apache-tomcat": [
+      "ts",
+      "apache-tomcat/default.svg"
+    ],
+    "apollo": [
+      "mit",
+      "apollo.svg"
+    ],
+    "appian": [
+      "ts",
+      "appian/default.svg"
+    ],
+    "apple": [
+      "ts",
+      "apple/default.svg"
+    ],
+    "apple-pay": [
+      "ts",
+      "apple-pay/default.svg"
+    ],
+    "appwrite": [
+      "ts",
+      "appwrite/default.svg"
+    ],
+    "arc": [
+      "ts",
+      "arc/default.svg"
+    ],
+    "arcgis": [
+      "ts",
+      "arcgis/default.svg"
+    ],
+    "arlo": [
+      "ts",
+      "arlo/default.svg"
+    ],
+    "arm": [
+      "ts",
+      "arm/default.svg"
+    ],
+    "asana": [
+      "ts",
+      "asana/default.svg"
+    ],
+    "asciidoc": [
+      "mit",
+      "asciidoc.svg"
+    ],
+    "asciidoctor": [
+      "ts",
+      "asciidoctor/default.svg"
+    ],
+    "asciinema": [
+      "ts",
+      "asciinema/default.svg"
+    ],
+    "astra": [
+      "ts",
+      "astra/default.svg"
+    ],
+    "astro": [
+      "ts",
+      "astro/default.svg"
+    ],
+    "atlassian": [
+      "ts",
+      "atlassian/default.svg"
+    ],
+    "aurelia": [
+      "ts",
+      "aurelia/default.svg"
+    ],
+    "auth0": [
+      "ts",
+      "auth0/default.svg"
+    ],
+    "authy": [
+      "ts",
+      "authy/default.svg"
+    ],
+    "auto": [
+      "mit",
+      "auto.svg"
+    ],
+    "aws": [
+      "ts",
+      "aws/default.svg"
+    ],
+    "axios": [
+      "ts",
+      "axios/default.svg"
+    ],
+    "azure": [
+      "di",
+      "azure/azure-original.svg"
+    ],
+    "azure-monitor": [
+      "ts",
+      "azure-monitor/default.svg"
+    ],
+    "babel": [
+      "ts",
+      "babel/default.svg"
+    ],
+    "backbone": [
+      "ts",
+      "backbone/default.svg"
+    ],
+    "baidu": [
+      "ts",
+      "baidu/default.svg"
+    ],
+    "bandsintown": [
+      "ts",
+      "bandsintown/default.svg"
+    ],
+    "baremetrics": [
+      "ts",
+      "baremetrics/default.svg"
+    ],
+    "base": [
+      "ts",
+      "base/default.svg"
+    ],
+    "base-ui": [
+      "ts",
+      "base-ui/default.svg"
+    ],
+    "bento": [
+      "ts",
+      "bento/default.svg"
+    ],
+    "bentobox": [
+      "ts",
+      "bentobox/default.svg"
+    ],
+    "better-stack": [
+      "ts",
+      "better-stack/default.svg"
+    ],
+    "bevy": [
+      "ts",
+      "bevy/default.svg"
+    ],
+    "big-cartel": [
+      "ts",
+      "big-cartel/default.svg"
+    ],
+    "bigbluebutton": [
+      "ts",
+      "bigbluebutton/default.svg"
+    ],
+    "bigcommerce": [
+      "ts",
+      "bigcommerce/default.svg"
+    ],
+    "binance": [
+      "ts",
+      "binance/default.svg"
+    ],
+    "bitcoin": [
+      "ts",
+      "bitcoin/default.svg"
+    ],
+    "black": [
+      "ts",
+      "black/default.svg"
+    ],
+    "blazor": [
+      "ts",
+      "blazor/default.svg"
+    ],
+    "blink": [
+      "mit",
+      "blink.svg"
+    ],
+    "blitz": [
+      "ts",
+      "blitz/default.svg"
+    ],
+    "blogger": [
+      "ts",
+      "blogger/default.svg"
+    ],
+    "bolt": [
+      "ts",
+      "bolt/default.svg"
+    ],
+    "bookstack": [
+      "ts",
+      "bookstack/default.svg"
+    ],
+    "boost": [
+      "ts",
+      "boost/default.svg"
+    ],
+    "bootstrap": [
+      "ts",
+      "bootstrap/default.svg"
+    ],
+    "botble-cms": [
+      "ts",
+      "botble-cms/default.svg"
+    ],
+    "braintree": [
+      "ts",
+      "braintree/default.svg"
+    ],
+    "brandfolder": [
+      "ts",
+      "brandfolder/default.svg"
+    ],
+    "brevo": [
+      "ts",
+      "brevo/default.svg"
+    ],
+    "bricks": [
+      "ts",
+      "bricks/default.svg"
+    ],
+    "buddy": [
+      "ts",
+      "buddy/default.svg"
+    ],
+    "builder": [
+      "ts",
+      "builder/default.svg"
+    ],
+    "bulma": [
+      "ts",
+      "bulma/default.svg"
+    ],
+    "buy-me-a-coffee": [
+      "ts",
+      "buy-me-a-coffee/default.svg"
+    ],
+    "buysellads": [
+      "ts",
+      "buysellads/default.svg"
+    ],
+    "c": [
+      "ts",
+      "c/default.svg"
+    ],
+    "cachet": [
+      "ts",
+      "cachet/default.svg"
+    ],
+    "caddy": [
+      "ts",
+      "caddy/default.svg"
+    ],
+    "cakephp": [
+      "ts",
+      "cakephp/default.svg"
+    ],
+    "calendly": [
+      "ts",
+      "calendly/default.svg"
+    ],
+    "campaign-monitor": [
+      "ts",
+      "campaign-monitor/default.svg"
+    ],
+    "canva": [
+      "ts",
+      "canva/default.svg"
+    ],
+    "canvas": [
+      "ts",
+      "canvas/default.svg"
+    ],
+    "captivate": [
+      "ts",
+      "captivate/default.svg"
+    ],
+    "carbon": [
+      "ts",
+      "carbon/default.svg"
+    ],
+    "carrd": [
+      "ts",
+      "carrd/default.svg"
+    ],
+    "carto": [
+      "ts",
+      "carto/default.svg"
+    ],
+    "centos": [
+      "ts",
+      "centos/default.svg"
+    ],
+    "chai": [
+      "ts",
+      "chai/default.svg"
+    ],
+    "chakra-ui": [
+      "ts",
+      "chakra-ui/default.svg"
+    ],
+    "chatbot": [
+      "ts",
+      "chatbot/default.svg"
+    ],
+    "chatwoot": [
+      "ts",
+      "chatwoot/default.svg"
+    ],
+    "circle": [
+      "ts",
+      "circle/default.svg"
+    ],
+    "citrix": [
+      "ts",
+      "citrix/default.svg"
+    ],
+    "civicrm": [
+      "ts",
+      "civicrm/default.svg"
+    ],
+    "claris": [
+      "ts",
+      "claris/default.svg"
+    ],
+    "clarity": [
+      "ts",
+      "clarity/default.svg"
+    ],
+    "clerk": [
+      "ts",
+      "clerk/default.svg"
+    ],
+    "clickup": [
+      "ts",
+      "clickup/default.svg"
+    ],
+    "cloudcannon": [
+      "ts",
+      "cloudcannon/default.svg"
+    ],
+    "cloudflare": [
+      "ts",
+      "cloudflare/default.svg"
+    ],
+    "cloudflare-workers": [
+      "ts",
+      "cloudflare-workers/default.svg"
+    ],
+    "cloudinary": [
+      "ts",
+      "cloudinary/default.svg"
+    ],
+    "cloudways": [
+      "ts",
+      "cloudways/default.svg"
+    ],
+    "code-climate": [
+      "ts",
+      "code-climate/default.svg"
+    ],
+    "codeigniter": [
+      "ts",
+      "codeigniter/default.svg"
+    ],
+    "codemirror": [
+      "ts",
+      "codemirror/default.svg"
+    ],
+    "codesandbox": [
+      "ts",
+      "codesandbox/default.svg"
+    ],
+    "coinbase": [
+      "ts",
+      "coinbase/default.svg"
+    ],
+    "conekta": [
+      "ts",
+      "conekta/default.svg"
+    ],
+    "construct-3": [
+      "ts",
+      "construct-3/default.svg"
+    ],
+    "contao": [
+      "ts",
+      "contao/default.svg"
+    ],
+    "contensis": [
+      "ts",
+      "contensis/default.svg"
+    ],
+    "contentful": [
+      "ts",
+      "contentful/default.svg"
+    ],
+    "contentstack": [
+      "ts",
+      "contentstack/default.svg"
+    ],
+    "copilot": [
+      "mit",
+      "copilot.svg"
+    ],
+    "couchdb": [
+      "di",
+      "couchdb/couchdb-original.svg"
+    ],
+    "cpanel": [
+      "ts",
+      "cpanel/default.svg"
+    ],
+    "craft-cms": [
+      "ts",
+      "craft-cms/default.svg"
+    ],
+    "crowdin": [
+      "ts",
+      "crowdin/default.svg"
+    ],
+    "cue": [
+      "mit",
+      "cue.svg"
+    ],
+    "d3": [
+      "ts",
+      "d3/default.svg"
+    ],
+    "dailymotion": [
+      "ts",
+      "dailymotion/default.svg"
+    ],
+    "daisyui": [
+      "ts",
+      "daisyui/default.svg"
+    ],
+    "dart": [
+      "ts",
+      "dart/default.svg"
+    ],
+    "datadog": [
+      "ts",
+      "datadog/default.svg"
+    ],
+    "datatables": [
+      "ts",
+      "datatables/default.svg"
+    ],
+    "datocms": [
+      "ts",
+      "datocms/default.svg"
+    ],
+    "debian": [
+      "ts",
+      "debian/default.svg"
+    ],
+    "decap-cms": [
+      "ts",
+      "decap-cms/default.svg"
+    ],
+    "delta": [
+      "ts",
+      "delta/default.svg"
+    ],
+    "deno-deploy": [
+      "ts",
+      "deno-deploy/default.svg"
+    ],
+    "deutsche-post": [
+      "ts",
+      "deutsche-post/default.svg"
+    ],
+    "dhl": [
+      "ts",
+      "dhl/default.svg"
+    ],
+    "digitalocean": [
+      "ts",
+      "digitalocean/default.svg"
+    ],
+    "directus": [
+      "ts",
+      "directus/default.svg"
+    ],
+    "discourse": [
+      "ts",
+      "discourse/default.svg"
+    ],
+    "disqus": [
+      "ts",
+      "disqus/default.svg"
+    ],
+    "django": [
+      "ts",
+      "django/default.svg"
+    ],
+    "docsify": [
+      "ts",
+      "docsify/default.svg"
+    ],
+    "docusaurus": [
+      "ts",
+      "docusaurus/default.svg"
+    ],
+    "douban": [
+      "ts",
+      "douban/default.svg"
+    ],
+    "doxygen": [
+      "ts",
+      "doxygen/default.svg"
+    ],
+    "dpd": [
+      "ts",
+      "dpd/default.svg"
+    ],
+    "dreamweaver": [
+      "ts",
+      "dreamweaver/default.svg"
+    ],
+    "drupal": [
+      "ts",
+      "drupal/default.svg"
+    ],
+    "dynatrace": [
+      "ts",
+      "dynatrace/default.svg"
+    ],
+    "ebay": [
+      "ts",
+      "ebay/default.svg"
+    ],
+    "elastic": [
+      "ts",
+      "elastic/default.svg"
+    ],
+    "elasticsearch": [
+      "ts",
+      "elasticsearch/default.svg"
+    ],
+    "element": [
+      "ts",
+      "element/default.svg"
+    ],
+    "elementor": [
+      "ts",
+      "elementor/default.svg"
+    ],
+    "eleventy": [
+      "ts",
+      "eleventy/default.svg"
+    ],
+    "elm": [
+      "ts",
+      "elm/default.svg"
+    ],
+    "email": [
+      "mit",
+      "email.svg"
+    ],
+    "ember": [
+      "ts",
+      "ember/default.svg"
+    ],
+    "emotion": {
+      "light": [
+        "ski",
+        "Emotion-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "Emotion-Dark.svg"
+      ]
+    },
+    "envoy": [
+      "di",
+      "envoy/envoy-original.svg"
+    ],
+    "erlang": [
+      "ts",
+      "erlang/default.svg"
+    ],
+    "erpnext": [
+      "ts",
+      "erpnext/default.svg"
+    ],
+    "ethers": [
+      "ts",
+      "ethers/default.svg"
+    ],
+    "evernote": [
+      "ts",
+      "evernote/default.svg"
+    ],
+    "express": [
+      "ts",
+      "express/default.svg"
+    ],
+    "facebook": [
+      "ts",
+      "facebook/default.svg"
+    ],
+    "fareharbor": [
+      "ts",
+      "fareharbor/default.svg"
+    ],
+    "fastapi": [
+      "ts",
+      "fastapi/default.svg"
+    ],
+    "fastly": [
+      "ts",
+      "fastly/default.svg"
+    ],
+    "fathom": [
+      "ts",
+      "fathom/default.svg"
+    ],
+    "fedex": [
+      "ts",
+      "fedex/default.svg"
+    ],
+    "fedora": [
+      "ts",
+      "fedora/default.svg"
+    ],
+    "filamentphp": [
+      "ts",
+      "filamentphp/default.svg"
+    ],
+    "fillout": [
+      "ts",
+      "fillout/default.svg"
+    ],
+    "fing": [
+      "ts",
+      "fing/default.svg"
+    ],
+    "firebase": [
+      "ts",
+      "firebase/default.svg"
+    ],
+    "firefish": [
+      "ts",
+      "firefish/default.svg"
+    ],
+    "flask": [
+      "ts",
+      "flask/default.svg"
+    ],
+    "flat": [
+      "ts",
+      "flat/default.svg"
+    ],
+    "flow": [
+      "mit",
+      "flow.svg"
+    ],
+    "flowbite": [
+      "ts",
+      "flowbite/default.svg"
+    ],
+    "flutter": [
+      "ts",
+      "flutter/default.svg"
+    ],
+    "fly-io": [
+      "ts",
+      "fly-io/default.svg"
+    ],
+    "flywheel": [
+      "ts",
+      "flywheel/default.svg"
+    ],
+    "font-awesome": [
+      "ts",
+      "font-awesome/default.svg"
+    ],
+    "forgejo": [
+      "ts",
+      "forgejo/default.svg"
+    ],
+    "formstack": [
+      "ts",
+      "formstack/default.svg"
+    ],
+    "fortinet": [
+      "ts",
+      "fortinet/default.svg"
+    ],
+    "framer": [
+      "ts",
+      "framer/default.svg"
+    ],
+    "framework7": [
+      "ts",
+      "framework7/default.svg"
+    ],
+    "frappe": [
+      "ts",
+      "frappe/default.svg"
+    ],
+    "freebsd": [
+      "ts",
+      "freebsd/default.svg"
+    ],
+    "fresco": [
+      "ts",
+      "fresco/default.svg"
+    ],
+    "fresh": [
+      "ts",
+      "fresh/default.svg"
+    ],
+    "front": [
+      "ts",
+      "front/default.svg"
+    ],
+    "frontify": [
+      "ts",
+      "frontify/default.svg"
+    ],
+    "fusion": [
+      "ts",
+      "fusion/default.svg"
+    ],
+    "gatsby": [
+      "ts",
+      "gatsby/default.svg"
+    ],
+    "gcore": [
+      "ts",
+      "gcore/default.svg"
+    ],
+    "gentoo": [
+      "ts",
+      "gentoo/default.svg"
+    ],
+    "gerrit": [
+      "ts",
+      "gerrit/default.svg"
+    ],
+    "ghost": [
+      "ts",
+      "ghost/default.svg"
+    ],
+    "git": [
+      "ts",
+      "git/default.svg"
+    ],
+    "gitbook": [
+      "ts",
+      "gitbook/default.svg"
+    ],
+    "gitea": [
+      "ts",
+      "gitea/default.svg"
+    ],
+    "github-pages": [
+      "ts",
+      "github-pages/default.svg"
+    ],
+    "gitlab": [
+      "ts",
+      "gitlab/default.svg"
+    ],
+    "gitter": [
+      "ts",
+      "gitter/default.svg"
+    ],
+    "glance": [
+      "ts",
+      "glance/default.svg"
+    ],
+    "gleam": [
+      "ts",
+      "gleam/default.svg"
+    ],
+    "glide": [
+      "ts",
+      "glide/default.svg"
+    ],
+    "glitch": [
+      "ts",
+      "glitch/default.svg"
+    ],
+    "go": [
+      "ts",
+      "go/default.svg"
+    ],
+    "godaddy": [
+      "ts",
+      "godaddy/default.svg"
+    ],
+    "godot": [
+      "ts",
+      "godot/default.svg"
+    ],
+    "google": [
+      "ts",
+      "google/default.svg"
+    ],
+    "google-adsense": [
+      "ts",
+      "google-adsense/default.svg"
+    ],
+    "google-analytics": [
+      "ts",
+      "google-analytics/default.svg"
+    ],
+    "google-cloud-storage": [
+      "ts",
+      "google-cloud-storage/default.svg"
+    ],
+    "google-forms": [
+      "ts",
+      "google-forms/default.svg"
+    ],
+    "google-maps": [
+      "ts",
+      "google-maps/default.svg"
+    ],
+    "google-pay": [
+      "ts",
+      "google-pay/default.svg"
+    ],
+    "google-tag-manager": [
+      "ts",
+      "google-tag-manager/default.svg"
+    ],
+    "grab": [
+      "ts",
+      "grab/default.svg"
+    ],
+    "grafana": [
+      "ts",
+      "grafana/default.svg"
+    ],
+    "grain": [
+      "mit",
+      "grain.svg"
+    ],
+    "graphql": [
+      "ts",
+      "graphql/default.svg"
+    ],
+    "grav": [
+      "ts",
+      "grav/default.svg"
+    ],
+    "gravatar": [
+      "ts",
+      "gravatar/default.svg"
+    ],
+    "greenhouse": [
+      "ts",
+      "greenhouse/default.svg"
+    ],
+    "gridsome": [
+      "ts",
+      "gridsome/default.svg"
+    ],
+    "gsap": [
+      "ts",
+      "gsap/default.svg"
+    ],
+    "gumroad": [
+      "ts",
+      "gumroad/default.svg"
+    ],
+    "gunicorn": [
+      "ts",
+      "gunicorn/default.svg"
+    ],
+    "gutenberg": [
+      "ts",
+      "gutenberg/default.svg"
+    ],
+    "handlebars": [
+      "di",
+      "handlebars/handlebars-original.svg"
+    ],
+    "harbor": [
+      "ts",
+      "harbor/default.svg"
+    ],
+    "hashnode": [
+      "ts",
+      "hashnode/default.svg"
+    ],
+    "hasura": [
+      "ts",
+      "hasura/default.svg"
+    ],
+    "hcaptcha": [
+      "ts",
+      "hcaptcha/default.svg"
+    ],
+    "hcl": [
+      "ts",
+      "hcl/default.svg"
+    ],
+    "headless-ui": [
+      "ts",
+      "headless-ui/default.svg"
+    ],
+    "hearth": [
+      "ts",
+      "hearth/default.svg"
+    ],
+    "helix": [
+      "ts",
+      "helix/default.svg"
+    ],
+    "help-scout": [
+      "ts",
+      "help-scout/default.svg"
+    ],
+    "here": [
+      "ts",
+      "here/default.svg"
+    ],
+    "hermes": [
+      "ts",
+      "hermes/default.svg"
+    ],
+    "heroku": [
+      "ts",
+      "heroku/default.svg"
+    ],
+    "heroui": [
+      "ts",
+      "heroui/default.svg"
+    ],
+    "hetzner": [
+      "ts",
+      "hetzner/default.svg"
+    ],
+    "hexo": [
+      "ts",
+      "hexo/default.svg"
+    ],
+    "hibob": [
+      "si",
+      "hibob.svg"
+    ],
+    "honeybadger": [
+      "ts",
+      "honeybadger/default.svg"
+    ],
+    "hono": [
+      "ts",
+      "hono/default.svg"
+    ],
+    "hostinger": [
+      "ts",
+      "hostinger/default.svg"
+    ],
+    "hotjar": [
+      "ts",
+      "hotjar/default.svg"
+    ],
+    "hotmart": [
+      "ts",
+      "hotmart/default.svg"
+    ],
+    "htmx": [
+      "ts",
+      "htmx/default.svg"
+    ],
+    "http": [
+      "mit",
+      "http.svg"
+    ],
+    "hubspot": [
+      "ts",
+      "hubspot/default.svg"
+    ],
+    "hugo": [
+      "ts",
+      "hugo/default.svg"
+    ],
+    "humhub": [
+      "ts",
+      "humhub/default.svg"
+    ],
+    "ibm": [
+      "ts",
+      "ibm/default.svg"
+    ],
+    "image": [
+      "mit",
+      "image.svg"
+    ],
+    "imba": [
+      "mit",
+      "imba.svg"
+    ],
+    "indeed": [
+      "ts",
+      "indeed/default.svg"
+    ],
+    "inertia": [
+      "ts",
+      "inertia/default.svg"
+    ],
+    "instatus": [
+      "ts",
+      "instatus/default.svg"
+    ],
+    "intercom": [
+      "ts",
+      "intercom/default.svg"
+    ],
+    "intlayer": [
+      "ts",
+      "intlayer/default.svg"
+    ],
+    "ionic": [
+      "ts",
+      "ionic/default.svg"
+    ],
+    "ipfs": [
+      "ts",
+      "ipfs/default.svg"
+    ],
+    "issuu": [
+      "ts",
+      "issuu/default.svg"
+    ],
+    "java": [
+      "ts",
+      "java/default.svg"
+    ],
+    "jekyll": [
+      "ts",
+      "jekyll/default.svg"
+    ],
+    "jenkins": [
+      "ts",
+      "jenkins/default.svg"
+    ],
+    "jet": [
+      "ts",
+      "jet/default.svg"
+    ],
+    "jitsi": [
+      "ts",
+      "jitsi/default.svg"
+    ],
+    "joomla": [
+      "ts",
+      "joomla/default.svg"
+    ],
+    "jquery": [
+      "ts",
+      "jquery/default.svg"
+    ],
+    "jsdelivr": [
+      "ts",
+      "jsdelivr/default.svg"
+    ],
+    "jss": [
+      "ts",
+      "jss/default.svg"
+    ],
+    "just": [
+      "ts",
+      "just/default.svg"
+    ],
+    "kakao": [
+      "ts",
+      "kakao/default.svg"
+    ],
+    "karma": [
+      "ts",
+      "karma/default.svg"
+    ],
+    "kentico": [
+      "ts",
+      "kentico/default.svg"
+    ],
+    "kibana": [
+      "ts",
+      "kibana/default.svg"
+    ],
+    "kinsta": [
+      "ts",
+      "kinsta/default.svg"
+    ],
+    "kirby": [
+      "ts",
+      "kirby/default.svg"
+    ],
+    "kit": [
+      "ts",
+      "kit/default.svg"
+    ],
+    "klarna": [
+      "ts",
+      "klarna/default.svg"
+    ],
+    "klook": [
+      "ts",
+      "klook/default.svg"
+    ],
+    "knockout": [
+      "di",
+      "knockout/knockout-plain-wordmark.svg"
+    ],
+    "ko-fi": [
+      "ts",
+      "ko-fi/default.svg"
+    ],
+    "koa": [
+      "ts",
+      "koa/default.svg"
+    ],
+    "kong": [
+      "ts",
+      "kong/default.svg"
+    ],
+    "konva": [
+      "ts",
+      "konva/default.svg"
+    ],
+    "ktor": [
+      "ts",
+      "ktor/default.svg"
+    ],
+    "laravel": [
+      "ts",
+      "laravel/default.svg"
+    ],
+    "leaflet": [
+      "ts",
+      "leaflet/default.svg"
+    ],
+    "lemon-squeezy": [
+      "ts",
+      "lemon-squeezy/default.svg"
+    ],
+    "leptos": [
+      "ts",
+      "leptos/default.svg"
+    ],
+    "less": [
+      "ts",
+      "less/default.svg"
+    ],
+    "liberapay": [
+      "ts",
+      "liberapay/default.svg"
+    ],
+    "lightning": [
+      "ts",
+      "lightning/default.svg"
+    ],
+    "line": [
+      "ts",
+      "line/default.svg"
+    ],
+    "linear": [
+      "ts",
+      "linear/default.svg"
+    ],
+    "linkedin": [
+      "ts",
+      "linkedin/default.svg"
+    ],
+    "linkfire": [
+      "ts",
+      "linkfire/default.svg"
+    ],
+    "liquid": [
+      "ts",
+      "liquid/default.svg"
+    ],
+    "lit": [
+      "ts",
+      "lit/default.svg"
+    ],
+    "livechat": [
+      "ts",
+      "livechat/default.svg"
+    ],
+    "livejournal": [
+      "ts",
+      "livejournal/default.svg"
+    ],
+    "livewire": [
+      "ts",
+      "livewire/default.svg"
+    ],
+    "lodash": [
+      "ts",
+      "lodash/default.svg"
+    ],
+    "looker": [
+      "ts",
+      "looker/default.svg"
+    ],
+    "loom": [
+      "ts",
+      "loom/default.svg"
+    ],
+    "loop": [
+      "ts",
+      "loop/default.svg"
+    ],
+    "loops": [
+      "ts",
+      "loops/default.svg"
+    ],
+    "lottiefiles": [
+      "ts",
+      "lottiefiles/default.svg"
+    ],
+    "lovable": [
+      "ts",
+      "lovable/default.svg"
+    ],
+    "lua": [
+      "ts",
+      "lua/default.svg"
+    ],
+    "lucide": [
+      "ts",
+      "lucide/default.svg"
+    ],
+    "magento": [
+      "ts",
+      "magento/default.svg"
+    ],
+    "magic-ui": [
+      "ts",
+      "magic-ui/default.svg"
+    ],
+    "mailchimp": [
+      "ts",
+      "mailchimp/default.svg"
+    ],
+    "mantine": [
+      "ts",
+      "mantine/default.svg"
+    ],
+    "mapbox": [
+      "ts",
+      "mapbox/default.svg"
+    ],
+    "maptiler": [
+      "ts",
+      "maptiler/default.svg"
+    ],
+    "marko": [
+      "ts",
+      "marko/default.svg"
+    ],
+    "mastercard": [
+      "ts",
+      "mastercard/default.svg"
+    ],
+    "mastodon": [
+      "ts",
+      "mastodon/default.svg"
+    ],
+    "material-for-mkdocs": [
+      "ts",
+      "material-for-mkdocs/default.svg"
+    ],
+    "material-ui": [
+      "ts",
+      "material-ui/default.svg"
+    ],
+    "matomo": [
+      "ts",
+      "matomo/default.svg"
+    ],
+    "matter": [
+      "ts",
+      "matter/default.svg"
+    ],
+    "mattermost": [
+      "ts",
+      "mattermost/default.svg"
+    ],
+    "mautic": [
+      "ts",
+      "mautic/default.svg"
+    ],
+    "mdbook": [
+      "ts",
+      "mdbook/default.svg"
+    ],
+    "mediawiki": [
+      "ts",
+      "mediawiki/default.svg"
+    ],
+    "medium": [
+      "ts",
+      "medium/default.svg"
+    ],
+    "medusa": [
+      "ts",
+      "medusa/default.svg"
+    ],
+    "mega": [
+      "ts",
+      "mega/default.svg"
+    ],
+    "meilisearch": [
+      "ts",
+      "meilisearch/default.svg"
+    ],
+    "merlin": [
+      "mit",
+      "merlin.svg"
+    ],
+    "mermaid": [
+      "ts",
+      "mermaid/default.svg"
+    ],
+    "meteor": [
+      "ts",
+      "meteor/default.svg"
+    ],
+    "metro": [
+      "ts",
+      "metro/default.svg"
+    ],
+    "microsoft": [
+      "ts",
+      "microsoft/default.svg"
+    ],
+    "microsoft-excel": [
+      "ts",
+      "microsoft-excel/default.svg"
+    ],
+    "microsoft-powerpoint": [
+      "ts",
+      "microsoft-powerpoint/default.svg"
+    ],
+    "microsoft-sharepoint": [
+      "ts",
+      "microsoft-sharepoint/default.svg"
+    ],
+    "microsoft-word": [
+      "ts",
+      "microsoft-word/default.svg"
+    ],
+    "milvus": [
+      "ts",
+      "milvus/default.svg"
+    ],
+    "mindstudio": [
+      "ts",
+      "mindstudio/default.svg"
+    ],
+    "mini": [
+      "ts",
+      "mini/default.svg"
+    ],
+    "mint": [
+      "mit",
+      "mint.svg"
+    ],
+    "mintlify": [
+      "ts",
+      "mintlify/default.svg"
+    ],
+    "misskey": [
+      "ts",
+      "misskey/default.svg"
+    ],
+    "mithril": [
+      "ts",
+      "mithril/default.svg"
+    ],
+    "mixpanel": [
+      "ts",
+      "mixpanel/default.svg"
+    ],
+    "mobx": [
+      "ts",
+      "mobx/default.svg"
+    ],
+    "modal": [
+      "ts",
+      "modal/default.svg"
+    ],
+    "modernizr": [
+      "mit",
+      "modernizr.svg"
+    ],
+    "modx": [
+      "ts",
+      "modx/default.svg"
+    ],
+    "mojo": [
+      "mit",
+      "mojo.svg"
+    ],
+    "moodle": [
+      "ts",
+      "moodle/default.svg"
+    ],
+    "moon": [
+      "ts",
+      "moon/default.svg"
+    ],
+    "motion": [
+      "ts",
+      "motion/default.svg"
+    ],
+    "mybb": [
+      "ts",
+      "mybb/default.svg"
+    ],
+    "naver": [
+      "ts",
+      "naver/default.svg"
+    ],
+    "neon": [
+      "ts",
+      "neon/default.svg"
+    ],
+    "netlify": [
+      "ts",
+      "netlify/default.svg"
+    ],
+    "nette": [
+      "ts",
+      "nette/default.svg"
+    ],
+    "new-relic": [
+      "ts",
+      "new-relic/default.svg"
+    ],
+    "next": [
+      "mit",
+      "next.svg"
+    ],
+    "next-js": {
+      "light": [
+        "ski",
+        "NextJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "NextJS-Dark.svg"
+      ]
+    },
+    "nextcloud": [
+      "ts",
+      "nextcloud/default.svg"
+    ],
+    "nextdoor": [
+      "ts",
+      "nextdoor/default.svg"
+    ],
+    "nextra": [
+      "ts",
+      "nextra/default.svg"
+    ],
+    "nginx": [
+      "ts",
+      "nginx/default.svg"
+    ],
+    "node-js": {
+      "light": [
+        "ski",
+        "NodeJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "NodeJS-Dark.svg"
+      ]
+    },
+    "nodebb": [
+      "ts",
+      "nodebb/default.svg"
+    ],
+    "norton": [
+      "ts",
+      "norton/default.svg"
+    ],
+    "notion": [
+      "ts",
+      "notion/default.svg"
+    ],
+    "nuxt-js": {
+      "light": [
+        "ski",
+        "NuxtJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "NuxtJS-Dark.svg"
+      ]
+    },
+    "nuxt-ui": [
+      "ts",
+      "nuxt-ui/default.svg"
+    ],
+    "obsidian": [
+      "ts",
+      "obsidian/default.svg"
+    ],
+    "october-cms": [
+      "ts",
+      "october-cms/default.svg"
+    ],
+    "odoo": [
+      "ts",
+      "odoo/default.svg"
+    ],
+    "okta": [
+      "ts",
+      "okta/default.svg"
+    ],
+    "openbsd": [
+      "ts",
+      "openbsd/default.svg"
+    ],
+    "opencv": [
+      "ts",
+      "opencv/default.svg"
+    ],
+    "openlayers": [
+      "ts",
+      "openlayers/default.svg"
+    ],
+    "openssl": [
+      "ts",
+      "openssl/default.svg"
+    ],
+    "openstreetmap": [
+      "ts",
+      "openstreetmap/default.svg"
+    ],
+    "oracle": [
+      "ts",
+      "oracle/default.svg"
+    ],
+    "orange": [
+      "ts",
+      "orange/default.svg"
+    ],
+    "orchard-core": [
+      "ts",
+      "orchard-core/default.svg"
+    ],
+    "osano": [
+      "ts",
+      "osano/default.svg"
+    ],
+    "otto": [
+      "ts",
+      "otto/default.svg"
+    ],
+    "owncloud": [
+      "ts",
+      "owncloud/default.svg"
+    ],
+    "oxygen": [
+      "ts",
+      "oxygen/default.svg"
+    ],
+    "paddle": [
+      "ts",
+      "paddle/default.svg"
+    ],
+    "pagekit": [
+      "ts",
+      "pagekit/default.svg"
+    ],
+    "pagseguro": [
+      "ts",
+      "pagseguro/default.svg"
+    ],
+    "panda": [
+      "mit",
+      "panda.svg"
+    ],
+    "pantheon": [
+      "ts",
+      "pantheon/default.svg"
+    ],
+    "paper": [
+      "ts",
+      "paper/default.svg"
+    ],
+    "parcel": [
+      "ts",
+      "parcel/default.svg"
+    ],
+    "passport-js": [
+      "ts",
+      "passport-js/default.svg"
+    ],
+    "patreon": [
+      "ts",
+      "patreon/default.svg"
+    ],
+    "payhip": [
+      "ts",
+      "payhip/default.svg"
+    ],
+    "payload-cms": [
+      "ts",
+      "payload-cms/default.svg"
+    ],
+    "payoneer": [
+      "ts",
+      "payoneer/default.svg"
+    ],
+    "paypal": [
+      "ts",
+      "paypal/default.svg"
+    ],
+    "paysafe": [
+      "ts",
+      "paysafe/default.svg"
+    ],
+    "pdf": [
+      "ts",
+      "pdf/default.svg"
+    ],
+    "peertube": [
+      "ts",
+      "peertube/default.svg"
+    ],
+    "percy": [
+      "ts",
+      "percy/default.svg"
+    ],
+    "perl": [
+      "ts",
+      "perl/default.svg"
+    ],
+    "personio": [
+      "ts",
+      "personio/default.svg"
+    ],
+    "phabricator": [
+      "ts",
+      "phabricator/default.svg"
+    ],
+    "phaser": [
+      "ts",
+      "phaser/default.svg"
+    ],
+    "phoenix": [
+      "di",
+      "phoenix/phoenix-original.svg"
+    ],
+    "phoenix-framework": [
+      "ts",
+      "phoenix-framework/default.svg"
+    ],
+    "php": [
+      "ts",
+      "php/default.svg"
+    ],
+    "phpbb": [
+      "ts",
+      "phpbb/default.svg"
+    ],
+    "phpmyadmin": [
+      "ts",
+      "phpmyadmin/default.svg"
+    ],
+    "pimcore": [
+      "ts",
+      "pimcore/default.svg"
+    ],
+    "pinboard": [
+      "ts",
+      "pinboard/default.svg"
+    ],
+    "pingdom": [
+      "ts",
+      "pingdom/default.svg"
+    ],
+    "pinia": [
+      "ts",
+      "pinia/default.svg"
+    ],
+    "pinterest": [
+      "ts",
+      "pinterest/default.svg"
+    ],
+    "piwigo": [
+      "ts",
+      "piwigo/default.svg"
+    ],
+    "pixijs": [
+      "ts",
+      "pixijs/default.svg"
+    ],
+    "plaid": [
+      "ts",
+      "plaid/default.svg"
+    ],
+    "planet": [
+      "ts",
+      "planet/default.svg"
+    ],
+    "pleroma": [
+      "ts",
+      "pleroma/default.svg"
+    ],
+    "plesk": [
+      "ts",
+      "plesk/default.svg"
+    ],
+    "plotly": [
+      "ts",
+      "plotly/default.svg"
+    ],
+    "pocket": [
+      "ts",
+      "pocket/default.svg"
+    ],
+    "polar": [
+      "ts",
+      "polar/default.svg"
+    ],
+    "poper": [
+      "ts",
+      "poper/default.svg"
+    ],
+    "posthog": [
+      "ts",
+      "posthog/default.svg"
+    ],
+    "postman": [
+      "ts",
+      "postman/default.svg"
+    ],
+    "preact": [
+      "ts",
+      "preact/default.svg"
+    ],
+    "prestashop": [
+      "ts",
+      "prestashop/default.svg"
+    ],
+    "presto": [
+      "ts",
+      "presto/default.svg"
+    ],
+    "primereact": [
+      "ts",
+      "primereact/default.svg"
+    ],
+    "primevue": [
+      "ts",
+      "primevue/default.svg"
+    ],
+    "prismic": [
+      "ts",
+      "prismic/default.svg"
+    ],
+    "processwire": [
+      "ts",
+      "processwire/default.svg"
+    ],
+    "product-hunt": [
+      "ts",
+      "product-hunt/default.svg"
+    ],
+    "progress": [
+      "ts",
+      "progress/default.svg"
+    ],
+    "proto": [
+      "mit",
+      "proto.svg"
+    ],
+    "proxmox": [
+      "ts",
+      "proxmox/default.svg"
+    ],
+    "pterodactyl": [
+      "ts",
+      "pterodactyl/default.svg"
+    ],
+    "pusher": [
+      "ts",
+      "pusher/default.svg"
+    ],
+    "pwa": [
+      "ts",
+      "pwa/default.svg"
+    ],
+    "pyscript": [
+      "di",
+      "pyscript/pyscript-original-wordmark.svg"
+    ],
+    "python": [
+      "ts",
+      "python/default.svg"
+    ],
+    "pythonanywhere": [
+      "ts",
+      "pythonanywhere/default.svg"
+    ],
+    "qualtrics": [
+      "ts",
+      "qualtrics/default.svg"
+    ],
+    "quantcast": [
+      "ts",
+      "quantcast/default.svg"
+    ],
+    "quarto": [
+      "ts",
+      "quarto/default.svg"
+    ],
+    "quasar": [
+      "ts",
+      "quasar/default.svg"
+    ],
+    "quora": [
+      "ts",
+      "quora/default.svg"
+    ],
+    "qwik": [
+      "ts",
+      "qwik/default.svg"
+    ],
+    "radar": [
+      "ts",
+      "radar/default.svg"
+    ],
+    "radix-ui": [
+      "ts",
+      "radix-ui/default.svg"
+    ],
+    "railway": [
+      "ts",
+      "railway/default.svg"
+    ],
+    "rakuten": [
+      "ts",
+      "rakuten/default.svg"
+    ],
+    "rapid": [
+      "ts",
+      "rapid/default.svg"
+    ],
+    "razorpay": [
+      "ts",
+      "razorpay/default.svg"
+    ],
+    "react": [
+      "ts",
+      "react/default.svg"
+    ],
+    "react-router": [
+      "ts",
+      "react-router/default.svg"
+    ],
+    "read-the-docs": [
+      "ts",
+      "read-the-docs/default.svg"
+    ],
+    "readme": [
+      "ts",
+      "readme/default.svg"
+    ],
+    "red": [
+      "ts",
+      "red/default.svg"
+    ],
+    "red-hat": [
+      "ts",
+      "red-hat/default.svg"
+    ],
+    "reddit": [
+      "ts",
+      "reddit/default.svg"
+    ],
+    "redmine": [
+      "ts",
+      "redmine/default.svg"
+    ],
+    "redux": [
+      "ts",
+      "redux/default.svg"
+    ],
+    "redwoodjs": [
+      "ts",
+      "redwoodjs/default.svg"
+    ],
+    "reflex": [
+      "ts",
+      "reflex/default.svg"
+    ],
+    "remix": [
+      "ts",
+      "remix/default.svg"
+    ],
+    "remotion": [
+      "ts",
+      "remotion/default.svg"
+    ],
+    "render": [
+      "ts",
+      "render/default.svg"
+    ],
+    "replit": [
+      "ts",
+      "replit/default.svg"
+    ],
+    "retool": [
+      "ts",
+      "retool/default.svg"
+    ],
+    "rezgo": [
+      "ts",
+      "rezgo/default.svg"
+    ],
+    "rich": [
+      "ts",
+      "rich/default.svg"
+    ],
+    "riot": [
+      "mit",
+      "riot.svg"
+    ],
+    "ripple": [
+      "ts",
+      "ripple/default.svg"
+    ],
+    "rive": [
+      "ts",
+      "rive/default.svg"
+    ],
+    "rocket": [
+      "ts",
+      "rocket/default.svg"
+    ],
+    "rollbar": [
+      "ts",
+      "rollbar/default.svg"
+    ],
+    "roundcube": [
+      "ts",
+      "roundcube/default.svg"
+    ],
+    "rss": [
+      "ts",
+      "rss/default.svg"
+    ],
+    "ruby": [
+      "ts",
+      "ruby/default.svg"
+    ],
+    "ruby-on-rails": [
+      "ts",
+      "ruby-on-rails/default.svg"
+    ],
+    "ruffle": [
+      "ts",
+      "ruffle/default.svg"
+    ],
+    "rumble": [
+      "ts",
+      "rumble/default.svg"
+    ],
+    "runkit": [
+      "ts",
+      "runkit/default.svg"
+    ],
+    "rust": [
+      "ts",
+      "rust/default.svg"
+    ],
+    "rxjs": [
+      "ts",
+      "rxjs/default.svg"
+    ],
+    "salesforce": [
+      "ts",
+      "salesforce/default.svg"
+    ],
+    "salla": [
+      "ts",
+      "salla/default.svg"
+    ],
+    "samsung": [
+      "ts",
+      "samsung/default.svg"
+    ],
+    "sanity": [
+      "ts",
+      "sanity/default.svg"
+    ],
+    "sap": [
+      "ts",
+      "sap/default.svg"
+    ],
+    "sass": [
+      "ts",
+      "sass/default.svg"
+    ],
+    "scalar": [
+      "ts",
+      "scalar/default.svg"
+    ],
+    "scrollreveal": [
+      "ts",
+      "scrollreveal/default.svg"
+    ],
+    "sellfy": [
+      "ts",
+      "sellfy/default.svg"
+    ],
+    "semantic-ui": [
+      "ts",
+      "semantic-ui/default.svg"
+    ],
+    "semrush": [
+      "ts",
+      "semrush/default.svg"
+    ],
+    "sencha": [
+      "ts",
+      "sencha/default.svg"
+    ],
+    "sentry": [
+      "ts",
+      "sentry/default.svg"
+    ],
+    "session": [
+      "ts",
+      "session/default.svg"
+    ],
+    "sezzle": [
+      "ts",
+      "sezzle/default.svg"
+    ],
+    "shadcn-ui": [
+      "ts",
+      "shadcn-ui/default.svg"
+    ],
+    "shopify": [
+      "ts",
+      "shopify/default.svg"
+    ],
+    "shopline": [
+      "ts",
+      "shopline/default.svg"
+    ],
+    "shopware": [
+      "ts",
+      "shopware/default.svg"
+    ],
+    "signal": [
+      "ts",
+      "signal/default.svg"
+    ],
+    "silverstripe": [
+      "mit",
+      "silverstripe.svg"
+    ],
+    "simple-analytics": [
+      "ts",
+      "simple-analytics/default.svg"
+    ],
+    "sitecore": [
+      "ts",
+      "sitecore/default.svg"
+    ],
+    "sitepoint": [
+      "ts",
+      "sitepoint/default.svg"
+    ],
+    "sky": [
+      "ts",
+      "sky/default.svg"
+    ],
+    "slim": [
+      "mit",
+      "slim.svg"
+    ],
+    "smugmug": [
+      "ts",
+      "smugmug/default.svg"
+    ],
+    "socket": [
+      "ts",
+      "socket/default.svg"
+    ],
+    "solidjs": [
+      "ts",
+      "solidjs/default.svg"
+    ],
+    "sonar": [
+      "ts",
+      "sonar/default.svg"
+    ],
+    "soundcloud": [
+      "ts",
+      "soundcloud/default.svg"
+    ],
+    "sphinx": [
+      "ts",
+      "sphinx/default.svg"
+    ],
+    "spine": [
+      "ts",
+      "spine/default.svg"
+    ],
+    "splunk": [
+      "ts",
+      "splunk/default.svg"
+    ],
+    "spotify": [
+      "ts",
+      "spotify/default.svg"
+    ],
+    "spring": [
+      "ts",
+      "spring/default.svg"
+    ],
+    "square": [
+      "ts",
+      "square/default.svg"
+    ],
+    "squarespace": [
+      "ts",
+      "squarespace/default.svg"
+    ],
+    "staffbase": [
+      "ts",
+      "staffbase/default.svg"
+    ],
+    "statamic": [
+      "ts",
+      "statamic/default.svg"
+    ],
+    "statuspal": [
+      "ts",
+      "statuspal/default.svg"
+    ],
+    "stencil": [
+      "ts",
+      "stencil/default.svg"
+    ],
+    "stimulus": [
+      "ts",
+      "stimulus/default.svg"
+    ],
+    "stitches": [
+      "mit",
+      "stitches.svg"
+    ],
+    "storyblok": [
+      "ts",
+      "storyblok/default.svg"
+    ],
+    "storybook": [
+      "ts",
+      "storybook/default.svg"
+    ],
+    "strapi": [
+      "ts",
+      "strapi/default.svg"
+    ],
+    "strava": [
+      "ts",
+      "strava/default.svg"
+    ],
+    "streamlit": [
+      "ts",
+      "streamlit/default.svg"
+    ],
+    "stripe": [
+      "ts",
+      "stripe/default.svg"
+    ],
+    "styled-components": [
+      "ts",
+      "styled-components/default.svg"
+    ],
+    "sublime": [
+      "mit",
+      "sublime.svg"
+    ],
+    "substack": [
+      "ts",
+      "substack/default.svg"
+    ],
+    "subversion": [
+      "ts",
+      "subversion/default.svg"
+    ],
+    "sulu": [
+      "ts",
+      "sulu/default.svg"
+    ],
+    "supabase": [
+      "ts",
+      "supabase/default.svg"
+    ],
+    "suse": [
+      "ts",
+      "suse/default.svg"
+    ],
+    "svelte": [
+      "ts",
+      "svelte/default.svg"
+    ],
+    "svg": [
+      "ts",
+      "svg/default.svg"
+    ],
+    "swagger": [
+      "ts",
+      "swagger/default.svg"
+    ],
+    "swiper": [
+      "ts",
+      "swiper/default.svg"
+    ],
+    "symfony": [
+      "ts",
+      "symfony/default.svg"
+    ],
+    "synology": [
+      "ts",
+      "synology/default.svg"
+    ],
+    "tabby": [
+      "ts",
+      "tabby/default.svg"
+    ],
+    "tablecheck": [
+      "ts",
+      "tablecheck/default.svg"
+    ],
+    "tailwind-css": [
+      "ts",
+      "tailwind-css/default.svg"
+    ],
+    "tanstack": [
+      "ts",
+      "tanstack/default.svg"
+    ],
+    "task": [
+      "ts",
+      "task/default.svg"
+    ],
+    "teamcity": [
+      "ts",
+      "teamcity/default.svg"
+    ],
+    "teamviewer": [
+      "ts",
+      "teamviewer/default.svg"
+    ],
+    "tencent": [
+      "ts",
+      "tencent/default.svg"
+    ],
+    "textpattern": [
+      "ts",
+      "textpattern/default.svg"
+    ],
+    "things": [
+      "ts",
+      "things/default.svg"
+    ],
+    "three-js": {
+      "light": [
+        "ski",
+        "ThreeJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "ThreeJS-Dark.svg"
+      ]
+    },
+    "tiddlywiki": [
+      "ts",
+      "tiddlywiki/default.svg"
+    ],
+    "tiktok": [
+      "ts",
+      "tiktok/default.svg"
+    ],
+    "tistory": [
+      "ts",
+      "tistory/default.svg"
+    ],
+    "tomtom": [
+      "ts",
+      "tomtom/default.svg"
+    ],
+    "tradingview": [
+      "ts",
+      "tradingview/default.svg"
+    ],
+    "transifex": [
+      "ts",
+      "transifex/default.svg"
+    ],
+    "transloadit": [
+      "ts",
+      "transloadit/default.svg"
+    ],
+    "trezor": [
+      "ts",
+      "trezor/default.svg"
+    ],
+    "trivago": [
+      "ts",
+      "trivago/default.svg"
+    ],
+    "trove": [
+      "ts",
+      "trove/default.svg"
+    ],
+    "trusted-shops": [
+      "ts",
+      "trusted-shops/default.svg"
+    ],
+    "trustpilot": [
+      "ts",
+      "trustpilot/default.svg"
+    ],
+    "tumblr": [
+      "ts",
+      "tumblr/default.svg"
+    ],
+    "turbo": [
+      "ts",
+      "turbo/default.svg"
+    ],
+    "turbopack": [
+      "ts",
+      "turbopack/default.svg"
+    ],
+    "twenty": [
+      "ts",
+      "twenty/default.svg"
+    ],
+    "twilio": [
+      "ts",
+      "twilio/default.svg"
+    ],
+    "twitch": [
+      "ts",
+      "twitch/default.svg"
+    ],
+    "twitter": [
+      "ts",
+      "twitter/default.svg"
+    ],
+    "typedoc": [
+      "mit",
+      "typedoc.svg"
+    ],
+    "typeform": [
+      "ts",
+      "typeform/default.svg"
+    ],
+    "typer": [
+      "ts",
+      "typer/default.svg"
+    ],
+    "typesense": [
+      "ts",
+      "typesense/default.svg"
+    ],
+    "typo3": [
+      "ts",
+      "typo3/default.svg"
+    ],
+    "ubuntu": [
+      "ts",
+      "ubuntu/default.svg"
+    ],
+    "uikit": [
+      "ts",
+      "uikit/default.svg"
+    ],
+    "umami": [
+      "ts",
+      "umami/default.svg"
+    ],
+    "umbraco": [
+      "ts",
+      "umbraco/default.svg"
+    ],
+    "umi": [
+      "mit",
+      "umi.svg"
+    ],
+    "unity": [
+      "ts",
+      "unity/default.svg"
+    ],
+    "unix": [
+      "ts",
+      "unix/default.svg"
+    ],
+    "unocss": [
+      "ts",
+      "unocss/default.svg"
+    ],
+    "unpkg": [
+      "ts",
+      "unpkg/default.svg"
+    ],
+    "upptime": [
+      "ts",
+      "upptime/default.svg"
+    ],
+    "uppy": [
+      "ts",
+      "uppy/default.svg"
+    ],
+    "ups": [
+      "ts",
+      "ups/default.svg"
+    ],
+    "upsales": [
+      "ts",
+      "upsales/default.svg"
+    ],
+    "uservoice": [
+      "ts",
+      "uservoice/default.svg"
+    ],
+    "usps": [
+      "ts",
+      "usps/default.svg"
+    ],
+    "vaadin": [
+      "ts",
+      "vaadin/default.svg"
+    ],
+    "varnish": [
+      "mit",
+      "varnish.svg"
+    ],
+    "vbulletin": [
+      "ts",
+      "vbulletin/default.svg"
+    ],
+    "vectary": [
+      "ts",
+      "vectary/default.svg"
+    ],
+    "venmo": [
+      "ts",
+      "venmo/default.svg"
+    ],
+    "vercel": [
+      "ts",
+      "vercel/default.svg"
+    ],
+    "verizon": [
+      "ts",
+      "verizon/default.svg"
+    ],
+    "vfairs": [
+      "ts",
+      "vfairs/default.svg"
+    ],
+    "video": [
+      "mit",
+      "video.svg"
+    ],
+    "vike": [
+      "ts",
+      "vike/default.svg"
+    ],
+    "vimeo": [
+      "ts",
+      "vimeo/default.svg"
+    ],
+    "virtual": [
+      "mit",
+      "virtual.svg"
+    ],
+    "visa": [
+      "ts",
+      "visa/default.svg"
+    ],
+    "visx": [
+      "ts",
+      "visx/default.svg"
+    ],
+    "vite": [
+      "ts",
+      "vite/default.svg"
+    ],
+    "vitepress": [
+      "ts",
+      "vitepress/default.svg"
+    ],
+    "vonage": [
+      "ts",
+      "vonage/default.svg"
+    ],
+    "vox": [
+      "ts",
+      "vox/default.svg"
+    ],
+    "vtex": [
+      "ts",
+      "vtex/default.svg"
+    ],
+    "vue": [
+      "ts",
+      "vue/default.svg"
+    ],
+    "vue-js": {
+      "light": [
+        "ski",
+        "VueJS-Light.svg"
+      ],
+      "dark": [
+        "ski",
+        "VueJS-Dark.svg"
+      ]
+    },
+    "vuetify": [
+      "ts",
+      "vuetify/default.svg"
+    ],
+    "vyper": [
+      "ts",
+      "vyper/default.svg"
+    ],
+    "wagtail": [
+      "ts",
+      "wagtail/default.svg"
+    ],
+    "wally": [
+      "mit",
+      "wally.svg"
+    ],
+    "warp": [
+      "ts",
+      "warp/default.svg"
+    ],
+    "webassembly": [
+      "ts",
+      "webassembly/default.svg"
+    ],
+    "webawesome": [
+      "si",
+      "webawesome.svg"
+    ],
+    "webflow": [
+      "ts",
+      "webflow/default.svg"
+    ],
+    "weblate": [
+      "ts",
+      "weblate/default.svg"
+    ],
+    "webpack": [
+      "ts",
+      "webpack/default.svg"
+    ],
+    "webstudio": [
+      "ts",
+      "webstudio/default.svg"
+    ],
+    "whatsapp": [
+      "ts",
+      "whatsapp/default.svg"
+    ],
+    "windows": [
+      "ts",
+      "windows/default.svg"
+    ],
+    "wise": [
+      "ts",
+      "wise/default.svg"
+    ],
+    "wistia": [
+      "ts",
+      "wistia/default.svg"
+    ],
+    "wix": [
+      "ts",
+      "wix/default.svg"
+    ],
+    "woocommerce": [
+      "ts",
+      "woocommerce/default.svg"
+    ],
+    "word": [
+      "mit",
+      "word.svg"
+    ],
+    "wordpress": [
+      "ts",
+      "wordpress/default.svg"
+    ],
+    "workday": [
+      "ts",
+      "workday/default.svg"
+    ],
+    "wp-engine": [
+      "ts",
+      "wp-engine/default.svg"
+    ],
+    "wp-rocket": [
+      "ts",
+      "wp-rocket/default.svg"
+    ],
+    "xendit": [
+      "ts",
+      "xendit/default.svg"
+    ],
+    "xwiki": [
+      "ts",
+      "xwiki/default.svg"
+    ],
+    "yandex": [
+      "ts",
+      "yandex/default.svg"
+    ],
+    "yelp": [
+      "ts",
+      "yelp/default.svg"
+    ],
+    "yii": [
+      "ts",
+      "yii/default.svg"
+    ],
+    "yoast": [
+      "ts",
+      "yoast/default.svg"
+    ],
+    "youtube": [
+      "ts",
+      "youtube/default.svg"
+    ],
+    "yunohost": [
+      "ts",
+      "yunohost/default.svg"
+    ],
+    "zabbix": [
+      "ts",
+      "zabbix/default.svg"
+    ],
+    "zeabur": [
+      "ts",
+      "zeabur/default.svg"
+    ],
+    "zend": [
+      "ts",
+      "zend/default.svg"
+    ],
+    "zendesk": [
+      "ts",
+      "zendesk/default.svg"
+    ],
+    "zip": [
+      "mit",
+      "zip.svg"
+    ],
+    "zoho": [
+      "ts",
+      "zoho/default.svg"
+    ],
+    "zola": [
+      "ts",
+      "zola/default.svg"
+    ],
+    "zulip": [
+      "ts",
+      "zulip/default.svg"
+    ]
+  },
+  "generic": {
+    "a-b-testing": [
+      "tb",
+      "chart-dots.svg"
+    ],
+    "accessibility": [
+      "tb",
+      "certificate.svg"
+    ],
+    "accounting": [
+      "tb",
+      "building-bank.svg"
+    ],
+    "advertising": [
+      "tb",
+      "speakerphone.svg"
+    ],
+    "affiliate-programs": [
+      "tb",
+      "affiliate.svg"
+    ],
+    "analytics": [
+      "tb",
+      "chart-line.svg"
+    ],
+    "appointment-scheduling": [
+      "tb",
+      "calendar-time.svg"
+    ],
+    "augmented-reality": [
+      "tb",
+      "augmented-reality.svg"
+    ],
+    "authentication": [
+      "tb",
+      "lock.svg"
+    ],
+    "blogs": [
+      "tb",
+      "news.svg"
+    ],
+    "browser-fingerprinting": [
+      "tb",
+      "device-analytics.svg"
+    ],
+    "buy-now-pay-later": [
+      "tb",
+      "credit-card.svg"
+    ],
+    "caching": [
+      "tb",
+      "server.svg"
+    ],
+    "cart-abandonment": [
+      "tb",
+      "shopping-cart.svg"
+    ],
+    "cdn": [
+      "tb",
+      "cloud.svg"
+    ],
+    "ci": [
+      "tb",
+      "arrows-exchange.svg"
+    ],
+    "cms": [
+      "tb",
+      "template.svg"
+    ],
+    "comment-systems": [
+      "tb",
+      "message-circle.svg"
+    ],
+    "containers": [
+      "tb",
+      "packages.svg"
+    ],
+    "content-curation": [
+      "tb",
+      "list-search.svg"
+    ],
+    "control-systems": [
+      "tb",
+      "settings.svg"
+    ],
+    "cookie-compliance": [
+      "tb",
+      "cookie.svg"
+    ],
+    "crm": [
+      "tb",
+      "users.svg"
+    ],
+    "cross-border-ecommerce": [
+      "tb",
+      "world-www.svg"
+    ],
+    "cryptominers": [
+      "tb",
+      "cpu.svg"
+    ],
+    "customer-data-platform": [
+      "tb",
+      "database.svg"
+    ],
+    "database-managers": [
+      "tb",
+      "database.svg"
+    ],
+    "databases": [
+      "tb",
+      "database.svg"
+    ],
+    "default": [
+      "tb",
+      "code.svg"
+    ],
+    "development": [
+      "tb",
+      "code.svg"
+    ],
+    "digital-asset-management": [
+      "tb",
+      "photo.svg"
+    ],
+    "dms": [
+      "tb",
+      "file-text.svg"
+    ],
+    "documentation": [
+      "tb",
+      "book.svg"
+    ],
+    "domain-parking": [
+      "tb",
+      "world-www.svg"
+    ],
+    "ecommerce": [
+      "tb",
+      "shopping-cart.svg"
+    ],
+    "ecommerce-frontends": [
+      "tb",
+      "building-store.svg"
+    ],
+    "editors": [
+      "tb",
+      "brush.svg"
+    ],
+    "email": [
+      "tb",
+      "mail.svg"
+    ],
+    "feature-management": [
+      "tb",
+      "settings.svg"
+    ],
+    "feed-readers": [
+      "tb",
+      "rss.svg"
+    ],
+    "font-scripts": [
+      "tb",
+      "file-code.svg"
+    ],
+    "form-builders": [
+      "tb",
+      "forms.svg"
+    ],
+    "fulfilment": [
+      "tb",
+      "truck-delivery.svg"
+    ],
+    "fundraising-and-donations": [
+      "tb",
+      "heart-handshake.svg"
+    ],
+    "geolocation": [
+      "tb",
+      "map-pin.svg"
+    ],
+    "hosting": [
+      "tb",
+      "cloud.svg"
+    ],
+    "hosting-panels": [
+      "tb",
+      "layout-dashboard.svg"
+    ],
+    "iaas": [
+      "tb",
+      "server.svg"
+    ],
+    "issue-trackers": [
+      "tb",
+      "list-search.svg"
+    ],
+    "javascript-frameworks": [
+      "tb",
+      "code.svg"
+    ],
+    "javascript-graphics": [
+      "tb",
+      "chart-arcs.svg"
+    ],
+    "javascript-libraries": [
+      "tb",
+      "file-code.svg"
+    ],
+    "live-chat": [
+      "tb",
+      "message-circle.svg"
+    ],
+    "livestreaming": [
+      "tb",
+      "player-play.svg"
+    ],
+    "lms": [
+      "tb",
+      "school.svg"
+    ],
+    "load-balancers": [
+      "tb",
+      "arrows-exchange.svg"
+    ],
+    "loyalty-and-rewards": [
+      "tb",
+      "star.svg"
+    ],
+    "maps": [
+      "tb",
+      "map.svg"
+    ],
+    "marketing-automation": [
+      "tb",
+      "speakerphone.svg"
+    ],
+    "media-servers": [
+      "tb",
+      "video.svg"
+    ],
+    "message-boards": [
+      "tb",
+      "messages.svg"
+    ],
+    "miscellaneous": [
+      "tb",
+      "puzzle.svg"
+    ],
+    "mobile-frameworks": [
+      "tb",
+      "device-mobile.svg"
+    ],
+    "network-devices": [
+      "tb",
+      "server.svg"
+    ],
+    "network-storage": [
+      "tb",
+      "database.svg"
+    ],
+    "operating-systems": [
+      "tb",
+      "device-desktop.svg"
+    ],
+    "paas": [
+      "tb",
+      "cloud.svg"
+    ],
+    "page-builders": [
+      "tb",
+      "layout-grid.svg"
+    ],
+    "payment-processors": [
+      "tb",
+      "credit-card.svg"
+    ],
+    "performance": [
+      "tb",
+      "chart-line.svg"
+    ],
+    "personalization": [
+      "tb",
+      "wand.svg"
+    ],
+    "photo-galleries": [
+      "tb",
+      "photo.svg"
+    ],
+    "programming-languages": [
+      "tb",
+      "file-code.svg"
+    ],
+    "recruitment-and-staffing": [
+      "tb",
+      "briefcase.svg"
+    ],
+    "referral-marketing": [
+      "tb",
+      "user-plus.svg"
+    ],
+    "remote-access": [
+      "tb",
+      "device-desktop.svg"
+    ],
+    "reservations-and-delivery": [
+      "tb",
+      "calendar-time.svg"
+    ],
+    "retargeting": [
+      "tb",
+      "arrows-exchange.svg"
+    ],
+    "returns": [
+      "tb",
+      "truck.svg"
+    ],
+    "reverse-proxies": [
+      "tb",
+      "server.svg"
+    ],
+    "reviews": [
+      "tb",
+      "star.svg"
+    ],
+    "rich-text-editors": [
+      "tb",
+      "file-text.svg"
+    ],
+    "rum": [
+      "tb",
+      "device-analytics.svg"
+    ],
+    "search-engines": [
+      "tb",
+      "search.svg"
+    ],
+    "security": [
+      "tb",
+      "shield-check.svg"
+    ],
+    "segmentation": [
+      "tb",
+      "chart-pie.svg"
+    ],
+    "seo": [
+      "tb",
+      "search.svg"
+    ],
+    "shipping-carriers": [
+      "tb",
+      "truck-delivery.svg"
+    ],
+    "shopify-apps": [
+      "tb",
+      "shopping-bag.svg"
+    ],
+    "shopify-themes": [
+      "tb",
+      "building-store.svg"
+    ],
+    "ssl-tls-certificate-authorities": [
+      "tb",
+      "certificate.svg"
+    ],
+    "static-site-generator": [
+      "tb",
+      "template.svg"
+    ],
+    "surveys": [
+      "tb",
+      "forms.svg"
+    ],
+    "tag-managers": [
+      "tb",
+      "tag.svg"
+    ],
+    "ticket-booking": [
+      "tb",
+      "calendar-time.svg"
+    ],
+    "translation": [
+      "tb",
+      "language.svg"
+    ],
+    "ui-frameworks": [
+      "tb",
+      "brush.svg"
+    ],
+    "user-onboarding": [
+      "tb",
+      "user-plus.svg"
+    ],
+    "video-players": [
+      "tb",
+      "video.svg"
+    ],
+    "web-frameworks": [
+      "tb",
+      "window.svg"
+    ],
+    "web-server-extensions": [
+      "tb",
+      "puzzle.svg"
+    ],
+    "web-servers": [
+      "tb",
+      "server.svg"
+    ],
+    "webmail": [
+      "tb",
+      "mail-fast.svg"
+    ],
+    "widgets": [
+      "tb",
+      "puzzle.svg"
+    ],
+    "wikis": [
+      "tb",
+      "book.svg"
+    ],
+    "wordpress-plugins": [
+      "tb",
+      "puzzle.svg"
+    ],
+    "wordpress-themes": [
+      "tb",
+      "brand-wordpress.svg"
+    ]
+  }
+}

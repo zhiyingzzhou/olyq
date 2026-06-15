@@ -1,0 +1,10 @@
+{
+  "licenses": {
+    "title": "Open-Source License",
+    "description": "Shows this extension's open-source license (MIT).",
+    "olyqLicenseLine": "Olyq browser extension is released under the MIT License.",
+    "usageNotice": "Note: full third-party dependency/resource notices are provided with the source release. For commercial usage, please evaluate compliance on your own.",
+    "mitTitle": "MIT License",
+    "thirdPartyTitle": "Third-Party Notices"
+  }
+}

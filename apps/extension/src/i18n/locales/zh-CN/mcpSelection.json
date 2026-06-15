@@ -1,0 +1,13 @@
+{
+  "mcpSelection": {
+    "mcpModes": {
+      "auto": "自动选择",
+      "manual": "手动（选择 Server）",
+      "disabled": "禁用（不注入工具）"
+    },
+    "mcpModeDesc": "按当前消息判断是否需要 MCP，并只启用相关服务；普通对话不会注入 MCP 工具。",
+    "mcpServers": "允许的 MCP Servers（手动模式）",
+    "noMcpServers": "暂无可用的 MCP Server（请先在「扩展设置 → MCP」中添加并启用）。",
+    "modelParamsLabel": "模型参数（modelParams）"
+  }
+}

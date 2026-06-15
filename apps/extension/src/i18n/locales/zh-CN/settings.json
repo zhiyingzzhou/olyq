@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "title": "扩展设置",
+    "description": "管理 MCP、云同步、全局记忆、模型平台、联网搜索与安全隐私等扩展能力。",
+    "backToChat": "返回聊天",
+    "appearance": "外观",
+    "chatDialog": "对话",
+    "developer": "开发者",
+    "serviceWorker": "Service Worker",
+    "mcpBridge": "MCP 服务",
+    "cloudSync": "云同步",
+    "modelManager": "模型管理",
+    "defaultModels": "模型与提示",
+    "webSearch": "联网搜索",
+    "memory": "全局记忆",
+    "uiArch": "UI 架构",
+    "performance": "性能监控",
+    "sitePermissions": "网站权限",
+    "security": "安全隐私",
+    "licenses": "许可"
+  }
+}

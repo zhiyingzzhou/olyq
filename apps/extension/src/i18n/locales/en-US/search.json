@@ -1,0 +1,14 @@
+{
+  "search": {
+    "inChat": "Search in chat…",
+    "includeUser": "Include user",
+    "caseSensitive": "Case sensitive (English only)",
+    "wholeWord": "Whole word (English only)",
+    "prev": "Previous",
+    "next": "Next",
+    "globalTitle": "Global search",
+    "globalPlaceholder": "Search all topics…",
+    "openInChat": "Open in chat",
+    "noResults": "No results"
+  }
+}

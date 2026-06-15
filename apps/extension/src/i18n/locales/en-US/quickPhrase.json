@@ -1,0 +1,31 @@
+{
+  "quickPhrase": {
+    "title": "Quick Phrases",
+    "manageTitle": "Manage quick phrases",
+    "manageDesc": "Manage regular phrases for the current assistant and global phrases available to every assistant.",
+    "search": "Search phrases…",
+    "add": "Add Phrase",
+    "titleLabel": "Title",
+    "titlePlaceholder": "e.g. Meeting notes template",
+    "contentLabel": "Content",
+    "contentPlaceholder": "Enter the content inserted into chat input…",
+    "saveTo": "Save to",
+    "assistantScope": "Current assistant",
+    "assistantScopeDesc": "Show this first for the current assistant only",
+    "assistantScopeUnavailable": "No assistant is bound to this input, so only global phrases are available",
+    "globalScope": "Global phrases",
+    "globalScopeDesc": "Available across all assistants and topics",
+    "assistantSection": "Current assistant",
+    "globalSection": "Global",
+    "addFromInputDesc": "After saving, insert it from the input lightning button or / panel.",
+    "manageGlobalDesc": "Manage global quick phrases available to every assistant.",
+    "assistantManageTitle": "Regular phrases",
+    "assistantManageDesc": "These phrases belong only to the current assistant and appear first in the input phrase panel.",
+    "dragHandle": "Drag to reorder",
+    "deleteConfirmTitle": "Delete phrase",
+    "deleteConfirmDesc": "After deletion, this content can no longer be inserted from quick phrases.",
+    "noResults": "No matching phrases",
+    "hint": "Type / to trigger quick phrases",
+    "empty": "No quick phrases yet"
+  }
+}

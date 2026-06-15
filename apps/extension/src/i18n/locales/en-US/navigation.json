@@ -1,0 +1,12 @@
+{
+  "navigation": {
+    "top": "Top",
+    "bottom": "Bottom",
+    "prev": "Previous",
+    "next": "Next",
+    "flow": "Conversation Flow",
+    "hide": "Hide",
+    "panel": "Message navigation",
+    "closePanel": "Collapse message navigation"
+  }
+}

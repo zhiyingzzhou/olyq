@@ -1,0 +1,8 @@
+# Olyq
+
+Olyq is a local-first browser extension for page-aware chat, web page tools, multi-model workflows, technology detection, image generation, and backup utilities.
+
+- [Home](/)
+- [English home](/en/)
+- [Privacy boundary](#privacy)
+- [Get Olyq](#get-olyq)

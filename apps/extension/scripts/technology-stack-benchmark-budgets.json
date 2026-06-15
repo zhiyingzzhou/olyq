@@ -1,0 +1,43 @@
+{
+  "rulePackage": {
+    "minFingerprints": 7000,
+    "maxColdLoadMs": 120
+  },
+  "scenarios": {
+    "large-dom": {
+      "iterations": 40,
+      "maxMeanMs": 14,
+      "maxP95Ms": 32,
+      "minTechnologies": 8,
+      "mustReportPartialCoverage": false
+    },
+    "large-script-list": {
+      "iterations": 40,
+      "maxMeanMs": 18,
+      "maxP95Ms": 24,
+      "minTechnologies": 9,
+      "mustReportPartialCoverage": false
+    },
+    "large-cookie-set": {
+      "iterations": 40,
+      "maxMeanMs": 14,
+      "maxP95Ms": 20,
+      "minTechnologies": 7,
+      "mustReportPartialCoverage": false
+    },
+    "request-heavy": {
+      "iterations": 40,
+      "maxMeanMs": 10,
+      "maxP95Ms": 14,
+      "minTechnologies": 9,
+      "mustReportPartialCoverage": false
+    },
+    "spa-soft-route": {
+      "iterations": 40,
+      "maxMeanMs": 10,
+      "maxP95Ms": 14,
+      "minTechnologies": 8,
+      "mustReportPartialCoverage": false
+    }
+  }
+}

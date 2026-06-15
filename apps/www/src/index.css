@@ -1,0 +1,190 @@
+@import 'tailwindcss';
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Inter Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url('@fontsource-variable/inter/files/inter-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono Variable';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 800;
+  src: url('@fontsource-variable/jetbrains-mono/files/jetbrains-mono-latin-wght-normal.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@theme {
+  --font-primary: Inter Variable, PingFang SC, Hiragino Sans GB, Microsoft YaHei UI, Microsoft YaHei, Noto Sans CJK SC, Source Han Sans SC, WenQuanYi Micro Hei, sans-serif;
+  --font-mono: JetBrains Mono Variable, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace;
+
+  --color-gray-50: oklch(98.5% 0.002 247.839);
+  --color-gray-100: #f9f9f9;
+  --color-gray-200: #f5f5f5;
+  --color-gray-300: #eaedf1;
+  --color-gray-400: #d7d7d7;
+  --color-gray-500: silver;
+  --color-gray-600: #8b8b8b;
+  --color-gray-700: oklch(37.3% 0.034 259.733);
+  --color-gray-800: oklch(27.8% 0.033 256.848);
+  --color-gray-900: oklch(21% 0.034 264.665);
+
+  --color-neutral-50: oklch(98.5% 0 0);
+  --color-neutral-100: oklch(97% 0 0);
+  --color-neutral-200: oklch(92.2% 0 0);
+  --color-neutral-300: oklch(87% 0 0);
+  --color-neutral-400: oklch(70.8% 0 0);
+  --color-neutral-500: oklch(55.6% 0 0);
+  --color-neutral-600: oklch(43.9% 0 0);
+  --color-neutral-700: oklch(37.1% 0 0);
+  --color-neutral-800: oklch(26.9% 0 0);
+  --color-neutral-900: oklch(20.5% 0 0);
+  --color-neutral-950: oklch(14.5% 0 0);
+
+  --color-black: #000;
+  --color-white: #fff;
+  --color-charcoal-700: #343434;
+  --color-charcoal-900: #202020;
+  --color-brand: #f17463;
+
+  --perspective-distant: 1200px;
+  --shadow-aceternity:
+    0px 2px 3px -1px rgb(0 0 0 / 0.1),
+    0px 1px 0px 0px rgb(25 28 33 / 0.02),
+    0px 0px 0px 1px rgb(25 28 33 / 0.08);
+  --animate-orbit: orbit var(--duration, 24s) linear infinite;
+  --animate-counter-orbit: counter-orbit var(--duration, 24s) linear infinite;
+}
+
+@theme inline {
+  --color-foreground: var(--foreground);
+  --color-input: var(--input);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-ring: var(--ring);
+  --color-destructive: var(--destructive);
+  --color-canvas: var(--canvas);
+  --color-canvas-fill: var(--canvas-fill);
+  --color-dots: var(--dots);
+  --color-line: var(--line);
+  --color-divide: var(--divide);
+  --color-footer-link: var(--footer-link);
+}
+
+@layer base {
+  :root {
+    color-scheme: light;
+    --primary: var(--color-neutral-900);
+    --divide: var(--color-gray-300);
+    --canvas: var(--color-neutral-400);
+    --canvas-fill: var(--color-neutral-300);
+    --dots: var(--color-gray-300);
+    --line: var(--color-neutral-200);
+    --footer-link: #676767;
+  }
+
+  html.dark {
+    color-scheme: dark;
+    --primary: var(--color-neutral-100);
+    --divide: var(--color-neutral-800);
+    --canvas: var(--color-neutral-200);
+    --canvas-fill: var(--color-neutral-800);
+    --dots: var(--color-neutral-800);
+    --line: var(--color-neutral-700);
+    --footer-link: var(--color-neutral-300);
+  }
+
+  html,
+  body,
+  #root {
+    min-height: 100%;
+  }
+
+  body {
+    margin: 0;
+    font-family: var(--font-primary), var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html.dark body {
+    background-color: var(--color-black);
+  }
+}
+
+.notus-app {
+  min-height: 100vh;
+  background: white;
+}
+
+.dark .notus-app {
+  background: black;
+}
+
+.notus-app [data-mobile-menu='true'] {
+  display: none;
+}
+
+.notus-app [data-mobile-menu='true'][data-open='true'] {
+  display: block;
+}
+
+.notus-testimonials-active-surface {
+  background:
+    radial-gradient(circle at center, var(--color-canvas) 0%, transparent 70%),
+    var(--color-canvas-fill);
+}
+
+.notus-newsletter-field {
+  background-color: var(--color-gray-200);
+  border-color: var(--color-gray-300);
+}
+
+.hover\:shadow-input:hover {
+  box-shadow:
+    0px 2px 3px -1px rgb(0 0 0 / 0.1),
+    0px 1px 0px 0px rgb(25 28 33 / 0.02),
+    0px 0px 0px 1px rgb(25 28 33 / 0.08);
+}
+
+.notus-auth-focus-field:focus-visible {
+  --tw-ring-color: var(--color-gray-300);
+}
+
+html.dark .notus-newsletter-field {
+  background-color: var(--color-neutral-800);
+  border-color: var(--color-neutral-700);
+}
+
+html.dark .hover\:shadow-input:hover {
+  box-shadow:
+    0px 2px 3px -1px rgb(0 0 0 / 0.4),
+    0px 1px 0px 0px rgb(255 255 255 / 0.03),
+    0px 0px 0px 1px rgb(255 255 255 / 0.1);
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counter-orbit {
+  from {
+    transform: rotate(360deg);
+  }
+
+  to {
+    transform: rotate(0deg);
+  }
+}

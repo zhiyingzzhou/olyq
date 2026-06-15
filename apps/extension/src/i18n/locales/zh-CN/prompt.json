@@ -1,0 +1,43 @@
+{
+  "prompt": {
+    "library": "提示词库",
+    "description": "浏览、创建并应用提示词模板。",
+    "search": "搜索提示词…",
+    "apply": "应用",
+    "addPrompt": "添加提示词",
+    "title": "标题",
+    "content": "内容",
+    "category": "分类",
+    "categoryOptional": "分类（可选）",
+    "add": "添加",
+    "builtin": "内置",
+    "user": "自定义",
+    "builtinPrompts": {
+      "translate": {
+        "title": "翻译模板",
+        "content": "请将下面内容翻译成目标语言。如果内容是中文，翻译为英文；如果内容是英文，翻译为中文。保持原文语气、风格和术语一致性。",
+        "category": "翻译"
+      },
+      "coder": {
+        "title": "代码问题",
+        "content": "请围绕下面代码或问题提供编写、调试、优化建议。说明关键原因、可能风险和可执行的最佳实践。",
+        "category": "编程"
+      },
+      "writer": {
+        "title": "写作润色",
+        "content": "请改进下面文本的结构、措辞和表达，保留原意，并给出有建设性的修改建议。",
+        "category": "写作"
+      },
+      "summarizer": {
+        "title": "内容总结",
+        "content": "请将下面内容精炼总结，提取关键要点，并用简洁明了的语言呈现。",
+        "category": "效率"
+      },
+      "explainer": {
+        "title": "概念解释",
+        "content": "请用通俗易懂的语言解释下面概念或问题，可以使用类比和例子帮助理解。",
+        "category": "学习"
+      }
+    }
+  }
+}

@@ -1,0 +1,185 @@
+name: Prepare Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version without the v prefix, such as 0.1.1 or 0.1.1-beta.1"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: prepare-release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  prepare-release:
+    name: Prepare release PR
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout dev
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          ref: dev
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 10.27.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Validate release input
+        id: release
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          version="${RELEASE_VERSION}"
+          if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Release version must match X.Y.Z or X.Y.Z-prerelease. Got ${version}."
+            exit 1
+          fi
+
+          tag="v${version}"
+          branch="release/${tag}"
+
+          if git ls-remote --exit-code --heads origin "${branch}" >/dev/null 2>&1; then
+            echo "::error::Release branch ${branch} already exists."
+            exit 1
+          fi
+
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
+            echo "::error::Release tag ${tag} already exists."
+            exit 1
+          fi
+
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+          echo "branch=${branch}" >> "${GITHUB_OUTPUT}"
+
+      - name: Update package versions
+        env:
+          RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          node --input-type=module <<'NODE'
+          import fs from "node:fs";
+
+          const version = process.env.RELEASE_VERSION;
+          const files = ["package.json", "apps/extension/package.json"];
+
+          for (const file of files) {
+            const pkg = JSON.parse(fs.readFileSync(file, "utf8"));
+            pkg.version = version;
+            fs.writeFileSync(file, `${JSON.stringify(pkg, null, 2)}\n`);
+          }
+          NODE
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Verify
+        run: pnpm verify
+
+      - name: Run mock E2E
+        run: pnpm --filter @olyq/extension e2e:mock
+
+      - name: Rebuild production extension packages
+        run: pnpm build:extension:chromium && pnpm build:extension:firefox
+
+      - name: Package preview artifacts
+        env:
+          OLYQ_PACKAGE_LABEL: ${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}
+          OLYQ_RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          pnpm --filter @olyq/extension package:chromium
+          pnpm --filter @olyq/extension package:firefox
+          cd apps/extension/artifacts
+          shasum -a 256 \
+            "olyq-chrome-web-store-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}.zip" \
+            "olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}.zip" \
+            > SHA256SUMS.txt
+          cd ../../..
+          pnpm package:release-docs
+
+      - name: Upload Chrome preview package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: olyq-chrome-web-store-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}
+          path: apps/extension/artifacts/olyq-chrome-web-store-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}.zip
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload Firefox preview package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}
+          path: apps/extension/artifacts/olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}.zip
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Upload release docs preview package
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: olyq-release-docs-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}
+          path: apps/extension/artifacts/olyq-release-docs-${{ steps.release.outputs.tag }}-pre.${{ github.run_number }}.zip
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Create release pull request
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_BRANCH: ${{ steps.release.outputs.branch }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RUN_ID: ${{ github.run_id }}
+          RUN_NUMBER: ${{ github.run_number }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if git diff --quiet -- package.json apps/extension/package.json; then
+            echo "::error::Version files did not change. ${RELEASE_TAG} may already be prepared."
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "${RELEASE_BRANCH}"
+          git add package.json apps/extension/package.json
+          git commit -m "chore: prepare ${RELEASE_TAG}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "HEAD:refs/heads/${RELEASE_BRANCH}"
+
+          gh pr create \
+            --repo "${GITHUB_REPOSITORY}" \
+            --base main \
+            --head "${RELEASE_BRANCH}" \
+            --title "Release ${RELEASE_TAG}" \
+            --body "$(cat <<BODY
+Prepare ${RELEASE_TAG} from dev for publication.
+
+Preview packages were generated by this workflow run and are retained for 14 days:
+
+- olyq-chrome-web-store-${RELEASE_TAG}-pre.${RUN_NUMBER}.zip
+- olyq-firefox-amo-addon-${RELEASE_TAG}-pre.${RUN_NUMBER}.zip
+- olyq-release-docs-${RELEASE_TAG}-pre.${RUN_NUMBER}.zip
+
+Manual QA must use the preview artifacts from:
+https://github.com/${GITHUB_REPOSITORY}/actions/runs/${RUN_ID}
+
+After this PR is reviewed, preview QA passes, and the PR is merged into main, run the Release workflow with version ${RELEASE_TAG#v}. The Release workflow rebuilds official packages from main; it does not reuse preview artifacts.
+BODY
+)"

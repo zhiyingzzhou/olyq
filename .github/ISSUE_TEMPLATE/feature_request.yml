@@ -1,0 +1,34 @@
+name: Feature request
+description: Suggest a product or developer experience improvement.
+title: "[Feature]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: What user problem should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposal
+      description: Describe the behavior you want.
+    validations:
+      required: true
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: Note any privacy, permission, provider, browser, or workflow constraints.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: This request does not require expanding install-time permissions without user benefit.
+          required: true
+        - label: I understand Olyq avoids compatibility branches and hidden fallback behavior during active development.
+          required: true

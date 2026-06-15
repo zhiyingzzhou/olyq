@@ -1,0 +1,34 @@
+{
+  "files": {
+    "title": "Files",
+    "description": "Manage chat attachments and local backup snapshots.",
+    "tabs": {
+      "attachments": "Attachments",
+      "backups": "Backups"
+    },
+    "searchPlaceholder": "Search by name / MIME / ID…",
+    "filters": {
+      "all": "All",
+      "images": "Images",
+      "files": "Files"
+    },
+    "selected": "{{count}} selected",
+    "deleteSelected": "Delete selected",
+    "empty": "No attachments",
+    "preview": "Preview",
+    "download": "Download",
+    "restore": "Restore",
+    "lite": "Lite backup",
+    "backupsHint": "Snapshots are stored in browser IndexedDB and can be synced from Settings.",
+    "backupsEmpty": "No local backup snapshots",
+    "errors": {
+      "attachmentMissing": "Attachment is missing or has been cleaned up",
+      "backupMissing": "Backup content is missing (it may have been cleaned up)"
+    },
+    "toast": {
+      "deleted": "Deleted {{count}} item(s)",
+      "restored": "Restored from local backup (data refreshed)",
+      "backupDeleted": "Backup snapshot deleted"
+    }
+  }
+}

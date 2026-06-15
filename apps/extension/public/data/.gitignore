@@ -1,0 +1,13 @@
+*
+!.gitignore
+!assistant-presets.browser.zh-CN.json
+!assistant-presets.browser.en.json
+!assistant-presets.general.zh-CN.json
+!assistant-presets.general.en.json
+!technology-fingerprints/
+!technology-fingerprints/fingerprint-rules.json
+!technology-icons/
+!technology-icons/catalog.compact.json
+!technology-icons/catalog.full.json
+!technology-icons/coverage.json
+!technology-icons/missing-icons.json

@@ -1,0 +1,50 @@
+{
+  "securityPanel": {
+    "title": "安全与隐私保护",
+    "description": "以 manifest.json 为准进行安全审计：CSP、权限与可访问资源清单。",
+    "csp": {
+      "title": "内容安全策略（CSP）",
+      "extensionPages": "扩展页 CSP（只读）",
+      "note": "此项由 manifest 固定声明，运行时不可通过 UI 动态修改。",
+      "missing": "（未读取到 CSP：可能不在扩展环境或 manifest 未显式声明）"
+    },
+    "permissions": {
+      "title": "权限声明审计",
+      "table": {
+        "permission": "权限",
+        "type": "类型",
+        "source": "来源"
+      },
+      "typeLabels": {
+        "permissions": "扩展权限",
+        "hostPermissions": "安装期网站权限"
+      },
+      "sourceLabels": {
+        "manifest": "扩展清单（manifest.json）"
+      },
+      "missing": "（未读取到权限信息）"
+    },
+    "installTimeWebAccess": {
+      "title": "安装期网页访问",
+      "description": "普通网页访问只认 manifest 中固定声明的 http://*/* 与 https://*/*，不提供运行时网页授权或撤销入口。",
+      "declared": "已声明普通网页访问",
+      "missing": "manifest 未声明普通网页访问",
+      "count": "manifest 声明 {{count}} 条"
+    },
+    "webAccessibleResources": {
+      "title": "Web Accessible Resources",
+      "description": "以下资源已在 manifest.json 中显式声明为可访问：",
+      "none": "（当前未声明）"
+    },
+    "credentials": {
+      "title": "凭证存储",
+      "modelApiKey": "模型平台 API Key",
+      "modelApiKeyDesc": "使用 chrome.storage.local 存储（不暴露给网页）。"
+    },
+    "networkTips": {
+      "title": "网络提示",
+      "allUrls": "技术栈探测、browser-context 与网页工具只覆盖普通 http/https 页面；内部页、扩展页、about: 与 file: 默认不可采集。",
+      "audit": "MCP/同步等外部通道建议开启审计日志（后续接入）。"
+    }
+  }
+}

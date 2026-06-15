@@ -1,0 +1,43 @@
+{
+  "prompt": {
+    "library": "Prompt Library",
+    "description": "Browse, create and apply prompt templates.",
+    "search": "Search prompts…",
+    "apply": "Apply",
+    "addPrompt": "Add Prompt",
+    "title": "Title",
+    "content": "Content",
+    "category": "Category",
+    "categoryOptional": "Category (optional)",
+    "add": "Add",
+    "builtin": "Built-in",
+    "user": "Custom",
+    "builtinPrompts": {
+      "translate": {
+        "title": "Translation Template",
+        "content": "Translate the following content into the target language. If the content is Chinese, translate it into English; if it is English, translate it into Chinese. Preserve the original tone, style, and terminology.",
+        "category": "Translation"
+      },
+      "coder": {
+        "title": "Code Question",
+        "content": "Provide writing, debugging, and optimization guidance for the following code or question. Explain the key reasons, risks, and actionable best practices.",
+        "category": "Programming"
+      },
+      "writer": {
+        "title": "Writing Revision",
+        "content": "Improve the structure, wording, and expression of the following text while preserving its intent, and provide constructive revision suggestions.",
+        "category": "Writing"
+      },
+      "summarizer": {
+        "title": "Content Summary",
+        "content": "Summarize the following content, extract the key points, and present them clearly and concisely.",
+        "category": "Productivity"
+      },
+      "explainer": {
+        "title": "Concept Explainer",
+        "content": "Explain the following concept or question in plain language, using analogies and examples when helpful.",
+        "category": "Learning"
+      }
+    }
+  }
+}

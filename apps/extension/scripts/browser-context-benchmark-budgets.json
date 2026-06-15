@@ -1,0 +1,30 @@
+{
+  "scenarios": {
+    "tab-switch-follow": {
+      "iterations": 25,
+      "maxMeanMs": 20,
+      "maxP95Ms": 40,
+      "minStaleEntries": 2
+    },
+    "send-preflight": {
+      "iterations": 12,
+      "maxMeanMs": 120,
+      "maxP95Ms": 200,
+      "maxWarmMeanMs": 80,
+      "maxWarmP95Ms": 120,
+      "expectedLayoutRequestsPerIteration": 2,
+      "expectedReadableDomRequestsPerIteration": 1,
+      "expectedTechnologyStackRequestsPerIteration": 1,
+      "minSourceCacheHitRatio": 0.45,
+      "maxDegradedSendRate": 0
+    },
+    "capture-coalescing": {
+      "iterations": 2,
+      "maxMeanMs": 3000,
+      "maxP95Ms": 3400,
+      "maxCaptureCallsPerIteration": 3,
+      "minCaptureCoalescingHitRatio": 0.7,
+      "maxQuotaRetryRate": 0
+    }
+  }
+}

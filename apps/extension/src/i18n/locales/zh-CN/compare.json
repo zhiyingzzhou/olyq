@@ -1,0 +1,10 @@
+{
+  "compare": {
+    "title": "多模型对比",
+    "description": "选择 2 个或更多模型进行并行对比（至少选 2 个）。",
+    "selected": "已选 {{count}} 个模型",
+    "start": "开始对比",
+    "models": "{{count}} 个模型对比",
+    "generating": "生成中…"
+  }
+}

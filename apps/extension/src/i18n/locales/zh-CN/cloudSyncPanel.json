@@ -1,0 +1,331 @@
+{
+  "cloudSyncPanel": {
+    "nav": {
+      "sections": {
+        "base": "基础数据设置",
+        "backup": "云同步与备份"
+      },
+      "items": {
+        "dataDir": "数据目录",
+        "localBackup": "本地备份",
+        "webdav": "WebDAV",
+        "s3": "S3 兼容存储"
+      }
+    },
+    "actions": {
+      "backup": "创建备份快照",
+      "restore": "从备份快照恢复",
+      "manage": "管理备份快照",
+      "download": "下载",
+      "copy": "复制",
+      "refresh": "刷新"
+    },
+    "toast": {
+      "copyFailed": "复制失败：请检查浏览器剪贴板权限"
+    },
+    "snapshotBackup": {
+      "title": "备份与恢复",
+      "desc": "创建可恢复的 ZIP 快照，用于恢复、迁移、回滚；这是唯一的备份入口。",
+      "autoTitle": "自动创建快照"
+    },
+    "liteBackup": {
+      "title": "精简备份",
+      "desc": "保留聊天、设置、记忆和 Paint 元数据；跳过附件、图片等文件二进制，并移除相关附件引用。"
+    },
+    "autoSync": {
+      "title": "自动同步",
+      "off": "关闭",
+      "minute_interval": "{{count}} 分钟",
+      "hour_interval": "{{count}} 小时"
+    },
+    "sync": {
+      "title": "多设备同步",
+      "desc": "合并多设备上的助手、话题、消息等当前状态；不创建备份，也不能用于回滚恢复。",
+      "runLabel": "当前状态",
+      "fileLabel": "同步状态文件",
+      "syncNow": "同步当前状态",
+      "never": "尚未执行多设备同步",
+      "lastSuccess": "最近成功：{{time}}，已合并 {{merged}} 个话题；此操作不会创建备份",
+      "lastFailure": "最近失败：{{time}}",
+      "toast": {
+        "synced": "多设备同步完成，已合并 {{merged}} 个话题"
+      }
+    },
+    "maxBackups": {
+      "title": "最大快照数",
+      "unlimited": "无限制"
+    },
+    "remoteBackups": {
+      "count": "{{count}} 个备份快照",
+      "empty": "暂无远端备份快照。",
+      "unknownTime": "时间未知",
+      "restoreConfirmTitle": "恢复这个备份快照？",
+      "restoreConfirmDesc": "将用“{{name}}”覆盖当前本地数据。此操作会替换聊天、设置、记忆和其它备份内数据。"
+    },
+    "dataDir": {
+      "dataSettingsTitle": "数据设置",
+      "backupRestore": "快照备份",
+      "dataDirTitle": "数据目录",
+      "appData": "应用数据",
+      "appDataDesc": "localStorage (浏览器本地存储)",
+      "viewData": "查看数据",
+      "viewDataDialog": {
+        "title": "查看数据",
+        "desc": "展示当前扩展在 localStorage / chrome.storage.local / IndexedDB 的数据概况（仅本地）。"
+      },
+      "kbFiles": "知识库记忆",
+      "deleteFiles": "清空记忆",
+      "deleteFilesDialog": {
+        "title": "清空知识库记忆？",
+        "desc": "将清空知识库记忆数据（不可恢复），不会删除聊天附件和 Paint 图片。"
+      },
+      "clearCache": "清除缓存",
+      "clearCacheDialog": {
+        "title": "清除缓存？",
+        "desc": "清除 CacheStorage 等缓存数据，不会删除聊天记录与设置。"
+      },
+      "resetData": "重置数据",
+      "resetDialog": {
+        "title": "重置所有数据？",
+        "desc": "将清空聊天记录、附件、记忆、模型配置与云同步配置等全部本地数据，且无法撤销。"
+      },
+      "toast": {
+        "backupExported": "备份已导出",
+        "restoreDone": "恢复完成（聊天数据已刷新，建议重新打开设置面板以加载最新配置）",
+        "copied": "已复制到剪贴板",
+        "filesDeleted": "已清空知识库记忆",
+        "cacheCleared": "缓存已清除",
+        "resetDone": "已重置数据，即将刷新页面"
+      }
+    },
+    "localBackup": {
+      "title": "本地快照备份",
+      "dir": "快照导出目录",
+      "dirDesc": "可选：授权一个目录后，每次创建备份快照时都会额外导出一份 ZIP 文件（best-effort）。",
+      "dirDescUnsupported": "当前浏览器不支持选择目录，将仅把备份快照保存在本地（IndexedDB），可在“管理备份快照”中下载。",
+      "dirPlaceholder": "请选择快照导出目录",
+      "browse": "浏览",
+      "clear": "清除",
+      "manageTitle": "本地备份快照管理",
+      "manageDesc": "备份快照保存在浏览器的 IndexedDB 中，可在此恢复/下载/删除。",
+      "manageCount": "{{count}} 个备份快照",
+      "manageEmpty": "暂无备份快照。",
+      "status": {
+        "saving": "正在保存自动快照设置...",
+        "savedAt": "已保存：{{time}}",
+        "scheduleActive": "自动快照已开启",
+        "autoDisabled": "自动快照已关闭",
+        "autoDisabledDesc": "开启后，首次自动快照会在一个完整周期后触发。",
+        "nextRunAt": "下次约 {{time}}；浏览器可能因休眠或资源调度延迟执行。",
+        "nextRunPending": "等待后台创建下一次计划；首次不会立即执行。",
+        "never": "尚未执行自动快照",
+        "lastSuccess": "最近成功：{{time}}",
+        "lastFailure": "最近失败：{{time}}，{{error}}",
+        "cleaned": "本次清理 {{count}} 个旧备份快照",
+        "fileExportDegraded": "目录导出需重新授权；快照已保存到浏览器本地 IndexedDB。",
+        "reauthorizeDir": "重新授权目录",
+        "fastFullBackupWarning": "5 分钟自动快照不保证精确定时；full 备份可能增加后台导出成本，建议开启精简备份或延长间隔。",
+        "queryFailed": "无法读取后台自动快照计划",
+        "detail": {
+          "action": "详情",
+          "title": "自动快照失败详情",
+          "desc": "这里显示自动任务记录的可读诊断信息；需要反馈排查时可复制完整诊断信息。",
+          "copyDiagnostics": "复制诊断信息",
+          "summary": "错误摘要",
+          "time": "发生时间",
+          "runtime": "运行时",
+          "phase": "阶段",
+          "taskType": "任务",
+          "requestId": "请求 ID",
+          "errorKey": "错误标识",
+          "reason": "原因码",
+          "causeReason": "下层原因码",
+          "domainId": "备份域",
+          "stage": "导出阶段",
+          "path": "归档路径",
+          "message": "原始信息",
+          "causeMessage": "原因信息",
+          "note": "说明",
+          "backupProfile": "备份档位",
+          "syncInterval": "间隔分钟",
+          "maxBackups": "最大快照数",
+          "nextRun": "下次计划",
+          "raw": "原始状态",
+          "empty": "当前失败记录没有保存更多技术详情；等待下一次自动任务执行后会刷新。",
+          "unknownValue": "未识别的诊断值",
+          "unknownReason": "未识别的失败原因",
+          "unknownDomain": "未识别的数据范围",
+          "notes": {
+            "reasonCodeMissingLegacy": "这是一条旧失败记录，自动任务当时只保存了泛化错误，没有保存具体原因码；下一次自动快照如果仍失败，会写入真实原因码。",
+            "statusMissingDetail": "这条失败状态缺少详情，是旧写入路径生成的；等待下一次自动任务刷新。"
+          },
+          "domainLabels": {
+            "config_shared_storage": "共享设置",
+            "config_local_storage": "本地设置",
+            "workspace_paint": "Paint 工作区",
+            "chat_messages": "聊天消息",
+            "memory_records": "记忆数据",
+            "attachments_records": "附件数据"
+          },
+          "valueLabels": {
+            "runtime": {
+              "offscreen": "离屏文档",
+              "service_worker": "Service Worker"
+            },
+            "phase": {
+              "ensure_offscreen_document": "准备离屏文档",
+              "wait_offscreen_port": "等待离屏文档连接",
+              "offscreen_rpc": "调用离屏文档任务",
+              "offscreen_result": "读取离屏文档结果",
+              "service_worker_fallback": "Service Worker 后备执行",
+              "service_worker_task": "Service Worker 执行任务",
+              "local_backup_snapshot": "创建本地快照",
+              "status_missing_detail": "读取旧失败状态",
+              "webdav_structured_sync": "WebDAV 状态同步",
+              "s3_structured_sync": "S3 状态同步",
+              "flush": "刷新待写入数据",
+              "export": "导出备份域",
+              "validate": "校验备份域",
+              "encode": "编码备份域",
+              "manifest": "生成备份域清单"
+            },
+            "taskType": {
+              "local_backup_auto": "本地自动快照",
+              "webdav_auto": "WebDAV 自动同步",
+              "s3_auto": "S3 自动同步"
+            },
+            "backupProfile": {
+              "full": "完整备份",
+              "lite": "精简备份"
+            }
+          },
+          "reasonCodes": {
+            "backup_format_detail_missing": "旧失败记录缺少具体原因码；下一次自动快照会写入真实原因。",
+            "backup_archive_export_domain_flush_failed": "备份域刷新待写入数据失败。",
+            "backup_archive_export_domain_export_failed": "备份域导出失败。",
+            "backup_archive_export_domain_validate_failed": "备份域校验失败。",
+            "backup_archive_export_domain_encode_failed": "备份域编码失败。",
+            "backup_archive_export_domain_manifest_failed": "备份域清单生成失败。",
+            "backup_archive_app_version_missing": "备份清单缺少应用版本。",
+            "backup_archive_domain_blob_path_invalid": "备份域包含非法附件路径。",
+            "backup_archive_json_entry_missing": "备份归档缺少必要 JSON 文件。",
+            "backup_archive_json_entry_invalid_json": "备份归档中的 JSON 文件无法解析。",
+            "backup_archive_domain_manifest_domain_id_missing": "备份域清单缺少数据范围标识。",
+            "backup_archive_domain_manifest_hash_or_data_path_missing": "备份域清单缺少数据路径或校验信息。",
+            "backup_archive_domain_manifest_numeric_fields_invalid": "备份域清单包含非法数字字段。",
+            "backup_archive_manifest_version_unsupported": "备份清单版本不受支持。",
+            "backup_archive_manifest_domains_array_required": "备份清单中的数据范围列表格式不正确。",
+            "backup_archive_attachments_manifest_array_required": "附件清单格式不正确。",
+            "backup_archive_attachments_blob_entry_missing": "备份归档缺少附件文件。",
+            "backup_archive_attachments_blob_missing_for_record": "附件记录缺少对应文件。",
+            "backup_archive_serialized_archive_size_invalid": "备份归档大小超过限制。",
+            "backup_archive_input_blob_invalid": "导入的备份文件不是有效 Blob。",
+            "backup_archive_zip_load_failed": "备份 ZIP 读取失败。",
+            "backup_archive_manifest_file_missing": "备份 ZIP 缺少清单文件。",
+            "backup_archive_domain_descriptor_missing": "备份包含当前版本未登记的数据范围。",
+            "backup_archive_domain_hash_mismatch": "备份域校验值不匹配。",
+            "backup_archive_file_count_mismatch": "备份 ZIP 文件数量与清单不一致。",
+            "backup_archive_unexpected_file": "备份 ZIP 中存在未登记文件。",
+            "backup_archive_parse_failed": "备份 ZIP 解析失败。",
+            "backup_chat_messages_topic_id_missing": "聊天消息备份中存在缺少话题 ID 的记录。",
+            "backup_chat_messages_array_required": "聊天消息备份数据不是数组。",
+            "backup_chat_messages_count_limit_exceeded": "聊天消息数量超过备份上限。",
+            "backup_memory_records_array_required": "记忆备份数据不是数组。",
+            "backup_memory_records_record_invalid": "记忆备份中存在非法记录。",
+            "attachments_records_data_blob_like_missing": "附件记录缺少可读取的 Blob 数据。",
+            "attachments_records_size_mismatch": "附件元数据大小与实际 Blob 大小不一致。",
+            "attachments_records_missing_blob_record": "聊天或工作台引用了不存在的附件记录。",
+            "attachments_records_count_limit_exceeded": "附件数量超过备份上限。",
+            "attachments_records_item_size_limit_exceeded": "单个附件超过备份体积上限。",
+            "attachments_records_total_size_limit_exceeded": "附件总体积超过备份上限。",
+            "attachments_records_selected_count_limit_exceeded": "选中的附件数量超过备份上限。",
+            "attachments_records_record_required": "附件备份中存在非对象记录。",
+            "attachments_records_meta_record_required": "附件元数据不是对象。",
+            "attachments_records_kind_invalid": "附件类型非法。",
+            "attachments_records_non_empty_string_required": "附件记录缺少必填文本字段。",
+            "attachments_records_finite_non_negative_integer_required": "附件记录中存在非法数字字段。",
+            "attachments_records_duplicate_id": "附件备份中存在重复 ID。",
+            "attachments_records_array_required": "附件备份数据不是数组。",
+            "attachments_records_manifest_array_required": "附件清单不是数组。"
+          }
+        }
+      },
+      "toast": {
+        "dirPickerUnsupported": "当前浏览器不支持选择目录（File System Access API 不可用）",
+        "dirSelected": "已选择目录：{{name}}",
+        "dirAuthorized": "快照导出目录已重新授权",
+        "dirCleared": "已清除备份目录",
+        "dirPermissionDenied": "目录未授权写入权限",
+        "exportFailed": "导出到目录失败：{{error}}",
+        "backedUp": "本地备份快照已创建",
+        "cleaned": "已清理 {{count}} 个旧备份快照",
+        "backupMissing": "备份快照内容不存在（可能已被清理）",
+        "restored": "已从本地备份快照恢复（聊天数据已刷新）",
+        "deleted": "已删除备份快照"
+      }
+    },
+    "webdav": {
+      "title": "WebDAV",
+      "url": "WebDAV 地址",
+      "username": "WebDAV 用户名",
+      "usernamePlaceholder": "WebDAV 用户名",
+      "password": "WebDAV 密码",
+      "passwordPlaceholder": "WebDAV 密码",
+      "path": "WebDAV 路径",
+      "targetFile": "备份快照文件",
+      "targetFileDesc": "路径固定为远端目录。快照备份会在该目录下生成 ZIP；状态同步会在同一目录写入 olyq-sync-state.v1.json。",
+      "actions": {
+        "backup": "备份到 WebDAV",
+        "restore": "从 WebDAV 恢复"
+      },
+      "manage": {
+        "title": "选择 WebDAV 备份",
+        "description": "从 WebDAV 目录中选择一个 Olyq ZIP 快照恢复。"
+      },
+      "disableStream": "禁用流式上传",
+      "disableStreamDesc": "开启后，将文件加载到内存中再上传，可解决部分 WebDAV 服务不兼容 chunked 上传的问题，但会增加内存占用",
+      "toast": {
+        "backedUp": "已创建 WebDAV 备份快照",
+        "restoreUrlMissing": "未找到可恢复的 WebDAV 备份快照，请先在当前 WebDAV 路径下创建备份。",
+        "restored": "已从 WebDAV 备份快照恢复（聊天数据已刷新）"
+      }
+    },
+    "s3": {
+      "title": "S3 兼容存储",
+      "description": "与 AWS S3 API 兼容的对象存储服务，例如 AWS S3、Cloudflare R2、阿里云 OSS、腾讯云 COS 等",
+      "fields": {
+        "apiUrl": "API 地址",
+        "apiUrlPlaceholder": "https://s3.amazonaws.com",
+        "region": "区域",
+        "regionPlaceholder": "Region, 例如: us-east-1",
+        "bucket": "存储桶",
+        "bucketPlaceholder": "Bucket, 例如: my-backup",
+        "accessKeyId": "Access Key ID",
+        "accessKeyIdPlaceholder": "Access Key ID",
+        "secretAccessKey": "Secret Access Key",
+        "secretAccessKeyPlaceholder": "Secret Access Key",
+        "backupDir": "备份目录（可选）",
+        "backupDirPlaceholder": "例如：olyq"
+      },
+      "actions": {
+        "backup": "备份到 S3",
+        "connectionTest": "连接测试",
+        "testConnection": "测试连接"
+      },
+      "manage": {
+        "title": "管理 S3 备份",
+        "description": "查看、恢复或删除 S3 上的备份快照。",
+        "count": "{{count}} 个备份快照",
+        "empty": "暂无备份快照。"
+      },
+      "toast": {
+        "backedUp": "已创建 S3 备份快照",
+        "cleaned": "已清理 {{count}} 个旧备份快照",
+        "restored": "已从 S3 备份快照恢复",
+        "deleted": "已删除备份快照",
+        "connectionOk": "连接成功",
+        "connectionFailedTitle": "连接失败"
+      }
+    }
+  }
+}

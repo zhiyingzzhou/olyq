@@ -1,0 +1,42 @@
+{
+  "screenshotEditor": {
+    "title": "Web Screenshot",
+    "textInput": "Enter annotation text",
+    "ocrPrompt": "You are an OCR text transcriber. Read only the text that is visibly present in the screenshot and preserve line breaks in reading order. Output exactly one JSON object in this shape: {\"text\":\"...\"}. The text field must contain only the original visible text from the screenshot; do not add explanations, headings, summaries, Markdown, code fences, bold markers, or any text that is not visible in the screenshot. If no text is recognizable, output {\"text\":\"\"}.",
+    "actions": {
+      "chat": "Chat",
+      "ocr": "OCR",
+      "undo": "Undo",
+      "copy": "Copy",
+      "download": "Download",
+      "close": "Close",
+      "confirm": "Add to conversation"
+    },
+    "tools": {
+      "rect": "Rectangle",
+      "circle": "Circle",
+      "arrow": "Arrow",
+      "pen": "Pen",
+      "mosaic": "Mosaic",
+      "text": "Text"
+    },
+    "options": {
+      "label": "Annotation style",
+      "color": "Color {{color}}",
+      "size": "Size {{size}}",
+      "fontSize": "Font size {{size}}"
+    },
+    "feedback": {
+      "copied": "Screenshot copied"
+    },
+    "ocr": {
+      "title": "Extracted text",
+      "loading": "Extracting text…",
+      "empty": "No text found",
+      "copy": "Copy",
+      "copied": "Copied",
+      "copyFailed": "Copy failed",
+      "close": "Close OCR result"
+    }
+  }
+}

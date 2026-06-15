@@ -1,0 +1,40 @@
+{
+  "translation": {
+    "title": "Translation Panel",
+    "sourceLang": "Source Language",
+    "targetLang": "Target Language",
+    "autoDetect": "Auto Detect",
+    "translate": "Translate",
+    "translating": "Translating…",
+    "inputPlaceholder": "Enter text to translate…",
+    "swap": "Swap Languages",
+    "resultPlaceholder": "Translation result will appear here…",
+    "charsCount": "{{count}} chars",
+    "autoDetectSource": "Auto-detect source language",
+    "sourceIs": "Source language is ",
+    "promptRole": "You are a professional translator. ",
+    "promptTranslateTo": ", please translate to ",
+    "promptPeriod": ".",
+    "promptRequirements": "Requirements:",
+    "promptOnlyResult": "Only output the translation, no explanations",
+    "promptKeepFormat": "Preserve the original formatting and line breaks",
+    "promptKeepTone": "Preserve the original tone and style",
+    "inputSystemPrompt": "You are a translation assistant. Translate the user-provided text into the specified target language. Output only the translated text, with no explanation, quotes, prefixes, or suffixes. Preserve the original formatting as much as possible, including paragraphs, lists, tables, and code blocks. If the source is already in the target language, output it unchanged.",
+    "inputUserPrompt": "Target language: {{language}}\n\n<input_text>\n{{text}}\n</input_text>",
+    "messageSystemPrompt": "You are a professional translator. Output only the translated text, with no explanation, prefix, suffix, or quotes. Preserve the original formatting as much as possible, including paragraphs, lists, tables, and code blocks.",
+    "messageUserPrompt": "Target language: {{language}}\n\n{{text}}",
+    "languages": {
+      "auto": "Auto detect",
+      "zh": "Chinese",
+      "en": "English",
+      "ja": "Japanese",
+      "ko": "Korean",
+      "fr": "French",
+      "de": "German",
+      "es": "Spanish",
+      "ru": "Russian",
+      "pt": "Portuguese",
+      "ar": "Arabic"
+    }
+  }
+}

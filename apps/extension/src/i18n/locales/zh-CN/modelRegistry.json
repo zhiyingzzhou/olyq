@@ -1,0 +1,87 @@
+{
+  "modelRegistry": {
+    "empty": "暂无",
+    "filters": {
+      "all": "全部"
+    },
+    "capabilities": {
+      "chat": "文本对话",
+      "multimodal-chat": "多模态对话",
+      "audio-chat": "音频对话",
+      "transcription": "语音转写",
+      "speech-generation": "语音合成",
+      "moderation": "内容审核",
+      "audio-model": "音频模型",
+      "image-generation": "图片生成",
+      "video-generation": "视频生成",
+      "embedding": "向量嵌入",
+      "rerank": "重排",
+      "unknown": "未知",
+      "vision-input": "视觉输入",
+      "audio-input": "音频输入",
+      "file-input": "文件输入",
+      "tool-call": "工具调用",
+      "structured-output": "结构化输出",
+      "reasoning": "推理",
+      "native-web-search": "原生联网",
+      "image-output": "图像输出",
+      "audio-output": "音频输出"
+    },
+    "modalities": {
+      "text": "文本",
+      "image": "图像",
+      "audio": "音频",
+      "video": "视频",
+      "file": "文件",
+      "embeddings": "向量"
+    },
+    "scopes": {
+      "public": "公共",
+      "provider": "平台私有",
+      "local": "本地"
+    },
+    "confidence": {
+      "high": "高",
+      "medium": "中",
+      "low": "低"
+    },
+    "transportProtocols": {
+      "openai-chat": "OpenAI Chat Completions",
+      "openai-responses": "OpenAI Responses",
+      "anthropic-messages": "Anthropic Messages",
+      "gemini-generate-content": "Gemini GenerateContent",
+      "cohere-chat": "Cohere Chat",
+      "bedrock-converse": "AWS Bedrock Converse",
+      "embedding-api": "Embedding API",
+      "rerank-api": "Rerank API",
+      "image-api": "Image API",
+      "video-api": "Video API",
+      "transcription-api": "Transcription API",
+      "speech-api": "Speech API",
+      "moderation-api": "Moderation API",
+      "unknown": "未知"
+    },
+    "fields": {
+      "baseModelKey": "基础模型 ID",
+      "canonicalId": "内部 Canonical ID",
+      "scope": "作用域",
+      "kind": "系统识别主类",
+      "confidence": "置信度",
+      "transportProtocol": "系统识别协议",
+      "displayName": "展示名称",
+      "description": "系统描述",
+      "systemCapabilities": "系统识别能力",
+      "inputModalities": "输入模态",
+      "outputModalities": "输出模态"
+    },
+    "manifestEditor": {
+      "validate": "校验",
+      "attachLocalFile": "绑定本地文件",
+      "currentFile": "当前文件：{{name}}",
+      "downloadJsonFallback": "未绑定本地文件时将下载 JSON",
+      "validateFailed": "校验失败",
+      "updatedAt": "updatedAt：{{value}}",
+      "jsonContent": "JSON 内容"
+    }
+  }
+}

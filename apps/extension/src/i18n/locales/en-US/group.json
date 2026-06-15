@@ -1,0 +1,23 @@
+{
+  "group": {
+    "useful": "Mark useful",
+    "empty": "Empty",
+    "layoutFold": "Fold",
+    "layoutVertical": "Vertical",
+    "layoutHorizontal": "Horizontal",
+    "layoutGrid": "Grid",
+    "retryFailedAll": "Retry failed ({{count}})",
+    "gridSettings": "Grid settings",
+    "gridColumns": "Columns",
+    "gridTrigger": "Popover trigger",
+    "openFullscreen": "Open fullscreen compare",
+    "closeFullscreen": "Close fullscreen compare",
+    "triggerHover": "Hover",
+    "triggerClick": "Click",
+    "deleteGroup": "Delete group",
+    "confirmDeleteGroup": "Delete all replies in this group?",
+    "modelTabs": "Select model response",
+    "compact": "Compact",
+    "expanded": "Expanded"
+  }
+}

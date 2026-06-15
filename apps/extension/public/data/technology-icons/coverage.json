@@ -1,0 +1,7106 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-05-09T22:56:04.533Z",
+  "sourceRules": {
+    "path": "public/data/technology-fingerprints/fingerprint-rules.json",
+    "snapshotVersion": "6.12.2",
+    "generatedAt": "2026-05-08T04:48:38.908Z",
+    "ruleCount": 7098,
+    "technologyCount": 7193,
+    "categoryCount": 108
+  },
+  "ruleCount": 7098,
+  "iconCount": 696,
+  "brandMatchedRules": 994,
+  "brandMissingRules": 6104,
+  "genericCoveredRules": 6104,
+  "visualCoveredRules": 7098,
+  "visualCoveragePercent": 100,
+  "brandCoveragePercent": 14,
+  "ruleHitReasonCounts": {
+    "exact": 555,
+    "js-suffix": 22,
+    "brand-prefix": 417
+  },
+  "topMissingCategories": [
+    {
+      "category": "ecommerce",
+      "count": 705
+    },
+    {
+      "category": "marketing-automation",
+      "count": 531
+    },
+    {
+      "category": "cms",
+      "count": 390
+    },
+    {
+      "category": "analytics",
+      "count": 362
+    },
+    {
+      "category": "live-chat",
+      "count": 337
+    },
+    {
+      "category": "crm",
+      "count": 294
+    },
+    {
+      "category": "page-builders",
+      "count": 216
+    },
+    {
+      "category": "advertising",
+      "count": 192
+    },
+    {
+      "category": "wordpress-plugins",
+      "count": 177
+    },
+    {
+      "category": "widgets",
+      "count": 166
+    },
+    {
+      "category": "personalization",
+      "count": 165
+    },
+    {
+      "category": "shopify-apps",
+      "count": 164
+    },
+    {
+      "category": "appointment-scheduling",
+      "count": 159
+    },
+    {
+      "category": "javascript-libraries",
+      "count": 152
+    },
+    {
+      "category": "payment-processors",
+      "count": 136
+    },
+    {
+      "category": "wordpress-themes",
+      "count": 127
+    },
+    {
+      "category": "reviews",
+      "count": 101
+    },
+    {
+      "category": "reservations-and-delivery",
+      "count": 97
+    },
+    {
+      "category": "security",
+      "count": 89
+    },
+    {
+      "category": "miscellaneous",
+      "count": 83
+    },
+    {
+      "category": "recruitment-and-staffing",
+      "count": 79
+    },
+    {
+      "category": "cookie-compliance",
+      "count": 78
+    },
+    {
+      "category": "lms",
+      "count": 73
+    },
+    {
+      "category": "affiliate-programs",
+      "count": 65
+    },
+    {
+      "category": "customer-data-platform",
+      "count": 61
+    },
+    {
+      "category": "shipping-carriers",
+      "count": 60
+    },
+    {
+      "category": "email",
+      "count": 57
+    },
+    {
+      "category": "issue-trackers",
+      "count": 57
+    },
+    {
+      "category": "web-servers",
+      "count": 57
+    },
+    {
+      "category": "form-builders",
+      "count": 55
+    }
+  ],
+  "matchedRules": [
+    {
+      "slug": "sulu-web",
+      "name": "@sulu/web",
+      "hitKey": "sulu",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "a-frame",
+      "name": "A-Frame",
+      "hitKey": "a-frame",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "accuweather",
+      "name": "AccuWeather",
+      "hitKey": "accuweather",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ace",
+      "name": "Ace",
+      "hitKey": "ace",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ada",
+      "name": "Ada",
+      "hitKey": "ada",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adminer",
+      "name": "Adminer",
+      "hitKey": "adminer",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-analytics",
+      "name": "Adobe Analytics",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-audience-manager",
+      "name": "Adobe Audience Manager",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-client-data-layer",
+      "name": "Adobe Client Data Layer",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-coldfusion",
+      "name": "Adobe ColdFusion",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-dtm",
+      "name": "Adobe DTM",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-dynamic-media-classic",
+      "name": "Adobe Dynamic Media Classic",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-experience-manager",
+      "name": "Adobe Experience Manager",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-experience-manager-franklin",
+      "name": "Adobe Experience Manager Franklin",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-experience-platform-identity-service",
+      "name": "Adobe Experience Platform Identity Service",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-experience-platform-launch",
+      "name": "Adobe Experience Platform Launch",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-flash",
+      "name": "Adobe Flash",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-fonts",
+      "name": "Adobe Fonts",
+      "hitKey": "adobe-fonts",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-golive",
+      "name": "Adobe GoLive",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-muse",
+      "name": "Adobe Muse",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-portfolio",
+      "name": "Adobe Portfolio",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-robohelp",
+      "name": "Adobe RoboHelp",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adobe-target",
+      "name": "Adobe Target",
+      "hitKey": "adobe",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adonisjs",
+      "name": "AdonisJS",
+      "hitKey": "adonisjs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adroll",
+      "name": "AdRoll",
+      "hitKey": "adroll",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adroll-cmp-system",
+      "name": "AdRoll CMP System",
+      "hitKey": "adroll",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "adyen",
+      "name": "Adyen",
+      "hitKey": "adyen",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "aero-commerce",
+      "name": "Aero Commerce",
+      "hitKey": "aero",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "affirm",
+      "name": "Affirm",
+      "hitKey": "affirm",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "afterpay",
+      "name": "Afterpay",
+      "hitKey": "afterpay",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "aftership",
+      "name": "AfterShip",
+      "hitKey": "aftership",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "aftership-returns-center",
+      "name": "AfterShip Returns Center",
+      "hitKey": "aftership",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "agora",
+      "name": "Agora",
+      "hitKey": "agora",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ahrefs",
+      "name": "Ahrefs",
+      "hitKey": "ahrefs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "airtable",
+      "name": "Airtable",
+      "hitKey": "airtable",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akamai",
+      "name": "Akamai",
+      "hitKey": "akamai",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akamai-bot-manager",
+      "name": "Akamai Bot Manager",
+      "hitKey": "akamai",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akamai-connected-cloud",
+      "name": "Akamai Connected Cloud",
+      "hitKey": "akamai",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akamai-mpulse",
+      "name": "Akamai mPulse",
+      "hitKey": "akamai",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akamai-web-application-protector",
+      "name": "Akamai Web Application Protector",
+      "hitKey": "akamai",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akaunting",
+      "name": "Akaunting",
+      "hitKey": "akaunting",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "akka-http",
+      "name": "Akka HTTP",
+      "hitKey": "akka",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "algolia",
+      "name": "Algolia",
+      "hitKey": "algolia",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "algolia-docsearch",
+      "name": "Algolia DocSearch",
+      "hitKey": "algolia",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "alibaba-cloud-cdn",
+      "name": "Alibaba Cloud CDN",
+      "hitKey": "alibaba",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "alibaba-cloud-object-storage-service",
+      "name": "Alibaba Cloud Object Storage Service",
+      "hitKey": "alibaba",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "alibaba-cloud-verification-code",
+      "name": "Alibaba Cloud Verification Code",
+      "hitKey": "alibaba",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "almalinux",
+      "name": "AlmaLinux",
+      "hitKey": "almalinux",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "alpine-js",
+      "name": "Alpine.js",
+      "hitKey": "alpine-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "amazon-advertising",
+      "name": "Amazon Advertising",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-alb",
+      "name": "Amazon ALB",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-associates",
+      "name": "Amazon Associates",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-cloudfront",
+      "name": "Amazon CloudFront",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-cloudwatch-rum",
+      "name": "Amazon CloudWatch RUM",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-cognito",
+      "name": "Amazon Cognito",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-ec2",
+      "name": "Amazon EC2",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-ecs",
+      "name": "Amazon ECS",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-elb",
+      "name": "Amazon ELB",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-pay",
+      "name": "Amazon Pay",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-s3",
+      "name": "Amazon S3",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-web-services",
+      "name": "Amazon Web Services",
+      "hitKey": "amazon-web-services",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amazon-webstore",
+      "name": "Amazon Webstore",
+      "hitKey": "amazon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "american-express",
+      "name": "American Express",
+      "hitKey": "american-express",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amp",
+      "name": "AMP",
+      "hitKey": "amp",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "amp-for-wordpress",
+      "name": "AMP for WordPress",
+      "hitKey": "amp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "angular",
+      "name": "Angular",
+      "hitKey": "angular",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "angular-material",
+      "name": "Angular Material",
+      "hitKey": "angular",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "angularjs",
+      "name": "AngularJS",
+      "hitKey": "angularjs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "animate-css",
+      "name": "Animate.css",
+      "hitKey": "animate",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ant-design",
+      "name": "Ant Design",
+      "hitKey": "ant-design",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "antv-g2",
+      "name": "AntV G2",
+      "hitKey": "antv",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "antv-g6",
+      "name": "AntV G6",
+      "hitKey": "antv",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-apisix",
+      "name": "Apache APISIX",
+      "hitKey": "apache",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-http-server",
+      "name": "Apache HTTP Server",
+      "hitKey": "apache",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-jspwiki",
+      "name": "Apache JSPWiki",
+      "hitKey": "apache",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-tomcat",
+      "name": "Apache Tomcat",
+      "hitKey": "apache-tomcat",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-traffic-server",
+      "name": "Apache Traffic Server",
+      "hitKey": "apache",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apache-wicket",
+      "name": "Apache Wicket",
+      "hitKey": "apache",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apollo",
+      "name": "Apollo",
+      "hitKey": "apollo",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "appian",
+      "name": "Appian",
+      "hitKey": "appian",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apple-business-chat",
+      "name": "Apple Business Chat",
+      "hitKey": "apple",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apple-pay",
+      "name": "Apple Pay",
+      "hitKey": "apple-pay",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "apple-sign-in",
+      "name": "Apple Sign-in",
+      "hitKey": "apple",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "appwrite",
+      "name": "Appwrite",
+      "hitKey": "appwrite",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "arc",
+      "name": "Arc",
+      "hitKey": "arc",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "arc-xp",
+      "name": "Arc XP",
+      "hitKey": "arc",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "arcgis-api-for-javascript",
+      "name": "ArcGIS API for JavaScript",
+      "hitKey": "arcgis",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "arlo",
+      "name": "Arlo",
+      "hitKey": "arlo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "arm-js",
+      "name": "ARM JS",
+      "hitKey": "arm",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "asana",
+      "name": "Asana",
+      "hitKey": "asana",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "asciidoc",
+      "name": "AsciiDoc",
+      "hitKey": "asciidoc",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "asciidoctor",
+      "name": "Asciidoctor",
+      "hitKey": "asciidoctor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "asciinema",
+      "name": "Asciinema",
+      "hitKey": "asciinema",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "astra",
+      "name": "Astra",
+      "hitKey": "astra",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "astra-widgets",
+      "name": "Astra Widgets",
+      "hitKey": "astra",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "astro",
+      "name": "Astro",
+      "hitKey": "astro",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-bitbucket",
+      "name": "Atlassian Bitbucket",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-confluence",
+      "name": "Atlassian Confluence",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-fisheye",
+      "name": "Atlassian FishEye",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-jira",
+      "name": "Atlassian Jira",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-jira-issue-collector",
+      "name": "Atlassian Jira Issue Collector",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "atlassian-statuspage",
+      "name": "Atlassian Statuspage",
+      "hitKey": "atlassian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "aurelia",
+      "name": "Aurelia",
+      "hitKey": "aurelia",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "auth0",
+      "name": "Auth0",
+      "hitKey": "auth0",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "auth0-lock",
+      "name": "Auth0 Lock",
+      "hitKey": "auth0",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "authy",
+      "name": "Authy",
+      "hitKey": "authy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "auto-hq",
+      "name": "Auto HQ",
+      "hitKey": "auto",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "aws-waf-captcha",
+      "name": "AWS WAF Captcha",
+      "hitKey": "aws",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "axios",
+      "name": "Axios",
+      "hitKey": "axios",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "azure",
+      "name": "Azure",
+      "hitKey": "azure",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "azure-ad-b2c",
+      "name": "Azure AD B2C",
+      "hitKey": "azure",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "azure-cdn",
+      "name": "Azure CDN",
+      "hitKey": "azure",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "azure-edge-network",
+      "name": "Azure Edge Network",
+      "hitKey": "azure",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "azure-front-door",
+      "name": "Azure Front Door",
+      "hitKey": "azure",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "azure-monitor",
+      "name": "Azure Monitor",
+      "hitKey": "azure-monitor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "babel",
+      "name": "Babel",
+      "hitKey": "babel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "backbone-js",
+      "name": "Backbone.js",
+      "hitKey": "backbone",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "baidu-analytics",
+      "name": "Baidu Analytics (百度统计)",
+      "hitKey": "baidu",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "baidu-maps",
+      "name": "Baidu Maps",
+      "hitKey": "baidu",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "baidu-search-box",
+      "name": "Baidu Search Box",
+      "hitKey": "baidu",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bandsintown-events-widget",
+      "name": "BandsInTown Events Widget",
+      "hitKey": "bandsintown",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "baremetrics",
+      "name": "Baremetrics",
+      "hitKey": "baremetrics",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "base",
+      "name": "Base",
+      "hitKey": "base",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "base-ui",
+      "name": "Base UI",
+      "hitKey": "base-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bento",
+      "name": "Bento",
+      "hitKey": "bento",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bentobox",
+      "name": "Bentobox",
+      "hitKey": "bentobox",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "better-stack",
+      "name": "Better Stack",
+      "hitKey": "better-stack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bevy",
+      "name": "Bevy",
+      "hitKey": "bevy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "big-cartel",
+      "name": "Big Cartel",
+      "hitKey": "big-cartel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bigbluebutton",
+      "name": "BigBlueButton",
+      "hitKey": "bigbluebutton",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bigcommerce",
+      "name": "BigCommerce",
+      "hitKey": "bigcommerce",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bigcommerce-b2b-edition",
+      "name": "BigCommerce B2B Edition",
+      "hitKey": "bigcommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "binance-pay",
+      "name": "Binance Pay",
+      "hitKey": "binance",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bitcoin",
+      "name": "Bitcoin",
+      "hitKey": "bitcoin",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "black-book",
+      "name": "Black Book",
+      "hitKey": "black",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "black-crow",
+      "name": "Black Crow",
+      "hitKey": "black",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "blazor",
+      "name": "Blazor",
+      "hitKey": "blazor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "blink-ai",
+      "name": "BLiNK AI",
+      "hitKey": "blink",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "blitz",
+      "name": "Blitz",
+      "hitKey": "blitz",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "blitz-js",
+      "name": "Blitz.js",
+      "hitKey": "blitz",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "blogger",
+      "name": "Blogger",
+      "hitKey": "blogger",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bolt-cms",
+      "name": "Bolt CMS",
+      "hitKey": "bolt",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bolt-payments",
+      "name": "Bolt Payments",
+      "hitKey": "bolt",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bookstack",
+      "name": "BookStack",
+      "hitKey": "bookstack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "boost-commerce",
+      "name": "Boost Commerce",
+      "hitKey": "boost",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "boost-ai",
+      "name": "Boost.ai",
+      "hitKey": "boost",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bootstrap",
+      "name": "Bootstrap",
+      "hitKey": "bootstrap",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bootstrap-icons",
+      "name": "Bootstrap Icons",
+      "hitKey": "bootstrap",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bootstrap-table",
+      "name": "Bootstrap Table",
+      "hitKey": "bootstrap",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "botble-cms",
+      "name": "Botble CMS",
+      "hitKey": "botble-cms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "braintree",
+      "name": "Braintree",
+      "hitKey": "braintree",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "brandfolder",
+      "name": "Brandfolder",
+      "hitKey": "brandfolder",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "brevo",
+      "name": "Brevo",
+      "hitKey": "brevo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bricks",
+      "name": "Bricks",
+      "hitKey": "bricks",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "buddy-ecommerce",
+      "name": "Buddy eCommerce",
+      "hitKey": "buddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "builder-io",
+      "name": "Builder.io",
+      "hitKey": "builder",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "bulma",
+      "name": "Bulma",
+      "hitKey": "bulma",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "buy-me-a-coffee",
+      "name": "Buy me a coffee",
+      "hitKey": "buy-me-a-coffee",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "buysellads",
+      "name": "BuySellAds",
+      "hitKey": "buysellads",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "c",
+      "name": "C",
+      "hitKey": "c",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cachet",
+      "name": "Cachet",
+      "hitKey": "cachet",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "caddy",
+      "name": "Caddy",
+      "hitKey": "caddy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cakephp",
+      "name": "CakePHP",
+      "hitKey": "cakephp",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "calendly",
+      "name": "Calendly",
+      "hitKey": "calendly",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "campaign-monitor",
+      "name": "Campaign Monitor",
+      "hitKey": "campaign-monitor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "canva",
+      "name": "Canva",
+      "hitKey": "canva",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "canvas-lms",
+      "name": "Canvas LMS",
+      "hitKey": "canvas",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "canvasjs",
+      "name": "CanvasJS",
+      "hitKey": "canvas",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "captivate-fm",
+      "name": "Captivate.fm",
+      "hitKey": "captivate",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "carbon-ads",
+      "name": "Carbon Ads",
+      "hitKey": "carbon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "carrd",
+      "name": "Carrd",
+      "hitKey": "carrd",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "carto-analytics",
+      "name": "CARTO Analytics",
+      "hitKey": "carto",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "carto-data-observatory",
+      "name": "CARTO Data Observatory",
+      "hitKey": "carto",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "centos",
+      "name": "CentOS",
+      "hitKey": "centos",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "chai",
+      "name": "Chai",
+      "hitKey": "chai",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "chakra-ui",
+      "name": "Chakra UI",
+      "hitKey": "chakra-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "chatbot",
+      "name": "ChatBot",
+      "hitKey": "chatbot",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "chatwoot",
+      "name": "Chatwoot",
+      "hitKey": "chatwoot",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "circle",
+      "name": "Circle",
+      "hitKey": "circle",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "citrix",
+      "name": "Citrix",
+      "hitKey": "citrix",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "civicrm",
+      "name": "CiviCRM",
+      "hitKey": "civicrm",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "civicrm-plugins",
+      "name": "CiviCRM plugins",
+      "hitKey": "civicrm",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "claris-filemaker",
+      "name": "Claris FileMaker",
+      "hitKey": "claris",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "clarity",
+      "name": "Clarity",
+      "hitKey": "clarity",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "clerk",
+      "name": "Clerk",
+      "hitKey": "clerk",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "clerk-io",
+      "name": "Clerk.io",
+      "hitKey": "clerk",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "clickup",
+      "name": "ClickUp",
+      "hitKey": "clickup",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudcannon",
+      "name": "CloudCannon",
+      "hitKey": "cloudcannon",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare",
+      "name": "Cloudflare",
+      "hitKey": "cloudflare",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-bot-management",
+      "name": "Cloudflare Bot Management",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-browser-insights",
+      "name": "Cloudflare Browser Insights",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-rocket-loader",
+      "name": "Cloudflare Rocket Loader",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-stream",
+      "name": "Cloudflare Stream",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-turnstile",
+      "name": "Cloudflare Turnstile",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-workers",
+      "name": "Cloudflare Workers",
+      "hitKey": "cloudflare-workers",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudflare-zaraz",
+      "name": "Cloudflare Zaraz",
+      "hitKey": "cloudflare",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudinary",
+      "name": "Cloudinary",
+      "hitKey": "cloudinary",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cloudways",
+      "name": "Cloudways",
+      "hitKey": "cloudways",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "code-climate",
+      "name": "Code Climate",
+      "hitKey": "code-climate",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "codeigniter",
+      "name": "CodeIgniter",
+      "hitKey": "codeigniter",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "codemirror",
+      "name": "CodeMirror",
+      "hitKey": "codemirror",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "codesandbox",
+      "name": "CodeSandbox",
+      "hitKey": "codesandbox",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "coinbase-commerce",
+      "name": "Coinbase Commerce",
+      "hitKey": "coinbase",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "conekta",
+      "name": "Conekta",
+      "hitKey": "conekta",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "construct-3",
+      "name": "Construct 3",
+      "hitKey": "construct-3",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "constructor",
+      "name": "Constructor",
+      "hitKey": "constructor",
+      "matchReason": "exact"
+    },
+    {
+      "slug": "contao",
+      "name": "Contao",
+      "hitKey": "contao",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "contensis",
+      "name": "Contensis",
+      "hitKey": "contensis",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "contentful",
+      "name": "Contentful",
+      "hitKey": "contentful",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "contentstack",
+      "name": "Contentstack",
+      "hitKey": "contentstack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "copilot-live",
+      "name": "Copilot.Live",
+      "hitKey": "copilot",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "couchdb",
+      "name": "CouchDB",
+      "hitKey": "couchdb",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "cpanel",
+      "name": "cPanel",
+      "hitKey": "cpanel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "craft-cms",
+      "name": "Craft CMS",
+      "hitKey": "craft-cms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "crowdin",
+      "name": "Crowdin",
+      "hitKey": "crowdin",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "cue",
+      "name": "CUE",
+      "hitKey": "cue",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "d3",
+      "name": "D3",
+      "hitKey": "d3",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dailymotion",
+      "name": "Dailymotion",
+      "hitKey": "dailymotion",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "daisyui",
+      "name": "daisyUI",
+      "hitKey": "daisyui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dart",
+      "name": "Dart",
+      "hitKey": "dart",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "datadog",
+      "name": "Datadog",
+      "hitKey": "datadog",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "datatables",
+      "name": "DataTables",
+      "hitKey": "datatables",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "datocms",
+      "name": "DatoCMS",
+      "hitKey": "datocms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "debian",
+      "name": "Debian",
+      "hitKey": "debian",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "decap-cms",
+      "name": "Decap CMS",
+      "hitKey": "decap-cms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "delta-commerce",
+      "name": "Delta Commerce",
+      "hitKey": "delta",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "deno-deploy",
+      "name": "Deno Deploy",
+      "hitKey": "deno-deploy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "deutsche-post",
+      "name": "Deutsche Post",
+      "hitKey": "deutsche-post",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dhl",
+      "name": "DHL",
+      "hitKey": "dhl",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "digitalocean-spaces",
+      "name": "DigitalOcean Spaces",
+      "hitKey": "digitalocean",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "directus",
+      "name": "Directus",
+      "hitKey": "directus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "discourse",
+      "name": "Discourse",
+      "hitKey": "discourse",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "disqus",
+      "name": "Disqus",
+      "hitKey": "disqus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "django",
+      "name": "Django",
+      "hitKey": "django",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "django-cms",
+      "name": "Django CMS",
+      "hitKey": "django",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "docsify",
+      "name": "Docsify",
+      "hitKey": "docsify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "docusaurus",
+      "name": "Docusaurus",
+      "hitKey": "docusaurus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "douban",
+      "name": "Douban",
+      "hitKey": "douban",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "doxygen",
+      "name": "Doxygen",
+      "hitKey": "doxygen",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dpd",
+      "name": "DPD",
+      "hitKey": "dpd",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dreamweaver",
+      "name": "DreamWeaver",
+      "hitKey": "dreamweaver",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "drupal",
+      "name": "Drupal",
+      "hitKey": "drupal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "drupal-commerce",
+      "name": "Drupal Commerce",
+      "hitKey": "drupal",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "drupal-multisite",
+      "name": "Drupal Multisite",
+      "hitKey": "drupal",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dynatrace",
+      "name": "Dynatrace",
+      "hitKey": "dynatrace",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "dynatrace-rum",
+      "name": "Dynatrace RUM",
+      "hitKey": "dynatrace",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ebay-partner-network",
+      "name": "eBay Partner Network",
+      "hitKey": "ebay",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ebay-store",
+      "name": "eBay Store",
+      "hitKey": "ebay",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elastic-apm",
+      "name": "Elastic APM",
+      "hitKey": "elastic",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elastic-path",
+      "name": "Elastic Path",
+      "hitKey": "elastic",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elasticsearch",
+      "name": "Elasticsearch",
+      "hitKey": "elasticsearch",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "element",
+      "name": "Element",
+      "hitKey": "element",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "element-ui",
+      "name": "Element UI",
+      "hitKey": "element",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elementor",
+      "name": "Elementor",
+      "hitKey": "elementor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elementor-cloud",
+      "name": "Elementor Cloud",
+      "hitKey": "elementor",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elementor-header-and-footer-builder",
+      "name": "Elementor Header & Footer Builder",
+      "hitKey": "elementor",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "eleventy",
+      "name": "Eleventy",
+      "hitKey": "eleventy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "elm",
+      "name": "Elm",
+      "hitKey": "elm",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "emailjs",
+      "name": "EmailJS",
+      "hitKey": "email",
+      "matchReason": "js-suffix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "ember-js",
+      "name": "Ember.js",
+      "hitKey": "ember",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "emotion",
+      "name": "Emotion",
+      "hitKey": "emotion",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "envoy",
+      "name": "Envoy",
+      "hitKey": "envoy",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "erlang",
+      "name": "Erlang",
+      "hitKey": "erlang",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "erpnext",
+      "name": "ERPNext",
+      "hitKey": "erpnext",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ethers",
+      "name": "Ethers",
+      "hitKey": "ethers",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "evernote",
+      "name": "Evernote",
+      "hitKey": "evernote",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "express",
+      "name": "Express",
+      "hitKey": "express",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "facebook-chat-plugin",
+      "name": "Facebook Chat Plugin",
+      "hitKey": "facebook",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "facebook-login",
+      "name": "Facebook Login",
+      "hitKey": "facebook",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "facebook-pay",
+      "name": "Facebook Pay",
+      "hitKey": "facebook",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "facebook-pixel",
+      "name": "Facebook Pixel",
+      "hitKey": "facebook",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fareharbor",
+      "name": "FareHarbor",
+      "hitKey": "fareharbor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fastapi",
+      "name": "FastAPI",
+      "hitKey": "fastapi",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fastly",
+      "name": "Fastly",
+      "hitKey": "fastly",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fathom",
+      "name": "Fathom",
+      "hitKey": "fathom",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fedex",
+      "name": "FedEx",
+      "hitKey": "fedex",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fedora",
+      "name": "Fedora",
+      "hitKey": "fedora",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "filamentphp",
+      "name": "Filamentphp",
+      "hitKey": "filamentphp",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fillout",
+      "name": "Fillout",
+      "hitKey": "fillout",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fing",
+      "name": "Fing",
+      "hitKey": "fing",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "firebase",
+      "name": "Firebase",
+      "hitKey": "firebase",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "firefish-software",
+      "name": "Firefish Software",
+      "hitKey": "firefish",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "flask",
+      "name": "Flask",
+      "hitKey": "flask",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "flat-ui",
+      "name": "Flat UI",
+      "hitKey": "flat",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "flow",
+      "name": "Flow",
+      "hitKey": "flow",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "flowbite",
+      "name": "Flowbite",
+      "hitKey": "flowbite",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "flutter",
+      "name": "Flutter",
+      "hitKey": "flutter",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fly-io",
+      "name": "Fly.io",
+      "hitKey": "fly-io",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "flywheel",
+      "name": "Flywheel",
+      "hitKey": "flywheel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "font-awesome",
+      "name": "Font Awesome",
+      "hitKey": "font-awesome",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "forgejo",
+      "name": "Forgejo",
+      "hitKey": "forgejo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "formstack",
+      "name": "Formstack",
+      "hitKey": "formstack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fortinet-fortigate",
+      "name": "Fortinet FortiGate",
+      "hitKey": "fortinet",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "framer-motion",
+      "name": "Framer Motion",
+      "hitKey": "framer",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "framer-sites",
+      "name": "Framer Sites",
+      "hitKey": "framer",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "framework7",
+      "name": "Framework7",
+      "hitKey": "framework7",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "frappe",
+      "name": "Frappe",
+      "hitKey": "frappe",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "freebsd",
+      "name": "FreeBSD",
+      "hitKey": "freebsd",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fresco",
+      "name": "Fresco",
+      "hitKey": "fresco",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fresh",
+      "name": "Fresh",
+      "hitKey": "fresh",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fresh-relevance",
+      "name": "Fresh Relevance",
+      "hitKey": "fresh",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "front-ai",
+      "name": "Front AI",
+      "hitKey": "front",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "front-chat",
+      "name": "Front Chat",
+      "hitKey": "front",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "front-commerce",
+      "name": "Front-Commerce",
+      "hitKey": "front",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "frontify",
+      "name": "Frontify",
+      "hitKey": "frontify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "fusion-ads",
+      "name": "Fusion Ads",
+      "hitKey": "fusion",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gatsby",
+      "name": "Gatsby",
+      "hitKey": "gatsby",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gatsby-cloud-image-cdn",
+      "name": "Gatsby Cloud Image CDN",
+      "hitKey": "gatsby",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gcore",
+      "name": "Gcore",
+      "hitKey": "gcore",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gentoo",
+      "name": "Gentoo",
+      "hitKey": "gentoo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gerrit",
+      "name": "Gerrit",
+      "hitKey": "gerrit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ghost",
+      "name": "Ghost",
+      "hitKey": "ghost",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "git",
+      "name": "git",
+      "hitKey": "git",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gitbook",
+      "name": "GitBook",
+      "hitKey": "gitbook",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gitea",
+      "name": "Gitea",
+      "hitKey": "gitea",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "github-pages",
+      "name": "GitHub Pages",
+      "hitKey": "github-pages",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gitlab",
+      "name": "GitLab",
+      "hitKey": "gitlab",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gitlab-ci-cd",
+      "name": "GitLab CI/CD",
+      "hitKey": "gitlab",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gitter",
+      "name": "Gitter",
+      "hitKey": "gitter",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "glance",
+      "name": "Glance",
+      "hitKey": "glance",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gleam",
+      "name": "Gleam",
+      "hitKey": "gleam",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "glide-js",
+      "name": "Glide.js",
+      "hitKey": "glide",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "glitch",
+      "name": "Glitch",
+      "hitKey": "glitch",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-coblocks",
+      "name": "GoDaddy CoBlocks",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-domain-parking",
+      "name": "GoDaddy Domain Parking",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-escapade",
+      "name": "GoDaddy Escapade",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-go",
+      "name": "GoDaddy Go",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-lyrical",
+      "name": "GoDaddy Lyrical",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-online-store",
+      "name": "GoDaddy Online Store",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-primer",
+      "name": "GoDaddy Primer",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-uptown-style",
+      "name": "GoDaddy Uptown Style",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godaddy-website-builder",
+      "name": "GoDaddy Website Builder",
+      "hitKey": "godaddy",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "godot",
+      "name": "Godot",
+      "hitKey": "godot",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gojs",
+      "name": "GoJS",
+      "hitKey": "go",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-ads-conversion-tracking",
+      "name": "Google Ads Conversion Tracking",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-adsense",
+      "name": "Google AdSense",
+      "hitKey": "google-adsense",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-analytics",
+      "name": "Google Analytics",
+      "hitKey": "google-analytics",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-analytics-enhanced-ecommerce",
+      "name": "Google Analytics Enhanced eCommerce",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-call-conversion-tracking",
+      "name": "Google Call Conversion Tracking",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-charts",
+      "name": "Google Charts",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-cloud-cdn",
+      "name": "Google Cloud CDN",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-cloud-load-balancing",
+      "name": "Google Cloud Load Balancing",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-cloud-storage",
+      "name": "Google Cloud Storage",
+      "hitKey": "google-cloud-storage",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-cloud-trace",
+      "name": "Google Cloud Trace",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-code-prettify",
+      "name": "Google Code Prettify",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-customer-reviews",
+      "name": "Google Customer Reviews",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-font-api",
+      "name": "Google Font API",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-forms",
+      "name": "Google Forms",
+      "hitKey": "google-forms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-hosted-libraries",
+      "name": "Google Hosted Libraries",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-maps",
+      "name": "Google Maps",
+      "hitKey": "google-maps",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-my-business",
+      "name": "Google My Business",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-optimize",
+      "name": "Google Optimize",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-pagespeed",
+      "name": "Google PageSpeed",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-pay",
+      "name": "Google Pay",
+      "hitKey": "google-pay",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-publisher-tag",
+      "name": "Google Publisher Tag",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-sign-in",
+      "name": "Google Sign-in",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-sites",
+      "name": "Google Sites",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-tag-manager",
+      "name": "Google Tag Manager",
+      "hitKey": "google-tag-manager",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-tag-manager-for-wordpress",
+      "name": "Google Tag Manager for WordPress",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-wallet",
+      "name": "Google Wallet",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-web-server",
+      "name": "Google Web Server",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "google-web-toolkit",
+      "name": "Google Web Toolkit",
+      "hitKey": "google",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "grab-pay-later",
+      "name": "Grab Pay Later",
+      "hitKey": "grab",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "grafana",
+      "name": "Grafana",
+      "hitKey": "grafana",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "grain-harvest",
+      "name": "Grain Harvest",
+      "hitKey": "grain",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "graphql",
+      "name": "GraphQL",
+      "hitKey": "graphql",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "grav",
+      "name": "Grav",
+      "hitKey": "grav",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gravatar",
+      "name": "Gravatar",
+      "hitKey": "gravatar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "greenhouse",
+      "name": "Greenhouse",
+      "hitKey": "greenhouse",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gridsome",
+      "name": "Gridsome",
+      "hitKey": "gridsome",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gsap",
+      "name": "GSAP",
+      "hitKey": "gsap",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gumroad",
+      "name": "Gumroad",
+      "hitKey": "gumroad",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gunicorn",
+      "name": "gunicorn",
+      "hitKey": "gunicorn",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "gutenberg",
+      "name": "Gutenberg",
+      "hitKey": "gutenberg",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "handlebars",
+      "name": "Handlebars",
+      "hitKey": "handlebars",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "harbor",
+      "name": "Harbor",
+      "hitKey": "harbor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hashnode",
+      "name": "Hashnode",
+      "hitKey": "hashnode",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hasura",
+      "name": "Hasura",
+      "hitKey": "hasura",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hcaptcha",
+      "name": "hCaptcha",
+      "hitKey": "hcaptcha",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hcl-commerce",
+      "name": "HCL Commerce",
+      "hitKey": "hcl",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hcl-digital-experience",
+      "name": "HCL Digital Experience",
+      "hitKey": "hcl",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hcl-domino",
+      "name": "HCL Domino",
+      "hitKey": "hcl",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "headless-ui",
+      "name": "Headless UI",
+      "hitKey": "headless-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hearth",
+      "name": "Hearth",
+      "hitKey": "hearth",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "helix-ultimate",
+      "name": "Helix Ultimate",
+      "hitKey": "helix",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "help-scout",
+      "name": "Help Scout",
+      "hitKey": "help-scout",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "here",
+      "name": "Here",
+      "hitKey": "here",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hermes",
+      "name": "Hermes",
+      "hitKey": "hermes",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "heroku",
+      "name": "Heroku",
+      "hitKey": "heroku",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "heroui",
+      "name": "HeroUI",
+      "hitKey": "heroui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hetzner",
+      "name": "Hetzner",
+      "hitKey": "hetzner",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hexo",
+      "name": "Hexo",
+      "hitKey": "hexo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hibob",
+      "name": "HiBob",
+      "hitKey": "hibob",
+      "matchReason": "exact",
+      "provider": "simple-icons"
+    },
+    {
+      "slug": "honeybadger",
+      "name": "Honeybadger",
+      "hitKey": "honeybadger",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hono",
+      "name": "Hono",
+      "hitKey": "hono",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hostinger",
+      "name": "Hostinger",
+      "hitKey": "hostinger",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hostinger-cdn",
+      "name": "Hostinger CDN",
+      "hitKey": "hostinger",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hostinger-horizons",
+      "name": "Hostinger Horizons",
+      "hitKey": "hostinger",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hostinger-website-builder",
+      "name": "Hostinger Website Builder",
+      "hitKey": "hostinger",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hotjar",
+      "name": "Hotjar",
+      "hitKey": "hotjar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hotjar-incoming-feedback",
+      "name": "Hotjar Incoming Feedback",
+      "hitKey": "hotjar",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hotmart",
+      "name": "Hotmart",
+      "hitKey": "hotmart",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "htmx",
+      "name": "Htmx",
+      "hitKey": "htmx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "http-2",
+      "name": "HTTP/2",
+      "hitKey": "http",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "http-3",
+      "name": "HTTP/3",
+      "hitKey": "http",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "hubspot",
+      "name": "HubSpot",
+      "hitKey": "hubspot",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hubspot-analytics",
+      "name": "HubSpot Analytics",
+      "hitKey": "hubspot",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hubspot-chat",
+      "name": "HubSpot Chat",
+      "hitKey": "hubspot",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hubspot-cms-hub",
+      "name": "HubSpot CMS Hub",
+      "hitKey": "hubspot",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hubspot-cookie-policy-banner",
+      "name": "HubSpot Cookie Policy Banner",
+      "hitKey": "hubspot",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hubspot-wordpress-plugin",
+      "name": "HubSpot WordPress plugin",
+      "hitKey": "hubspot",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "hugo",
+      "name": "Hugo",
+      "hitKey": "hugo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "humhub",
+      "name": "HumHub",
+      "hitKey": "humhub",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ibm-carbon-design-system",
+      "name": "IBM Carbon Design System",
+      "hitKey": "ibm",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ibm-coremetrics",
+      "name": "IBM Coremetrics",
+      "hitKey": "ibm",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ibm-datapower",
+      "name": "IBM DataPower",
+      "hitKey": "ibm",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ibm-http-server",
+      "name": "IBM HTTP Server",
+      "hitKey": "ibm",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "image-relay",
+      "name": "Image Relay",
+      "hitKey": "image",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "imba",
+      "name": "Imba",
+      "hitKey": "imba",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "indeed",
+      "name": "Indeed",
+      "hitKey": "indeed",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "inertia-js",
+      "name": "Inertia.js",
+      "hitKey": "inertia",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "instatus",
+      "name": "Instatus",
+      "hitKey": "instatus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "intercom",
+      "name": "Intercom",
+      "hitKey": "intercom",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "intlayer",
+      "name": "Intlayer",
+      "hitKey": "intlayer",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ionic",
+      "name": "Ionic",
+      "hitKey": "ionic",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ipfs",
+      "name": "IPFS",
+      "hitKey": "ipfs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "issuu",
+      "name": "Issuu",
+      "hitKey": "issuu",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "java",
+      "name": "Java",
+      "hitKey": "java",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "java-servlet",
+      "name": "Java Servlet",
+      "hitKey": "java",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jekyll",
+      "name": "Jekyll",
+      "hitKey": "jekyll",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jenkins",
+      "name": "Jenkins",
+      "hitKey": "jenkins",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jet-enterprise",
+      "name": "JET Enterprise",
+      "hitKey": "jet",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jitsi",
+      "name": "Jitsi",
+      "hitKey": "jitsi",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "joomla",
+      "name": "Joomla",
+      "hitKey": "joomla",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery",
+      "name": "jQuery",
+      "hitKey": "jquery",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-blockui",
+      "name": "jQuery BlockUI",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-cdn",
+      "name": "jQuery CDN",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-devbridge-autocomplete",
+      "name": "jQuery DevBridge Autocomplete",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-migrate",
+      "name": "jQuery Migrate",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-mobile",
+      "name": "jQuery Mobile",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-modal",
+      "name": "jQuery Modal",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-payment",
+      "name": "jQuery Payment",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-sparklines",
+      "name": "jQuery Sparklines",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-ui",
+      "name": "jQuery UI",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jquery-pjax",
+      "name": "jQuery-pjax",
+      "hitKey": "jquery",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jsdelivr",
+      "name": "jsDelivr",
+      "hitKey": "jsdelivr",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "jss",
+      "name": "JSS",
+      "hitKey": "jss",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "just",
+      "name": "JUST",
+      "hitKey": "just",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kakao",
+      "name": "Kakao",
+      "hitKey": "kakao",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "karma",
+      "name": "Karma",
+      "hitKey": "karma",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kentico-cms",
+      "name": "Kentico CMS",
+      "hitKey": "kentico",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kibana",
+      "name": "Kibana",
+      "hitKey": "kibana",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kinsta",
+      "name": "Kinsta",
+      "hitKey": "kinsta",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kirby",
+      "name": "Kirby",
+      "hitKey": "kirby",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kit",
+      "name": "Kit",
+      "hitKey": "kit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kit-cms",
+      "name": "KIT CMS",
+      "hitKey": "kit",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "klarna-checkout",
+      "name": "Klarna Checkout",
+      "hitKey": "klarna",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "klarna-virtual-shopping",
+      "name": "Klarna Virtual Shopping",
+      "hitKey": "klarna",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "klook",
+      "name": "Klook",
+      "hitKey": "klook",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "knockout-js",
+      "name": "Knockout.js",
+      "hitKey": "knockout",
+      "matchReason": "js-suffix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "ko-fi",
+      "name": "Ko-fi",
+      "hitKey": "ko-fi",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "koa",
+      "name": "Koa",
+      "hitKey": "koa",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "kong",
+      "name": "Kong",
+      "hitKey": "kong",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "konva-js",
+      "name": "Konva.js",
+      "hitKey": "konva",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ktor",
+      "name": "Ktor",
+      "hitKey": "ktor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "laravel",
+      "name": "Laravel",
+      "hitKey": "laravel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "laravel-echo",
+      "name": "Laravel Echo",
+      "hitKey": "laravel",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "leaflet",
+      "name": "Leaflet",
+      "hitKey": "leaflet",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "leaflet-platform",
+      "name": "Leaflet platform",
+      "hitKey": "leaflet",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lemon-squeezy",
+      "name": "Lemon Squeezy",
+      "hitKey": "lemon-squeezy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "leptos",
+      "name": "Leptos",
+      "hitKey": "leptos",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "less",
+      "name": "Less",
+      "hitKey": "less",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "liberapay",
+      "name": "Liberapay",
+      "hitKey": "liberapay",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lightning",
+      "name": "Lightning",
+      "hitKey": "lightning",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "line-login",
+      "name": "LINE Login",
+      "hitKey": "line",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "line-up",
+      "name": "Line-Up",
+      "hitKey": "line",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "linear",
+      "name": "Linear",
+      "hitKey": "linear",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "linkedin-ads",
+      "name": "Linkedin Ads",
+      "hitKey": "linkedin",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "linkedin-insight-tag",
+      "name": "Linkedin Insight Tag",
+      "hitKey": "linkedin",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "linkedin-sign-in",
+      "name": "Linkedin Sign-in",
+      "hitKey": "linkedin",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "linkfire",
+      "name": "Linkfire",
+      "hitKey": "linkfire",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "liquid-web",
+      "name": "Liquid Web",
+      "hitKey": "liquid",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lit-element",
+      "name": "lit-element",
+      "hitKey": "lit",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lit-html",
+      "name": "lit-html",
+      "hitKey": "lit",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "livechat",
+      "name": "LiveChat",
+      "hitKey": "livechat",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "livejournal",
+      "name": "LiveJournal",
+      "hitKey": "livejournal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "livewire",
+      "name": "Livewire",
+      "hitKey": "livewire",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lodash",
+      "name": "Lodash",
+      "hitKey": "lodash",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "looker",
+      "name": "Looker",
+      "hitKey": "looker",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "loom",
+      "name": "Loom",
+      "hitKey": "loom",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "loop-returns",
+      "name": "Loop Returns",
+      "hitKey": "loop",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "loop-web",
+      "name": "Loop Web",
+      "hitKey": "loop",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "loops",
+      "name": "Loops",
+      "hitKey": "loops",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lottiefiles",
+      "name": "LottieFiles",
+      "hitKey": "lottiefiles",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lovable",
+      "name": "Lovable",
+      "hitKey": "lovable",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lua",
+      "name": "Lua",
+      "hitKey": "lua",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "lucide",
+      "name": "Lucide",
+      "hitKey": "lucide",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "magento",
+      "name": "Magento",
+      "hitKey": "magento",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "magic-ui",
+      "name": "Magic UI",
+      "hitKey": "magic-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mailchimp",
+      "name": "MailChimp",
+      "hitKey": "mailchimp",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mailchimp-for-woocommerce",
+      "name": "MailChimp for WooCommerce",
+      "hitKey": "mailchimp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mailchimp-for-wordpress",
+      "name": "MailChimp for WordPress",
+      "hitKey": "mailchimp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mantine",
+      "name": "Mantine",
+      "hitKey": "mantine",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mapbox-gl-js",
+      "name": "Mapbox GL JS",
+      "hitKey": "mapbox",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mapbox-js",
+      "name": "Mapbox.js",
+      "hitKey": "mapbox",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "maptiler",
+      "name": "Maptiler",
+      "hitKey": "maptiler",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "marko",
+      "name": "Marko",
+      "hitKey": "marko",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mastercard",
+      "name": "Mastercard",
+      "hitKey": "mastercard",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mastodon",
+      "name": "Mastodon",
+      "hitKey": "mastodon",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "material-for-mkdocs",
+      "name": "Material for MkDocs",
+      "hitKey": "material-for-mkdocs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "material-ui",
+      "name": "Material UI",
+      "hitKey": "material-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "matomo-analytics",
+      "name": "Matomo Analytics",
+      "hitKey": "matomo",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "matomo-tag-manager",
+      "name": "Matomo Tag Manager",
+      "hitKey": "matomo",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "matter-js",
+      "name": "Matter.js",
+      "hitKey": "matter",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mattermost",
+      "name": "Mattermost",
+      "hitKey": "mattermost",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mautic",
+      "name": "Mautic",
+      "hitKey": "mautic",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mdbook",
+      "name": "mdBook",
+      "hitKey": "mdbook",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mediawiki",
+      "name": "MediaWiki",
+      "hitKey": "mediawiki",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "medium",
+      "name": "Medium",
+      "hitKey": "medium",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "medusajs",
+      "name": "Medusajs",
+      "hitKey": "medusa",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mega",
+      "name": "Mega",
+      "hitKey": "mega",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "meilisearch",
+      "name": "Meilisearch",
+      "hitKey": "meilisearch",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "merlin",
+      "name": "Merlin",
+      "hitKey": "merlin",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "mermaid",
+      "name": "Mermaid",
+      "hitKey": "mermaid",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "meteor",
+      "name": "Meteor",
+      "hitKey": "meteor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "metro-creativex",
+      "name": "Metro CreativeX",
+      "hitKey": "metro",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-advertising",
+      "name": "Microsoft Advertising",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-ajax-content-delivery-network",
+      "name": "Microsoft Ajax Content Delivery Network",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-application-insights",
+      "name": "Microsoft Application Insights",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-asp-net",
+      "name": "Microsoft ASP.NET",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-authentication",
+      "name": "Microsoft Authentication",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-azure-maps",
+      "name": "Microsoft Azure Maps",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-clarity",
+      "name": "Microsoft Clarity",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-dynamics-365-commerce",
+      "name": "Microsoft Dynamics 365 Commerce",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-excel",
+      "name": "Microsoft Excel",
+      "hitKey": "microsoft-excel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-httpapi",
+      "name": "Microsoft HTTPAPI",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-power-bi",
+      "name": "Microsoft Power BI",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-powerpoint",
+      "name": "Microsoft PowerPoint",
+      "hitKey": "microsoft-powerpoint",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-publisher",
+      "name": "Microsoft Publisher",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-sharepoint",
+      "name": "Microsoft SharePoint",
+      "hitKey": "microsoft-sharepoint",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-silverlight",
+      "name": "Microsoft Silverlight",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-visual-studio",
+      "name": "Microsoft Visual Studio",
+      "hitKey": "microsoft",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "microsoft-word",
+      "name": "Microsoft Word",
+      "hitKey": "microsoft-word",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "milvus",
+      "name": "Milvus",
+      "hitKey": "milvus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mindstudio",
+      "name": "MindStudio",
+      "hitKey": "mindstudio",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mini-httpd",
+      "name": "mini_httpd",
+      "hitKey": "mini",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mint",
+      "name": "Mint",
+      "hitKey": "mint",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "mintlify",
+      "name": "Mintlify",
+      "hitKey": "mintlify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "misskey",
+      "name": "Misskey",
+      "hitKey": "misskey",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mithril-js",
+      "name": "Mithril.js",
+      "hitKey": "mithril",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mixpanel",
+      "name": "Mixpanel",
+      "hitKey": "mixpanel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mobx",
+      "name": "MobX",
+      "hitKey": "mobx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "modal-forms",
+      "name": "Modal Forms",
+      "hitKey": "modal",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "modernizr",
+      "name": "Modernizr",
+      "hitKey": "modernizr",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "modx",
+      "name": "MODX",
+      "hitKey": "modx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mojo",
+      "name": "Mojo",
+      "hitKey": "mojo",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "mojo-helpdesk",
+      "name": "Mojo Helpdesk",
+      "hitKey": "mojo",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "moodle",
+      "name": "Moodle",
+      "hitKey": "moodle",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "moon",
+      "name": "Moon",
+      "hitKey": "moon",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "motion",
+      "name": "Motion",
+      "hitKey": "motion",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "motion-page",
+      "name": "Motion.page",
+      "hitKey": "motion",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "mybb",
+      "name": "MyBB",
+      "hitKey": "mybb",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "naver-analytics",
+      "name": "Naver Analytics",
+      "hitKey": "naver",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "naver-maps",
+      "name": "Naver Maps",
+      "hitKey": "naver",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "neon-crm",
+      "name": "Neon CRM",
+      "hitKey": "neon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "netlify",
+      "name": "Netlify",
+      "hitKey": "netlify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "netlify-create",
+      "name": "Netlify Create",
+      "hitKey": "netlify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "netlify-forms",
+      "name": "Netlify Forms",
+      "hitKey": "netlify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nette-framework",
+      "name": "Nette Framework",
+      "hitKey": "nette",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "new-relic",
+      "name": "New Relic",
+      "hitKey": "new-relic",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "next-basket",
+      "name": "Next Basket",
+      "hitKey": "next",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "next-total",
+      "name": "Next Total",
+      "hitKey": "next",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "next-js",
+      "name": "Next.js",
+      "hitKey": "next-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "nextcloud",
+      "name": "Nextcloud",
+      "hitKey": "nextcloud",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nextdoor-ads",
+      "name": "Nextdoor Ads",
+      "hitKey": "nextdoor",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nextra",
+      "name": "Nextra",
+      "hitKey": "nextra",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nginx",
+      "name": "Nginx",
+      "hitKey": "nginx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "node-js",
+      "name": "Node.js",
+      "hitKey": "node-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "nodebb",
+      "name": "NodeBB",
+      "hitKey": "nodebb",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "norton-shopping-guarantee",
+      "name": "Norton Shopping Guarantee",
+      "hitKey": "norton",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "notion",
+      "name": "Notion",
+      "hitKey": "notion",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nuxt-ui",
+      "name": "Nuxt UI",
+      "hitKey": "nuxt-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "nuxt-js",
+      "name": "Nuxt.js",
+      "hitKey": "nuxt-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "obsidian-publish",
+      "name": "Obsidian Publish",
+      "hitKey": "obsidian",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "october-cms",
+      "name": "October CMS",
+      "hitKey": "october-cms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "odoo",
+      "name": "Odoo",
+      "hitKey": "odoo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "okta",
+      "name": "Okta",
+      "hitKey": "okta",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "openbsd-httpd",
+      "name": "OpenBSD httpd",
+      "hitKey": "openbsd",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "opencv",
+      "name": "OpenCV",
+      "hitKey": "opencv",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "openlayers",
+      "name": "OpenLayers",
+      "hitKey": "openlayers",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "openssl",
+      "name": "OpenSSL",
+      "hitKey": "openssl",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "openstreetmap",
+      "name": "OpenStreetMap",
+      "hitKey": "openstreetmap",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-application-express",
+      "name": "Oracle Application Express",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-application-server",
+      "name": "Oracle Application Server",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-bluekai",
+      "name": "Oracle BlueKai",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-commerce",
+      "name": "Oracle Commerce",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-commerce-cloud",
+      "name": "Oracle Commerce Cloud",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-content-management",
+      "name": "Oracle Content Management",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-dynamic-monitoring-service",
+      "name": "Oracle Dynamic Monitoring Service",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-http-server",
+      "name": "Oracle HTTP Server",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-infinity",
+      "name": "Oracle Infinity",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-linux",
+      "name": "Oracle Linux",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-maxymiser",
+      "name": "Oracle Maxymiser",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-moat-measurement",
+      "name": "Oracle Moat Measurement",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-recommendations-on-demand",
+      "name": "Oracle Recommendations On Demand",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oracle-web-cache",
+      "name": "Oracle Web Cache",
+      "hitKey": "oracle",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "orange-cdb",
+      "name": "Orange CDB",
+      "hitKey": "orange",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "orchard-core",
+      "name": "Orchard Core",
+      "hitKey": "orchard-core",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "osano",
+      "name": "Osano",
+      "hitKey": "osano",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "otto",
+      "name": "Otto",
+      "hitKey": "otto",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "owncloud",
+      "name": "ownCloud",
+      "hitKey": "owncloud",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "oxygen",
+      "name": "Oxygen",
+      "hitKey": "oxygen",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paddle",
+      "name": "Paddle",
+      "hitKey": "paddle",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pagekit",
+      "name": "Pagekit",
+      "hitKey": "pagekit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pagseguro",
+      "name": "PagSeguro",
+      "hitKey": "pagseguro",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "panda-css",
+      "name": "Panda CSS",
+      "hitKey": "panda",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "panda-video",
+      "name": "Panda Video",
+      "hitKey": "panda",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "pantheon",
+      "name": "Pantheon",
+      "hitKey": "pantheon",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paper-js",
+      "name": "Paper.js",
+      "hitKey": "paper",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "parcel",
+      "name": "parcel",
+      "hitKey": "parcel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "passport-js",
+      "name": "Passport.js",
+      "hitKey": "passport-js",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "patreon",
+      "name": "Patreon",
+      "hitKey": "patreon",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "payhip",
+      "name": "Payhip",
+      "hitKey": "payhip",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "payload-cms",
+      "name": "Payload CMS",
+      "hitKey": "payload-cms",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "payoneer",
+      "name": "Payoneer",
+      "hitKey": "payoneer",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paypal",
+      "name": "PayPal",
+      "hitKey": "paypal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paypal-credit",
+      "name": "PayPal Credit",
+      "hitKey": "paypal",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paypal-marketing-solutions",
+      "name": "PayPal Marketing Solutions",
+      "hitKey": "paypal",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "paysafe",
+      "name": "Paysafe",
+      "hitKey": "paysafe",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pdf-js",
+      "name": "PDF.js",
+      "hitKey": "pdf",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "peertube",
+      "name": "PeerTube",
+      "hitKey": "peertube",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "percy",
+      "name": "Percy",
+      "hitKey": "percy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "perl",
+      "name": "Perl",
+      "hitKey": "perl",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "personio",
+      "name": "Personio",
+      "hitKey": "personio",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phabricator",
+      "name": "Phabricator",
+      "hitKey": "phabricator",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phaser",
+      "name": "Phaser",
+      "hitKey": "phaser",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phoenix",
+      "name": "Phoenix",
+      "hitKey": "phoenix",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "phoenix-cart",
+      "name": "Phoenix Cart",
+      "hitKey": "phoenix",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "phoenix-framework",
+      "name": "Phoenix Framework",
+      "hitKey": "phoenix-framework",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phoenix-liveview",
+      "name": "Phoenix LiveView",
+      "hitKey": "phoenix",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "phoenix-site",
+      "name": "Phoenix Site",
+      "hitKey": "phoenix",
+      "matchReason": "brand-prefix",
+      "provider": "devicon"
+    },
+    {
+      "slug": "php",
+      "name": "PHP",
+      "hitKey": "php",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "php-nuke",
+      "name": "PHP-Nuke",
+      "hitKey": "php",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phpbb",
+      "name": "phpBB",
+      "hitKey": "phpbb",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "phpmyadmin",
+      "name": "phpMyAdmin",
+      "hitKey": "phpmyadmin",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pimcore",
+      "name": "Pimcore",
+      "hitKey": "pimcore",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pinboard",
+      "name": "Pinboard",
+      "hitKey": "pinboard",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pingdom-rum",
+      "name": "Pingdom RUM",
+      "hitKey": "pingdom",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pingdom-uptime-monitoring",
+      "name": "Pingdom Uptime Monitoring",
+      "hitKey": "pingdom",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pinia",
+      "name": "Pinia",
+      "hitKey": "pinia",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pinterest",
+      "name": "Pinterest",
+      "hitKey": "pinterest",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pinterest-ads",
+      "name": "Pinterest Ads",
+      "hitKey": "pinterest",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pinterest-conversion-tag",
+      "name": "Pinterest Conversion Tag",
+      "hitKey": "pinterest",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "piwigo",
+      "name": "Piwigo",
+      "hitKey": "piwigo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pixijs",
+      "name": "PIXIjs",
+      "hitKey": "pixijs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "plaid",
+      "name": "Plaid",
+      "hitKey": "plaid",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "planet",
+      "name": "Planet",
+      "hitKey": "planet",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pleroma",
+      "name": "Pleroma",
+      "hitKey": "pleroma",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "plesk",
+      "name": "Plesk",
+      "hitKey": "plesk",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "plotly",
+      "name": "Plotly",
+      "hitKey": "plotly",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pocket",
+      "name": "Pocket",
+      "hitKey": "pocket",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "polar-analytics",
+      "name": "Polar Analytics",
+      "hitKey": "polar",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "poper",
+      "name": "Poper",
+      "hitKey": "poper",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "posthog",
+      "name": "PostHog",
+      "hitKey": "posthog",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "postman-api-documentation",
+      "name": "Postman API Documentation",
+      "hitKey": "postman",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "preact",
+      "name": "Preact",
+      "hitKey": "preact",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "prestashop",
+      "name": "PrestaShop",
+      "hitKey": "prestashop",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "presto-player",
+      "name": "Presto Player",
+      "hitKey": "presto",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "primereact",
+      "name": "PrimeReact",
+      "hitKey": "primereact",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "primevue",
+      "name": "PrimeVue",
+      "hitKey": "primevue",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "prismic",
+      "name": "Prismic",
+      "hitKey": "prismic",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "processwire",
+      "name": "ProcessWire",
+      "hitKey": "processwire",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "product-hunt",
+      "name": "Product Hunt",
+      "hitKey": "product-hunt",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "progress-moveit",
+      "name": "Progress MOVEit",
+      "hitKey": "progress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "progress-sitefinity",
+      "name": "Progress Sitefinity",
+      "hitKey": "progress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "proto-aicx",
+      "name": "Proto AICX",
+      "hitKey": "proto",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "proxmox-mail-gateway",
+      "name": "Proxmox Mail Gateway",
+      "hitKey": "proxmox",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "proxmox-ve",
+      "name": "Proxmox VE",
+      "hitKey": "proxmox",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pterodactyl-panel",
+      "name": "Pterodactyl Panel",
+      "hitKey": "pterodactyl",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pusher",
+      "name": "Pusher",
+      "hitKey": "pusher",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pwa",
+      "name": "PWA",
+      "hitKey": "pwa",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pwa-studio",
+      "name": "PWA Studio",
+      "hitKey": "pwa",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pyscript",
+      "name": "PyScript",
+      "hitKey": "pyscript",
+      "matchReason": "exact",
+      "provider": "devicon"
+    },
+    {
+      "slug": "python",
+      "name": "Python",
+      "hitKey": "python",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "pythonanywhere",
+      "name": "PythonAnywhere",
+      "hitKey": "pythonanywhere",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "qualtrics",
+      "name": "Qualtrics",
+      "hitKey": "qualtrics",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "quantcast-choice",
+      "name": "Quantcast Choice",
+      "hitKey": "quantcast",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "quantcast-measure",
+      "name": "Quantcast Measure",
+      "hitKey": "quantcast",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "quarto",
+      "name": "Quarto",
+      "hitKey": "quarto",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "quasar",
+      "name": "Quasar",
+      "hitKey": "quasar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "quora-pixel",
+      "name": "Quora Pixel",
+      "hitKey": "quora",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "qwik",
+      "name": "Qwik",
+      "hitKey": "qwik",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "radar",
+      "name": "Radar",
+      "hitKey": "radar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "radix-ui",
+      "name": "Radix UI",
+      "hitKey": "radix-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "railway",
+      "name": "Railway",
+      "hitKey": "railway",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rakuten",
+      "name": "Rakuten",
+      "hitKey": "rakuten",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rakuten-advertising",
+      "name": "Rakuten Advertising",
+      "hitKey": "rakuten",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rakuten-digital-commerce",
+      "name": "Rakuten Digital Commerce",
+      "hitKey": "rakuten",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rapid-active-crm",
+      "name": "Rapid Active CRM",
+      "hitKey": "rapid",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rapid-search",
+      "name": "Rapid Search",
+      "hitKey": "rapid",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "razorpay",
+      "name": "Razorpay",
+      "hitKey": "razorpay",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react",
+      "name": "React",
+      "hitKey": "react",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react-bricks",
+      "name": "React Bricks",
+      "hitKey": "react",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react-flow",
+      "name": "React Flow",
+      "hitKey": "react",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react-native-for-web",
+      "name": "React Native for Web",
+      "hitKey": "react",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react-redux",
+      "name": "React Redux",
+      "hitKey": "react",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "react-router",
+      "name": "React Router",
+      "hitKey": "react-router",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "read-the-docs",
+      "name": "Read the Docs",
+      "hitKey": "read-the-docs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "readme",
+      "name": "ReadMe",
+      "hitKey": "readme",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "red-hat",
+      "name": "Red Hat",
+      "hitKey": "red-hat",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "red-je-pakketje",
+      "name": "Red je Pakketje",
+      "hitKey": "red",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "reddit",
+      "name": "Reddit",
+      "hitKey": "reddit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "reddit-ads",
+      "name": "Reddit Ads",
+      "hitKey": "reddit",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "redmine",
+      "name": "Redmine",
+      "hitKey": "redmine",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "redux",
+      "name": "Redux",
+      "hitKey": "redux",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "redux-framework",
+      "name": "Redux Framework",
+      "hitKey": "redux",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "redwoodjs",
+      "name": "RedwoodJS",
+      "hitKey": "redwoodjs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "reflex",
+      "name": "Reflex",
+      "hitKey": "reflex",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "remix",
+      "name": "Remix",
+      "hitKey": "remix",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "remotion",
+      "name": "Remotion",
+      "hitKey": "remotion",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "render",
+      "name": "Render",
+      "hitKey": "render",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "render-better",
+      "name": "Render Better",
+      "hitKey": "render",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "replit",
+      "name": "Replit",
+      "hitKey": "replit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "retool",
+      "name": "Retool",
+      "hitKey": "retool",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rezgo",
+      "name": "Rezgo",
+      "hitKey": "rezgo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rich-plugins-reviews",
+      "name": "Rich Plugins Reviews",
+      "hitKey": "rich",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "riot-js",
+      "name": "Riot.js",
+      "hitKey": "riot",
+      "matchReason": "js-suffix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "ripple",
+      "name": "Ripple",
+      "hitKey": "ripple",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rive",
+      "name": "Rive",
+      "hitKey": "rive",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rocket-tools",
+      "name": "Rocket Tools",
+      "hitKey": "rocket",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rocket-chat",
+      "name": "Rocket.Chat",
+      "hitKey": "rocket",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rollbar",
+      "name": "Rollbar",
+      "hitKey": "rollbar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "roundcube",
+      "name": "RoundCube",
+      "hitKey": "roundcube",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rss",
+      "name": "RSS",
+      "hitKey": "rss",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ruby",
+      "name": "Ruby",
+      "hitKey": "ruby",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ruby-chat",
+      "name": "Ruby Chat",
+      "hitKey": "ruby",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ruby-on-rails",
+      "name": "Ruby on Rails",
+      "hitKey": "ruby-on-rails",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ruby-receptionists",
+      "name": "Ruby Receptionists",
+      "hitKey": "ruby",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ruffle",
+      "name": "Ruffle",
+      "hitKey": "ruffle",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rumble",
+      "name": "Rumble",
+      "hitKey": "rumble",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "runkit",
+      "name": "RunKit",
+      "hitKey": "runkit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rust",
+      "name": "Rust",
+      "hitKey": "rust",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "rxjs",
+      "name": "RxJS",
+      "hitKey": "rxjs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce",
+      "name": "Salesforce",
+      "hitKey": "salesforce",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-audience-studio",
+      "name": "Salesforce Audience Studio",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-commerce-cloud",
+      "name": "Salesforce Commerce Cloud",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-experience-cloud",
+      "name": "Salesforce Experience Cloud",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-interaction-studio",
+      "name": "Salesforce Interaction Studio",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-marketing-cloud-account-engagement",
+      "name": "Salesforce Marketing Cloud Account Engagement",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-marketing-cloud-email-studio",
+      "name": "Salesforce Marketing Cloud Email Studio",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salesforce-service-cloud",
+      "name": "Salesforce Service Cloud",
+      "hitKey": "salesforce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "salla",
+      "name": "Salla",
+      "hitKey": "salla",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "samsung-food",
+      "name": "Samsung Food",
+      "hitKey": "samsung",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sanity",
+      "name": "Sanity",
+      "hitKey": "sanity",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sap",
+      "name": "SAP",
+      "hitKey": "sap",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sap-commerce-cloud",
+      "name": "SAP Commerce Cloud",
+      "hitKey": "sap",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sap-customer-data-cloud-sign-in",
+      "name": "SAP Customer Data Cloud Sign-in",
+      "hitKey": "sap",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sap-upscale-commerce",
+      "name": "SAP Upscale Commerce",
+      "hitKey": "sap",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sass",
+      "name": "Sass",
+      "hitKey": "sass",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "scalar",
+      "name": "Scalar",
+      "hitKey": "scalar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "scrollreveal",
+      "name": "scrollreveal",
+      "hitKey": "scrollreveal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sellfy",
+      "name": "Sellfy",
+      "hitKey": "sellfy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "semantic-ui",
+      "name": "Semantic UI",
+      "hitKey": "semantic-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "semrush",
+      "name": "SEMrush",
+      "hitKey": "semrush",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sencha-touch",
+      "name": "Sencha Touch",
+      "hitKey": "sencha",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sentry",
+      "name": "Sentry",
+      "hitKey": "sentry",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "session-rewind",
+      "name": "Session Rewind",
+      "hitKey": "session",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sezzle",
+      "name": "Sezzle",
+      "hitKey": "sezzle",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shadcn-ui",
+      "name": "shadcn/ui",
+      "hitKey": "shadcn-ui",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify",
+      "name": "Shopify",
+      "hitKey": "shopify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify-buy-button",
+      "name": "Shopify Buy Button",
+      "hitKey": "shopify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify-chat",
+      "name": "Shopify Chat",
+      "hitKey": "shopify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify-consent-management",
+      "name": "Shopify Consent Management",
+      "hitKey": "shopify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify-geolocation-app",
+      "name": "Shopify Geolocation App",
+      "hitKey": "shopify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopify-product-reviews",
+      "name": "Shopify Product Reviews",
+      "hitKey": "shopify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopline",
+      "name": "Shopline",
+      "hitKey": "shopline",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "shopware",
+      "name": "Shopware",
+      "hitKey": "shopware",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "signal",
+      "name": "Signal",
+      "hitKey": "signal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "silverstripe",
+      "name": "Silverstripe",
+      "hitKey": "silverstripe",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "simple-analytics",
+      "name": "Simple Analytics",
+      "hitKey": "simple-analytics",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sitecore",
+      "name": "Sitecore",
+      "hitKey": "sitecore",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sitecore-engagement-cloud",
+      "name": "Sitecore Engagement Cloud",
+      "hitKey": "sitecore",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sitecore-experience-edge",
+      "name": "Sitecore Experience Edge",
+      "hitKey": "sitecore",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sitepoint",
+      "name": "SitePoint",
+      "hitKey": "sitepoint",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sky-pilot",
+      "name": "Sky Pilot",
+      "hitKey": "sky",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sky-shop",
+      "name": "Sky-Shop",
+      "hitKey": "sky",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "slim-select",
+      "name": "Slim Select",
+      "hitKey": "slim",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "smugmug",
+      "name": "SmugMug",
+      "hitKey": "smugmug",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "socket-io",
+      "name": "Socket.io",
+      "hitKey": "socket",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "solidjs",
+      "name": "SolidJS",
+      "hitKey": "solidjs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sonar",
+      "name": "Sonar",
+      "hitKey": "sonar",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "soundcloud",
+      "name": "SoundCloud",
+      "hitKey": "soundcloud",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sphinx",
+      "name": "Sphinx",
+      "hitKey": "sphinx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spine-js",
+      "name": "Spine.js",
+      "hitKey": "spine",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "splunk-rum",
+      "name": "Splunk RUM",
+      "hitKey": "splunk",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spotify-web-api",
+      "name": "Spotify Web API",
+      "hitKey": "spotify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spotify-widgets",
+      "name": "Spotify Widgets",
+      "hitKey": "spotify",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spring",
+      "name": "Spring",
+      "hitKey": "spring",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spring-for-creators",
+      "name": "Spring for creators",
+      "hitKey": "spring",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "spring-metrics",
+      "name": "Spring Metrics",
+      "hitKey": "spring",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "square",
+      "name": "Square",
+      "hitKey": "square",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "square-online",
+      "name": "Square Online",
+      "hitKey": "square",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "squarespace",
+      "name": "Squarespace",
+      "hitKey": "squarespace",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "squarespace-commerce",
+      "name": "Squarespace Commerce",
+      "hitKey": "squarespace",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "staffbase",
+      "name": "Staffbase",
+      "hitKey": "staffbase",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "statamic",
+      "name": "Statamic",
+      "hitKey": "statamic",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "statuspal",
+      "name": "Statuspal",
+      "hitKey": "statuspal",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "stencil",
+      "name": "Stencil",
+      "hitKey": "stencil",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "stimulus",
+      "name": "Stimulus",
+      "hitKey": "stimulus",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "stitches",
+      "name": "Stitches",
+      "hitKey": "stitches",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "storyblok",
+      "name": "Storyblok",
+      "hitKey": "storyblok",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "storybook",
+      "name": "Storybook",
+      "hitKey": "storybook",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "strapi",
+      "name": "Strapi",
+      "hitKey": "strapi",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "strava",
+      "name": "Strava",
+      "hitKey": "strava",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "streamlit",
+      "name": "Streamlit",
+      "hitKey": "streamlit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "stripe",
+      "name": "Stripe",
+      "hitKey": "stripe",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "styled-components",
+      "name": "styled-components",
+      "hitKey": "styled-components",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sublime",
+      "name": "Sublime",
+      "hitKey": "sublime",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "substack",
+      "name": "Substack",
+      "hitKey": "substack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "subversion",
+      "name": "Subversion",
+      "hitKey": "subversion",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "sulu",
+      "name": "Sulu",
+      "hitKey": "sulu",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "supabase",
+      "name": "Supabase",
+      "hitKey": "supabase",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "suse",
+      "name": "SUSE",
+      "hitKey": "suse",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "svelte",
+      "name": "Svelte",
+      "hitKey": "svelte",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "svg-support",
+      "name": "SVG Support",
+      "hitKey": "svg",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "swagger-ui",
+      "name": "Swagger UI",
+      "hitKey": "swagger",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "swiper",
+      "name": "Swiper",
+      "hitKey": "swiper",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "symfony",
+      "name": "Symfony",
+      "hitKey": "symfony",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "synology-diskstation",
+      "name": "Synology DiskStation",
+      "hitKey": "synology",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tabby",
+      "name": "Tabby",
+      "hitKey": "tabby",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tablecheck",
+      "name": "TableCheck",
+      "hitKey": "tablecheck",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tailwind-css",
+      "name": "Tailwind CSS",
+      "hitKey": "tailwind-css",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tanstack",
+      "name": "TanStack",
+      "hitKey": "tanstack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "task-analytics",
+      "name": "Task Analytics",
+      "hitKey": "task",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "teamcity",
+      "name": "TeamCity",
+      "hitKey": "teamcity",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "teamviewer",
+      "name": "TeamViewer",
+      "hitKey": "teamviewer",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tencent-analytics",
+      "name": "Tencent Analytics (腾讯分析)",
+      "hitKey": "tencent",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tencent-cloud",
+      "name": "Tencent Cloud",
+      "hitKey": "tencent",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tencent-qq",
+      "name": "Tencent QQ",
+      "hitKey": "tencent",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tencent-waterproof-wall",
+      "name": "Tencent Waterproof Wall",
+      "hitKey": "tencent",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "textpattern-cms",
+      "name": "Textpattern CMS",
+      "hitKey": "textpattern",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "things-solver",
+      "name": "Things Solver",
+      "hitKey": "things",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "three-js",
+      "name": "Three.js",
+      "hitKey": "three-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "tiddlywiki",
+      "name": "TiddlyWiki",
+      "hitKey": "tiddlywiki",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tiktok-pixel",
+      "name": "TikTok Pixel",
+      "hitKey": "tiktok",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tistory",
+      "name": "Tistory",
+      "hitKey": "tistory",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tomtom-maps",
+      "name": "TomTom Maps",
+      "hitKey": "tomtom",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tradingview",
+      "name": "TradingView",
+      "hitKey": "tradingview",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "transifex",
+      "name": "Transifex",
+      "hitKey": "transifex",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "transloadit",
+      "name": "Transloadit",
+      "hitKey": "transloadit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "trezor",
+      "name": "Trezor",
+      "hitKey": "trezor",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "trivago",
+      "name": "Trivago",
+      "hitKey": "trivago",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "trove-recommerce",
+      "name": "Trove Recommerce",
+      "hitKey": "trove",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "trusted-shops",
+      "name": "Trusted Shops",
+      "hitKey": "trusted-shops",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "trustpilot",
+      "name": "Trustpilot",
+      "hitKey": "trustpilot",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "tumblr",
+      "name": "Tumblr",
+      "hitKey": "tumblr",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "turbo",
+      "name": "Turbo",
+      "hitKey": "turbo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "turbopack",
+      "name": "Turbopack",
+      "hitKey": "turbopack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-eleven",
+      "name": "Twenty Eleven",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-fifteen",
+      "name": "Twenty Fifteen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-fourteen",
+      "name": "Twenty Fourteen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-nineteen",
+      "name": "Twenty Nineteen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-seventeen",
+      "name": "Twenty Seventeen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-sixteen",
+      "name": "Twenty Sixteen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-ten",
+      "name": "Twenty Ten",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-thirteen",
+      "name": "Twenty Thirteen",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-twelve",
+      "name": "Twenty Twelve",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-twenty",
+      "name": "Twenty Twenty",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-twenty-one",
+      "name": "Twenty Twenty-One",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-twenty-three",
+      "name": "Twenty Twenty-Three",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twenty-twenty-two",
+      "name": "Twenty Twenty-Two",
+      "hitKey": "twenty",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twilio-authy",
+      "name": "Twilio Authy",
+      "hitKey": "twilio",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitch-player",
+      "name": "Twitch Player",
+      "hitKey": "twitch",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter",
+      "name": "Twitter",
+      "hitKey": "twitter",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter-ads",
+      "name": "Twitter Ads",
+      "hitKey": "twitter",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter-analytics",
+      "name": "Twitter Analytics",
+      "hitKey": "twitter",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter-emoji-twemoji",
+      "name": "Twitter Emoji (Twemoji)",
+      "hitKey": "twitter",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter-flight",
+      "name": "Twitter Flight",
+      "hitKey": "twitter",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "twitter-typeahead-js",
+      "name": "Twitter typeahead.js",
+      "hitKey": "twitter",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "typedoc",
+      "name": "TypeDoc",
+      "hitKey": "typedoc",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "typeform",
+      "name": "Typeform",
+      "hitKey": "typeform",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "typer-js",
+      "name": "Typer.js",
+      "hitKey": "typer",
+      "matchReason": "js-suffix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "typesense",
+      "name": "Typesense",
+      "hitKey": "typesense",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "typo3-cms",
+      "name": "TYPO3 CMS",
+      "hitKey": "typo3",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ubuntu",
+      "name": "Ubuntu",
+      "hitKey": "ubuntu",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "uikit",
+      "name": "UIKit",
+      "hitKey": "uikit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "umami",
+      "name": "Umami",
+      "hitKey": "umami",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "umbraco",
+      "name": "Umbraco",
+      "hitKey": "umbraco",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "umi-cms",
+      "name": "UMI.CMS",
+      "hitKey": "umi",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "umijs",
+      "name": "UmiJs",
+      "hitKey": "umi",
+      "matchReason": "js-suffix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "unity",
+      "name": "Unity",
+      "hitKey": "unity",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "unix",
+      "name": "UNIX",
+      "hitKey": "unix",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "unocss",
+      "name": "UnoCSS",
+      "hitKey": "unocss",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "unpkg",
+      "name": "Unpkg",
+      "hitKey": "unpkg",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "upptime",
+      "name": "Upptime",
+      "hitKey": "upptime",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "uppy",
+      "name": "Uppy",
+      "hitKey": "uppy",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "ups",
+      "name": "UPS",
+      "hitKey": "ups",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "upsales",
+      "name": "Upsales",
+      "hitKey": "upsales",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "uservoice",
+      "name": "UserVoice",
+      "hitKey": "uservoice",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "usps",
+      "name": "USPS",
+      "hitKey": "usps",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vaadin",
+      "name": "Vaadin",
+      "hitKey": "vaadin",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "varnish",
+      "name": "Varnish",
+      "hitKey": "varnish",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "vbulletin",
+      "name": "vBulletin",
+      "hitKey": "vbulletin",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vectary",
+      "name": "Vectary",
+      "hitKey": "vectary",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "venmo",
+      "name": "Venmo",
+      "hitKey": "venmo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vercel",
+      "name": "Vercel",
+      "hitKey": "vercel",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vercel-analytics",
+      "name": "Vercel Analytics",
+      "hitKey": "vercel",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "verizon-media",
+      "name": "Verizon Media",
+      "hitKey": "verizon",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vfairs",
+      "name": "vFairs",
+      "hitKey": "vfairs",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "videojs",
+      "name": "VideoJS",
+      "hitKey": "video",
+      "matchReason": "js-suffix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "vike",
+      "name": "Vike",
+      "hitKey": "vike",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vimeo",
+      "name": "Vimeo",
+      "hitKey": "vimeo",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vimeo-ott",
+      "name": "Vimeo OTT",
+      "hitKey": "vimeo",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "virtual-chat",
+      "name": "Virtual Chat",
+      "hitKey": "virtual",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "visa",
+      "name": "Visa",
+      "hitKey": "visa",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "visa-checkout",
+      "name": "Visa Checkout",
+      "hitKey": "visa",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "visx",
+      "name": "Visx",
+      "hitKey": "visx",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vite",
+      "name": "Vite",
+      "hitKey": "vite",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vitepress",
+      "name": "VitePress",
+      "hitKey": "vitepress",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vonage-video-api",
+      "name": "Vonage Video API",
+      "hitKey": "vonage",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vox-media",
+      "name": "Vox Media",
+      "hitKey": "vox",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vtex",
+      "name": "VTEX",
+      "hitKey": "vtex",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vue-storefront",
+      "name": "Vue Storefront",
+      "hitKey": "vue",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vue-ai",
+      "name": "Vue.ai",
+      "hitKey": "vue",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vue-js",
+      "name": "Vue.js",
+      "hitKey": "vue-js",
+      "matchReason": "exact",
+      "provider": "skill-icons"
+    },
+    {
+      "slug": "vuetify",
+      "name": "Vuetify",
+      "hitKey": "vuetify",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "vyper",
+      "name": "Vyper",
+      "hitKey": "vyper",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wagtail",
+      "name": "Wagtail",
+      "hitKey": "wagtail",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wally",
+      "name": "Wally",
+      "hitKey": "wally",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "warp",
+      "name": "Warp",
+      "hitKey": "warp",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "webassembly",
+      "name": "WebAssembly",
+      "hitKey": "webassembly",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "webawesome",
+      "name": "WebAwesome",
+      "hitKey": "webawesome",
+      "matchReason": "exact",
+      "provider": "simple-icons"
+    },
+    {
+      "slug": "webflow",
+      "name": "Webflow",
+      "hitKey": "webflow",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "webflow-ecommerce",
+      "name": "Webflow Ecommerce",
+      "hitKey": "webflow",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "weblate",
+      "name": "Weblate",
+      "hitKey": "weblate",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "webpack",
+      "name": "Webpack",
+      "hitKey": "webpack",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "webstudio",
+      "name": "Webstudio",
+      "hitKey": "webstudio",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "whatsapp-business-chat",
+      "name": "WhatsApp Business Chat",
+      "hitKey": "whatsapp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "windows-ce",
+      "name": "Windows CE",
+      "hitKey": "windows",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "windows-server",
+      "name": "Windows Server",
+      "hitKey": "windows",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wise-agent",
+      "name": "Wise Agent",
+      "hitKey": "wise",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wistia",
+      "name": "Wistia",
+      "hitKey": "wistia",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wix",
+      "name": "Wix",
+      "hitKey": "wix",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wix-answers",
+      "name": "Wix Answers",
+      "hitKey": "wix",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wix-ecommerce",
+      "name": "Wix eCommerce",
+      "hitKey": "wix",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce",
+      "name": "WooCommerce",
+      "hitKey": "woocommerce",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-blocks",
+      "name": "WooCommerce Blocks",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-multilingual",
+      "name": "WooCommerce Multilingual",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-paypal-checkout-payment-gateway",
+      "name": "WooCommerce PayPal Checkout Payment Gateway",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-paypal-payments",
+      "name": "WooCommerce PayPal Payments",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-stripe-payment-gateway",
+      "name": "WooCommerce Stripe Payment Gateway",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "woocommerce-subscriptions",
+      "name": "WooCommerce Subscriptions",
+      "hitKey": "woocommerce",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "word-of-mouth",
+      "name": "Word of Mouth",
+      "hitKey": "word",
+      "matchReason": "brand-prefix",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "wordpress",
+      "name": "WordPress",
+      "hitKey": "wordpress",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-default",
+      "name": "WordPress Default",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-multisite",
+      "name": "WordPress Multisite",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-popular-posts",
+      "name": "WordPress Popular Posts",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-project-manager",
+      "name": "WordPress Project Manager",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-super-cache",
+      "name": "WordPress Super Cache",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-vip",
+      "name": "WordPress VIP",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wordpress-com",
+      "name": "WordPress.com",
+      "hitKey": "wordpress",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "workday",
+      "name": "Workday",
+      "hitKey": "workday",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wp-engine",
+      "name": "WP Engine",
+      "hitKey": "wp-engine",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "wp-rocket",
+      "name": "WP Rocket",
+      "hitKey": "wp-rocket",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "xendit",
+      "name": "Xendit",
+      "hitKey": "xendit",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "xwiki",
+      "name": "XWiki",
+      "hitKey": "xwiki",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yandex-smartcaptcha",
+      "name": "Yandex SmartCaptcha",
+      "hitKey": "yandex",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yandex-cloud-cdn",
+      "name": "Yandex.Cloud CDN",
+      "hitKey": "yandex",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yandex-direct",
+      "name": "Yandex.Direct",
+      "hitKey": "yandex",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yandex-messenger",
+      "name": "Yandex.Messenger",
+      "hitKey": "yandex",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yandex-metrika",
+      "name": "Yandex.Metrika",
+      "hitKey": "yandex",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yelp-reservations",
+      "name": "Yelp Reservations",
+      "hitKey": "yelp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yelp-review-badge",
+      "name": "Yelp Review Badge",
+      "hitKey": "yelp",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yii",
+      "name": "Yii",
+      "hitKey": "yii",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yoast-duplicate-post",
+      "name": "Yoast Duplicate Post",
+      "hitKey": "yoast",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yoast-seo",
+      "name": "Yoast SEO",
+      "hitKey": "yoast",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yoast-seo-for-shopify",
+      "name": "Yoast SEO for Shopify",
+      "hitKey": "yoast",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "youtube",
+      "name": "YouTube",
+      "hitKey": "youtube",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "yunohost",
+      "name": "YunoHost",
+      "hitKey": "yunohost",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zabbix",
+      "name": "Zabbix",
+      "hitKey": "zabbix",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zeabur",
+      "name": "Zeabur",
+      "hitKey": "zeabur",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zend",
+      "name": "Zend",
+      "hitKey": "zend",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zendesk",
+      "name": "Zendesk",
+      "hitKey": "zendesk",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zendesk-chat",
+      "name": "Zendesk Chat",
+      "hitKey": "zendesk",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zendesk-sunshine-conversations",
+      "name": "Zendesk Sunshine Conversations",
+      "hitKey": "zendesk",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zip",
+      "name": "Zip",
+      "hitKey": "zip",
+      "matchReason": "exact",
+      "provider": "material-icon-theme"
+    },
+    {
+      "slug": "zoho-commerce",
+      "name": "Zoho Commerce",
+      "hitKey": "zoho",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zoho-pagesense",
+      "name": "Zoho PageSense",
+      "hitKey": "zoho",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zoho-recruit",
+      "name": "Zoho Recruit",
+      "hitKey": "zoho",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zoho-salesiq",
+      "name": "Zoho SalesIQ",
+      "hitKey": "zoho",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zoho-sites",
+      "name": "Zoho Sites",
+      "hitKey": "zoho",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zola",
+      "name": "Zola",
+      "hitKey": "zola",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zola-planner",
+      "name": "Zola Planner",
+      "hitKey": "zola",
+      "matchReason": "brand-prefix",
+      "provider": "theSVG"
+    },
+    {
+      "slug": "zulip",
+      "name": "Zulip",
+      "hitKey": "zulip",
+      "matchReason": "exact",
+      "provider": "theSVG"
+    }
+  ]
+}

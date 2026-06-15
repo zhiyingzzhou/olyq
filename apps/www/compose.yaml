@@ -1,0 +1,15 @@
+services:
+  olyq-www:
+    build:
+      context: ../..
+      dockerfile: apps/www/Dockerfile
+    image: ${IMAGE_TAG:-olyq-www:local}
+    ports:
+      - "${OLYQ_WWW_HTTP_PORT:-8080}:80"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "-q", "-O", "/dev/null", "http://127.0.0.1/healthz"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 10s

@@ -1,0 +1,22 @@
+{
+  "elementPicker": {
+    "title": "选择元素",
+    "pickHint": "点击选择网页元素",
+    "pickedTag": "已选 {{tag}}",
+    "shrink": "缩小范围",
+    "expand": "扩大范围",
+    "commit": "添加到对话",
+    "escCancel": "按 Esc 取消",
+    "emptyElement": "该元素没有可提取内容，请扩大范围或选择其它元素",
+    "commitFailed": "无法加入所选区域，请重试或选择其它区域",
+    "summary": {
+      "visual": "视觉区域 · {{tag}} · 截图区域",
+      "table": "表格 · {{tag}} · {{rows}} 行 × {{columns}} 列",
+      "code": "代码 · {{tag}}{{languagePart}} · {{lines}} 行",
+      "languagePart": " · {{language}}",
+      "image": "图片 · {{tag}} · {{count}} 张图",
+      "link": "链接 · {{tag}} · 约 {{count}} 字",
+      "text": "文本 · {{tag}} · 约 {{count}} 字"
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "iterations": 7,
+  "desktopViewport": {
+    "width": 1440,
+    "height": 900
+  },
+  "compactViewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "counterBudgets": {
+    "feature-rich/cold-signals": {
+      "createTreeWalkerCalls": { "min": 1, "max": 1 }
+    },
+    "feature-rich/warm-signals": {
+      "createTreeWalkerCalls": { "min": 0, "max": 0 },
+      "getComputedStyleCalls": { "min": 0, "max": 0 },
+      "getBoundingClientRectCalls": { "min": 0, "max": 0 }
+    },
+    "feature-rich/scroll-metrics": {
+      "createTreeWalkerCalls": { "min": 0, "max": 0 },
+      "getComputedStyleCalls": { "min": 0, "max": 0 },
+      "getBoundingClientRectCalls": { "min": 0, "max": 0 }
+    },
+    "feature-rich/mutation-signals": {
+      "createTreeWalkerCalls": { "min": 1, "max": 1 }
+    },
+    "feature-rich/resize-metrics": {
+      "createTreeWalkerCalls": { "min": 0, "max": 0 },
+      "getComputedStyleCalls": { "min": 0, "max": 0 },
+      "getBoundingClientRectCalls": { "min": 0, "max": 0 }
+    },
+    "feature-rich/resize-signals": {
+      "createTreeWalkerCalls": { "min": 1, "max": 1 }
+    },
+    "sparse/cold-signals": {
+      "createTreeWalkerCalls": { "min": 1, "max": 1 }
+    },
+    "sparse/warm-signals": {
+      "createTreeWalkerCalls": { "min": 0, "max": 0 },
+      "getComputedStyleCalls": { "min": 0, "max": 0 },
+      "getBoundingClientRectCalls": { "min": 0, "max": 0 }
+    },
+    "dense/cold-signals": {
+      "createTreeWalkerCalls": { "min": 1, "max": 1 }
+    },
+    "dense/warm-signals": {
+      "createTreeWalkerCalls": { "min": 0, "max": 0 },
+      "getComputedStyleCalls": { "min": 0, "max": 0 },
+      "getBoundingClientRectCalls": { "min": 0, "max": 0 }
+    }
+  },
+  "ratioBudgets": {
+    "feature-rich/warm-signals": {
+      "baseline": "feature-rich/cold-signals",
+      "maxMeanRatio": 0.35,
+      "maxP95Ratio": 0.5
+    },
+    "feature-rich/scroll-metrics": {
+      "baseline": "feature-rich/cold-signals",
+      "maxMeanRatio": 0.25,
+      "maxP95Ratio": 0.35
+    },
+    "feature-rich/mutation-signals": {
+      "baseline": "feature-rich/cold-signals",
+      "maxMeanRatio": 1.75,
+      "maxP95Ratio": 2
+    },
+    "feature-rich/resize-metrics": {
+      "baseline": "feature-rich/cold-signals",
+      "maxMeanRatio": 0.25,
+      "maxP95Ratio": 0.4
+    },
+    "feature-rich/resize-signals": {
+      "baseline": "feature-rich/cold-signals",
+      "maxMeanRatio": 1.75,
+      "maxP95Ratio": 2
+    },
+    "sparse/warm-signals": {
+      "baseline": "sparse/cold-signals",
+      "maxMeanRatio": 0.35,
+      "maxP95Ratio": 1.1
+    },
+    "dense/warm-signals": {
+      "baseline": "dense/cold-signals",
+      "maxMeanRatio": 0.35,
+      "maxP95Ratio": 0.5
+    }
+  },
+  "chunkSizeBudgets": {
+    "page-style": {
+      "chunkName": "page-style",
+      "maxRawBytes": 230000,
+      "maxGzipBytes": 65000
+    }
+  }
+}

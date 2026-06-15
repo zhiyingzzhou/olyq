@@ -1,0 +1,23 @@
+{
+  "modelSelect": {
+    "title": "选择模型",
+    "searchPlaceholder": "搜索模型…",
+    "filterByTag": "按模型类型筛选",
+    "pinned": "置顶",
+    "pin": "置顶",
+    "unpin": "取消置顶",
+    "emptyTitle": "未找到匹配的模型",
+    "emptyDesc": "请尝试调整搜索或类别筛选",
+    "emptyDescWithFilters": "当前筛选：{{filters}}。请尝试调整搜索或类别筛选。",
+    "useDefault": "使用默认",
+    "manageModels": "模型管理",
+    "currentSelection": "当前已选",
+    "currentUnavailable": "当前模型暂未出现在筛选结果中，已保底展示",
+    "selectedCount": "已选择 {{count}} 个",
+    "clear": "清空",
+    "done": "完成",
+    "tags": {
+      "free": "免费"
+    }
+  }
+}

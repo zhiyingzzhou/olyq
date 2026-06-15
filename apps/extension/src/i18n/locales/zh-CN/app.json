@@ -1,0 +1,29 @@
+{
+  "app": {
+    "name": "Olyq",
+    "loadingWorkspace": "正在加载工作区",
+    "workspaceCrashedTitle": "工作区暂时不可用",
+    "workspaceCrashedDescription": "当前页面渲染失败，请刷新扩展页后继续。"
+  },
+  "status": {
+    "swAlive": "Service Worker 活跃",
+    "swDisconnected": "Service Worker 未连接",
+    "offscreenReady": "Offscreen 就绪",
+    "offscreenNotReady": "Offscreen 未就绪",
+    "mcpServers": "MCP 服务器：{{count}} 个",
+    "shortSw": "SW",
+    "shortOff": "OFF"
+  },
+  "welcome": {
+    "badge": "新的对话",
+    "title": "欢迎开始新的话题",
+    "description": "直接输入你的问题，或先整理上下文后再发给 {{modelName}}。",
+    "askTitle": "直接提问",
+    "askDesc": "可以让它写作、总结、分析当前网页，或帮你拆解复杂任务。",
+    "attachTitle": "补充上下文",
+    "attachDesc": "支持粘贴长文本、拖入图片或添加文件，让问题和材料一起进入对话。",
+    "modelTitle": "切换模型",
+    "modelDesc": "输入 @ 提及模型，或切换到更适合写作、编码、搜索和推理的模型。",
+    "hintTitle": "开始方式"
+  }
+}

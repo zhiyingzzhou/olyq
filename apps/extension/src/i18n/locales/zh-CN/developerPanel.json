@@ -1,0 +1,44 @@
+{
+  "developerPanel": {
+    "title": "开发者模式",
+    "description": "统一查看实验功能、调试事件、环境快照与渲染验证入口。",
+    "experimental": {
+      "title": "实验功能"
+    },
+    "debugEvents": {
+      "title": "调试事件",
+      "description": "展示最近收到的 chat/debug 事件，同时保留控制台输出。",
+      "listTitle": "最近事件",
+      "detailTitle": "事件详情",
+      "detailEmpty": "选择一条事件即可查看完整 JSON 负载与元数据。",
+      "payload": "事件负载",
+      "payloadDialogTitle": "放大查看事件负载",
+      "expand": "放大查看",
+      "wrapLines": "自动换行",
+      "prettifyJson": "JSON 格式化",
+      "copyPayload": "复制负载",
+      "empty": "当前还没有调试事件。开启开发者模式后发起对话、翻译或联网搜索，即可在这里看到调试流。",
+      "clear": "清空事件",
+      "copy": "复制事件",
+      "copySuccess": "调试事件已复制到剪贴板",
+      "copyFailed": "复制调试事件失败",
+      "requestId": "请求 ID",
+      "source": "来源",
+      "kind": "事件类型"
+    },
+    "snapshot": {
+      "title": "环境快照",
+      "description": "复用站点权限页的内容脚本动态注入状态，用于开发排查。",
+      "enabled": "动态注入开关",
+      "registered": "当前注册状态",
+      "method": "动态注册方式",
+      "origins": "已授权站点范围",
+      "loader": "注入 loader",
+      "lastRegistrationError": "最近一次内容脚本错误"
+    },
+    "rendering": {
+      "title": "渲染验证",
+      "description": "在开发者面板内集中验证 Markdown、公式、Mermaid 与媒体渲染能力。"
+    }
+  }
+}

@@ -1,0 +1,179 @@
+name: Release
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Release version without the v prefix, such as 0.1.1 or 0.1.1-beta.1"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  attestations: write
+  id-token: write
+
+concurrency:
+  group: release-${{ inputs.version }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Publish release
+    runs-on: ubuntu-22.04
+    timeout-minutes: 120
+    environment: github-release
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@b906affcce14559ad1aafd4ab0e942779e9f58b1 # v4
+        with:
+          version: 10.27.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Validate release input
+        id: release
+        env:
+          RELEASE_VERSION: ${{ inputs.version }}
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if [[ "${GITHUB_REF}" != "refs/heads/main" ]]; then
+            echo "::error::Publish Release must run from main. Current ref is ${GITHUB_REF}."
+            exit 1
+          fi
+
+          version="${RELEASE_VERSION}"
+          if [[ ! "${version}" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9A-Za-z.-]+)?$ ]]; then
+            echo "::error::Release version must match X.Y.Z or X.Y.Z-prerelease. Got ${version}."
+            exit 1
+          fi
+
+          tag="v${version}"
+          root_version="$(node -p "require('./package.json').version")"
+          extension_version="$(node -p "require('./apps/extension/package.json').version")"
+
+          if [[ "${root_version}" != "${version}" ]]; then
+            echo "::error::Root package version ${root_version} does not match ${tag}."
+            exit 1
+          fi
+
+          if [[ "${extension_version}" != "${version}" ]]; then
+            echo "::error::Extension package version ${extension_version} does not match ${tag}."
+            exit 1
+          fi
+
+          if git ls-remote --exit-code --tags origin "refs/tags/${tag}" >/dev/null 2>&1; then
+            echo "::error::Release tag ${tag} already exists."
+            exit 1
+          fi
+
+          if gh release view "${tag}" --repo "${GITHUB_REPOSITORY}" >/dev/null 2>&1; then
+            echo "::error::GitHub Release ${tag} already exists."
+            exit 1
+          fi
+
+          echo "tag=${tag}" >> "${GITHUB_OUTPUT}"
+          echo "version=${version}" >> "${GITHUB_OUTPUT}"
+
+      - name: Verify
+        run: pnpm verify
+
+      - name: Run mock E2E
+        run: pnpm --filter @olyq/extension e2e:mock
+
+      - name: Rebuild production extension packages
+        run: pnpm build:extension:chromium && pnpm build:extension:firefox
+
+      - name: Package extension builds
+        env:
+          OLYQ_PACKAGE_LABEL: ${{ steps.release.outputs.tag }}
+        run: pnpm --filter @olyq/extension package:all
+
+      - name: Generate checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd apps/extension/artifacts
+          shasum -a 256 \
+            "olyq-chrome-web-store-${{ steps.release.outputs.tag }}.zip" \
+            "olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}.zip" \
+            "olyq-firefox-amo-source-${{ steps.release.outputs.tag }}.zip" \
+            > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Package release docs
+        env:
+          OLYQ_PACKAGE_LABEL: ${{ steps.release.outputs.tag }}
+          OLYQ_RELEASE_VERSION: ${{ steps.release.outputs.version }}
+        run: pnpm package:release-docs
+
+      - name: Finalize checksums
+        shell: bash
+        run: |
+          set -euo pipefail
+          cd apps/extension/artifacts
+          shasum -a 256 \
+            "olyq-chrome-web-store-${{ steps.release.outputs.tag }}.zip" \
+            "olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}.zip" \
+            "olyq-firefox-amo-source-${{ steps.release.outputs.tag }}.zip" \
+            "olyq-release-docs-${{ steps.release.outputs.tag }}.zip" \
+            > SHA256SUMS.txt
+          cat SHA256SUMS.txt
+
+      - name: Attest release artifacts
+        uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be # v2
+        with:
+          subject-path: |
+            apps/extension/artifacts/olyq-chrome-web-store-${{ steps.release.outputs.tag }}.zip
+            apps/extension/artifacts/olyq-firefox-amo-addon-${{ steps.release.outputs.tag }}.zip
+            apps/extension/artifacts/olyq-firefox-amo-source-${{ steps.release.outputs.tag }}.zip
+            apps/extension/artifacts/olyq-release-docs-${{ steps.release.outputs.tag }}.zip
+            apps/extension/artifacts/SHA256SUMS.txt
+
+      - name: Create release tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git tag -a "${RELEASE_TAG}" -m "${RELEASE_TAG}"
+          git push "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" "refs/tags/${RELEASE_TAG}"
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          gh release create "${RELEASE_TAG}" \
+            --repo "${GITHUB_REPOSITORY}" \
+            --title "${RELEASE_TAG}" \
+            --generate-notes \
+            --verify-tag \
+            "apps/extension/artifacts/olyq-chrome-web-store-${RELEASE_TAG}.zip" \
+            "apps/extension/artifacts/olyq-firefox-amo-addon-${RELEASE_TAG}.zip" \
+            "apps/extension/artifacts/olyq-firefox-amo-source-${RELEASE_TAG}.zip" \
+            "apps/extension/artifacts/olyq-release-docs-${RELEASE_TAG}.zip" \
+            "apps/extension/artifacts/SHA256SUMS.txt"

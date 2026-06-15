@@ -1,0 +1,91 @@
+{
+  "elementContext": {
+    "kind": {
+      "text": "Text",
+      "code": "Code",
+      "image": "Image",
+      "table": "Table",
+      "visual": "Visual region"
+    },
+    "summary": {
+      "table": "{{kind}} · {{tag}} · {{rows}} rows × {{columns}} columns",
+      "code": "{{kind}} · {{tag}}{{languagePart}} · {{lines}} lines",
+      "codeLanguagePart": " · {{language}}",
+      "image": "{{kind}} · {{tag}} · {{count}} images",
+      "visual": "{{kind}} · {{tag}} · screenshot area",
+      "text": "{{kind}} · {{tag}} · about {{count}} chars"
+    },
+    "detail": {
+      "label": {
+        "type": "Type",
+        "tag": "Tag",
+        "source": "Source",
+        "url": "URL",
+        "selector": "Selector",
+        "size": "Size",
+        "lines": "Lines",
+        "language": "Language",
+        "images": "Images",
+        "imageName": "File name",
+        "imageAlt": "Alt text",
+        "mime": "MIME",
+        "visibleRect": "Visible region",
+        "viewport": "Viewport"
+      },
+      "value": {
+        "chars": "about {{count}} chars",
+        "lines": "{{lines}} lines",
+        "images": "{{count}} images",
+        "tableSize": "{{rows}} rows × {{columns}} columns",
+        "regionSize": "{{width}} × {{height}} CSS px",
+        "visibleRect": "x={{x}}, y={{y}}, {{width}} × {{height}} CSS px",
+        "viewport": "{{width}} × {{height}} CSS px, scroll: {{scrollX}}, {{scrollY}}"
+      },
+      "section": {
+        "metadata": "Reference metadata",
+        "preview": "Reference preview",
+        "content": "Reference content",
+        "technical": "Technical details",
+        "text": "Text",
+        "code": "Code",
+        "table": "Table",
+        "image": "Images",
+        "visual": "Visual region"
+      },
+      "empty": {
+        "text": "(No extractable text)",
+        "code": "// No extractable code",
+        "table": "(Table is empty)",
+        "image": "(No image details available)",
+        "visual": "(No visual region metrics available)"
+      },
+      "generatedColumn": "Column {{index}}",
+      "tableTruncated": "...(truncated, original table had {{rows}} rows)",
+      "previewMoreRows": "Previewing first {{count}} rows",
+      "imageFallback": "Image {{index}}",
+      "attachmentStatus": "{{count}} attachments added to this reference",
+      "showFullContent": "Show full content",
+      "hideFullContent": "Hide full content",
+      "showTechnicalDetails": "Technical details",
+      "hideTechnicalDetails": "Hide technical details"
+    },
+    "markdown": {
+      "heading": "Page element reference: {{title}}",
+      "source": "Source: {{source}}",
+      "url": "URL: {{url}}",
+      "selector": "Selector: {{selector}}",
+      "tableEmpty": "(Table is empty)",
+      "codeEmpty": "// No extractable code",
+      "imageFallback": "Image {{index}}",
+      "imageAttached": "[added as attachment]",
+      "imageAttachmentOnly": "(Image added as attachment)",
+      "visibleRect": "Visible region: x={{x}}, y={{y}}, {{width}} × {{height}} CSS px",
+      "viewport": "Viewport: {{width}} × {{height}} CSS px, scroll: {{scrollX}}, {{scrollY}}",
+      "screenshotAttached": "Screenshot: added as attachment",
+      "visualAttachmentOnly": "(Visual region added as screenshot attachment)",
+      "textEmpty": "(No extractable text)",
+      "generatedColumn": "Column {{index}}",
+      "tableTruncated": "...(truncated, original table had {{rows}} rows)"
+    }
+  }
+}

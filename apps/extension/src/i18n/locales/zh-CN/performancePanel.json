@@ -1,0 +1,46 @@
+{
+  "performancePanel": {
+    "title": "性能调优与资源管理",
+    "description": "监控和管理扩展的 CPU、内存与 WASM 资源使用。",
+    "metrics": {
+      "cpu": "CPU",
+      "jsHeap": "JS Heap",
+      "storageUsage": "存储占用",
+      "background": "后台组件"
+    },
+    "cpu": {
+      "loading": "正在采样 CPU 使用率",
+      "loadingDesc": "首次采样约需 2 秒。",
+      "estimated": "系统 CPU 使用率（估算值，近 2 秒）",
+      "unavailable": "CPU 指标不可用",
+      "unavailableDesc": "需要 Chrome system.cpu 权限（或请在扩展侧边栏中打开）。"
+    },
+    "background": {
+      "summary": "UI Port：{{uiPortCount}} ｜ Offscreen：{{offscreen}}",
+      "offscreenPort": "Offscreen Port：{{status}}"
+    },
+    "unload": {
+      "title": "资源回收策略",
+      "autoUnload": "自动回收离屏资源",
+      "autoUnloadDesc": "当后台空闲且没有挂起任务时，自动关闭 Offscreen Document（best-effort）。",
+      "idleTimeout": "空闲超时"
+    },
+    "units": {
+      "seconds": "{{count}} 秒"
+    },
+    "storage": {
+      "title": "数据落盘位置",
+      "chatPrompts": "聊天/提示词",
+      "chatPromptsDesc": "聊天设置、提示词和轻量偏好使用 shared storage，并通过启动快照/镜像加速加载。",
+      "sharedJson": "Shared JSON",
+      "modelKeys": "模型平台 Key",
+      "modelKeysDesc": "使用 chrome.storage.local（跨上下文共享）。",
+      "memory": "全局记忆",
+      "memoryDesc": "记忆数据保存在 IndexedDB，向量由已配置模型在线生成。"
+    },
+    "tips": {
+      "title": "性能提示",
+      "swMemoryLimit": "多标签页场景注意 Service Worker 共享内存限制"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "contentScript": {
+    "actions": {
+      "explain": "Explain",
+      "translate": "Translate",
+      "summarize": "Summarize",
+      "ask": "Ask Olyq"
+    },
+    "card": {
+      "label": "Olyq · {{action}}",
+      "close": "Close",
+      "copy": "Copy",
+      "copied": "Copied",
+      "open": "Open in sidebar"
+    },
+    "hide": {
+      "hidePageToolsLabel": "Hide page tools",
+      "dismissSession": "Close until next visit",
+      "disableSite": "Disable on this site",
+      "disableGlobal": "Disable permanently"
+    },
+    "inlinePrompt": {
+      "targetChinese": "Chinese",
+      "targetEnglish": "English",
+      "translate": "Translate the following content into {{targetLanguage}}, preserve tone and formatting, and output only the translation:\n\n\"{{text}}\"",
+      "summarize": "Summarize the following content as a concise bullet list:\n\n\"{{text}}\"",
+      "explain": "Explain the following content in clear, concise language:\n\n\"{{text}}\""
+    }
+  }
+}

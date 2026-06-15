@@ -1,0 +1,44 @@
+{
+  "developerPanel": {
+    "title": "Developer Mode",
+    "description": "Centralize experimental tools, debug events, environment snapshots, and rendering verification.",
+    "experimental": {
+      "title": "Experimental Features"
+    },
+    "debugEvents": {
+      "title": "Debug Events",
+      "description": "Show recent chat/debug events while keeping console output intact.",
+      "listTitle": "Recent Events",
+      "detailTitle": "Event Details",
+      "detailEmpty": "Select an event to inspect its full JSON payload and metadata.",
+      "payload": "Payload",
+      "payloadDialogTitle": "Expanded Payload Viewer",
+      "expand": "Expand",
+      "wrapLines": "Wrap Lines",
+      "prettifyJson": "Prettify JSON",
+      "copyPayload": "Copy Payload",
+      "empty": "No debug events yet. Turn on developer mode and start a chat, translation, or web search to inspect the debug stream here.",
+      "clear": "Clear Events",
+      "copy": "Copy Event",
+      "copySuccess": "Debug event copied to clipboard.",
+      "copyFailed": "Failed to copy debug event.",
+      "requestId": "Request ID",
+      "source": "Source",
+      "kind": "Kind"
+    },
+    "snapshot": {
+      "title": "Environment Snapshot",
+      "description": "Reuse the content-script injection snapshot from Site Permissions for developer diagnostics.",
+      "enabled": "Dynamic Injection",
+      "registered": "Registration Status",
+      "method": "Registration Method",
+      "origins": "Granted Origins",
+      "loader": "Injection Loader",
+      "lastRegistrationError": "Last Content-Script Error"
+    },
+    "rendering": {
+      "title": "Rendering Verification",
+      "description": "Validate Markdown, math, Mermaid, and media rendering directly inside the developer panel."
+    }
+  }
+}

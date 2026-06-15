@@ -1,0 +1,33 @@
+{
+  "markdown": {
+    "code": "Code",
+    "mermaidRenderError": "Mermaid render error",
+    "mermaidDiagram": "Mermaid diagram",
+    "mermaidPreview": "Preview diagram",
+    "mermaidPreviewTitle": "Diagram preview",
+    "mermaidSource": "Mermaid source",
+    "mermaidViewToggle": "Mermaid view switcher",
+    "mermaidViewDiagram": "Diagram",
+    "mermaidViewSource": "Source",
+    "mermaidRendering": "Rendering diagram, showing the source for now.",
+    "mermaidRenderAfterStream": "The diagram will render after the response finishes. Showing the source for now.",
+    "mermaidRenderFallback": "The diagram could not be rendered, so the source is shown instead.",
+    "imageBlockedUnsafe": "[Image blocked: unsafe URL]",
+    "imageLoadFailed": "Failed to load image: {{alt}}",
+    "linkPreview": {
+      "loading": "Loading link preview",
+      "unavailable": "Link preview unavailable",
+      "untitled": "Untitled link",
+      "imageAlt": "Preview image for {{title}}"
+    },
+    "viewer": {
+      "toolbar": "Preview toolbar",
+      "zoomOut": "Zoom out",
+      "zoomIn": "Zoom in",
+      "reset": "Reset / fit",
+      "rotateLeft": "Rotate left",
+      "rotateRight": "Rotate right"
+    },
+    "imagePreviewHint": "Click outside or press ESC to close."
+  }
+}

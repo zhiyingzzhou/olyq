@@ -1,0 +1,108 @@
+{
+  "mcpBridgePanel": {
+    "title": "MCP Servers",
+    "description": "Configure headers and OAuth for remote Streamable HTTP MCP servers.",
+    "settings": {
+      "chatTools": "Enable MCP tools in chat",
+      "chatToolsDesc": "When enabled, tools from active remote MCP servers are injected into the current chat context."
+    },
+    "servers": {
+      "title": "Remote MCP Servers",
+      "description": "Connect, authorize, refresh tools, and edit each remote MCP server independently.",
+      "add": "Add server",
+      "empty": "No MCP servers yet. Click Add server to configure one.",
+      "connect": "Connect",
+      "disconnect": "Disconnect",
+      "refreshTools": "Refresh tools",
+      "edit": "Edit",
+      "delete": "Delete",
+      "authorize": "Authorize OAuth",
+      "clearAuthorization": "Clear authorization",
+      "enabled": "Enabled",
+      "disabled": "Disabled",
+      "connected": "Connected",
+      "disconnected": "Disconnected",
+      "oauthEnabled": "OAuth",
+      "url": "URL:",
+      "toolsCount": "Tools: {{count}}"
+    },
+    "toolRunner": {
+      "title": "Tool Runner",
+      "needConnect": "Connect at least one remote MCP server first.",
+      "service": "Server",
+      "tool": "Tool",
+      "args": "Arguments (JSON)",
+      "result": "Result",
+      "resultPlaceholder": "Tool output will appear here.",
+      "auditHint": "Each run is written to the local browser audit log.",
+      "run": "Run",
+      "running": "Running…"
+    },
+    "audit": {
+      "title": "Tool Audit Log",
+      "empty": "No records yet",
+      "ok": "OK",
+      "err": "ERR",
+      "server": "server={{serverId}}",
+      "durationMs": "duration={{durationMs}}ms"
+    },
+    "dialog": {
+      "editTitle": "Edit MCP Server",
+      "addTitle": "Add MCP Server",
+      "description": "Enter a remote Streamable HTTP MCP endpoint. For local development, expose your service over HTTP first.",
+      "formMode": "Form mode",
+      "jsonMode": "JSON mode",
+      "type": "Server type",
+      "name": "Server name",
+      "namePlaceholder": "For example GitHub MCP",
+      "url": "Server URL",
+      "jsonConfig": "Full JSON config",
+      "jsonHint": "Supports the standard mcpServers wrapper. `type` and `url` are required; only `type`, `url`, `headers`, and `oauth` are accepted.",
+      "parseToForm": "Parse into form mode",
+      "headers": "Headers (optional)",
+      "headersPlaceholder": "{\"Authorization\":\"Bearer xxx\"}",
+      "headersHint": "JSON object. These headers will be attached to every Streamable HTTP request.",
+      "warnStreamableHttp": "Saving will use the URL, headers, and OAuth settings shown here when connecting to this MCP server."
+    },
+    "oauth": {
+      "enable": "Enable OAuth",
+      "enableHint": "When enabled, the extension uses MCP remote auth discovery, DCR / preregistered clients, PKCE, and token refresh.",
+      "registrationStrategy": "Registration strategy",
+      "dynamic": "Dynamic registration (DCR)",
+      "preregistered": "Preregistered client",
+      "scopes": "Scopes (one per line)",
+      "resource": "Resource override",
+      "protectedResourceMetadataUrl": "Protected Resource Metadata URL",
+      "authorizationServerMetadataUrl": "Authorization Server Metadata URL",
+      "dynamicClientName": "Dynamic client name",
+      "dynamicClientNamePlaceholder": "Olyq Browser Extension",
+      "tokenEndpointAuthMethod": "Token endpoint auth method",
+      "tokenEndpointAuthNone": "none",
+      "tokenEndpointAuthSecretPost": "client_secret_post",
+      "preregClientId": "Preregistered Client ID",
+      "preregClientSecret": "Preregistered Client Secret"
+    },
+    "server": {
+      "protocolVersion": "protocol {{version}}"
+    },
+    "serverType": {
+      "streamableHttp": "Streamable HTTP"
+    },
+    "toast": {
+      "toolsRefreshed": "Tools refreshed",
+      "authorizationDone": "OAuth authorization completed",
+      "authorizationCleared": "OAuth authorization cleared",
+      "toolNeedServer": "Select a server first",
+      "toolNeedTool": "Select a tool first",
+      "argsInvalidJson": "Arguments must be valid JSON",
+      "toolDone": "Tool call completed",
+      "toolFailed": "Tool call failed: {{error}}",
+      "serverNameRequired": "Server name is required",
+      "serverUpdated": "Server updated",
+      "serverAdded": "Server added",
+      "serverDeleted": "Server deleted",
+      "serverDeleteConfirm": "Delete MCP server \"{{name}}\"",
+      "serverDeleteConfirmDesc": "After deletion, this server will no longer participate in chat tool calls."
+    }
+  }
+}

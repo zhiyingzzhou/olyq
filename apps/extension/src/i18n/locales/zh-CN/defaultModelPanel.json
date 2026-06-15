@@ -1,0 +1,32 @@
+{
+  "defaultModelPanel": {
+    "title": "模型与提示",
+    "description": "配置对话、生图、转写和翻译任务使用的默认模型与全局提示词",
+    "conversationModel": "默认对话模型",
+    "conversationModelDesc": "新话题和助手使用的默认对话模型",
+    "imageModel": "默认生图模型",
+    "imageModelDesc": "新建绘图任务时默认选中的生图模型",
+    "transcriptionModel": "默认转写模型",
+    "transcriptionModelDesc": "发送音频附件前用于语音转写的模型",
+    "ocrModel": "截图 OCR 模型",
+    "ocrModelDesc": "网页截图中识别文字时使用的视觉对话模型",
+    "speechModel": "默认朗读模型",
+    "speechModelDesc": "assistant 消息手动朗读时使用的语音合成模型",
+    "speechVoice": "默认朗读 Voice",
+    "speechVoiceDesc": "传给 speech-api 的 voice 标识；留空时使用 provider 默认 voice",
+    "speechVoicePlaceholder": "例如 alloy、nova、shimmer",
+    "topicNamingModel": "话题命名模型",
+    "topicNamingModelDesc": "自动生成话题标题所使用的对话模型",
+    "translateModel": "翻译模型",
+    "translateModelDesc": "翻译面板使用的对话模型",
+    "globalChatPrompt": "全局对话提示词",
+    "globalChatPromptDesc": "每次对话都会固定前置到 assistant 提示词之前",
+    "globalChatPromptPlaceholder": "输入全局对话提示词（会前置到所有对话）…",
+    "globalImagePrompt": "全局生图提示词",
+    "globalImagePromptDesc": "生成图片时会作为前缀拼接到当前绘图提示词之前",
+    "globalImagePromptPlaceholder": "输入全局生图提示词（会前置到所有绘图请求）…",
+    "useDefaultModel": "使用默认对话模型",
+    "selectModel": "选择模型",
+    "noModels": "暂无可用模型，请先在模型管理中添加"
+  }
+}

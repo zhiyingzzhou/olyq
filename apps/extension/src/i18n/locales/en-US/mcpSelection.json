@@ -1,0 +1,13 @@
+{
+  "mcpSelection": {
+    "mcpModes": {
+      "auto": "Auto select",
+      "manual": "Manual (select servers)",
+      "disabled": "Disabled (no tools)"
+    },
+    "mcpModeDesc": "Decides whether the current message needs MCP and only enables relevant services; ordinary chat does not inject MCP tools.",
+    "mcpServers": "Allowed MCP servers (manual mode)",
+    "noMcpServers": "No MCP servers available (add and enable them in Extension Settings → MCP).",
+    "modelParamsLabel": "Model parameters (modelParams)"
+  }
+}

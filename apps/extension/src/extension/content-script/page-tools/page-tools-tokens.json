@@ -1,0 +1,44 @@
+{
+  "pageToolsHostZIndex": 2147483647,
+  "screenshotAnnotationColors": [
+    "#FF3D00",
+    "#FFAB00",
+    "#5ABA4D",
+    "#426CEC",
+    "#000000",
+    "#90959D",
+    "#ffffff"
+  ],
+  "screenshotMarkSizeTiers": [2, 4, 8],
+  "screenshotMosaicSizeTiers": [4, 8, 16],
+  "screenshotTextFontSizes": [12, 16, 24, 36, 48, 60, 72, 96],
+  "tailwindTokens": {
+    "zIndex": {
+      "page-tools-host": "2147483647",
+      "page-tools-menu": "10",
+      "page-tools-card": "20",
+      "page-tools-panel": "30",
+      "page-tools-modal": "40",
+      "page-tools-toolbar": "46",
+      "page-tools-feedback": "48",
+      "page-tools-ocr": "49"
+    },
+    "colors": {
+      "screenshot-red": "#FF3D00",
+      "screenshot-amber": "#FFAB00",
+      "screenshot-green": "#5ABA4D",
+      "screenshot-blue": "#426CEC",
+      "screenshot-black": "#000000",
+      "screenshot-gray": "#90959D",
+      "screenshot-white": "#ffffff"
+    },
+    "borderRadius": {
+      "page-tools-control": "9px",
+      "page-tools-panel": "12px"
+    },
+    "boxShadow": {
+      "page-tools-surface": "0 14px 34px rgba(15,23,42,.16), 0 2px 8px rgba(15,23,42,.08)",
+      "page-tools-card": "0 18px 44px rgba(15,23,42,.18), 0 3px 12px rgba(15,23,42,.08)"
+    }
+  }
+}

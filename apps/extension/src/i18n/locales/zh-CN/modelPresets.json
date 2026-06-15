@@ -1,0 +1,7 @@
+{
+  "modelPresets": {
+    "creative": "创意模式",
+    "balanced": "均衡模式",
+    "precise": "精确模式"
+  }
+}
