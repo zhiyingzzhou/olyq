@@ -195,6 +195,7 @@ describe('WebDAVContent', () => {
 
   it('从 WebDAV 恢复会先列远端备份版本，并排除同步状态 JSON', async () => {
     const user = userEvent.setup();
+    const selectedBackupBlob = new Blob(['zip'], { type: 'application/zip' });
     const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       if (init?.method === 'PROPFIND') {
         return new Response(`<?xml version="1.0" encoding="utf-8"?>
@@ -222,7 +223,13 @@ describe('WebDAVContent', () => {
       }
 
       if (init?.method === 'GET') {
-        return new Response(new Blob(['zip']));
+        // Node 22 的 undici Response 不接受 jsdom realm Blob；这里只模拟组件实际消费的下载响应 contract。
+        return {
+          ok: true,
+          status: 200,
+          text: async () => '',
+          blob: async () => selectedBackupBlob,
+        } as unknown as Response;
       }
 
       throw new Error(`Unexpected fetch: ${String(input)} ${init?.method || 'GET'}`);

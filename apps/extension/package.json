@@ -5,6 +5,9 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev:chromium": "cross-env OLYQ_TARGET=chromium vite",
     "dev:firefox": "cross-env OLYQ_TARGET=firefox vite",
@@ -21,8 +24,15 @@
     "package:firefox": "node ./scripts/package-extension.mjs firefox",
     "package:firefox-source": "node ./scripts/package-extension.mjs firefox-source",
     "package:all": "node ./scripts/package-extension.mjs all",
+    "verify:node-version": "node ../../scripts/verify-node-version.mjs",
+    "prelint": "pnpm verify:node-version",
     "lint": "eslint .",
+    "pretypecheck": "pnpm verify:node-version",
+    "pretest": "pnpm verify:node-version",
     "test": "vitest run",
+    "prebuild:chromium": "pnpm verify:node-version",
+    "prebuild:firefox": "pnpm verify:node-version",
+    "preverify": "pnpm verify:node-version",
     "benchmark:page-style": "pnpm build:test:chromium && pnpm build:test:firefox && node ./scripts/run-page-style-benchmark.mjs",
     "benchmark:browser-context": "pnpm exec vite-node ./scripts/run-browser-context-benchmark.ts",
     "benchmark:technology-stack": "pnpm exec vite-node ./scripts/run-technology-stack-benchmark.ts",

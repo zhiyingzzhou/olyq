@@ -5,6 +5,9 @@
   "license": "MIT",
   "type": "module",
   "packageManager": "pnpm@10.27.0",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev:extension:chromium": "pnpm --filter @olyq/extension dev:chromium",
     "dev:extension:firefox": "pnpm --filter @olyq/extension dev:firefox",
@@ -19,9 +22,10 @@
     "build:extension:test:chromium": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:test:chromium && node ./scripts/report-extension-build-output.mjs chromium-e2e",
     "build:extension:test:firefox": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension build:test:firefox && node ./scripts/report-extension-build-output.mjs firefox-e2e",
     "build:www": "pnpm --filter @olyq/www build",
+    "verify:node-version": "node ./scripts/verify-node-version.mjs",
     "verify:extension-dist-boundary": "node ./scripts/verify-extension-dist-boundary.mjs",
     "verify:github-workflows": "node ./scripts/verify-github-workflows.mjs",
-    "verify": "pnpm verify:github-workflows && pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension verify && pnpm --filter @olyq/www build",
+    "verify": "pnpm verify:node-version && pnpm verify:github-workflows && pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension verify && pnpm --filter @olyq/www build",
     "verify:extension": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension verify",
     "verify:www": "pnpm --filter @olyq/www build",
     "package:extension": "pnpm verify:extension-dist-boundary && pnpm --filter @olyq/extension package:all",
