@@ -63,6 +63,37 @@ vi.mock('@/hooks/useConfirmDialog', () => ({
   }),
 }));
 
+vi.mock('./RemoteBackupVersionsDialog', () => ({
+  RemoteBackupVersionsDialog: ({
+    open,
+    items,
+    loading,
+    onRestore,
+  }: {
+    open: boolean;
+    items: Array<{ key: string; name: string }>;
+    loading: boolean;
+    onRestore: (item: { key: string; name: string }) => void;
+  }) => {
+    if (!open) return null;
+
+    return (
+      <div role="dialog" aria-label="remote backup versions">
+        {loading ? <span>common.loading</span> : null}
+        {!loading && items.length === 0 ? <span>cloudSyncPanel.remoteBackups.empty</span> : null}
+        {items.map((item) => (
+          <div key={item.key}>
+            <span>{item.name}</span>
+            <button type="button" onClick={() => onRestore(item)}>
+              cloudSyncPanel.actions.restore
+            </button>
+          </div>
+        ))}
+      </div>
+    );
+  },
+}));
+
 import { WEBDAV_SYNC_STATUS_KEY } from '@/lib/sync/cloud-sync';
 import { WebDAVContent } from './WebDAVContent';
 
@@ -216,8 +247,7 @@ describe('WebDAVContent', () => {
     expect(screen.queryByText('notes.txt')).not.toBeInTheDocument();
     expect(screen.queryByText('manual-olyq-backup.zip')).not.toBeInTheDocument();
 
-    const restoreButtons = screen.getAllByRole('button', { name: /cloudSyncPanel\.actions\.restore/ });
-    await user.click(restoreButtons[0]);
+    await user.click(screen.getByRole('button', { name: 'cloudSyncPanel.actions.restore' }));
 
     await waitFor(() => {
       expect(confirmMock).toHaveBeenCalledWith(expect.objectContaining({
