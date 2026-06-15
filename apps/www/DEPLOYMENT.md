@@ -6,7 +6,9 @@
 - Output directory: `apps/www/dist`
 - Vite base: `/`
 
-The repository includes `.github/workflows/pages.yml` for deployments from `main` and manual runs.
+The repository includes `.github/workflows/pages.yml` as a manual deployment workflow. It is intentionally not triggered by `main` pushes.
+
+Before the first manual run, enable GitHub Pages for the repository and set **Build and deployment** to **GitHub Actions** in Settings -> Pages. Then run **Actions -> Pages -> Run workflow**.
 
 ## Cloudflare Pages
 

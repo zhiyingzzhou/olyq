@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { parseDocument } from "yaml";
 
 const repoRoot = path.resolve(path.dirname(new URL(import.meta.url).pathname), "..");
 const workflowsDir = path.join(repoRoot, ".github", "workflows");
@@ -17,7 +18,21 @@ function collectWorkflowFiles(dir) {
   });
 }
 
-function checkWorkflowFile(filePath) {
+function formatYamlError(relativePath, error) {
+  const line = error.linePos?.[0]?.line;
+  const column = error.linePos?.[0]?.col;
+  const location = line ? `:${line}${column ? `:${column}` : ""}` : "";
+  return `${relativePath}${location} workflow YAML must be parseable: ${error.message}`;
+}
+
+function checkWorkflowSyntax(filePath) {
+  const relativePath = path.relative(repoRoot, filePath).split(path.sep).join("/");
+  const content = fs.readFileSync(filePath, "utf8");
+  const document = parseDocument(content, { prettyErrors: false });
+  return document.errors.map((error) => formatYamlError(relativePath, error));
+}
+
+function checkWorkflowActionPins(filePath) {
   const relativePath = path.relative(repoRoot, filePath).split(path.sep).join("/");
   const lines = fs.readFileSync(filePath, "utf8").split(/\n/);
   const failures = [];
@@ -49,11 +64,15 @@ function checkWorkflowFile(filePath) {
   return failures;
 }
 
-const failures = collectWorkflowFiles(workflowsDir).flatMap(checkWorkflowFile);
+const workflowFiles = collectWorkflowFiles(workflowsDir);
+const failures = workflowFiles.flatMap((filePath) => [
+  ...checkWorkflowSyntax(filePath),
+  ...checkWorkflowActionPins(filePath),
+]);
 
 if (failures.length > 0) {
   console.error(failures.join("\n"));
   process.exit(1);
 }
 
-console.log("GitHub workflow action pins verified.");
+console.log("GitHub workflow syntax and action pins verified.");

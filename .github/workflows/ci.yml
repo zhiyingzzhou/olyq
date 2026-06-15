@@ -41,8 +41,5 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
-      - name: Verify GitHub workflow pins
-        run: pnpm verify:github-workflows
-
       - name: Verify
         run: pnpm verify

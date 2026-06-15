@@ -10,7 +10,8 @@
  * - 本文件只覆盖设置页交互与请求编排，不覆盖真实 WebDAV 服务。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { render, screen, waitFor } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 
 const {
   broadcastStoreReloadMock,
@@ -162,6 +163,7 @@ describe('WebDAVContent', () => {
   });
 
   it('从 WebDAV 恢复会先列远端备份版本，并排除同步状态 JSON', async () => {
+    const user = userEvent.setup();
     const fetchMock = vi.fn(async (input: RequestInfo | URL, init?: RequestInit) => {
       if (init?.method === 'PROPFIND') {
         return new Response(`<?xml version="1.0" encoding="utf-8"?>
@@ -198,7 +200,7 @@ describe('WebDAVContent', () => {
 
     render(<WebDAVContent />);
 
-    fireEvent.click(screen.getByRole('button', { name: /cloudSyncPanel\.webdav\.actions\.restore/ }));
+    await user.click(screen.getByRole('button', { name: /cloudSyncPanel\.webdav\.actions\.restore/ }));
 
     await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith(
@@ -215,22 +217,29 @@ describe('WebDAVContent', () => {
     expect(screen.queryByText('manual-olyq-backup.zip')).not.toBeInTheDocument();
 
     const restoreButtons = screen.getAllByRole('button', { name: /cloudSyncPanel\.actions\.restore/ });
-    fireEvent.click(restoreButtons[0]);
+    await user.click(restoreButtons[0]);
 
     await waitFor(() => {
       expect(confirmMock).toHaveBeenCalledWith(expect.objectContaining({
         title: 'cloudSyncPanel.remoteBackups.restoreConfirmTitle',
       }));
+    });
+    await waitFor(() => {
       expect(fetchMock).toHaveBeenCalledWith(
         'https://dav.example.com/webdav/olyq/olyq-backup-20260502033923108.zip',
         expect.objectContaining({ method: 'GET' }),
       );
+    });
+    await waitFor(() => {
       expect(importBackupFromZipMock).toHaveBeenCalledTimes(1);
+    });
+    await waitFor(() => {
       expect(broadcastStoreReloadMock).toHaveBeenCalledTimes(1);
     });
   });
 
   it('WebDAV 目录为空时不会自动 GET 旧 lastBackupUrl 或其它版本', async () => {
+    const user = userEvent.setup();
     const fetchMock = vi.fn(async (_input: RequestInfo | URL, init?: RequestInit) => {
       expect(init?.method).toBe('PROPFIND');
       return new Response('<?xml version="1.0"?><d:multistatus xmlns:d="DAV:" />', { status: 207 });
@@ -239,7 +248,7 @@ describe('WebDAVContent', () => {
 
     render(<WebDAVContent />);
 
-    fireEvent.click(screen.getByRole('button', { name: /cloudSyncPanel\.webdav\.actions\.restore/ }));
+    await user.click(screen.getByRole('button', { name: /cloudSyncPanel\.webdav\.actions\.restore/ }));
 
     expect(await screen.findByText('cloudSyncPanel.remoteBackups.empty')).toBeInTheDocument();
     expect(fetchMock).toHaveBeenCalledTimes(1);

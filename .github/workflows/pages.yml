@@ -1,9 +1,6 @@
 name: Pages
 
 on:
-  push:
-    branches:
-      - main
   workflow_dispatch:
 
 permissions:
@@ -22,6 +19,18 @@ jobs:
     timeout-minutes: 15
 
     steps:
+      - name: Verify Pages setup
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! gh api "repos/${GITHUB_REPOSITORY}/pages" >/dev/null 2>&1; then
+            echo "::error::GitHub Pages is not enabled for this repository. In Settings > Pages, set Build and deployment source to GitHub Actions, then rerun this workflow."
+            exit 1
+          fi
+
       - name: Checkout
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
         with:
