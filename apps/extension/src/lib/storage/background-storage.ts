@@ -14,7 +14,15 @@
 import { logger } from '@/lib/logger';
 
 /** 后台 storage 副作用的操作类型。 */
-export type BackgroundStorageOperation = 'get' | 'set' | 'remove' | 'read-json' | 'write-json' | 'reload' | 'sync';
+export type BackgroundStorageOperation =
+  | 'get'
+  | 'set'
+  | 'remove'
+  | 'read-json'
+  | 'write-json'
+  | 'write-json-with-bootstrap-mirror'
+  | 'reload'
+  | 'sync';
 
 /** 后台 storage 失败诊断上下文。 */
 export interface BackgroundStorageFailureContext {

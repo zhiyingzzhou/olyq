@@ -697,8 +697,8 @@ function createAssistantStore() {
           // 说明：reload 只信共享真源，不回读模块内缓存；
           // 这样跨窗口 restore / import / sync 回放后都能得到同一份结果。
           const [assistantsRaw, userPresetsRaw] = await Promise.all([
-            readStoredJson<unknown>(STORAGE_KEY, [], (raw) => raw),
-            readStoredJson<unknown>(PRESET_STORAGE_KEY, [], (raw) => raw),
+            readStoredJsonWithBootstrapMirror<unknown>(STORAGE_KEY, [], (raw) => raw),
+            readStoredJsonWithBootstrapMirror<unknown>(PRESET_STORAGE_KEY, [], (raw) => raw),
           ]);
           const assistants = ensureAssistantList(
             sanitizeAssistants(assistantsRaw, {
