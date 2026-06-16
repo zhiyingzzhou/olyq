@@ -7,48 +7,19 @@
  * - 防止页面内隐藏入口以后绕过 `shared-json-config-channel` 自造状态。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { jsonStorageMock } from '@/test/json-storage-mock';
 
-const mocks = vi.hoisted(() => ({
-  storedValue: undefined as unknown,
-  readBootstrapStoredJsonSeedMock: vi.fn(),
-  readStoredJsonMock: vi.fn(),
-  writeStoredJsonMock: vi.fn(),
-  writeStoredJsonInBackgroundMock: vi.fn(),
-  subscribeStoredKeysMock: vi.fn(),
-}));
+const PAGE_TOOLS_TEST_STORAGE_KEY = 'olyq.page-tools.v1';
 
-vi.mock('@/lib/storage/json-storage', () => ({
-  readBootstrapStoredJsonSeed: mocks.readBootstrapStoredJsonSeedMock,
-  readStoredJson: mocks.readStoredJsonMock,
-  writeStoredJson: mocks.writeStoredJsonMock,
-  writeStoredJsonInBackground: mocks.writeStoredJsonInBackgroundMock,
-  subscribeStoredKeys: mocks.subscribeStoredKeysMock,
-}));
+vi.mock('@/lib/storage/json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock');
+  return createJsonStorageMockModule();
+});
 
 describe('page-tools settings', () => {
   beforeEach(() => {
     vi.resetModules();
-    mocks.storedValue = undefined;
-    mocks.readBootstrapStoredJsonSeedMock.mockReset();
-    mocks.readStoredJsonMock.mockReset();
-    mocks.writeStoredJsonMock.mockReset();
-    mocks.writeStoredJsonInBackgroundMock.mockReset();
-    mocks.subscribeStoredKeysMock.mockReset();
-
-    mocks.readBootstrapStoredJsonSeedMock.mockImplementation((_key: string, fallback: unknown, normalize?: (raw: unknown) => unknown) => (
-      mocks.storedValue === undefined ? fallback : normalize?.(mocks.storedValue) ?? mocks.storedValue
-    ));
-    mocks.readStoredJsonMock.mockImplementation(async (_key: string, fallback: unknown, normalize?: (raw: unknown) => unknown) => {
-      const raw = mocks.storedValue === undefined ? fallback : mocks.storedValue;
-      return normalize?.(raw) ?? raw;
-    });
-    mocks.writeStoredJsonMock.mockImplementation(async (_key: string, value: unknown) => {
-      mocks.storedValue = value;
-    });
-    mocks.writeStoredJsonInBackgroundMock.mockImplementation((_key: string, value: unknown) => {
-      mocks.storedValue = value;
-    });
-    mocks.subscribeStoredKeysMock.mockReturnValue(() => undefined);
+    jsonStorageMock.reset();
   });
 
   it('默认启用网页工具且站点禁用列表为空', async () => {
@@ -62,7 +33,7 @@ describe('page-tools settings', () => {
   });
 
   it('按精确 http/https origin 归一化站点禁用列表', async () => {
-    mocks.storedValue = {
+    jsonStorageMock.setStoredValue(PAGE_TOOLS_TEST_STORAGE_KEY, {
       enabled: true,
       disabledSiteOrigins: [
         'https://example.com/path',
@@ -71,7 +42,7 @@ describe('page-tools settings', () => {
         'chrome://settings',
         '',
       ],
-    };
+    });
     const { loadPageToolsSettings, normalizePageToolsSiteOrigin } = await import('./page-tools');
 
     expect(normalizePageToolsSiteOrigin('https://example.com/a?b=1')).toBe('https://example.com');
@@ -111,9 +82,17 @@ describe('page-tools settings', () => {
 
     await expect(isPageToolsEnabledForUrl('https://example.com/other')).resolves.toBe(false);
     await expect(isPageToolsEnabledForUrl('https://another.example/')).resolves.toBe(false);
-    expect(mocks.storedValue).toEqual({
+    expect(jsonStorageMock.getStoredValue(PAGE_TOOLS_TEST_STORAGE_KEY)).toEqual({
       enabled: false,
       disabledSiteOrigins: ['https://example.com'],
     });
+    expect(jsonStorageMock.writeStoredJsonWithBootstrapMirrorInBackgroundMock).toHaveBeenCalledWith(
+      PAGE_TOOLS_TEST_STORAGE_KEY,
+      {
+        enabled: false,
+        disabledSiteOrigins: ['https://example.com'],
+      },
+      'shared-json-config-channel',
+    );
   });
 });

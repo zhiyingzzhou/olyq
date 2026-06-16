@@ -6,37 +6,13 @@
  * - 守住非法 payload、重复 token 与本宿主自回环不会触发刷新。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { jsonStorageMock } from '@/test/json-storage-mock';
 import { CHAT_MESSAGES_CHANGED_SIGNAL_KEY } from './message-change-signal.schema';
 
-const mocks = vi.hoisted(() => {
-  const state: {
-    storageValue: unknown;
-    storageCallback: ((changedKeys: string[]) => void) | null;
-  } = {
-    storageValue: null,
-    storageCallback: null,
-  };
-  return {
-    state,
-    readStoredJsonMock: vi.fn(async (_key: string, fallback: unknown, coerce?: (raw: unknown) => unknown) => {
-      if (state.storageValue === undefined) return fallback;
-      return coerce ? coerce(state.storageValue) : state.storageValue;
-    }),
-    subscribeStoredKeysMock: vi.fn((_keys: readonly string[], callback: (changedKeys: string[]) => void) => {
-      state.storageCallback = callback;
-      return vi.fn();
-    }),
-    writeStoredJsonMock: vi.fn(async (_key: string, value: unknown) => {
-      state.storageValue = value;
-    }),
-  };
+vi.mock('@/lib/storage/json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock');
+  return createJsonStorageMockModule();
 });
-
-vi.mock('@/lib/storage/json-storage', () => ({
-  readStoredJson: mocks.readStoredJsonMock,
-  subscribeStoredKeys: mocks.subscribeStoredKeysMock,
-  writeStoredJson: mocks.writeStoredJsonMock,
-}));
 
 /**
  * 重新导入带全新宿主 sourceId 的消息信号模块。
@@ -56,18 +32,14 @@ async function importSignalModule() {
  * 因此这里多等待两个 microtask，让断言看到订阅回调的最终结果。
  */
 async function emitStorageChange() {
-  mocks.state.storageCallback?.([CHAT_MESSAGES_CHANGED_SIGNAL_KEY]);
+  jsonStorageMock.emitStoredKeysChanged([CHAT_MESSAGES_CHANGED_SIGNAL_KEY]);
   await Promise.resolve();
   await Promise.resolve();
 }
 
 describe('message-change-signal', () => {
   beforeEach(() => {
-    mocks.state.storageValue = null;
-    mocks.state.storageCallback = null;
-    mocks.readStoredJsonMock.mockClear();
-    mocks.subscribeStoredKeysMock.mockClear();
-    mocks.writeStoredJsonMock.mockClear();
+    jsonStorageMock.reset();
   });
 
   it('publishTopicMessagesChanged 只写入轻量 topic 变更 payload', async () => {
@@ -75,7 +47,7 @@ describe('message-change-signal', () => {
 
     await publishTopicMessagesChanged(' topic-1 ');
 
-    expect(mocks.writeStoredJsonMock).toHaveBeenCalledWith(CHAT_MESSAGES_CHANGED_SIGNAL_KEY, {
+    expect(jsonStorageMock.writeStoredJsonMock).toHaveBeenCalledWith(CHAT_MESSAGES_CHANGED_SIGNAL_KEY, {
       topicId: 'topic-1',
       token: expect.any(String),
       sourceId: expect.any(String),
@@ -88,7 +60,10 @@ describe('message-change-signal', () => {
     const listener = vi.fn();
     subscribeTopicMessagesChanged(listener);
 
-    mocks.state.storageValue = { topicId: 'topic-1', token: '', sourceId: 'external', at: Date.now() };
+    jsonStorageMock.setStoredValue(
+      CHAT_MESSAGES_CHANGED_SIGNAL_KEY,
+      { topicId: 'topic-1', token: '', sourceId: 'external', at: Date.now() },
+    );
     await emitStorageChange();
     expect(listener).not.toHaveBeenCalled();
 
@@ -102,7 +77,7 @@ describe('message-change-signal', () => {
       sourceId: 'external-host',
       at: Date.now(),
     };
-    mocks.state.storageValue = externalPayload;
+    jsonStorageMock.setStoredValue(CHAT_MESSAGES_CHANGED_SIGNAL_KEY, externalPayload);
     await emitStorageChange();
     await emitStorageChange();
 

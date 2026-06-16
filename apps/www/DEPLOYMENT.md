@@ -5,7 +5,7 @@
 - Build command: `pnpm --filter @olyq/www build`
 - Output directory: `apps/www/dist`
 - Vite base: `/`
-- Node.js version: 22
+- Node.js version: `22.22.3`, matching `.node-version`, `.nvmrc`, and GitHub Actions
 
 The repository includes `.github/workflows/pages.yml` as a manual deployment workflow. It is intentionally not triggered by `main` pushes.
 
@@ -16,7 +16,7 @@ Before the first manual run, enable GitHub Pages for the repository and set **Bu
 - Root directory: repository root
 - Build command: `pnpm install --frozen-lockfile && pnpm --filter @olyq/www build`
 - Build output directory: `apps/www/dist`
-- Node.js version: 22, matching `.node-version`, `.nvmrc`, and GitHub Actions
+- Node.js version: `22.22.3`, matching `.node-version`, `.nvmrc`, and GitHub Actions
 
 ## Docker
 

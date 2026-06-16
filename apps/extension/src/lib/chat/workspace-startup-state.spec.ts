@@ -6,18 +6,12 @@
  * - 守住 assistants 必须先于 chat runtime 可见的启动快照约束。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { jsonStorageMock } from '@/test/json-storage-mock';
 import type { Assistant } from '@/types/assistant';
 
-const { writeStoredJsonMock } = vi.hoisted(() => ({
-  writeStoredJsonMock: vi.fn(async () => undefined),
-}));
-
-vi.mock('@/lib/storage/json-storage', async (importOriginal) => {
-  const actual = await importOriginal<typeof import('@/lib/storage/json-storage')>();
-  return {
-    ...actual,
-    writeStoredJson: writeStoredJsonMock,
-  };
+vi.mock('@/lib/storage/json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock');
+  return createJsonStorageMockModule();
 });
 
 import { ASSISTANTS_STORAGE_KEY, CHAT_RUNTIME_STORAGE_KEY } from '@/lib/legal/preset-remediation';
@@ -25,7 +19,7 @@ import { writeWorkspaceStartupState } from './workspace-startup-state';
 
 describe('writeWorkspaceStartupState', () => {
   beforeEach(() => {
-    vi.clearAllMocks();
+    jsonStorageMock.reset();
   });
 
   it('先写 assistants，再写 chat runtime', async () => {
@@ -46,7 +40,16 @@ describe('writeWorkspaceStartupState', () => {
 
     await writeWorkspaceStartupState(assistants, runtime);
 
-    expect(writeStoredJsonMock).toHaveBeenNthCalledWith(1, ASSISTANTS_STORAGE_KEY, assistants);
-    expect(writeStoredJsonMock).toHaveBeenNthCalledWith(2, CHAT_RUNTIME_STORAGE_KEY, runtime);
+    expect(jsonStorageMock.writeStoredJsonWithBootstrapMirrorMock).toHaveBeenNthCalledWith(
+      1,
+      ASSISTANTS_STORAGE_KEY,
+      assistants,
+    );
+    expect(jsonStorageMock.writeStoredJsonWithBootstrapMirrorMock).toHaveBeenNthCalledWith(
+      2,
+      CHAT_RUNTIME_STORAGE_KEY,
+      runtime,
+    );
+    expect(jsonStorageMock.writeStoredJsonMock).not.toHaveBeenCalled();
   });
 });

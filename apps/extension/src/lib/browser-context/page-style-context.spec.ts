@@ -11,6 +11,7 @@
  * - 存储、附件库与 SW one-shot 请求全部用受控 mock 驱动，避免测试跨到其它运行时实现细节。
  */
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { jsonStorageMock } from '@/test/json-storage-mock';
 
 import type { BrowserContextMetadataSnapshot } from './types';
 import type {
@@ -20,17 +21,8 @@ import type {
 } from '@/types/sw-messages';
 
 const mocks = vi.hoisted(() => {
-  const storage = new Map<string, unknown>();
   let attachmentCounter = 0;
   return {
-    storage,
-    readStoredJsonMock: vi.fn(async (key: string, fallback: unknown, coerce?: (raw: unknown) => unknown) => {
-      const value = storage.has(key) ? storage.get(key) : fallback;
-      return coerce ? coerce(value) : value;
-    }),
-    writeStoredJsonMock: vi.fn(async (key: string, value: unknown) => {
-      storage.set(key, value);
-    }),
     requestLayoutMock: vi.fn(),
     requestSignalsMock: vi.fn(),
     requestCapturesMock: vi.fn(),
@@ -55,10 +47,7 @@ const mocks = vi.hoisted(() => {
      * 重置当前 spec 里所有受控 mock 与内存态，确保每个用例都从干净 snapshot 起跑。
      */
     reset() {
-      storage.clear();
       attachmentCounter = 0;
-      this.readStoredJsonMock.mockClear();
-      this.writeStoredJsonMock.mockClear();
       this.requestLayoutMock.mockReset();
       this.requestSignalsMock.mockReset();
       this.requestCapturesMock.mockReset();
@@ -71,10 +60,10 @@ const mocks = vi.hoisted(() => {
   };
 });
 
-vi.mock('@/lib/storage/json-storage', () => ({
-  readStoredJson: mocks.readStoredJsonMock,
-  writeStoredJson: mocks.writeStoredJsonMock,
-}));
+vi.mock('@/lib/storage/json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock');
+  return createJsonStorageMockModule();
+});
 
 vi.mock('@/lib/extension/browser-context-api', () => ({
   requestBrowserContextPageStyleLayout: mocks.requestLayoutMock,
@@ -277,6 +266,7 @@ describe('page-style-context', () => {
     vi.useFakeTimers();
     vi.setSystemTime(new Date('2026-04-14T22:30:00.000Z'));
     mocks.reset();
+    jsonStorageMock.reset();
   });
 
   afterEach(() => {
@@ -287,7 +277,7 @@ describe('page-style-context', () => {
 
   it('page fingerprint 未变时会直接复用 stored snapshot，不重复请求 signals/captures', async () => {
     const storedSnapshot = buildStoredSnapshot();
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
     mocks.requestLayoutMock.mockResolvedValue({
@@ -313,7 +303,7 @@ describe('page-style-context', () => {
   it('仅 viewport height 改变导致 fingerprint 变化时，不再直接复用 stored snapshot/captures', async () => {
     const storedSnapshot = buildStoredSnapshot();
     const resizedFingerprint = 'fingerprint-v1::vh-768';
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
     mocks.requestLayoutMock.mockResolvedValue({
@@ -362,7 +352,7 @@ describe('page-style-context', () => {
     const storedSnapshot = buildStoredSnapshot({
       captures: [],
     });
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
     mocks.requestLayoutMock.mockResolvedValue({
@@ -386,7 +376,7 @@ describe('page-style-context', () => {
 
   it('force 刷新会重新请求 live signals 与 captures，并替换旧的隐藏截图引用', async () => {
     const storedSnapshot = buildStoredSnapshot();
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
     mocks.requestLayoutMock.mockResolvedValue({
@@ -452,7 +442,7 @@ describe('page-style-context', () => {
         scrollY: 80,
       }],
     });
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
     mocks.requestLayoutMock.mockResolvedValue({
@@ -482,7 +472,7 @@ describe('page-style-context', () => {
 
   it('返回给调用方的 snapshot 是防御性拷贝，不会污染已存真源', async () => {
     const storedSnapshot = buildStoredSnapshot();
-    mocks.storage.set('olyq.browser-context.page-style-snapshots.v1', {
+    jsonStorageMock.setStoredValue('olyq.browser-context.page-style-snapshots.v1', {
       'topic-1': storedSnapshot,
     });
 

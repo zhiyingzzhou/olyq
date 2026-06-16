@@ -64,10 +64,39 @@ function checkWorkflowActionPins(filePath) {
   return failures;
 }
 
+function checkWorkflowNodeVersionFile(filePath) {
+  const relativePath = path.relative(repoRoot, filePath).split(path.sep).join("/");
+  const lines = fs.readFileSync(filePath, "utf8").split(/\n/);
+  const failures = [];
+
+  for (const [index, line] of lines.entries()) {
+    if (!/uses:\s*actions\/setup-node@/.test(line)) continue;
+
+    const blockIndent = line.match(/^(\s*)/)?.[1].length ?? 0;
+    const followingBlock = [];
+    for (let cursor = index + 1; cursor < lines.length; cursor += 1) {
+      const nextLine = lines[cursor];
+      if (nextLine.trim() && (nextLine.match(/^(\s*)/)?.[1].length ?? 0) < blockIndent) break;
+      followingBlock.push(nextLine);
+    }
+
+    const blockText = followingBlock.join("\n");
+    if (/^\s*node-version:/m.test(blockText)) {
+      failures.push(`${relativePath}:${index + 1} setup-node must read .node-version via node-version-file, not node-version`);
+    }
+    if (!/^\s*node-version-file:\s*\.node-version\s*$/m.test(blockText)) {
+      failures.push(`${relativePath}:${index + 1} setup-node must include node-version-file: .node-version`);
+    }
+  }
+
+  return failures;
+}
+
 const workflowFiles = collectWorkflowFiles(workflowsDir);
 const failures = workflowFiles.flatMap((filePath) => [
   ...checkWorkflowSyntax(filePath),
   ...checkWorkflowActionPins(filePath),
+  ...checkWorkflowNodeVersionFile(filePath),
 ]);
 
 if (failures.length > 0) {

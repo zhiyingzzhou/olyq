@@ -11,39 +11,16 @@
  * - 存储层全部使用受控 mock，不跨到真实 `chrome.storage` 或 bootstrap mirror 细节。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest'
+import { jsonStorageMock } from '@/test/json-storage-mock'
 
-const mocks = vi.hoisted(() => {
-  const storage = new Map<string, unknown>()
-  const readStoredJsonMock = vi.fn(async (key: string, fallback: unknown, coerce?: (raw: unknown) => unknown) => {
-    const value = storage.has(key) ? storage.get(key) : fallback
-    return coerce ? coerce(value) : value
-  })
-  const writeStoredJsonMock = vi.fn(async (key: string, value: unknown) => {
-    storage.set(key, value)
-  })
-  return {
-    storage,
-    readStoredJsonMock,
-    writeStoredJsonMock,
-    /**
-     * 重置当前 spec 里的受控存储与 mock 调用计数，保证每个用例都从干净状态起跑。
-     */
-    reset: () => {
-      storage.clear()
-      readStoredJsonMock.mockClear()
-      writeStoredJsonMock.mockClear()
-    },
-  }
+vi.mock('@/lib/storage/json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock')
+  return createJsonStorageMockModule()
 })
-
-vi.mock('@/lib/storage/json-storage', () => ({
-  readStoredJson: mocks.readStoredJsonMock,
-  writeStoredJson: mocks.writeStoredJsonMock,
-}))
 
 describe('openai-responses-store-capability', () => {
   beforeEach(() => {
-    mocks.reset()
+    jsonStorageMock.reset()
   })
 
   it('会把空 host 与尾斜杠 host 归一化到同一稳定 key', async () => {
@@ -116,6 +93,6 @@ describe('openai-responses-store-capability', () => {
       apiHost: 'https://gateway.example.com/v1/',
     })
 
-    expect(mocks.writeStoredJsonMock).toHaveBeenCalledTimes(1)
+    expect(jsonStorageMock.writeStoredJsonMock).toHaveBeenCalledTimes(1)
   })
 })

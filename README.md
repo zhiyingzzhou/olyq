@@ -109,7 +109,7 @@ Olyq 默认把设置、助手、话题、消息、附件、记忆和备份保存
 
 ## 开发与贡献
 
-本仓库的本地开发和 GitHub Actions 都以 Node.js 22 为基线，根目录提供 `.node-version` 与 `.nvmrc`，并通过 `engine-strict` 与 `pnpm verify:node-version` 拒绝其它 Node 主版本。请先切到 Node 22，再使用 `pnpm@10.27.0` 安装、测试和构建，避免 Node Web API 行为差异造成本地假绿。
+本仓库的本地开发和 GitHub Actions 都以 `.node-version` / `.nvmrc` 声明的 Node.js `22.22.3` 为精确基线，并通过 `engine-strict` 与 `pnpm verify:node-version` 拒绝其它版本。请先切到 `22.22.3`，再使用 `pnpm@10.27.0` 安装、测试和构建，避免 Node Web API 行为差异造成本地假绿。
 
 构建、测试、打包、发布和商店提交说明见 [CONTRIBUTING.md](./CONTRIBUTING.md)。安全问题请按 [SECURITY.md](./SECURITY.md) 里的私密报告路径提交。
 

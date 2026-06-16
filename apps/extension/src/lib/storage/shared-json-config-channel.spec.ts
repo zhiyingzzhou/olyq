@@ -7,29 +7,12 @@
  * - 防止业务模块再次复制 `bootstrap + cache + storage + custom-event` 组合协议。
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
+import { jsonStorageMock } from '@/test/json-storage-mock';
 
-const mocks = vi.hoisted(() => ({
-  readBootstrapStoredJsonSeedMock: vi.fn(),
-  readStoredJsonMock: vi.fn(),
-  readStoredJsonWithBootstrapMirrorMock: vi.fn(),
-  writeStoredJsonMock: vi.fn(),
-  writeStoredJsonWithBootstrapMirrorMock: vi.fn(),
-  writeStoredJsonInBackgroundMock: vi.fn(),
-  writeStoredJsonWithBootstrapMirrorInBackgroundMock: vi.fn(),
-  subscribeStoredKeysMock: vi.fn(),
-  storageListener: null as null | (() => void),
-}));
-
-vi.mock('./json-storage', () => ({
-  readBootstrapStoredJsonSeed: mocks.readBootstrapStoredJsonSeedMock,
-  readStoredJson: mocks.readStoredJsonMock,
-  readStoredJsonWithBootstrapMirror: mocks.readStoredJsonWithBootstrapMirrorMock,
-  writeStoredJson: mocks.writeStoredJsonMock,
-  writeStoredJsonWithBootstrapMirror: mocks.writeStoredJsonWithBootstrapMirrorMock,
-  writeStoredJsonInBackground: mocks.writeStoredJsonInBackgroundMock,
-  writeStoredJsonWithBootstrapMirrorInBackground: mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock,
-  subscribeStoredKeys: mocks.subscribeStoredKeysMock,
-}));
+vi.mock('./json-storage', async () => {
+  const { createJsonStorageMockModule } = await import('@/test/json-storage-mock');
+  return createJsonStorageMockModule();
+});
 
 /**
  * 等待当前轮微任务完成，便于断言异步 storage / event 回流。
@@ -42,25 +25,7 @@ async function flushMicrotasks(): Promise<void> {
 describe('shared-json-config-channel', () => {
   beforeEach(() => {
     vi.resetModules();
-    mocks.readBootstrapStoredJsonSeedMock.mockReset();
-    mocks.readStoredJsonMock.mockReset();
-    mocks.readStoredJsonWithBootstrapMirrorMock.mockReset();
-    mocks.writeStoredJsonMock.mockReset();
-    mocks.writeStoredJsonWithBootstrapMirrorMock.mockReset();
-    mocks.writeStoredJsonInBackgroundMock.mockReset();
-    mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock.mockReset();
-    mocks.subscribeStoredKeysMock.mockReset();
-    mocks.storageListener = null;
-
-    mocks.readBootstrapStoredJsonSeedMock.mockImplementation((_key: string, fallback: unknown) => fallback);
-    mocks.subscribeStoredKeysMock.mockImplementation((_keys: string[], callback: () => void) => {
-      mocks.storageListener = callback;
-      return () => {
-        if (mocks.storageListener === callback) {
-          mocks.storageListener = null;
-        }
-      };
-    });
+    jsonStorageMock.reset();
   });
 
   it('信任有效 startup snapshot，并把 hydratedFromStartupStorage 标成 true', async () => {
@@ -83,7 +48,7 @@ describe('shared-json-config-channel', () => {
 
     expect(channel.hydratedFromStartupStorage).toBe(true);
     expect(channel.getSnapshot()).toEqual({ enabled: true });
-    expect(mocks.readStoredJsonMock).not.toHaveBeenCalled();
+    expect(jsonStorageMock.readStoredJsonMock).not.toHaveBeenCalled();
   });
 
   it('本地 save 只通知一次订阅者，不会被自己的 custom-event 再回放一遍', async () => {
@@ -110,7 +75,7 @@ describe('shared-json-config-channel', () => {
     expect(next).toEqual({ enabled: true });
     expect(channel.getSnapshot()).toEqual({ enabled: true });
     expect(callback).toHaveBeenCalledTimes(1);
-    expect(mocks.writeStoredJsonInBackgroundMock).toHaveBeenCalledWith(
+    expect(jsonStorageMock.writeStoredJsonInBackgroundMock).toHaveBeenCalledWith(
       'olyq.test.channel.v1',
       { enabled: true },
       'shared-json-config-channel',
@@ -134,20 +99,16 @@ describe('shared-json-config-channel', () => {
     channel.save('en-US');
     await flushMicrotasks();
 
-    expect(mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock).toHaveBeenCalledWith(
+    expect(jsonStorageMock.writeStoredJsonWithBootstrapMirrorInBackgroundMock).toHaveBeenCalledWith(
       'olyq.language.v1',
       'en-US',
       'shared-json-config-channel',
     );
-    expect(mocks.writeStoredJsonInBackgroundMock).not.toHaveBeenCalled();
+    expect(jsonStorageMock.writeStoredJsonInBackgroundMock).not.toHaveBeenCalled();
   });
 
   it('storage 回流和外部 custom-event 都会复用同一刷新路径', async () => {
-    let storedValue: unknown = { enabled: false };
-    mocks.readStoredJsonMock.mockImplementation(async (_key: string, fallback: unknown, normalize: (raw: unknown) => unknown) => {
-      const raw = storedValue ?? fallback;
-      return normalize(raw);
-    });
+    jsonStorageMock.setStoredValue('olyq.test.channel.v1', { enabled: false });
 
     const { createSharedJsonConfigChannel } = await import('./shared-json-config-channel');
     const channel = createSharedJsonConfigChannel({
@@ -166,8 +127,8 @@ describe('shared-json-config-channel', () => {
     const callback = vi.fn();
     channel.subscribe(callback);
 
-    storedValue = { enabled: true };
-    mocks.storageListener?.();
+    jsonStorageMock.setStoredValue('olyq.test.channel.v1', { enabled: true });
+    jsonStorageMock.emitStoredKeysChanged(['olyq.test.channel.v1']);
     await flushMicrotasks();
 
     expect(channel.getSnapshot()).toEqual({ enabled: true });
