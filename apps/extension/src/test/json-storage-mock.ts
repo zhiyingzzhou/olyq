@@ -286,16 +286,53 @@ export const jsonStorageMock = globalStorageMock[GLOBAL_KEY] ??= createJsonStora
  */
 export function createJsonStorageMockModule(): JsonStorageMockModule {
   return {
-    readBootstrapStoredJsonSeed: jsonStorageMock.readBootstrapStoredJsonSeedMock,
-    writeBootstrapStoredJsonMirror: jsonStorageMock.writeBootstrapStoredJsonMirrorMock,
-    removeBootstrapStoredJsonMirror: jsonStorageMock.removeBootstrapStoredJsonMirrorMock,
-    readStoredJson: jsonStorageMock.readStoredJsonMock,
-    readStoredJsonWithBootstrapMirror: jsonStorageMock.readStoredJsonWithBootstrapMirrorMock,
-    writeStoredJson: jsonStorageMock.writeStoredJsonMock,
-    writeStoredJsonWithBootstrapMirror: jsonStorageMock.writeStoredJsonWithBootstrapMirrorMock,
-    writeStoredJsonInBackground: jsonStorageMock.writeStoredJsonInBackgroundMock,
-    writeStoredJsonWithBootstrapMirrorInBackground: jsonStorageMock.writeStoredJsonWithBootstrapMirrorInBackgroundMock,
-    removeStoredJson: jsonStorageMock.removeStoredJsonMock,
-    subscribeStoredKeys: jsonStorageMock.subscribeStoredKeysMock,
+    readBootstrapStoredJsonSeed: <T>(
+      key: string,
+      fallback: T,
+      coerce?: StoredJsonCoerce<T>,
+    ): T => (
+      jsonStorageMock.readBootstrapStoredJsonSeedMock(key, fallback, coerce) as T
+    ),
+    writeBootstrapStoredJsonMirror: (key: string, value: unknown): void => {
+      jsonStorageMock.writeBootstrapStoredJsonMirrorMock(key, value);
+    },
+    removeBootstrapStoredJsonMirror: (key: string): void => {
+      jsonStorageMock.removeBootstrapStoredJsonMirrorMock(key);
+    },
+    readStoredJson: <T>(
+      key: string,
+      fallback: T,
+      coerce?: StoredJsonCoerce<T>,
+    ): Promise<T> => (
+      jsonStorageMock.readStoredJsonMock(key, fallback, coerce) as Promise<T>
+    ),
+    readStoredJsonWithBootstrapMirror: <T>(
+      key: string,
+      fallback: T,
+      coerce?: StoredJsonCoerce<T>,
+    ): Promise<T> => (
+      jsonStorageMock.readStoredJsonWithBootstrapMirrorMock(key, fallback, coerce) as Promise<T>
+    ),
+    writeStoredJson: (key: string, value: unknown): Promise<void> => (
+      jsonStorageMock.writeStoredJsonMock(key, value) as Promise<void>
+    ),
+    writeStoredJsonWithBootstrapMirror: (key: string, value: unknown): Promise<void> => (
+      jsonStorageMock.writeStoredJsonWithBootstrapMirrorMock(key, value) as Promise<void>
+    ),
+    writeStoredJsonInBackground: (key: string, value: unknown, owner: string): void => {
+      jsonStorageMock.writeStoredJsonInBackgroundMock(key, value, owner);
+    },
+    writeStoredJsonWithBootstrapMirrorInBackground: (key: string, value: unknown, owner: string): void => {
+      jsonStorageMock.writeStoredJsonWithBootstrapMirrorInBackgroundMock(key, value, owner);
+    },
+    removeStoredJson: (key: string): Promise<void> => (
+      jsonStorageMock.removeStoredJsonMock(key) as Promise<void>
+    ),
+    subscribeStoredKeys: (
+      keys: readonly string[],
+      callback: (changedKeys: string[]) => void,
+    ): (() => void) => (
+      jsonStorageMock.subscribeStoredKeysMock(keys, callback) as () => void
+    ),
   };
 }
