@@ -10,10 +10,14 @@
  */
 import { getStorageAdapter } from '@/lib/storage/storage-adapter';
 import { consumeBackgroundStoragePromise } from '@/lib/storage/background-storage';
+import { SHARED_STORAGE_CONTRACT_BY_KEY } from '@/lib/data-contracts/registry';
 
 const BOOTSTRAP_MIRROR_PREFIX = '__olyq.bootstrap__.';
 const BOOTSTRAP_MIRROR_SCHEMA_VERSION = 1;
 const BOOTSTRAP_MIRROR_TTL_MS = 24 * 60 * 60 * 1000;
+const BOOTSTRAP_MIRROR_ALLOWED_LOCAL_KEYS = new Set([
+  'olyq.paint.workspace.v1',
+]);
 
 type BootstrapMirrorEnvelope = {
   schemaVersion: number;
@@ -52,6 +56,22 @@ function getBootstrapMirrorKey(key: string): string {
 }
 
 /**
+ * 判断某个 key 是否允许写入 localStorage bootstrap mirror。
+ *
+ * 说明：
+ * - shared-storage key 必须先登记 Data Contract Registry，且只能是非敏感、非
+ *   `encrypted-secret` 的配置；
+ * - IndexedDB / workspace 等非 shared-storage 冷启动快照必须显式列入本文件的
+ *   非敏感 allowlist；
+ * - 未登记 key 默认拒绝写入，避免把密钥或临时状态复制到 localStorage。
+ */
+function canWriteBootstrapMirror(key: string): boolean {
+  const contract = SHARED_STORAGE_CONTRACT_BY_KEY.get(key);
+  if (contract) return !contract.sensitive && contract.syncPolicy !== 'encrypted-secret';
+  return BOOTSTRAP_MIRROR_ALLOWED_LOCAL_KEYS.has(key);
+}
+
+/**
  * 内部函数：`isBootstrapMirrorEnvelope`。
  *
  * @remarks
@@ -77,9 +97,15 @@ function isBootstrapMirrorEnvelope(value: unknown): value is BootstrapMirrorEnve
  */
 export function writeBootstrapStoredJsonMirror(key: string, value: unknown): void {
   if (!hasLocalStorage()) return;
+  const storageKey = String(key || '').trim();
+  if (!storageKey) return;
+  if (!canWriteBootstrapMirror(storageKey)) {
+    removeBootstrapMirror(storageKey);
+    return;
+  }
   try {
     window.localStorage.setItem(
-      getBootstrapMirrorKey(key),
+      getBootstrapMirrorKey(storageKey),
       JSON.stringify({
         schemaVersion: BOOTSTRAP_MIRROR_SCHEMA_VERSION,
         expiresAt: Date.now() + BOOTSTRAP_MIRROR_TTL_MS,

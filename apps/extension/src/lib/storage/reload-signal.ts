@@ -13,6 +13,7 @@ import {
   subscribeStoredKeys,
   writeStoredJson,
 } from '@/lib/storage/json-storage';
+import { createSecureId } from '@/lib/utils/secure-id';
 
 /**
  * 导出常量：`STORE_RELOAD_EVENT`。
@@ -63,7 +64,7 @@ function emitReloadEvent(payload: ReloadSignalPayload) {
  */
 export async function broadcastStoreReloadSignal(): Promise<void> {
   const payload: ReloadSignalPayload = {
-    token: `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`,
+    token: createSecureId(),
     at: Date.now(),
   };
   emitReloadEvent(payload);

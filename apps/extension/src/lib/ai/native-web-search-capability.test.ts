@@ -110,4 +110,34 @@ describe('native-web-search-capability', () => {
       modelId: 'gpt-5.4',
     })).toMatchObject({ state: 'unsupported', injectionKind: 'unsupported' });
   });
+
+  it('Gemini Google Search grounding 判定保持线性，不使用可回溯长正则', () => {
+    expect(resolveNativeWebSearchCapability({
+      providerId: 'gemini',
+      providerType: 'gemini',
+      effectiveProviderType: 'gemini',
+      transportProtocol: 'gemini-generate-content',
+      modelId: 'gemini-3-pro-preview',
+    })).toMatchObject({
+      state: 'supported',
+      injectionKind: 'provider-hosted-tool',
+      toolName: 'native__google_search',
+    });
+
+    expect(resolveNativeWebSearchCapability({
+      providerId: 'gemini',
+      providerType: 'gemini',
+      effectiveProviderType: 'gemini',
+      transportProtocol: 'gemini-generate-content',
+      modelId: `gemini-2-${'very-long-segment-'.repeat(200)}latest`,
+    })).toMatchObject({ state: 'supported' });
+
+    expect(resolveNativeWebSearchCapability({
+      providerId: 'gemini',
+      providerType: 'gemini',
+      effectiveProviderType: 'gemini',
+      transportProtocol: 'gemini-generate-content',
+      modelId: 'gemini-2-flash-image-preview',
+    })).toMatchObject({ state: 'unsupported', injectionKind: 'unsupported' });
+  });
 });

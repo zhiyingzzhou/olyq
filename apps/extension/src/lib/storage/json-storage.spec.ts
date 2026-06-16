@@ -10,6 +10,9 @@
  */
 import { beforeEach, describe, expect, it, vi } from 'vitest';
 
+const NON_SENSITIVE_STORAGE_KEY = 'olyq.language.v1';
+const NON_SENSITIVE_MIRROR_KEY = `__olyq.bootstrap__.${NON_SENSITIVE_STORAGE_KEY}`;
+
 const loggerMocks = vi.hoisted(() => ({
   generalWarn: vi.fn(),
 }));
@@ -123,35 +126,51 @@ describe('json-storage bootstrap mirror', () => {
     loggerMocks.generalWarn.mockReset();
   });
 
-  it('writeStoredJson 会写入带 schema 和 TTL 的 bootstrap mirror', async () => {
+  it('writeStoredJson 会为非敏感契约 key 写入带 schema 和 TTL 的 bootstrap mirror', async () => {
     const { chromeMock } = createChromeStorageMock({});
     vi.stubGlobal('chrome', chromeMock);
 
     const { writeStoredJson } = await import('./json-storage');
-    await writeStoredJson('olyq.demo.v1', { enabled: true });
+    await writeStoredJson(NON_SENSITIVE_STORAGE_KEY, 'en-US');
 
-    const raw = JSON.parse(localStorage.getItem('__olyq.bootstrap__.olyq.demo.v1') || 'null') as {
+    const raw = JSON.parse(localStorage.getItem(NON_SENSITIVE_MIRROR_KEY) || 'null') as {
       schemaVersion: number;
       expiresAt: number;
-      value: { enabled: boolean };
+      value: string;
     } | null;
 
     expect(raw).not.toBeNull();
     expect(raw?.schemaVersion).toBe(1);
-    expect(raw?.value).toEqual({ enabled: true });
+    expect(raw?.value).toBe('en-US');
     expect(raw?.expiresAt).toBeGreaterThan(Date.now());
   });
 
+  it('writeBootstrapStoredJsonMirror 会拒绝敏感契约 key 并清理既有 mirror', async () => {
+    localStorage.setItem('__olyq.bootstrap__.olyq.providers.v1', JSON.stringify({ value: 'stale-secret' }));
+
+    const { writeBootstrapStoredJsonMirror } = await import('./json-storage');
+    writeBootstrapStoredJsonMirror('olyq.providers.v1', [{ id: 'openai', apiKey: 'sk-secret' }]);
+
+    expect(localStorage.getItem('__olyq.bootstrap__.olyq.providers.v1')).toBeNull();
+  });
+
+  it('writeBootstrapStoredJsonMirror 默认拒绝未登记 key', async () => {
+    const { writeBootstrapStoredJsonMirror } = await import('./json-storage');
+    writeBootstrapStoredJsonMirror('olyq.demo.v1', { enabled: true });
+
+    expect(localStorage.getItem('__olyq.bootstrap__.olyq.demo.v1')).toBeNull();
+  });
+
   it('readBootstrapStoredJsonSeed 会忽略过期 mirror 并清理脏缓存', async () => {
-    localStorage.setItem('__olyq.bootstrap__.olyq.demo.v1', JSON.stringify({
+    localStorage.setItem(NON_SENSITIVE_MIRROR_KEY, JSON.stringify({
       schemaVersion: 1,
       expiresAt: Date.now() - 1_000,
       value: 'stale',
     }));
 
     const { readBootstrapStoredJsonSeed } = await import('./json-storage');
-    expect(readBootstrapStoredJsonSeed('olyq.demo.v1', 'fallback')).toBe('fallback');
-    expect(localStorage.getItem('__olyq.bootstrap__.olyq.demo.v1')).toBeNull();
+    expect(readBootstrapStoredJsonSeed(NON_SENSITIVE_STORAGE_KEY, 'fallback')).toBe('fallback');
+    expect(localStorage.getItem(NON_SENSITIVE_MIRROR_KEY)).toBeNull();
   });
 
   it('readStoredJson 不会再从 raw localStorage 真源回灌共享存储', async () => {
@@ -181,13 +200,13 @@ describe('json-storage bootstrap mirror', () => {
     vi.stubGlobal('chrome', chromeMock);
 
     const { writeStoredJsonInBackground } = await import('./json-storage');
-    writeStoredJsonInBackground('olyq.demo.v1', { enabled: true }, 'json-storage.spec');
+    writeStoredJsonInBackground(NON_SENSITIVE_STORAGE_KEY, 'en-US', 'json-storage.spec');
 
     await Promise.resolve();
     await Promise.resolve();
 
     expect(loggerMocks.generalWarn).toHaveBeenCalledWith('background storage operation failed', {
-      key: 'olyq.demo.v1',
+      key: NON_SENSITIVE_STORAGE_KEY,
       owner: 'json-storage.spec',
       operation: 'write-json',
       error: 'I18nError: errors.chromeStorageFailedWithDetail',

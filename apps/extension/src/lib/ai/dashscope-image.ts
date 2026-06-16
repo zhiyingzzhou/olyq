@@ -172,8 +172,8 @@ function pickDashScopeBaseUrl(baseUrl?: string): string {
   if (!raw) return DASHSCOPE_CN
   try {
     const u = new URL(raw)
-    if (u.hostname.includes('dashscope-intl.aliyuncs.com')) return DASHSCOPE_INTL
-    if (u.hostname.includes('dashscope.aliyuncs.com')) return DASHSCOPE_CN
+    if (u.hostname === 'dashscope-intl.aliyuncs.com') return DASHSCOPE_INTL
+    if (u.hostname === 'dashscope.aliyuncs.com') return DASHSCOPE_CN
   } catch {
     // ignore
   }

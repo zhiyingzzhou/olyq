@@ -20,6 +20,11 @@ import {
   LANGUAGE_STORAGE_KEY,
   readExtensionPageStartupValue,
 } from '@/lib/extension/extension-page-startup';
+import {
+  createLocaleResourceRecord,
+  safeDeepMergeLocaleResources,
+  type LocaleResourceRecord,
+} from '@/lib/i18n/locale-merge';
 
 /**
  * 语言存储 key。
@@ -115,42 +120,16 @@ type LocaleModule = {
 };
 
 /**
- * 判断值是否为普通对象。
- *
- * @param v - 待判断的值。
- * @returns `true` 表示是普通对象且不是数组。
- */
-function isPlainObject(v: unknown): v is Record<string, unknown> {
-  return !!v && typeof v === 'object' && !Array.isArray(v);
-}
-
-/**
- * 深度合并 locale 资源对象。
- *
- * @param target - 目标对象，会被原地修改。
- * @param source - 来源对象。
- */
-function deepMerge(target: Record<string, unknown>, source: Record<string, unknown>) {
-  for (const [key, value] of Object.entries(source)) {
-    if (isPlainObject(value) && isPlainObject(target[key])) {
-      deepMerge(target[key] as Record<string, unknown>, value);
-    } else {
-      target[key] = value;
-    }
-  }
-}
-
-/**
  * 合并同一语言目录下的多个 locale JSON 模块。
  *
  * @param modules - `import.meta.glob` 读取到的模块映射。
  * @returns 合并后的语言资源对象。
  */
 function mergeLocaleModules(modules: Record<string, LocaleModule>) {
-  const out: Record<string, unknown> = {};
+  const out = createLocaleResourceRecord();
   for (const key of Object.keys(modules).sort()) {
     const mod = modules[key];
-    deepMerge(out, mod.default ?? {});
+    safeDeepMergeLocaleResources(out, (mod.default ?? {}) as LocaleResourceRecord);
   }
   return out;
 }

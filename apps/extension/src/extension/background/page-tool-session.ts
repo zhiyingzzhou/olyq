@@ -10,6 +10,7 @@
  * - 这里的状态只存在于 Service Worker 内存，属于页面临时交互，不写入持久化存储；
  * - SW 被浏览器回收后，会话自然失效，用户可以重新点击工具入口恢复。
  */
+import { createSecureId } from '@/lib/utils/secure-id';
 import type { PageToolSessionTool } from '@/types/sw-messages';
 
 /** 页面工具会话记录。 */
@@ -51,8 +52,7 @@ function pruneExpiredPageToolSessions(now = Date.now()) {
 
 /** 生成页面工具会话 ID。 */
 function createPageToolSessionId(tool: PageToolSessionTool, tabId: number) {
-  const random = Math.random().toString(36).slice(2, 10);
-  return `page-tool-${tool}-${tabId}-${Date.now().toString(36)}-${random}`;
+  return `page-tool-${tool}-${tabId}-${createSecureId()}`;
 }
 
 /**

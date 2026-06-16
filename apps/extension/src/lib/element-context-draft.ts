@@ -19,6 +19,7 @@ import type {
   PickedImage,
   PickedTable,
 } from '@/types/element-picker';
+import { escapeMarkdownTableCell } from '@/lib/utils/markdown-table';
 import { isPlainRecord } from '@/lib/utils/type-guards';
 
 /** 元素引用文案生成所需的最小翻译函数契约。 */
@@ -298,7 +299,7 @@ export function buildElementContextSummary(reference: ElementContextReferenceLik
 
 /** 将 Markdown 表格单元格转义为安全的单元格文本。 */
 function formatMarkdownCell(value: string) {
-  return String(value || '').replace(/\s+/g, ' ').replace(/\|/g, '\\|').trim();
+  return escapeMarkdownTableCell(value);
 }
 
 /** 生成可按当前语言渲染扩展生成列名和截断提示的 Markdown 表格。 */

@@ -18,6 +18,7 @@ import { ensurePageToolsRoot } from '@/extension/content-script/page-tools/page-
 import { clamp } from './geometry';
 import type { ScreenshotEditorUi } from './types';
 import { sendExtensionMessage } from '@/lib/extension/runtime-api';
+import { createSecureId } from '@/lib/utils/secure-id';
 
 type ScreenshotOcrPopoverState = {
   requestId: string;
@@ -39,7 +40,7 @@ let ocrPopoverState: ScreenshotOcrPopoverState | null = null;
  * 它不是持久化 ID，只用于同一轮用户提交里的旧回包隔离。
  */
 export function createScreenshotOcrRequestId(): string {
-  return `screenshot-ocr-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  return `screenshot-ocr-${createSecureId()}`;
 }
 
 /** 根据截图编辑器和 OCR 浮窗可见性刷新 Shadow host 的 pointer-events。 */

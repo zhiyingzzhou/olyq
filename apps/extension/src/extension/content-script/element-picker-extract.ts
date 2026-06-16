@@ -10,6 +10,7 @@
  */
 import { I18nError } from '@/lib/i18n/error';
 import { createId } from '@/lib/utils/id';
+import { escapeMarkdownTableCell } from '@/lib/utils/markdown-table';
 import type { PickedElement, PickedImage, PickedTable } from '@/types/element-picker';
 
 /** 元素选择器摘要使用的最小翻译函数契约。 */
@@ -32,10 +33,7 @@ function countMeaningfulChars(text: string) {
  * @returns 已转义竖线并压缩空白的单元格文本。
  */
 function getMarkdownCellText(cell: Element) {
-  return safeTextFromElement(cell)
-    .replace(/\s+/g, ' ')
-    .replace(/\|/g, '\\|')
-    .trim();
+  return escapeMarkdownTableCell(safeTextFromElement(cell));
 }
 
 /**

@@ -18,6 +18,7 @@ import { extractTextFromScreenshot } from '@/plugins/page-tools/screenshot-captu
 import { claimPageToolSessionRestoreTarget, createPageToolSession, deletePageToolSession } from '@/extension/background/page-tool-session';
 import { closePanelForPageToolSession } from '@/extension/background/side-panel';
 import { isPageToolsEnabledForUrl } from '@/lib/extension/page-tools';
+import { classifyPageToolTargetUrl } from '@/lib/extension/page-tool-url-policy';
 import {
   getExtensionTab,
   isExtensionTabMessageError,
@@ -29,6 +30,7 @@ import { parseChatStreamImageUrl } from '@/lib/chat-stream-protocol';
 import { I18nError, toI18nTextFromError } from '@/lib/i18n/error';
 import { i18nText } from '@/lib/i18n/text';
 import { isPlainRecord } from '@/lib/utils/type-guards';
+import { createSecureId } from '@/lib/utils/secure-id';
 import type {
   ScreenshotEditorAction,
   ScreenshotEditorActionPayload,
@@ -51,25 +53,11 @@ function buildScreenshotEditorError(params: {
     | 'bundle-missing';
 }): I18nError {
   const { reason, tabUrl } = params;
-  if (tabUrl?.startsWith('file://')) {
-    return new I18nError('errors.screenshotEditorFileUrlNotAllowed');
-  }
-  if (
-    tabUrl?.startsWith('chrome://')
-    || tabUrl?.startsWith('edge://')
-    || tabUrl?.startsWith('about:')
-    || tabUrl?.startsWith('devtools://')
-  ) {
-    return new I18nError('errors.screenshotEditorBrowserInternalPageNotAllowed');
-  }
-  if (tabUrl?.startsWith('chrome-extension://') || tabUrl?.startsWith('moz-extension://')) {
-    return new I18nError('errors.screenshotEditorExtensionPageNotAllowed');
-  }
-  if (
-    tabUrl
-    && (tabUrl.startsWith('https://chrome.google.com/webstore')
-      || tabUrl.startsWith('https://chromewebstore.google.com'))
-  ) {
+  const category = classifyPageToolTargetUrl(tabUrl);
+  if (category === 'file-url') return new I18nError('errors.screenshotEditorFileUrlNotAllowed');
+  if (category === 'browser-internal-page') return new I18nError('errors.screenshotEditorBrowserInternalPageNotAllowed');
+  if (category === 'extension-page') return new I18nError('errors.screenshotEditorExtensionPageNotAllowed');
+  if (category === 'chrome-web-store') {
     return new I18nError('errors.screenshotEditorChromeWebStoreNotAllowed');
   }
   if (reason === 'tab-unavailable') {
@@ -123,7 +111,7 @@ function normalizeScreenshotAction(value: unknown): ScreenshotEditorAction | nul
 
 /** 创建后台兜底 OCR 请求 ID，兼容旧调用方未传 ID 的情况。 */
 function createOcrRequestId(): string {
-  return `screenshot-ocr-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+  return `screenshot-ocr-${createSecureId()}`;
 }
 
 /**

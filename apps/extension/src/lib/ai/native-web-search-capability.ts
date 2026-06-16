@@ -60,7 +60,6 @@ const EVIDENCE_DATE = '2026-05-20' as const;
 const OPENAI_SEARCH_PREVIEW_MODEL_REGEX = /\bgpt-4o(?:-mini)?-search-preview(?:-[\w.]+)?\b/i;
 const OPENAI_RESPONSES_SEARCH_MODEL_REGEX = /\b(?:gpt-5(?:\.\d+)?(?:-(?:mini|nano|pro))?|o[134](?:-mini)?|gpt-4\.1(?!-nano))(?:-[\w.]+)?\b/i;
 const ANTHROPIC_WEB_SEARCH_MODEL_REGEX = /\b(?:claude-(?:haiku|sonnet|opus)-4|claude-3(?:\.|-)7-sonnet)(?:-[\w.]+)?\b/i;
-const GEMINI_WEB_SEARCH_MODEL_REGEX = /gemini-(?:2(?!.*-image-preview).*(?:-latest)?|3(?:\.\d+)?-(?:flash|pro)(?:-(?:image-)?preview)?|flash-latest|pro-latest|flash-lite-latest)(?:-[\w-]+)*$/i;
 const XAI_WEB_SEARCH_MODEL_REGEX = /\bgrok-(?:4|4\.\d+|4-\d+|4\.1|4-1|3)(?:-[\w.]+)?\b/i;
 const PERPLEXITY_SEARCH_NATIVE_MODELS = new Set([
   'sonar',
@@ -80,6 +79,20 @@ function normalizeToken(value: unknown): string {
 /** 规范化模型 ID，避免 UI 判定引入 stream runtime 依赖。 */
 function normalizeModelId(value: unknown): string {
   return String(value || '').trim().toLowerCase();
+}
+
+/** 判断 Gemini / Vertex Gemini 模型是否属于已核验 Google Search grounding 支持范围。 */
+function isGeminiWebSearchModel(modelId: string): boolean {
+  const id = normalizeModelId(modelId);
+  if (!id) return false;
+  if (id === 'gemini-flash-latest' || id === 'gemini-pro-latest' || id === 'gemini-flash-lite-latest') return true;
+  if (!id.startsWith('gemini-')) return false;
+  if (id.includes('-image-preview')) return false;
+  const suffix = id.slice('gemini-'.length);
+  if (suffix.startsWith('2')) return true;
+  if (!suffix.startsWith('3')) return false;
+  const tokens = suffix.split('-').filter(Boolean);
+  return tokens.includes('flash') || tokens.includes('pro');
 }
 
 /** 读取模型特性集合。 */
@@ -180,7 +193,7 @@ export function resolveNativeWebSearchCapability(
   }
 
   if (providerType === 'gemini' && effectiveProviderType === 'gemini') {
-    if (transportProtocol === 'gemini-generate-content' && (GEMINI_WEB_SEARCH_MODEL_REGEX.test(modelId) || hasNativeFeature)) {
+    if (transportProtocol === 'gemini-generate-content' && (isGeminiWebSearchModel(modelId) || hasNativeFeature)) {
       if (!supportsToolsParameter(input.supportedParameters)) {
         return unsupported('model supportedParameters', '当前模型显式 supportedParameters 不包含 tools，不能注入 provider-hosted/server tool。');
       }
@@ -195,7 +208,7 @@ export function resolveNativeWebSearchCapability(
   }
 
   if (providerType === 'vertexai' && effectiveProviderType === 'vertexai') {
-    if (transportProtocol === 'gemini-generate-content' && (GEMINI_WEB_SEARCH_MODEL_REGEX.test(modelId) || hasNativeFeature)) {
+    if (transportProtocol === 'gemini-generate-content' && (isGeminiWebSearchModel(modelId) || hasNativeFeature)) {
       if (!supportsToolsParameter(input.supportedParameters)) {
         return unsupported('model supportedParameters', '当前模型显式 supportedParameters 不包含 tools，不能注入 provider-hosted/server tool。');
       }

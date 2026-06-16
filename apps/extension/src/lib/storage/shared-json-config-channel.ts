@@ -17,6 +17,7 @@ import {
   writeStoredJson,
   writeStoredJsonInBackground,
 } from './json-storage';
+import { createSecureId } from '@/lib/utils/secure-id';
 
 const SHARED_JSON_CHANNEL_STARTUP_MISSING = Symbol('shared-json-channel-startup-missing');
 
@@ -99,7 +100,7 @@ function defaultIsEqual<T>(left: T, right: T): boolean {
  * 生成当前窗口内的本地信号 token，用于忽略自己刚发出的 custom event。
  */
 function createSignalToken(): string {
-  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+  return createSecureId();
 }
 
 /**

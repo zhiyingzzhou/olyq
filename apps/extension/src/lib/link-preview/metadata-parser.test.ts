@@ -107,6 +107,21 @@ describe('link-preview metadata parser', () => {
     expect(metadata.description).toBeNull();
   });
 
+  it('HTML title fallback 会用线性文本提取去掉嵌套标签并解码实体', () => {
+    const metadata = parseLinkPreviewMetadata({
+      requestedUrl: 'https://example.com/post',
+      finalUrl: 'https://example.com/post',
+      fetchedAt: 450,
+      html: `
+        <head>
+          <title>Hello <span>Tagged &amp; Safe</span> Title</title>
+        </head>
+      `,
+    });
+
+    expect(metadata.title).toBe('Hello Tagged & Safe Title');
+  });
+
   it('非 http/https 图片地址会被丢弃', () => {
     const metadata = parseLinkPreviewMetadata({
       requestedUrl: 'https://example.com/post',

@@ -15,6 +15,7 @@ import type {
   BrowserContextReadableDomMode,
 } from '@/types/sw-messages';
 import type { BrowserContextHeading } from '@/lib/browser-context/types';
+import { escapeMarkdownTableCell } from '@/lib/utils/markdown-table';
 
 /** 页面身份基础字段。 */
 export interface ReadableDomBasePayload {
@@ -493,7 +494,7 @@ export function tableToMarkdown(table: Element): string {
   const normalizedRows = rows.map((row) => Array.from({ length: width }, (_, index) => row[index] || ''));
   const separator = Array.from({ length: width }, () => '---');
   return [normalizedRows[0], separator, ...normalizedRows.slice(1)]
-    .map((row) => `| ${row.map((cell) => cell.replace(/\|/g, '\\|')).join(' | ')} |`)
+    .map((row) => `| ${row.map(escapeMarkdownTableCell).join(' | ')} |`)
     .join('\n');
 }
 

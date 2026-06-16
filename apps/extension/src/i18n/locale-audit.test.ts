@@ -13,6 +13,11 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import ts from 'typescript'
 import { describe, expect, it } from 'vitest'
+import {
+  createLocaleResourceRecord,
+  safeDeepMergeLocaleResources,
+  type LocaleResourceRecord,
+} from '@/lib/i18n/locale-merge'
 
 const CURRENT_DIR = path.dirname(fileURLToPath(import.meta.url))
 const SRC_ROOT = path.resolve(CURRENT_DIR, '..')
@@ -32,22 +37,6 @@ function isPlainObject(value: unknown): value is Record<string, unknown> {
 }
 
 /**
- * 测试辅助函数：`deepMerge`。
- *
- * @remarks
- * 用于当前测试或 E2E 文件中的场景搭建、事件驱动或断言准备，不作为运行时代码复用。
- */
-function deepMerge(target: Record<string, unknown>, source: Record<string, unknown>) {
-  for (const [key, value] of Object.entries(source)) {
-    if (isPlainObject(value) && isPlainObject(target[key])) {
-      deepMerge(target[key] as Record<string, unknown>, value)
-    } else {
-      target[key] = value
-    }
-  }
-}
-
-/**
  * 测试辅助函数：`loadLocale`。
  *
  * @remarks
@@ -55,12 +44,12 @@ function deepMerge(target: Record<string, unknown>, source: Record<string, unkno
  */
 function loadLocale(language: 'zh-CN' | 'en-US'): Record<string, unknown> {
   const localeDir = path.join(LOCALES_ROOT, language)
-  const out: Record<string, unknown> = {}
+  const out = createLocaleResourceRecord()
   for (const fileName of readdirSync(localeDir).sort()) {
     if (!fileName.endsWith('.json')) continue
     const fullPath = path.join(localeDir, fileName)
     const json = JSON.parse(readFileSync(fullPath, 'utf8')) as Record<string, unknown>
-    deepMerge(out, json)
+    safeDeepMergeLocaleResources(out, json as LocaleResourceRecord)
   }
   return out
 }

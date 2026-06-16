@@ -195,7 +195,7 @@ describe('McpPanel', () => {
 
     expect(await screen.findByText('Remote MCP')).toBeInTheDocument();
     expect(screen.getByText('mcpBridgePanel.serverType.streamableHttp')).toBeInTheDocument();
-    expect(screen.getByText((content) => content.includes('https://example.com/mcp'))).toBeInTheDocument();
+    expect(screen.getByText('https://example.com/mcp')).toBeInTheDocument();
     expect(screen.getByText((content) => content.includes('mcpBridgePanel.servers.toolsCount'))).toBeInTheDocument();
   });
 

@@ -17,6 +17,7 @@ import {
   sendExtensionTabMessageWithRetry,
 } from '@/lib/extension/runtime-api';
 import { isPageToolsEnabledForUrl } from '@/lib/extension/page-tools';
+import { classifyPageToolTargetUrl } from '@/lib/extension/page-tool-url-policy';
 import { ensurePageToolContentScriptReadyForTab } from '@/extension/background/content-script-manager';
 import { closePanelForPageToolSession } from '@/extension/background/side-panel';
 import { createPageToolSession, deletePageToolSession } from '@/extension/background/page-tool-session';
@@ -37,25 +38,11 @@ function buildElementPickerError(params: {
     | 'bundle-missing';
 }): I18nError {
   const { reason, tabUrl } = params;
-  if (tabUrl?.startsWith('file://')) {
-    return new I18nError('errors.elementPickerFileUrlNotAllowed');
-  }
-  if (
-    tabUrl?.startsWith('chrome://')
-    || tabUrl?.startsWith('edge://')
-    || tabUrl?.startsWith('about:')
-    || tabUrl?.startsWith('devtools://')
-  ) {
-    return new I18nError('errors.elementPickerBrowserInternalPageNotAllowed');
-  }
-  if (tabUrl?.startsWith('chrome-extension://')) {
-    return new I18nError('errors.elementPickerExtensionPageNotAllowed');
-  }
-  if (
-    tabUrl
-    && (tabUrl.startsWith('https://chrome.google.com/webstore')
-      || tabUrl.startsWith('https://chromewebstore.google.com'))
-  ) {
+  const category = classifyPageToolTargetUrl(tabUrl);
+  if (category === 'file-url') return new I18nError('errors.elementPickerFileUrlNotAllowed');
+  if (category === 'browser-internal-page') return new I18nError('errors.elementPickerBrowserInternalPageNotAllowed');
+  if (category === 'extension-page') return new I18nError('errors.elementPickerExtensionPageNotAllowed');
+  if (category === 'chrome-web-store') {
     return new I18nError('errors.elementPickerChromeWebStoreNotAllowed');
   }
   if (reason === 'tab-unavailable') {

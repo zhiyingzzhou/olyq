@@ -8,16 +8,13 @@
  * 边界：
  * - 本文件只处理当前模块职责，不在这里扩散无关的跨域编排。
  */
+import { createSecureId } from '@/lib/utils/secure-id';
+
 /**
  * 统一的 ID 生成策略：
- * - 优先使用 `crypto.randomUUID()`：冲突概率更低
- * - 在不支持或异常时回退到"时间戳 + 随机数"：保证流程可用
+ * - 只使用 Web Crypto 随机源；
+ * - 缺少安全随机能力时直接抛错，不回退到弱随机。
  */
 export function createId() {
-  try {
-    return globalThis.crypto?.randomUUID?.() ?? `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  } catch {
-    return `${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  }
+  return createSecureId();
 }
-

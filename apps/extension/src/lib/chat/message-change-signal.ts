@@ -16,6 +16,7 @@ import {
   subscribeStoredKeys,
   writeStoredJson,
 } from '@/lib/storage/json-storage';
+import { createSecureId } from '@/lib/utils/secure-id';
 import {
   CHAT_MESSAGES_CHANGED_SIGNAL_KEY,
   normalizeChatMessagesChangedSignal,
@@ -23,7 +24,7 @@ import {
 } from './message-change-signal.schema';
 
 /** 当前页面宿主实例 ID，用于忽略自己写入 storage 后产生的回流事件。 */
-const currentSourceId = `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+const currentSourceId = createSecureId();
 
 let lastSeenToken = '';
 
@@ -33,7 +34,7 @@ let lastSeenToken = '';
  * @returns 当前宿主内唯一的轻量 token。
  */
 function createSignalToken(): string {
-  return `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
+  return createSecureId();
 }
 
 /**

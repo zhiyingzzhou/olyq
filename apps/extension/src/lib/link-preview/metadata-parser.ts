@@ -139,7 +139,34 @@ function parseAttributes(tagHtml: string): Map<string, string> {
 function extractTitleText(headHtml: string): string | null {
   const match = /<title\b[^>]*>([\s\S]*?)<\/title>/i.exec(headHtml);
   if (!match?.[1]) return null;
-  return decodeHtmlEntities(match[1].replace(/<[^>]*>/g, ''));
+  return decodeHtmlEntities(stripHtmlTagsFromText(match[1]));
+}
+
+/**
+ * 从短 HTML 片段里提取文本，忽略标签内容边界。
+ *
+ * @remarks
+ * 链接预览只读取有限 head 前缀；这里不做完整 DOM 解析，只用线性扫描删除标签，
+ * 避免正则多字符清洗对畸形标签产生不完整处理。
+ *
+ * @param html - 原始 HTML 片段。
+ * @returns 去掉标签后的文本。
+ */
+function stripHtmlTagsFromText(html: string): string {
+  let out = '';
+  let insideTag = false;
+  for (const char of html) {
+    if (char === '<') {
+      insideTag = true;
+      continue;
+    }
+    if (char === '>') {
+      insideTag = false;
+      continue;
+    }
+    if (!insideTag) out += char;
+  }
+  return out;
 }
 
 /**
