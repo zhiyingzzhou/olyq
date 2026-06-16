@@ -18,21 +18,28 @@ type StorageSubscription = {
   keys: Set<string>;
   callback: (changedKeys: string[]) => void;
 };
+type JsonStorageMockFunctionName = keyof JsonStorageMockModule;
+type JsonStorageMockFunctionMock<TName extends JsonStorageMockFunctionName> =
+  JsonStorageMockModule[TName] & {
+    mockClear: () => void;
+    mockImplementation: (implementation: JsonStorageMockModule[TName]) => void;
+  };
 
 interface JsonStorageMockController {
   storage: Map<string, unknown>;
   bootstrapMirror: Map<string, unknown>;
-  readBootstrapStoredJsonSeedMock: ReturnType<typeof vi.fn>;
-  writeBootstrapStoredJsonMirrorMock: ReturnType<typeof vi.fn>;
-  removeBootstrapStoredJsonMirrorMock: ReturnType<typeof vi.fn>;
-  readStoredJsonMock: ReturnType<typeof vi.fn>;
-  readStoredJsonWithBootstrapMirrorMock: ReturnType<typeof vi.fn>;
-  writeStoredJsonMock: ReturnType<typeof vi.fn>;
-  writeStoredJsonWithBootstrapMirrorMock: ReturnType<typeof vi.fn>;
-  writeStoredJsonInBackgroundMock: ReturnType<typeof vi.fn>;
-  writeStoredJsonWithBootstrapMirrorInBackgroundMock: ReturnType<typeof vi.fn>;
-  removeStoredJsonMock: ReturnType<typeof vi.fn>;
-  subscribeStoredKeysMock: ReturnType<typeof vi.fn>;
+  readBootstrapStoredJsonSeedMock: JsonStorageMockFunctionMock<'readBootstrapStoredJsonSeed'>;
+  writeBootstrapStoredJsonMirrorMock: JsonStorageMockFunctionMock<'writeBootstrapStoredJsonMirror'>;
+  removeBootstrapStoredJsonMirrorMock: JsonStorageMockFunctionMock<'removeBootstrapStoredJsonMirror'>;
+  readStoredJsonMock: JsonStorageMockFunctionMock<'readStoredJson'>;
+  readStoredJsonWithBootstrapMirrorMock: JsonStorageMockFunctionMock<'readStoredJsonWithBootstrapMirror'>;
+  writeStoredJsonMock: JsonStorageMockFunctionMock<'writeStoredJson'>;
+  writeStoredJsonWithBootstrapMirrorMock: JsonStorageMockFunctionMock<'writeStoredJsonWithBootstrapMirror'>;
+  writeStoredJsonInBackgroundMock: JsonStorageMockFunctionMock<'writeStoredJsonInBackground'>;
+  writeStoredJsonWithBootstrapMirrorInBackgroundMock:
+    JsonStorageMockFunctionMock<'writeStoredJsonWithBootstrapMirrorInBackground'>;
+  removeStoredJsonMock: JsonStorageMockFunctionMock<'removeStoredJson'>;
+  subscribeStoredKeysMock: JsonStorageMockFunctionMock<'subscribeStoredKeys'>;
   reset: () => void;
   setStoredValue: (key: string, value: unknown) => void;
   getStoredValue: (key: string) => unknown;
@@ -42,6 +49,20 @@ interface JsonStorageMockController {
 }
 
 const GLOBAL_KEY = '__olyqJsonStorageMockController';
+
+/**
+ * 创建带有真实 `json-storage` API 调用签名的 Vitest mock。
+ *
+ * @remarks
+ * Vitest 4 的裸 `ReturnType<typeof vi.fn>` 会退化成 `Mock<Procedure | Constructable>`，
+ * TypeScript 因此不能证明它一定可调用。这里把 `vi.fn()` 限定为当前生产模块导出的
+ * 具体函数签名，只暴露测试需要的 mock 控制面，避免每个 wrapper 再用宽泛类型兜底。
+ */
+function createJsonStorageFunctionMock<TName extends JsonStorageMockFunctionName>(
+  implementation: JsonStorageMockModule[TName],
+): JsonStorageMockFunctionMock<TName> {
+  return vi.fn(implementation as never) as unknown as JsonStorageMockFunctionMock<TName>;
+}
 
 /**
  * 规整测试 storage key，保持和生产 `json-storage` 一致的空 key 忽略语义。
@@ -78,6 +99,9 @@ function createJsonStorageMockController(): JsonStorageMockController {
   const bootstrapMirror = new Map<string, unknown>();
   const subscriptions = new Set<StorageSubscription>();
 
+  /**
+   * 从测试 bootstrap mirror 或主 storage Map 读取同步启动种子。
+   */
   const readBootstrapStoredJsonSeed = <T>(
     key: string,
     fallback: T,
@@ -94,18 +118,27 @@ function createJsonStorageMockController(): JsonStorageMockController {
     return fallback;
   };
 
+  /**
+   * 写入测试 bootstrap mirror，模拟生产 mirror 写入口的可观察副作用。
+   */
   const writeBootstrapStoredJsonMirror = (key: string, value: unknown): void => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
     bootstrapMirror.set(storageKey, value);
   };
 
+  /**
+   * 移除测试 bootstrap mirror 里的指定 key。
+   */
   const removeBootstrapStoredJsonMirror = (key: string): void => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
     bootstrapMirror.delete(storageKey);
   };
 
+  /**
+   * 异步读取测试主 storage Map，不触碰 bootstrap mirror。
+   */
   const readStoredJson = async <T>(
     key: string,
     fallback: T,
@@ -116,6 +149,9 @@ function createJsonStorageMockController(): JsonStorageMockController {
     return coerceStoredValue(storage.get(storageKey), coerce);
   };
 
+  /**
+   * 异步读取测试主 storage Map，并在命中主存储时刷新 bootstrap mirror。
+   */
   const readStoredJsonWithBootstrapMirror = async <T>(
     key: string,
     fallback: T,
@@ -134,12 +170,18 @@ function createJsonStorageMockController(): JsonStorageMockController {
     return fallback;
   };
 
+  /**
+   * 异步写入测试主 storage Map，不维护 bootstrap mirror。
+   */
   const writeStoredJson = async (key: string, value: unknown): Promise<void> => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
     storage.set(storageKey, value);
   };
 
+  /**
+   * 异步写入测试主 storage Map，并同步维护 bootstrap mirror。
+   */
   const writeStoredJsonWithBootstrapMirror = async (key: string, value: unknown): Promise<void> => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
@@ -147,12 +189,18 @@ function createJsonStorageMockController(): JsonStorageMockController {
     bootstrapMirror.set(storageKey, value);
   };
 
+  /**
+   * 模拟后台 fire-and-forget 写入，只更新测试主 storage Map。
+   */
   const writeStoredJsonInBackground = (key: string, value: unknown, _owner: string): void => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
     storage.set(storageKey, value);
   };
 
+  /**
+   * 模拟后台 fire-and-forget 写入，并同步更新测试 bootstrap mirror。
+   */
   const writeStoredJsonWithBootstrapMirrorInBackground = (
     key: string,
     value: unknown,
@@ -164,6 +212,9 @@ function createJsonStorageMockController(): JsonStorageMockController {
     bootstrapMirror.set(storageKey, value);
   };
 
+  /**
+   * 异步删除测试主 storage Map 与 bootstrap mirror 中的同名数据。
+   */
   const removeStoredJson = async (key: string): Promise<void> => {
     const storageKey = normalizeStorageKey(key);
     if (!storageKey) return;
@@ -171,6 +222,9 @@ function createJsonStorageMockController(): JsonStorageMockController {
     bootstrapMirror.delete(storageKey);
   };
 
+  /**
+   * 订阅测试 storage key 变化，供 spec 手动触发 `emitStoredKeysChanged()`。
+   */
   const subscribeStoredKeys = (
     keys: readonly string[],
     callback: (changedKeys: string[]) => void,
@@ -184,17 +238,32 @@ function createJsonStorageMockController(): JsonStorageMockController {
     };
   };
 
-  const readBootstrapStoredJsonSeedMock = vi.fn(readBootstrapStoredJsonSeed);
-  const writeBootstrapStoredJsonMirrorMock = vi.fn(writeBootstrapStoredJsonMirror);
-  const removeBootstrapStoredJsonMirrorMock = vi.fn(removeBootstrapStoredJsonMirror);
-  const readStoredJsonMock = vi.fn(readStoredJson);
-  const readStoredJsonWithBootstrapMirrorMock = vi.fn(readStoredJsonWithBootstrapMirror);
-  const writeStoredJsonMock = vi.fn(writeStoredJson);
-  const writeStoredJsonWithBootstrapMirrorMock = vi.fn(writeStoredJsonWithBootstrapMirror);
-  const writeStoredJsonInBackgroundMock = vi.fn(writeStoredJsonInBackground);
-  const writeStoredJsonWithBootstrapMirrorInBackgroundMock = vi.fn(writeStoredJsonWithBootstrapMirrorInBackground);
-  const removeStoredJsonMock = vi.fn(removeStoredJson);
-  const subscribeStoredKeysMock = vi.fn(subscribeStoredKeys);
+  const readBootstrapStoredJsonSeedMock = createJsonStorageFunctionMock<'readBootstrapStoredJsonSeed'>(
+    readBootstrapStoredJsonSeed,
+  );
+  const writeBootstrapStoredJsonMirrorMock = createJsonStorageFunctionMock<'writeBootstrapStoredJsonMirror'>(
+    writeBootstrapStoredJsonMirror,
+  );
+  const removeBootstrapStoredJsonMirrorMock = createJsonStorageFunctionMock<'removeBootstrapStoredJsonMirror'>(
+    removeBootstrapStoredJsonMirror,
+  );
+  const readStoredJsonMock = createJsonStorageFunctionMock<'readStoredJson'>(readStoredJson);
+  const readStoredJsonWithBootstrapMirrorMock = createJsonStorageFunctionMock<'readStoredJsonWithBootstrapMirror'>(
+    readStoredJsonWithBootstrapMirror,
+  );
+  const writeStoredJsonMock = createJsonStorageFunctionMock<'writeStoredJson'>(writeStoredJson);
+  const writeStoredJsonWithBootstrapMirrorMock = createJsonStorageFunctionMock<'writeStoredJsonWithBootstrapMirror'>(
+    writeStoredJsonWithBootstrapMirror,
+  );
+  const writeStoredJsonInBackgroundMock = createJsonStorageFunctionMock<'writeStoredJsonInBackground'>(
+    writeStoredJsonInBackground,
+  );
+  const writeStoredJsonWithBootstrapMirrorInBackgroundMock =
+    createJsonStorageFunctionMock<'writeStoredJsonWithBootstrapMirrorInBackground'>(
+      writeStoredJsonWithBootstrapMirrorInBackground,
+    );
+  const removeStoredJsonMock = createJsonStorageFunctionMock<'removeStoredJson'>(removeStoredJson);
+  const subscribeStoredKeysMock = createJsonStorageFunctionMock<'subscribeStoredKeys'>(subscribeStoredKeys);
 
   /**
    * 重新安装默认 mock 实现。
