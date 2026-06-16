@@ -24,6 +24,9 @@ export type DataContractExportPolicy = 'included' | 'excluded';
 /** 当前 key 在 structured cloud sync 中的处理策略。 */
 export type DataContractSyncPolicy = 'included' | 'encrypted-secret' | 'device-local' | 'cache';
 
+/** 当前 key 是否允许复制到 localStorage bootstrap mirror。 */
+export type DataContractBootstrapMirrorPolicy = 'allowed' | 'blocked';
+
 /** 当前 key 的合并语义。 */
 export type DataContractConflictPolicy = 'field-lww' | 'key-lww' | 'replace' | 'append-merge' | 'cache';
 
@@ -46,6 +49,8 @@ export interface DataContractDescriptor<T = unknown> {
   readonly syncPolicy: DataContractSyncPolicy;
   /** 是否包含敏感字段。 */
   readonly sensitive: boolean;
+  /** 是否允许作为扩展页冷启动镜像写入 localStorage。 */
+  readonly bootstrapMirror: DataContractBootstrapMirrorPolicy;
   /** 冲突合并策略。 */
   readonly conflictPolicy: DataContractConflictPolicy;
   /** 清理策略。 */

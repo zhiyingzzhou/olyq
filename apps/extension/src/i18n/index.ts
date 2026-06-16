@@ -11,9 +11,9 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import {
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJson,
+  writeStoredJsonWithBootstrapMirror,
 } from '@/lib/storage/json-storage';
 import {
   hasExtensionPageStartupStorageValue,
@@ -54,7 +54,7 @@ export function normalizeLanguage(raw: unknown): string {
  * 用于拆分当前文件中的局部处理步骤，输入输出、副作用和调用时机需结合同文件上下文理解。
  */
 async function readPersistedLanguage(): Promise<string> {
-  return await readStoredJson<string>(STORAGE_KEY, DEFAULT_LANGUAGE, normalizeLanguage);
+  return await readStoredJsonWithBootstrapMirror<string>(STORAGE_KEY, DEFAULT_LANGUAGE, normalizeLanguage);
 }
 
 /**
@@ -98,7 +98,7 @@ export function applyStoredLanguage() {
  */
 export function setLanguage(lang: string) {
   const nextLanguage = normalizeLanguage(lang);
-  void writeStoredJson(STORAGE_KEY, nextLanguage).catch(() => {
+  void writeStoredJsonWithBootstrapMirror(STORAGE_KEY, nextLanguage).catch(() => {
     // 忽略：存储失败不阻塞切换语言
   });
   void i18n.changeLanguage(nextLanguage);

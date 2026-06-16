@@ -12,6 +12,8 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 
 const NON_SENSITIVE_STORAGE_KEY = 'olyq.language.v1';
 const NON_SENSITIVE_MIRROR_KEY = `__olyq.bootstrap__.${NON_SENSITIVE_STORAGE_KEY}`;
+const PROVIDER_API_KEY_ROTATION_KEY = 'olyq.provider-api-key-rotation.v1';
+const PROVIDER_API_KEY_ROTATION_MIRROR_KEY = `__olyq.bootstrap__.${PROVIDER_API_KEY_ROTATION_KEY}`;
 
 const loggerMocks = vi.hoisted(() => ({
   generalWarn: vi.fn(),
@@ -126,12 +128,22 @@ describe('json-storage bootstrap mirror', () => {
     loggerMocks.generalWarn.mockReset();
   });
 
-  it('writeStoredJson 会为非敏感契约 key 写入带 schema 和 TTL 的 bootstrap mirror', async () => {
+  it('writeStoredJson 默认只写主存储，不维护 bootstrap mirror', async () => {
     const { chromeMock } = createChromeStorageMock({});
     vi.stubGlobal('chrome', chromeMock);
 
     const { writeStoredJson } = await import('./json-storage');
     await writeStoredJson(NON_SENSITIVE_STORAGE_KEY, 'en-US');
+
+    expect(localStorage.getItem(NON_SENSITIVE_MIRROR_KEY)).toBeNull();
+  });
+
+  it('writeStoredJsonWithBootstrapMirror 会为显式允许的契约 key 写入带 schema 和 TTL 的 bootstrap mirror', async () => {
+    const { chromeMock } = createChromeStorageMock({});
+    vi.stubGlobal('chrome', chromeMock);
+
+    const { writeStoredJsonWithBootstrapMirror } = await import('./json-storage');
+    await writeStoredJsonWithBootstrapMirror(NON_SENSITIVE_STORAGE_KEY, 'en-US');
 
     const raw = JSON.parse(localStorage.getItem(NON_SENSITIVE_MIRROR_KEY) || 'null') as {
       schemaVersion: number;
@@ -143,6 +155,17 @@ describe('json-storage bootstrap mirror', () => {
     expect(raw?.schemaVersion).toBe(1);
     expect(raw?.value).toBe('en-US');
     expect(raw?.expiresAt).toBeGreaterThan(Date.now());
+  });
+
+  it('provider API key rotation cache 即使走 mirror-aware 入口也只能清理旧 mirror', async () => {
+    const { chromeMock } = createChromeStorageMock({});
+    vi.stubGlobal('chrome', chromeMock);
+    localStorage.setItem(PROVIDER_API_KEY_ROTATION_MIRROR_KEY, JSON.stringify({ value: { openai: 1 } }));
+
+    const { writeStoredJsonWithBootstrapMirror } = await import('./json-storage');
+    await writeStoredJsonWithBootstrapMirror(PROVIDER_API_KEY_ROTATION_KEY, { openai: 2 });
+
+    expect(localStorage.getItem(PROVIDER_API_KEY_ROTATION_MIRROR_KEY)).toBeNull();
   });
 
   it('writeBootstrapStoredJsonMirror 会拒绝敏感契约 key 并清理既有 mirror', async () => {

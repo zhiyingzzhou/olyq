@@ -11,9 +11,9 @@
 import { useCallback, useEffect, useState } from 'react';
 import {
   readBootstrapStoredJsonSeed,
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from '@/lib/storage/json-storage';
 
 const COMPOSER_SHELL_HEIGHT_KEY = 'olyq.chat.composer-shell-height.v1';
@@ -50,7 +50,7 @@ let composerShellHeightCache = readBootstrapStoredJsonSeed(
 async function refreshInputLayoutFromStorage(): Promise<{
   composerShellHeight: number;
 }> {
-  const composerShellHeight = await readStoredJson(COMPOSER_SHELL_HEIGHT_KEY, composerShellHeightCache, normalizeComposerShellHeight);
+  const composerShellHeight = await readStoredJsonWithBootstrapMirror(COMPOSER_SHELL_HEIGHT_KEY, composerShellHeightCache, normalizeComposerShellHeight);
   composerShellHeightCache = composerShellHeight;
   return { composerShellHeight };
 }
@@ -95,7 +95,7 @@ export function useInputLayoutState() {
   const persistComposerShellHeight = useCallback((height: number) => {
     const next = normalizeComposerShellHeight(height);
     composerShellHeightCache = next;
-    writeStoredJsonInBackground(COMPOSER_SHELL_HEIGHT_KEY, next, 'useInputLayoutState.composerShellHeight');
+    writeStoredJsonWithBootstrapMirrorInBackground(COMPOSER_SHELL_HEIGHT_KEY, next, 'useInputLayoutState.composerShellHeight');
   }, []);
 
   /**

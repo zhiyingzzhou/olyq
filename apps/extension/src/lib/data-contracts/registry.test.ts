@@ -9,6 +9,7 @@
 import { describe, expect, it } from 'vitest';
 
 import {
+  BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS,
   CLOUD_SYNC_PLAIN_CONFIG_KEYS,
   CLOUD_SYNC_SECRET_CONFIG_KEYS,
   DATA_CONTRACT_VERSION,
@@ -30,6 +31,7 @@ describe('data contract registry v1', () => {
       expect(contract.owner).toBeTruthy();
       expect(contract.exportPolicy).toMatch(/^(included|excluded)$/);
       expect(contract.syncPolicy).toMatch(/^(included|encrypted-secret|device-local|cache)$/);
+      expect(contract.bootstrapMirror).toMatch(/^(allowed|blocked)$/);
       expect(contract.conflictPolicy).toMatch(/^(field-lww|key-lww|replace|append-merge|cache)$/);
       expect(contract.cleanupPolicy).toMatch(/^(authoritative-replace|delete-on-clear|rebuildable-cache)$/);
       expect(typeof contract.normalize).toBe('function');
@@ -60,6 +62,7 @@ describe('data contract registry v1', () => {
       exportPolicy: 'excluded',
       syncPolicy: 'cache',
       sensitive: false,
+      bootstrapMirror: 'blocked',
       conflictPolicy: 'cache',
       cleanupPolicy: 'rebuildable-cache',
     });
@@ -69,6 +72,35 @@ describe('data contract registry v1', () => {
       empty: -1,
       '': 2,
     })).toEqual({ openai: 1 });
+  });
+
+  it('bootstrap mirror 只允许显式登记的非敏感启动 key', () => {
+    expect(BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS).toEqual([
+      'olyq.assistants.v1',
+      'olyq.assistant-presets.v1',
+      'olyq.browser-context.policy.v1',
+      'olyq.browser-context.settings.v1',
+      'olyq.chat.prompts.v1',
+      'olyq.chat-mentioned-models.v1',
+      'olyq.chat.runtime.v1',
+      'olyq.chat.settings.v1',
+      'olyq.chat.composer-shell-height.v1',
+      'olyq.display-settings.v1',
+      'olyq.dark-theme-color.v1',
+      'olyq.language.v1',
+      'olyq.memory.config.v1',
+      'olyq.page-tools.v1',
+      'olyq.quick-phrases.v1',
+      'olyq.theme.v1',
+    ]);
+
+    for (const key of BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS) {
+      const contract = SHARED_STORAGE_CONTRACT_BY_KEY.get(key);
+      expect(contract?.sensitive, key).toBe(false);
+      expect(contract?.syncPolicy, key).not.toBe('encrypted-secret');
+      expect(contract?.syncPolicy, key).not.toBe('cache');
+    }
+    expect(BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS).not.toContain(PROVIDER_API_KEY_ROTATION_STATE_STORAGE_KEY);
   });
 
   it('IndexedDB 契约也固定在 v1 且声明同步/备份策略', () => {

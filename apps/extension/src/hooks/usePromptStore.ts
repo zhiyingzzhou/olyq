@@ -14,9 +14,9 @@ import { subscribeWithSelector } from 'zustand/middleware';
 import type { PromptTemplate } from '@/types/chat';
 import {
   readBootstrapStoredJsonSeed,
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from '@/lib/storage/json-storage';
 import { consumeBackgroundStoragePromise } from '@/lib/storage/background-storage';
 import { subscribeStoreReloadSignal } from '@/lib/storage/reload-signal';
@@ -92,7 +92,7 @@ function createPromptStore() {
 
       reloadFromStorage: () => {
         consumeBackgroundStoragePromise((async () => {
-          const nextPrompts = await readStoredJson(STORAGE_KEY, [], (raw) => (Array.isArray(raw) ? raw as PromptTemplate[] : []));
+          const nextPrompts = await readStoredJsonWithBootstrapMirror(STORAGE_KEY, [], (raw) => (Array.isArray(raw) ? raw as PromptTemplate[] : []));
           set({ prompts: nextPrompts });
         })(), {
           key: STORAGE_KEY,
@@ -143,7 +143,7 @@ function initPromptStoreOnce(store: PromptStoreHook): void {
       const serialized = serializePrompts(value);
       if (serialized === persistedSnapshot) return;
       persistedSnapshot = serialized;
-      writeStoredJsonInBackground(STORAGE_KEY, value, 'usePromptStore');
+      writeStoredJsonWithBootstrapMirrorInBackground(STORAGE_KEY, value, 'usePromptStore');
     },
   );
 
@@ -155,7 +155,7 @@ function initPromptStoreOnce(store: PromptStoreHook): void {
    */
   const reload = () => {
     consumeBackgroundStoragePromise((async () => {
-      const nextPrompts = await readStoredJson(STORAGE_KEY, [], (raw) => (Array.isArray(raw) ? raw as PromptTemplate[] : []));
+      const nextPrompts = await readStoredJsonWithBootstrapMirror(STORAGE_KEY, [], (raw) => (Array.isArray(raw) ? raw as PromptTemplate[] : []));
       persistedSnapshot = serializePrompts(nextPrompts);
       store.setState({ prompts: nextPrompts });
     })(), {

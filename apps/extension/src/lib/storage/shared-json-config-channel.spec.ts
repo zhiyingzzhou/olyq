@@ -11,7 +11,11 @@ import { beforeEach, describe, expect, it, vi } from 'vitest';
 const mocks = vi.hoisted(() => ({
   readBootstrapStoredJsonSeedMock: vi.fn(),
   readStoredJsonMock: vi.fn(),
+  readStoredJsonWithBootstrapMirrorMock: vi.fn(),
+  writeStoredJsonMock: vi.fn(),
+  writeStoredJsonWithBootstrapMirrorMock: vi.fn(),
   writeStoredJsonInBackgroundMock: vi.fn(),
+  writeStoredJsonWithBootstrapMirrorInBackgroundMock: vi.fn(),
   subscribeStoredKeysMock: vi.fn(),
   storageListener: null as null | (() => void),
 }));
@@ -19,7 +23,11 @@ const mocks = vi.hoisted(() => ({
 vi.mock('./json-storage', () => ({
   readBootstrapStoredJsonSeed: mocks.readBootstrapStoredJsonSeedMock,
   readStoredJson: mocks.readStoredJsonMock,
+  readStoredJsonWithBootstrapMirror: mocks.readStoredJsonWithBootstrapMirrorMock,
+  writeStoredJson: mocks.writeStoredJsonMock,
+  writeStoredJsonWithBootstrapMirror: mocks.writeStoredJsonWithBootstrapMirrorMock,
   writeStoredJsonInBackground: mocks.writeStoredJsonInBackgroundMock,
+  writeStoredJsonWithBootstrapMirrorInBackground: mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock,
   subscribeStoredKeys: mocks.subscribeStoredKeysMock,
 }));
 
@@ -36,7 +44,11 @@ describe('shared-json-config-channel', () => {
     vi.resetModules();
     mocks.readBootstrapStoredJsonSeedMock.mockReset();
     mocks.readStoredJsonMock.mockReset();
+    mocks.readStoredJsonWithBootstrapMirrorMock.mockReset();
+    mocks.writeStoredJsonMock.mockReset();
+    mocks.writeStoredJsonWithBootstrapMirrorMock.mockReset();
     mocks.writeStoredJsonInBackgroundMock.mockReset();
+    mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock.mockReset();
     mocks.subscribeStoredKeysMock.mockReset();
     mocks.storageListener = null;
 
@@ -105,6 +117,29 @@ describe('shared-json-config-channel', () => {
     );
 
     unsubscribe();
+  });
+
+  it('只有 registry 允许的 bootstrap key 才会走 mirror-aware 写入', async () => {
+    const { createSharedJsonConfigChannel } = await import('./shared-json-config-channel');
+    const channel = createSharedJsonConfigChannel({
+      storageKey: 'olyq.language.v1',
+      fallback: 'zh-CN',
+      normalize: (raw) => (raw === 'en-US' ? 'en-US' : 'zh-CN'),
+      clone: (value) => value,
+      bootstrap: {
+        bootstrapSource: 'bootstrap-mirror',
+      },
+    });
+
+    channel.save('en-US');
+    await flushMicrotasks();
+
+    expect(mocks.writeStoredJsonWithBootstrapMirrorInBackgroundMock).toHaveBeenCalledWith(
+      'olyq.language.v1',
+      'en-US',
+      'shared-json-config-channel',
+    );
+    expect(mocks.writeStoredJsonInBackgroundMock).not.toHaveBeenCalled();
   });
 
   it('storage 回流和外部 custom-event 都会复用同一刷新路径', async () => {

@@ -67,6 +67,7 @@ import type { DataContractDescriptor, DataContractStorage } from './policies';
 export {
   DATA_CONTRACT_VERSION,
   type DataContractCleanupPolicy,
+  type DataContractBootstrapMirrorPolicy,
   type DataContractConflictPolicy,
   type DataContractDescriptor,
   type DataContractExportPolicy,
@@ -81,13 +82,15 @@ export {
  * @returns 已补齐 v1 版本和 JSON 序列化校验的描述。
  */
 function createDescriptor<T>(
-  descriptor: Omit<DataContractDescriptor<T>, 'schemaVersion' | 'storage'> & {
+  descriptor: Omit<DataContractDescriptor<T>, 'schemaVersion' | 'storage' | 'bootstrapMirror'> & {
     readonly storage?: DataContractStorage;
+    readonly bootstrapMirror?: DataContractDescriptor<T>['bootstrapMirror'];
   },
 ): DataContractDescriptor<T> {
   return {
     storage: 'chrome-storage-local',
     schemaVersion: DATA_CONTRACT_VERSION,
+    bootstrapMirror: 'blocked',
     ...descriptor,
     normalize: (value: unknown) => assertJsonSerializable(descriptor.normalize(value)) as T,
   };
@@ -101,6 +104,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'field-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: (value) => sanitizeAssistants(value, { sort: true, fallbackToDefaultTopics: false }),
@@ -111,6 +115,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: sanitizeStoredAssistantPresets,
@@ -121,6 +126,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeBrowserContextPolicyState,
@@ -131,6 +137,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeBrowserContextSettings,
@@ -141,6 +148,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizePromptTemplates,
@@ -151,6 +159,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeMentionedModelsDraft,
@@ -161,6 +170,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'device-local',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'replace',
     cleanupPolicy: 'authoritative-replace',
     normalize: sanitizeRuntime,
@@ -181,6 +191,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeChatSettings,
@@ -191,6 +202,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'device-local',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'replace',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeNumber,
@@ -211,6 +223,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: coerceDisplaySettings,
@@ -221,6 +234,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeDarkThemeColor,
@@ -231,6 +245,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeNullableString,
@@ -261,6 +276,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeMemoryConfig,
@@ -331,6 +347,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizePageToolsSettings,
@@ -361,6 +378,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeQuickPhrases,
@@ -411,6 +429,7 @@ export const SHARED_STORAGE_CONTRACTS = [
     exportPolicy: 'included',
     syncPolicy: 'included',
     sensitive: false,
+    bootstrapMirror: 'allowed',
     conflictPolicy: 'key-lww',
     cleanupPolicy: 'authoritative-replace',
     normalize: normalizeTheme,
@@ -430,6 +449,18 @@ export const SHARED_STORAGE_CONTRACTS = [
 /** shared-storage 里允许进入普通业务备份域的 key。 */
 export const SHARED_STORAGE_BACKUP_KEYS = SHARED_STORAGE_CONTRACTS
   .filter((contract) => contract.exportPolicy === 'included')
+  .map((contract) => contract.key);
+
+/**
+ * 允许复制到 localStorage bootstrap mirror 的 shared-storage key。
+ *
+ * @remarks
+ * 这里是 bootstrap mirror 的唯一 registry 真源。只有首帧确实需要同步种子的
+ * 非敏感小型配置才能进入该集合；可重建 cache、device signal、secret 和未登记 key
+ * 都必须保持 blocked。
+ */
+export const BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS = SHARED_STORAGE_CONTRACTS
+  .filter((contract) => contract.bootstrapMirror === 'allowed')
   .map((contract) => contract.key);
 
 /** structured cloud sync 会明文同步的共享配置 key。 */

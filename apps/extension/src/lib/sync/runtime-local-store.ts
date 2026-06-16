@@ -24,7 +24,10 @@ import {
 } from '@/lib/data-contracts/registry';
 import { MCP_SERVERS_STORAGE_KEY } from '@/lib/mcp/constants';
 import { mergeMcpServerSecrets } from '@/lib/mcp/server-secrets';
-import { readStoredJson, writeStoredJson } from '@/lib/storage/json-storage';
+import {
+  readStoredJsonWithBootstrapMirror,
+  writeStoredJsonWithBootstrapMirror,
+} from '@/lib/storage/json-storage';
 import { storageEngine } from '@/lib/persistence/storage-engine';
 import { WEB_SEARCH_SETTINGS_STORAGE_KEY } from '@/lib/web-search/settings-schema';
 import { mergeWebSearchSecrets } from '@/lib/web-search/settings-secrets';
@@ -40,7 +43,7 @@ const ASSISTANTS_STORAGE_KEY = 'olyq.assistants.v1';
  * 用于拆分当前文件中的局部处理步骤，输入输出、副作用和调用时机需结合同文件上下文理解。
  */
 async function readStoredAssistants(): Promise<Assistant[]> {
-  return sanitizeAssistants(await readStoredJson<unknown>(ASSISTANTS_STORAGE_KEY, [], (raw) => raw), {
+  return sanitizeAssistants(await readStoredJsonWithBootstrapMirror<unknown>(ASSISTANTS_STORAGE_KEY, [], (raw) => raw), {
     sort: true,
     fallbackToDefaultTopics: false,
   });
@@ -127,7 +130,7 @@ export function createRuntimeLocalStore(): LocalStore {
       ));
     },
     setAssistants: async (assistants) => {
-      await writeStoredJson(ASSISTANTS_STORAGE_KEY, assistants);
+      await writeStoredJsonWithBootstrapMirror(ASSISTANTS_STORAGE_KEY, assistants);
     },
     setTopics: async (topics) => {
       await replaceAllTopicMessages(

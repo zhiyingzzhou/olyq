@@ -20,9 +20,9 @@ import {
   readExtensionPageStartupValue,
 } from '@/lib/extension/extension-page-startup';
 import {
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from '@/lib/storage/json-storage';
 import { consumeBackgroundStoragePromise } from '@/lib/storage/background-storage';
 import { subscribeStoreReloadSignal } from '@/lib/storage/reload-signal';
@@ -64,10 +64,10 @@ function serializeSettings(settings: ChatSettings) {
  */
 async function loadNormalizedSettingsFromStorage(): Promise<ChatSettings> {
   const defaultSettings = getLocalizedDefaultSettings();
-  const rawSettings = await readStoredJson<unknown>(STORAGE_KEY, defaultSettings, (value) => value);
+  const rawSettings = await readStoredJsonWithBootstrapMirror<unknown>(STORAGE_KEY, defaultSettings, (value) => value);
   const nextSettings = normalizeChatSettings((rawSettings as ChatSettings) ?? defaultSettings);
   if (JSON.stringify(rawSettings ?? null) !== serializeSettings(nextSettings)) {
-    writeStoredJsonInBackground(STORAGE_KEY, nextSettings, 'useChatSettingsStore.normalizeSettings');
+    writeStoredJsonWithBootstrapMirrorInBackground(STORAGE_KEY, nextSettings, 'useChatSettingsStore.normalizeSettings');
   }
   return nextSettings;
 }
@@ -189,7 +189,7 @@ function initChatSettingsStoreOnce(store: ChatSettingsStoreHook): void {
       const serialized = serializeSettings(value);
       if (serialized === persistedSnapshot) return;
       persistedSnapshot = serialized;
-      writeStoredJsonInBackground(STORAGE_KEY, value, 'useChatSettingsStore');
+      writeStoredJsonWithBootstrapMirrorInBackground(STORAGE_KEY, value, 'useChatSettingsStore');
     },
   );
 

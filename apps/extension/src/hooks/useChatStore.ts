@@ -49,9 +49,9 @@ import {
   subscribeTopicMessagesChanged,
 } from '@/lib/chat/message-change-signal';
 import {
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from '@/lib/storage/json-storage';
 import { consumeBackgroundStoragePromise } from '@/lib/storage/background-storage';
 import { registerPendingWriteFlusher } from '@/lib/storage/pending-write-flushers';
@@ -386,7 +386,7 @@ function createChatStore() {
       reloadFromStorage: () => {
         consumeBackgroundStoragePromise((async () => {
           await ensureLegalPresetRemediation();
-          const runtime = sanitizeRuntime(await readStoredJson(STORAGE_KEYS.runtime, null, sanitizeRuntime));
+          const runtime = sanitizeRuntime(await readStoredJsonWithBootstrapMirror(STORAGE_KEYS.runtime, null, sanitizeRuntime));
           const previousKey = get().activeConversationKey;
           set({ runtime });
           // 说明：运行时选择态与助手树、消息仓库是分层存储。
@@ -735,7 +735,7 @@ function initChatStoreOnce(store: ChatStoreHook): void {
   const reloadRuntime = () => {
     consumeBackgroundStoragePromise((async () => {
       await ensureLegalPresetRemediation();
-      const runtime = sanitizeRuntime(await readStoredJson(STORAGE_KEYS.runtime, null, sanitizeRuntime));
+      const runtime = sanitizeRuntime(await readStoredJsonWithBootstrapMirror(STORAGE_KEYS.runtime, null, sanitizeRuntime));
       runtimeHydrated = true;
       persistedRuntimeSnapshot = serializeRuntime(runtime);
       const previousKey = store.getState().activeConversationKey;
@@ -756,7 +756,7 @@ function initChatStoreOnce(store: ChatStoreHook): void {
     const serialized = serializeRuntime(value);
     if (serialized === persistedRuntimeSnapshot) return;
     persistedRuntimeSnapshot = serialized;
-    writeStoredJsonInBackground(STORAGE_KEYS.runtime, value, 'useChatStore.runtime');
+    writeStoredJsonWithBootstrapMirrorInBackground(STORAGE_KEYS.runtime, value, 'useChatStore.runtime');
   });
 
   useAssistantStore.subscribe(

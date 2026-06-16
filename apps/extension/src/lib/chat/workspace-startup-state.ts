@@ -12,7 +12,7 @@
  */
 import type { RuntimeState } from '@/lib/chat/runtime-selection';
 import { ASSISTANTS_STORAGE_KEY, CHAT_RUNTIME_STORAGE_KEY } from '@/lib/legal/preset-remediation';
-import { writeStoredJson } from '@/lib/storage/json-storage';
+import { writeStoredJsonWithBootstrapMirror } from '@/lib/storage/json-storage';
 import type { Assistant } from '@/types/assistant';
 
 /**
@@ -26,6 +26,6 @@ export async function writeWorkspaceStartupState(
   assistants: Assistant[],
   runtime: RuntimeState,
 ): Promise<void> {
-  await writeStoredJson(ASSISTANTS_STORAGE_KEY, assistants);
-  await writeStoredJson(CHAT_RUNTIME_STORAGE_KEY, runtime);
+  await writeStoredJsonWithBootstrapMirror(ASSISTANTS_STORAGE_KEY, assistants);
+  await writeStoredJsonWithBootstrapMirror(CHAT_RUNTIME_STORAGE_KEY, runtime);
 }

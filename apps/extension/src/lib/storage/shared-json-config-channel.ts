@@ -13,13 +13,18 @@
 import {
   readBootstrapStoredJsonSeed,
   readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
   writeStoredJson,
   writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirror,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from './json-storage';
 import { createSecureId } from '@/lib/utils/secure-id';
+import { BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS } from '@/lib/data-contracts/registry';
 
 const SHARED_JSON_CHANNEL_STARTUP_MISSING = Symbol('shared-json-channel-startup-missing');
+const BOOTSTRAP_MIRROR_SHARED_STORAGE_KEY_SET = new Set(BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS);
 
 /** shared channel 的 startup / bootstrap 入口类型。 */
 export type SharedJsonConfigBootstrap =
@@ -117,6 +122,8 @@ export function createSharedJsonConfigChannel<T>(
   const clone = options.clone;
   const isEqual = options.isEqual ?? defaultIsEqual;
   const bootstrap = options.bootstrap ?? { bootstrapSource: 'none' };
+  const shouldMaintainBootstrapMirror = bootstrap.bootstrapSource !== 'none'
+    && BOOTSTRAP_MIRROR_SHARED_STORAGE_KEY_SET.has(normalizedStorageKey);
   const sameWindowSignal = options.sameWindowSignal ?? { type: 'none' };
   const subscribers = new Set<() => void>();
   let lastLocalSignalToken = '';
@@ -179,7 +186,9 @@ export function createSharedJsonConfigChannel<T>(
     emitIfChanged?: boolean;
     notifyOnUnchanged?: boolean;
   }): Promise<{ changed: boolean; value: T }> => {
-    const next = await readStoredJson(normalizedStorageKey, cache, normalize);
+    const next = shouldMaintainBootstrapMirror
+      ? await readStoredJsonWithBootstrapMirror(normalizedStorageKey, cache, normalize)
+      : await readStoredJson(normalizedStorageKey, cache, normalize);
     const changed = !isEqual(cache, next);
     cache = next;
     applySideEffect(cache);
@@ -219,7 +228,10 @@ export function createSharedJsonConfigChannel<T>(
     const changed = !isEqual(cache, normalized);
     cache = normalized;
     applySideEffect(cache);
-    writeStoredJsonInBackground(normalizedStorageKey, cache, 'shared-json-config-channel');
+    const writeInBackground = shouldMaintainBootstrapMirror
+      ? writeStoredJsonWithBootstrapMirrorInBackground
+      : writeStoredJsonInBackground;
+    writeInBackground(normalizedStorageKey, cache, 'shared-json-config-channel');
     if (changed) {
       notifySubscribers();
       emitLocalSignal();
@@ -238,7 +250,11 @@ export function createSharedJsonConfigChannel<T>(
    */
   const saveAsync = async (next: unknown): Promise<T> => {
     const normalized = normalize(next);
-    await writeStoredJson(normalizedStorageKey, normalized);
+    if (shouldMaintainBootstrapMirror) {
+      await writeStoredJsonWithBootstrapMirror(normalizedStorageKey, normalized);
+    } else {
+      await writeStoredJson(normalizedStorageKey, normalized);
+    }
     const changed = !isEqual(cache, normalized);
     cache = normalized;
     applySideEffect(cache);

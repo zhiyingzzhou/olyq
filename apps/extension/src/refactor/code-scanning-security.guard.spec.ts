@@ -91,10 +91,19 @@ describe('code scanning security guard', () => {
 
   it('bootstrap mirror 必须按 Data Contract Registry 拒绝敏感 key', () => {
     const source = readSource('lib/storage/json-storage.ts');
+    const registrySource = readSource('lib/data-contracts/registry.ts');
+    const providerRotationSource = readSource('lib/ai/api-key-rotation-state.ts');
 
+    expect(registrySource).toContain('BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS');
+    expect(registrySource).toContain("bootstrapMirror: 'allowed'");
     expect(source).toContain('SHARED_STORAGE_CONTRACT_BY_KEY');
-    expect(source).toContain('!contract.sensitive && contract.syncPolicy !==');
+    expect(source).toContain('BOOTSTRAP_MIRROR_SHARED_STORAGE_KEYS');
+    expect(source).toContain("contract.bootstrapMirror === 'allowed'");
+    expect(source).toContain("contract.syncPolicy !== 'encrypted-secret'");
     expect(source).toContain('removeBootstrapMirror(storageKey)');
+    expect(source).toContain('writeStoredJsonWithBootstrapMirror');
+    expect(providerRotationSource).toContain('writeStoredJson(');
+    expect(providerRotationSource).not.toContain('writeStoredJsonWithBootstrapMirror');
   });
 
   it('Markdown 表格 cell 只能通过共享 helper 转义', () => {

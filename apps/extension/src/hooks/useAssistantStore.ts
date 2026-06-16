@@ -54,9 +54,9 @@ import {
 import { createId } from '@/lib/utils/id';
 import { isPlainRecord } from '@/lib/utils/type-guards';
 import {
-  readStoredJson,
+  readStoredJsonWithBootstrapMirror,
   subscribeStoredKeys,
-  writeStoredJsonInBackground,
+  writeStoredJsonWithBootstrapMirrorInBackground,
 } from '@/lib/storage/json-storage';
 import { consumeBackgroundStoragePromise } from '@/lib/storage/background-storage';
 import {
@@ -977,13 +977,13 @@ function initAssistantStoreOnce(store: AssistantStoreHook): void {
     const serialized = serializeAssistants(value);
     if (serialized === persistedSnapshot) return;
     persistedSnapshot = serialized;
-    writeStoredJsonInBackground(STORAGE_KEY, value, 'useAssistantStore.assistants');
+    writeStoredJsonWithBootstrapMirrorInBackground(STORAGE_KEY, value, 'useAssistantStore.assistants');
   });
   store.subscribe((state) => state.userPresets, (value) => {
     const serialized = serializeStoredPresets(value);
     if (serialized === persistedUserPresetsSnapshot) return;
     persistedUserPresetsSnapshot = serialized;
-    writeStoredJsonInBackground(PRESET_STORAGE_KEY, value, 'useAssistantStore.userPresets');
+    writeStoredJsonWithBootstrapMirrorInBackground(PRESET_STORAGE_KEY, value, 'useAssistantStore.userPresets');
   });
 
   // 说明：预设目录是运行时资源，首轮进入页面后再异步加载即可；
@@ -1018,8 +1018,8 @@ function initAssistantStoreOnce(store: AssistantStoreHook): void {
       consumeBackgroundStoragePromise((async () => {
         await ensureLegalPresetRemediation();
         const [assistantsRaw, userPresetsRaw] = await Promise.all([
-          readStoredJson<unknown>(STORAGE_KEY, [], (raw) => raw),
-          readStoredJson<unknown>(PRESET_STORAGE_KEY, [], (raw) => raw),
+          readStoredJsonWithBootstrapMirror<unknown>(STORAGE_KEY, [], (raw) => raw),
+          readStoredJsonWithBootstrapMirror<unknown>(PRESET_STORAGE_KEY, [], (raw) => raw),
         ]);
         const assistants = ensureAssistantList(
           sanitizeAssistants(assistantsRaw, {

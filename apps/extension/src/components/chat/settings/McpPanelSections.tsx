@@ -127,10 +127,9 @@ export function McpServerListSection({
                       <Badge variant="outline">{t('mcpBridgePanel.serverType.streamableHttp')}</Badge>
                       {server.oauth.enabled ? <Badge variant="outline">{t('mcpBridgePanel.servers.oauthEnabled')}</Badge> : null}
                     </div>
-                    <div className="text-xs text-muted-foreground">
-                      {t('mcpBridgePanel.servers.url')}
-                      {' '}
-                      {server.url}
+                    <div className="flex min-w-0 flex-wrap items-baseline gap-x-1 gap-y-0.5 text-xs text-muted-foreground">
+                      <span className="shrink-0">{t('mcpBridgePanel.servers.url')}</span>
+                      <span className="min-w-0 break-all font-mono text-foreground/80">{server.url}</span>
                     </div>
                     <div className="text-xs text-muted-foreground">
                       {t('mcpBridgePanel.servers.toolsCount', { count: state?.tools.length ?? 0 })}
