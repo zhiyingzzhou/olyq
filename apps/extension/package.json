@@ -50,7 +50,7 @@
     "verify": "pnpm lint && pnpm typecheck && pnpm test && pnpm build:chromium && pnpm build:firefox"
   },
   "dependencies": {
-    "@ai-sdk/amazon-bedrock": "4.0.114",
+    "@ai-sdk/amazon-bedrock": "5.0.2",
     "@ai-sdk/anthropic": "3.0.82",
     "@ai-sdk/cohere": "3.0.36",
     "@ai-sdk/deepseek": "2.0.35",
