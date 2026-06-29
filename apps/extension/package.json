@@ -127,7 +127,7 @@
     "@testing-library/user-event": "^14.6.1",
     "@types/chrome": "^0.1.43",
     "@types/css-tree": "^2.3.11",
-    "@types/node": "^25.9.2",
+    "@types/node": "^26.0.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@types/react-syntax-highlighter": "^15.5.13",
